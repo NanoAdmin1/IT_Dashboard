@@ -766,18 +766,18 @@
             <td class="matrix-cell matrix-cell-orange"><div class="matrix-cell-label">✦ Connected</div>Certified staff are better equipped to evaluate, adopt, and support new tools that enable cross-team and cross-site innovation.</td>
           </tr>
           <tr>
-            <td class="matrix-row-header" style="text-decoration:line-through;opacity:0.6;">✓ Veeam Cloud Backups Fully Configured</td>
+            <td class="matrix-row-header">✓ Veeam Cloud Backups Fully Configured</td>
             <td class="matrix-cell matrix-cell-empty"></td>
-            <td class="matrix-cell matrix-cell-purple" style="opacity:0.7;"><div class="matrix-cell-label">✦ Connected</div>Reliable cloud backups protect business-critical data at commercial scale, ensuring continuity and reducing risk of data loss during growth.</td>
-            <td class="matrix-cell matrix-cell-green" style="opacity:0.7;"><div class="matrix-cell-label">✦ Connected</div>Fully configured offsite backups are a cornerstone of operational safety — ensuring recovery capability for all core systems and lab infrastructure.</td>
+            <td class="matrix-cell matrix-cell-purple"><div class="matrix-cell-label">✦ Connected</div>Reliable cloud backups protect business-critical data at commercial scale, ensuring continuity and reducing risk of data loss during growth.</td>
+            <td class="matrix-cell matrix-cell-green"><div class="matrix-cell-label">✦ Connected</div>Fully configured offsite backups are a cornerstone of operational safety — ensuring recovery capability for all core systems and lab infrastructure.</td>
             <td class="matrix-cell matrix-cell-empty"></td>
           </tr>
           <tr>
-            <td class="matrix-row-header" style="text-decoration:line-through;opacity:0.6;">✓ Shared Virtual Machine for Scientific Users</td>
+            <td class="matrix-row-header">✓ Shared Virtual Machine for Scientific Users</td>
             <td class="matrix-cell matrix-cell-empty"></td>
             <td class="matrix-cell matrix-cell-empty"></td>
-            <td class="matrix-cell matrix-cell-green" style="opacity:0.7;"><div class="matrix-cell-label">✦ Connected</div>A shared VM gives Mac-based scientific users reliable access to Windows tools and lab software, reducing friction in daily operations.</td>
-            <td class="matrix-cell matrix-cell-orange" style="opacity:0.7;"><div class="matrix-cell-label">✦ Connected</div>Breaking down platform barriers between Mac and Windows users enables scientists and IT to collaborate more effectively on shared tools and data.</td>
+            <td class="matrix-cell matrix-cell-green"><div class="matrix-cell-label">✦ Connected</div>A shared VM gives Mac-based scientific users reliable access to Windows tools and lab software, reducing friction in daily operations.</td>
+            <td class="matrix-cell matrix-cell-orange"><div class="matrix-cell-label">✦ Connected</div>Breaking down platform barriers between Mac and Windows users enables scientists and IT to collaborate more effectively on shared tools and data.</td>
           </tr>
         </tbody>
       </table>
@@ -1405,8 +1405,8 @@ function renderGoals() {
         const chips = g.links.map(num => {
           const crit = goalsData.critical.find(c => c.number === num);
           if (!crit) return '';
-          const strikeStyle = crit.completed ? 'text-decoration:line-through;opacity:0.5;' : '';
-          return `<div style="display:flex;align-items:center;background:var(--surface2);border:1px solid #4a5280;border-radius:6px;padding:5px 10px;font-size:0.75rem;color:var(--text);${strikeStyle}">${crit.title}</div>`;
+          const checkmark = crit.completed ? '<span style="color:#4ade80;margin-right:6px;">✓</span>' : '';
+          return `<div style="display:flex;align-items:center;background:var(--surface2);border:1px solid #4a5280;border-radius:6px;padding:5px 10px;font-size:0.75rem;color:var(--text);">${checkmark}${crit.title}</div>`;
         }).join('');
         linksHtml = `<div style="margin-top:10px;border-top:1px solid var(--border);padding-top:8px;"><div style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--muted);margin-bottom:8px;">Supporting IT Critical Goals</div><div style="display:flex;flex-direction:column;gap:5px;">${chips}</div></div>`;
       }

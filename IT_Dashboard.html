@@ -64,6 +64,46 @@
     color: var(--muted);
   }
 
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .header-btn {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 0.78rem;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .header-btn:hover { color: var(--text); border-color: #4a5280; }
+
+  .save-status {
+    display: none;
+    font-size: 0.72rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+
+  .save-saving { color: var(--yellow); }
+  .save-success { color: var(--green); }
+  .save-error { color: var(--red); }
+
+  .subtask-status.clickable {
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .subtask-status.clickable:hover {
+    filter: brightness(1.3);
+    transform: scale(1.05);
+  }
+
   /* Tab Bar */
   .tab-bar {
     background: var(--surface);
@@ -597,7 +637,10 @@
     <h1>Nano One IT Dashboard</h1>
     <div class="subtitle">Nano One Materials — IT Internal</div>
   </div>
-  <div class="last-updated" id="last-updated-label">Last updated: March 26, 2026</div>
+  <div class="header-actions">
+    <span class="save-status" id="save-status"></span>
+    <button class="header-btn" onclick="promptToken()" title="Set GitHub token for saving">🔑</button>
+  </div>
 </header>
 
 <!-- Tab Bar -->
@@ -859,9 +902,103 @@
 </div>
 
 <script>
-const allMembersData = {
+// --- GitHub API Integration ---
+const GITHUB_REPO = 'NanoAdmin1/IT_Dashboard';
+const DATA_FILE = 'data.json';
+let githubToken = localStorage.getItem('gh_dashboard_token');
+let dataSha = null; // needed for GitHub API updates
+
+async function loadData() {
+  try {
+    // Try loading from GitHub API first (gets us the SHA for updates)
+    if (githubToken) {
+      const resp = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${DATA_FILE}`, {
+        headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github.v3+json' }
+      });
+      if (resp.ok) {
+        const meta = await resp.json();
+        dataSha = meta.sha;
+        const content = JSON.parse(atob(meta.content));
+        return content;
+      }
+    }
+    // Fallback: load data.json directly (works for local file:// or hosted)
+    const resp = await fetch('data.json');
+    if (resp.ok) return await resp.json();
+  } catch (e) {
+    console.warn('Failed to load data.json:', e);
+  }
+  return null;
+}
+
+async function saveData() {
+  if (!githubToken) {
+    showSaveStatus('Set GitHub token first (click 🔑)', 'error');
+    return;
+  }
+  try {
+    showSaveStatus('Saving...', 'saving');
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify({ allMembersData, goalsData }, null, 2))));
+
+    // Get latest SHA to avoid conflicts
+    const metaResp = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${DATA_FILE}`, {
+      headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github.v3+json' }
+    });
+    if (metaResp.ok) {
+      const meta = await metaResp.json();
+      dataSha = meta.sha;
+    }
+
+    const resp = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${DATA_FILE}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `token ${githubToken}`,
+        'Accept': 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message: `Dashboard update: ${new Date().toISOString().slice(0, 16)}`,
+        content: content,
+        sha: dataSha
+      })
+    });
+
+    if (resp.ok) {
+      const result = await resp.json();
+      dataSha = result.content.sha;
+      showSaveStatus('Saved ✓', 'success');
+    } else {
+      const err = await resp.json();
+      showSaveStatus('Save failed: ' + (err.message || resp.status), 'error');
+    }
+  } catch (e) {
+    showSaveStatus('Save failed: ' + e.message, 'error');
+  }
+}
+
+function showSaveStatus(msg, type) {
+  const el = document.getElementById('save-status');
+  el.textContent = msg;
+  el.className = 'save-status save-' + type;
+  el.style.display = 'inline-block';
+  if (type === 'success') setTimeout(() => { el.style.display = 'none'; }, 2500);
+}
+
+function promptToken() {
+  const token = prompt('Enter GitHub Personal Access Token\n(needs repo contents write permission)\n\nThis is stored in your browser only.');
+  if (token) {
+    githubToken = token.trim();
+    localStorage.setItem('gh_dashboard_token', githubToken);
+    showSaveStatus('Token saved ✓', 'success');
+  }
+}
+
+// --- Data (loaded async, fallback to inline) ---
+let allMembersData = {};
+let goalsData = {};
+
+const FALLBACK_allMembersData = {
   ryan: [
-    // --- IN PROGRESS ---
     {
       title: "Update QuickBooks with Trupoint Support",
       type: "task",
@@ -1386,7 +1523,7 @@ const allMembersData = {
   maxime: []
 };
 
-const goalsData = {
+const FALLBACK_goalsData = {
   company: [
     { title: "Establish Licensing Deals", completed: false, links: [1, 7] },
     { title: "Commercial Readiness", completed: false, links: [1, 2, 3, 5, 8] },
@@ -1413,9 +1550,23 @@ const goalsData = {
   ]
 };
 
+// --- Async Init: load from data.json, fall back to inline ---
+async function initData() {
+  const loaded = await loadData();
+  if (loaded) {
+    allMembersData = loaded.allMembersData;
+    goalsData = loaded.goalsData;
+  } else {
+    allMembersData = FALLBACK_allMembersData;
+    goalsData = FALLBACK_goalsData;
+  }
+  projects = allMembersData['ryan'];
+  renderGoals();
+}
+
 // State
 let activeMember = 'goals';
-let projects = allMembersData['ryan'];
+let projects = [];
 let currentStatus = 'all';
 let currentCategory = 'all';
 let currentType = 'all';
@@ -1587,10 +1738,12 @@ function renderAll() {
         const doneCount = p.subtasks.filter(s => s.status === 'done').length;
         const total = p.subtasks.length;
         const pct = Math.round((doneCount / total) * 100);
-        const items = p.subtasks.map(s => {
+        const memberKey = activeMember;
+        const taskIdx = projects.indexOf(p);
+        const items = p.subtasks.map((s, si) => {
           const label = s.status === 'not-started' ? 'Not Started' : s.status === 'in-progress' ? 'In Progress' : 'Done';
           return `<div class="subtask ${s.status === 'done' ? 'is-done' : ''}">
-            <span class="subtask-status ${s.status}">${label}</span>
+            <span class="subtask-status ${s.status} clickable" onclick="cycleSubtask(event, '${memberKey}', ${taskIdx}, ${si})">${label}</span>
             <span class="subtask-title">${s.title}</span>
           </div>`;
         }).join('');
@@ -1684,8 +1837,21 @@ function searchProjects(val) {
   renderAll();
 }
 
+// --- Status cycling ---
+const SUBTASK_CYCLE = ['not-started', 'in-progress', 'done'];
+
+function cycleSubtask(event, memberKey, taskIdx, subtaskIdx) {
+  event.stopPropagation(); // don't toggle card expand
+  const task = allMembersData[memberKey][taskIdx];
+  const sub = task.subtasks[subtaskIdx];
+  const curIdx = SUBTASK_CYCLE.indexOf(sub.status);
+  sub.status = SUBTASK_CYCLE[(curIdx + 1) % SUBTASK_CYCLE.length];
+  renderAll();
+  saveData();
+}
+
 // Init — start on Goals tab
-(function() {
+(async function() {
   const projectBoard = document.querySelector('.summary-row');
   const filtersEl = document.querySelector('.filters');
   const boardEl = document.querySelector('.board');
@@ -1694,7 +1860,7 @@ function searchProjects(val) {
   filtersEl.style.display = 'none';
   boardEl.style.display = 'none';
   goalsSection.style.display = '';
-  renderGoals();
+  await initData();
 })();
 </script>
 </body>

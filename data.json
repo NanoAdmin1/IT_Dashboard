@@ -1,0 +1,1026 @@
+{
+  "allMembersData": {
+    "ryan": [
+      {
+        "title": "Update QuickBooks with Trupoint Support",
+        "type": "task",
+        "status": "completed",
+        "categories": ["services"],
+        "blocker": null,
+        "notes": "Trupoint will be restarting the server. I will need to test that QuickBooks updates properly.",
+        "resolution": "Trupoint has updated the software on their end.",
+        "completedAt": "2026-03-25T12:52:00"
+      },
+      {
+        "title": "RPC Connection Issues on NANOSV01",
+        "type": "task",
+        "status": "completed",
+        "categories": ["infrastructure"],
+        "blocker": null,
+        "notes": "The RPC server is unavailable when requesting certain information from BDC01 to NANOSV01. BDC01 can connect to port 135 fine with 'Test Connection' and the services show as running on NANOSV01.",
+        "resolution": "Allowed connections from BDC01 through the firewall.",
+        "completedAt": "2026-03-23T13:30:00"
+      },
+      {
+        "title": "ESPEC Chamber Connect",
+        "type": "project",
+        "status": "blocked",
+        "categories": ["networking", "lab"],
+        "blocker": "Waiting for Blake to approve purchase of cables and switch (noted 12/3/2025).",
+        "notes": "10 ESPEC devices to be connected. Decided to use an isolated network (separate switch) rather than integrating into existing infrastructure. Verified with ESPEC that the program can handle 10 simultaneous devices."
+      },
+      {
+        "title": "Install AZTec 6.3 Software on SEM Computer",
+        "type": "task",
+        "status": "waiting",
+        "categories": ["endpoint", "lab"],
+        "blocker": null,
+        "notes": "SEM can be booked at sempc@nanoone.ca",
+        "resolution": null
+      },
+      {
+        "title": "Fix IPs on Burnaby Switches",
+        "type": "task",
+        "status": "waiting",
+        "categories": ["networking"],
+        "blocker": "Must be completed on a Saturday.",
+        "notes": "Burnaby 1 & 2 switches need static IPs assigned to the 98 VLAN (172.16.98.x / 172.16.198.x). 98 VLAN must have VPN enabled for site-to-site traffic. Requires coming in on a Saturday."
+      },
+      {
+        "title": "FreeRADIUS Config (Post Switch-IP Fix)",
+        "type": "task",
+        "status": "waiting",
+        "categories": ["networking", "security"],
+        "blocker": "Must be completed on a Saturday.",
+        "notes": "After switch IPs are corrected, each Burnaby switch needs to be added as a client to the FreeRADIUS server.\n\nclaude --resume 5ff90607-6c56-41e9-9bf9-8d60e3109e9c -> FreeRADIUS config plan from Claude"
+      },
+      {
+        "title": "BET Machine Connection Issue",
+        "type": "task",
+        "status": "waiting",
+        "categories": ["lab"],
+        "blocker": "Waiting for the machine to get a new Dewar.",
+        "notes": "Build a laptop to run the BET machine software to see if the issue lies with the machine or the computer.",
+        "resolution": null
+      },
+      {
+        "title": "Install Claude Code on FreeRADIUS Server",
+        "type": "task",
+        "status": "completed",
+        "categories": ["infrastructure"],
+        "blocker": null,
+        "notes": null,
+        "completedAt": "2026-03-23T10:30:00"
+      },
+      {
+        "title": "Move OneDrive Files for Departed Employees",
+        "type": "task",
+        "status": "completed",
+        "categories": ["services"],
+        "blocker": null,
+        "notes": "Users: Jean, Mital, Perry, Lida, Vahid",
+        "completedAt": "2026-03-23T11:00:00"
+      },
+      {
+        "title": "Format PCs of Departed Employees",
+        "type": "task",
+        "status": "completed",
+        "categories": ["endpoint"],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "completedAt": "2026-03-24T11:30:00"
+      },
+      {
+        "title": "Help Daniela with Arbin 2",
+        "type": "task",
+        "status": "completed",
+        "categories": ["lab"],
+        "blocker": null,
+        "notes": null,
+        "resolution": "Held the power button down to restart the computer as the Arbins have memory leak issues. Told Daniela she will need to restart them weekly — that's what Perry did.",
+        "completedAt": "2026-03-23T13:00:00"
+      },
+      {
+        "title": "Investigate Rigaku Software Crash",
+        "type": "task",
+        "status": "completed",
+        "categories": ["lab"],
+        "blocker": null,
+        "notes": null,
+        "resolution": "Ethernet cable connection to XRD machine was not seated properly. Made sure it was connected properly.",
+        "completedAt": "2026-03-23T14:00:00"
+      },
+      {
+        "title": "Give Gary a License to Claude. Install the Desktop App and Excel Plugin.",
+        "type": "task",
+        "status": "completed",
+        "categories": ["endpoint", "services"],
+        "blocker": null,
+        "notes": "Give Gary a license and access to the Claude Desktop app and Excel Plugin. Make sure he creates his account before I connect.",
+        "resolution": null,
+        "completedAt": "2026-04-06T12:59:00"
+      },
+      {
+        "title": "Install PDF-5+ 2026 Database Software on XRD Rigaku Computer",
+        "type": "task",
+        "status": "waiting",
+        "categories": ["endpoint", "lab"],
+        "blocker": "Waiting on O'Rian to contact the technician for information on license.",
+        "notes": "XRD Rigaku will need to be locked off for about 15 minutes to install the software. Coordinate with Alec.",
+        "resolution": null
+      },
+      {
+        "title": "Get a List of All Ports in 101B and Devices Connected to Switch 1 and 2",
+        "type": "task",
+        "status": "completed",
+        "categories": ["networking"],
+        "blocker": null,
+        "notes": "Need to know which ports are connected to devices in 101B and which ports feed down into 101A. Anything not in the list of ports in 101B can be disconnected.",
+        "resolution": null,
+        "completedAt": "2026-03-30T11:56:00"
+      },
+      {
+        "title": "Disconnect Ports Not Listed in 101B Ports List",
+        "type": "task",
+        "status": "completed",
+        "categories": ["networking"],
+        "blocker": null,
+        "notes": "Port list taken from task \"Get a List of All Ports in 101B and Devices Connected to Switch 1 and 2\".",
+        "resolution": null,
+        "completedAt": "2026-03-30T13:10:00"
+      },
+      {
+        "title": "Remove Unused Cables from Patch Panel",
+        "type": "task",
+        "status": "waiting",
+        "categories": ["networking"],
+        "blocker": "Needs to be done on a Saturday.",
+        "notes": "101A is being rented out and the cables that go down to 101A need to be identified and removed from our patch panel in 101B.",
+        "resolution": null
+      },
+      {
+        "title": "Grab Equipment from 101A and 101B",
+        "type": "task",
+        "status": "completed",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "completedAt": "2026-03-30T13:11:00"
+      },
+      {
+        "title": "Change Microsoft License on Arbin 5",
+        "type": "task",
+        "status": "completed",
+        "categories": ["endpoint", "services"],
+        "blocker": null,
+        "notes": "Arbin 5 is currently tied to Perry. Needs to be swapped over to someone else (likely me).",
+        "resolution": "The N drive needed to be remounted.",
+        "completedAt": "2026-03-27T12:59:00"
+      },
+      {
+        "title": "Install and Configure Rohos + Omnikey Readers on Science Computers",
+        "type": "project",
+        "status": "waiting",
+        "categories": ["endpoint", "security"],
+        "blocker": "Waiting on Rohos support to see if there is a better solution than scanning everyone manually every time.",
+        "notes": "Rohos and scanners will need to be installed on 14 science computers. Users will need to scan their fobs for each.",
+        "resolution": null
+      },
+      {
+        "title": "Remove Licenses from Departed Users",
+        "type": "task",
+        "status": "completed",
+        "categories": ["services"],
+        "blocker": null,
+        "notes": "Figure out how to do this with MgGraph or something else.",
+        "resolution": null,
+        "completedAt": "2026-03-26T14:07:00"
+      },
+      {
+        "title": "Investigate WinShared Veeam Backup",
+        "type": "task",
+        "status": "completed",
+        "categories": ["infrastructure"],
+        "blocker": null,
+        "notes": "WinShared computer has not updated properly in Veeam. Need to investigate why.",
+        "resolution": "They were just warning us about low space in Data Store 1. The backups are fine.",
+        "completedAt": "2026-03-26T14:40:00"
+      },
+      {
+        "title": "Investigate Veeam Warnings",
+        "type": "task",
+        "status": "completed",
+        "categories": ["infrastructure"],
+        "blocker": null,
+        "notes": "WinShared and Burnaby Core finished with warnings. Investigate them.",
+        "resolution": "They were just warning us about low space in Data Store 1. The backups are fine.",
+        "completedAt": "2026-03-26T14:40:00"
+      },
+      {
+        "title": "Free up Space in Lenovo Datastore 1 in vCenter",
+        "type": "task",
+        "status": "completed",
+        "categories": ["infrastructure"],
+        "blocker": null,
+        "notes": "Either we remove some files or we add more storage.",
+        "resolution": "There was a couple large snapshots from 10 months ago that did not need to exist as Veeam had more recent backups.",
+        "completedAt": "2026-03-26T14:38:00"
+      },
+      {
+        "title": "Investigate if Emma or Carolyn was in Office on Sunday",
+        "type": "task",
+        "status": "completed",
+        "categories": ["security"],
+        "blocker": null,
+        "notes": "Both Carolyn and Emma show logins from 172.16.9.X IPs on Sunday. These IPs are consistent with on-prem logins, not VPN. Need to confirm if either was physically in the office.",
+        "resolution": "They left their laptops here which may have made automatic connections.",
+        "completedAt": "2026-03-23T14:30:00"
+      },
+      {
+        "title": "Move Equipment out of 101A",
+        "type": "task",
+        "status": "completed",
+        "categories": [],
+        "blocker": null,
+        "notes": "Some leftover equipment needs to be moved from 101A.",
+        "resolution": null,
+        "completedAt": "2026-03-26T11:54:00"
+      },
+      {
+        "title": "Set-up Laptop for Harsh Singh",
+        "type": "task",
+        "status": "completed",
+        "categories": ["endpoint", "lab"],
+        "blocker": null,
+        "notes": "Harsh Singh is a lab tech. He will need a laptop with scientific software.",
+        "resolution": null,
+        "completedAt": "2026-03-24T11:00:00"
+      },
+      {
+        "title": "Set-up Laptop for Vincent Kong",
+        "type": "task",
+        "status": "completed",
+        "categories": ["endpoint", "lab"],
+        "blocker": null,
+        "notes": "Vincent Kong is a lab tech. He will need a laptop with scientific software.",
+        "resolution": null,
+        "completedAt": "2026-03-25T13:59:00"
+      },
+      {
+        "title": "Create Account for Harsh Singh",
+        "type": "task",
+        "status": "completed",
+        "categories": ["endpoint"],
+        "blocker": null,
+        "notes": "Create AD account, sync, make sure to add to the correct distribution groups.",
+        "resolution": null,
+        "completedAt": "2026-03-26T11:51:00"
+      },
+      {
+        "title": "Create Account for Vincent Kong",
+        "type": "task",
+        "status": "completed",
+        "categories": ["endpoint"],
+        "blocker": null,
+        "notes": "Create AD account, sync, make sure to add to the correct distribution groups.",
+        "resolution": null,
+        "completedAt": "2026-03-26T11:51:00"
+      },
+      {
+        "title": "Fix Support Bot",
+        "type": "task",
+        "status": "completed",
+        "categories": ["services"],
+        "blocker": null,
+        "notes": "Support Bot is currently down. Contacted Desk365 for assistance. Jordan is uploading an updated version to our tenant.",
+        "resolution": "Uploading the latest update to our Tenant fixed the issue.",
+        "completedAt": "2026-03-24T10:00:00"
+      },
+      {
+        "title": "InTune Integration Fix",
+        "type": "task",
+        "status": "completed",
+        "categories": ["endpoint"],
+        "blocker": null,
+        "notes": "Fixing existing InTune integration issues."
+      },
+      {
+        "title": "InTune Autopilot Configuration",
+        "type": "project",
+        "status": "blocked",
+        "categories": ["endpoint"],
+        "blocker": "Low priority.",
+        "notes": "Configuration and investigation of InTune Autopilot for device enrollment."
+      },
+      {
+        "title": "Connect Arbins to File Server",
+        "type": "task",
+        "status": "completed",
+        "categories": ["lab", "infrastructure"],
+        "blocker": null,
+        "notes": "Connect Arbin lab devices to the file server and update/edit the script to make data uploads easier."
+      },
+      {
+        "title": "Upgrade, Domain-Join & Back-Up Scientific Computers",
+        "type": "project",
+        "status": "completed",
+        "categories": ["endpoint", "lab"],
+        "blocker": null,
+        "notes": "Scientific computers around the office need to be upgraded, domain-joined, backed up, or a combination of all three."
+      },
+      {
+        "title": "Windows 11 Updates",
+        "type": "task",
+        "status": "completed",
+        "categories": ["endpoint"],
+        "blocker": null,
+        "notes": "Ongoing Windows 11 update rollout across managed devices."
+      },
+      {
+        "title": "Microbalance Software Integration",
+        "type": "task",
+        "status": "completed",
+        "categories": ["lab", "services"],
+        "blocker": null,
+        "notes": "Perry's microbalance is now connected. Currently integrating other users into the workflow."
+      },
+      {
+        "title": "Swap Arbins 4, 5 & 6 to MitsPro7",
+        "type": "task",
+        "status": "completed",
+        "categories": ["lab"],
+        "blocker": null,
+        "notes": "Perry requested downgrade from MitsPro8 to MitsPro7 due to workload reasons. MitsPro7 installed on Arbin 6 for testing but throws an error on open. IT last messaged Perry 12/2/2025."
+      },
+      {
+        "title": "Replace UPS Battery (Arbin UPS)",
+        "type": "task",
+        "status": "completed",
+        "categories": ["lab", "infrastructure"],
+        "blocker": null,
+        "notes": "Back-UPS 1500 Pro battery failed. Replacement battery identified and purchased pending PO approval."
+      },
+      {
+        "title": "Procure & Install RDS Licenses",
+        "type": "task",
+        "status": "completed",
+        "categories": ["services"],
+        "blocker": null,
+        "notes": "RDS CALs still required. Procurement and installation of Remote Desktop Services licenses."
+      },
+      {
+        "title": "Sort NanoOne Corporate Contacts (CiraHub / RO-Nano Corp)",
+        "type": "task",
+        "status": "blocked",
+        "categories": ["services"],
+        "blocker": "Need to get in contact with Dan Blondal about this.",
+        "notes": "Organize and sync NanoOne corporate contacts. Related to CiraHub integration."
+      },
+      {
+        "title": "Add Users and Assign Roles to Infor across Candiac and Burnaby",
+        "type": "task",
+        "status": "completed",
+        "categories": ["services"],
+        "blocker": null,
+        "notes": "Add 90+ users and assign roles to them in Infor across Candiac and Burnaby manually, 5 at a time, because there is no better way to do it.",
+        "completedAt": "2026-04-01T11:37:00"
+      },
+      {
+        "title": "False Positives in CrowdStrike",
+        "type": "task",
+        "status": "completed",
+        "categories": ["security"],
+        "blocker": null,
+        "notes": "Investigating and resolving false positive detections in CrowdStrike."
+      },
+      {
+        "title": "AZ-104 Certification Study",
+        "type": "project",
+        "status": "study",
+        "categories": ["certification"],
+        "blocker": null,
+        "notes": "Ryan studying for AZ-104 (Azure Administrator). Using 2025 education budget."
+      },
+      {
+        "title": "Candiac RADIUS Server — Build & Configure",
+        "type": "project",
+        "status": "blocked",
+        "categories": ["networking", "security"],
+        "blocker": "I will likely need to fly out to Candiac to assist with proper implementation.",
+        "notes": "Server is built and RADIUS installed. Configuration needs to be done and CA needs to be connected."
+      },
+      {
+        "title": "Infor Print Server",
+        "type": "project",
+        "status": "in-progress",
+        "categories": ["infrastructure", "services"],
+        "blocker": null,
+        "notes": "Infor will need a VM created to host their print server which comes with specific parameters found in an email from Blake."
+      },
+      {
+        "title": "Wired RADIUS Configuration with Jordan",
+        "type": "project",
+        "status": "not-started",
+        "categories": ["networking", "security"],
+        "blocker": null,
+        "notes": "The RADIUS server needs to have Wired configuration added to it."
+      },
+      {
+        "title": "AI Training and Certification Study",
+        "type": "project",
+        "status": "study",
+        "categories": ["certification"],
+        "blocker": null,
+        "notes": "Learning the basics of AI and Claude to get more success out of using them. Study order: 1) Google AI Essentials, 2) AI Fluency, 3) Claude 101, 4) Intro to MCP."
+      },
+      {
+        "title": "ICP Computer Upgrade",
+        "type": "task",
+        "status": "completed",
+        "categories": ["endpoint", "lab"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Fixing GPO Errors",
+        "type": "task",
+        "status": "completed",
+        "categories": ["security"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Reorganized the Network Structure including VLANs, ACLs and SSIDs",
+        "type": "project",
+        "status": "completed",
+        "categories": ["networking", "security"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Troubleshooting Horiba Computer in 102",
+        "type": "task",
+        "status": "completed",
+        "categories": ["endpoint", "lab"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "KB for Updating QuickBooks",
+        "type": "task",
+        "status": "completed",
+        "categories": ["services"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Set Up a New Laptop for Leanne",
+        "type": "task",
+        "status": "completed",
+        "categories": ["endpoint"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Create New Company and User Accounts in QuickBooks",
+        "type": "task",
+        "status": "completed",
+        "categories": ["services"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Assist Matt in Fixing Printer Deployment GPO",
+        "type": "task",
+        "status": "completed",
+        "categories": ["endpoint", "security"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Assisted Wei and Others with Getting into the New QuickBooks",
+        "type": "task",
+        "status": "completed",
+        "categories": ["services"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Renamed Andrew Muckstadt's Computer to New Scheme",
+        "type": "task",
+        "status": "completed",
+        "categories": ["endpoint"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "101A Clean Up Equipment",
+        "type": "project",
+        "status": "completed",
+        "categories": ["infrastructure"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "InTune Troubleshooting",
+        "type": "project",
+        "status": "completed",
+        "categories": ["endpoint"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Swap Users Over to New WiFi / Investigate GPO Capabilities",
+        "type": "project",
+        "status": "completed",
+        "categories": ["networking", "security"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Make KB on Smart Lab Studio Install",
+        "type": "task",
+        "status": "completed",
+        "categories": ["lab", "services"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Wi-Fi SSID Filtering for Non-Certificate Devices",
+        "type": "project",
+        "status": "completed",
+        "categories": ["networking", "security"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Port Investigation for Devices",
+        "type": "project",
+        "status": "completed",
+        "categories": ["networking"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Fix Arbin Export Script to Export to N: Drive",
+        "type": "task",
+        "status": "completed",
+        "categories": ["lab"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Provide N: Drive Access to Arbins",
+        "type": "task",
+        "status": "completed",
+        "categories": ["lab"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "RADIUS Server Config with Jordan",
+        "type": "project",
+        "status": "completed",
+        "categories": ["networking", "security"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Set Up Citrix/QB Accounts for Bec. Install/Configure Citrix Workspace",
+        "type": "task",
+        "status": "completed",
+        "categories": ["services", "endpoint"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Deploying Certs via InTune",
+        "type": "project",
+        "status": "completed",
+        "categories": ["endpoint", "security"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Look at UPS' for Arbins",
+        "type": "task",
+        "status": "completed",
+        "categories": ["lab", "infrastructure"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Add Phone Numbers to AD Objects",
+        "type": "task",
+        "status": "completed",
+        "categories": ["services"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Look into Mounting N Drive on Linux for Rohit",
+        "type": "task",
+        "status": "completed",
+        "categories": ["endpoint"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Jesse Speed Having Issues with Logging In",
+        "type": "task",
+        "status": "completed",
+        "categories": ["endpoint"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Assist Jordan with Verifying Autorun and Autoplay are Disabled",
+        "type": "task",
+        "status": "completed",
+        "categories": ["security", "endpoint"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Install VMware on All VMs / See if Alerts Can Be Forwarded",
+        "type": "task",
+        "status": "completed",
+        "categories": ["infrastructure"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Get the Win11 VM Working on the Old ESXi",
+        "type": "task",
+        "status": "completed",
+        "categories": ["infrastructure"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Route AnyConnect VPN through Site-to-Site VPN",
+        "type": "task",
+        "status": "completed",
+        "categories": ["networking"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Go Through Meraki and Rename Ports/Devices",
+        "type": "project",
+        "status": "completed",
+        "categories": ["networking"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Find if PDUs are Connected to Internet and Connect to Them / Label Devices",
+        "type": "task",
+        "status": "completed",
+        "categories": ["infrastructure", "networking"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Make a Network Map",
+        "type": "project",
+        "status": "completed",
+        "categories": ["networking"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "M & KB Go Through — Check Which Work",
+        "type": "task",
+        "status": "completed",
+        "categories": ["endpoint"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Assist Blake with Skyvia Integration in QuickBooks",
+        "type": "project",
+        "status": "completed",
+        "categories": ["services"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "AssetPanda - Inventory",
+        "type": "task",
+        "status": "completed",
+        "categories": ["services"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Fixed Splashtop on Hong Zhang's Computer",
+        "type": "task",
+        "status": "completed",
+        "categories": ["endpoint"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Runbook Password Changes",
+        "type": "project",
+        "status": "completed",
+        "categories": ["security"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Explore Meraki Sites (Burnaby, Burnaby-2, Candiac) & Familiarize w/Subnets",
+        "type": "task",
+        "status": "completed",
+        "categories": ["networking"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Fix Job Titles for Users in Candiac",
+        "type": "task",
+        "status": "completed",
+        "categories": ["services"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Fix DNS Servers for Cisco VPN",
+        "type": "task",
+        "status": "completed",
+        "categories": ["networking"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Contact List for Dan",
+        "type": "project",
+        "status": "completed",
+        "categories": ["services"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Investigate the Printer Errors",
+        "type": "task",
+        "status": "completed",
+        "categories": ["endpoint"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Fix Splashtop for Users",
+        "type": "task",
+        "status": "completed",
+        "categories": ["endpoint"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Assist with Fixing InTune",
+        "type": "project",
+        "status": "completed",
+        "categories": ["endpoint"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Remove Inactive Users from Okta",
+        "type": "task",
+        "status": "completed",
+        "categories": ["security"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Look into Teams Dialpad Issue",
+        "type": "task",
+        "status": "completed",
+        "categories": ["services"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Call Disk Repair Shops for Quote",
+        "type": "task",
+        "status": "completed",
+        "categories": ["infrastructure"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Arbin Backups",
+        "type": "project",
+        "status": "completed",
+        "categories": ["lab", "infrastructure"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Veeam RAID5 and Backup Set Up",
+        "type": "project",
+        "status": "completed",
+        "categories": ["infrastructure"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "VLAN Configuration for Arbins",
+        "type": "project",
+        "status": "completed",
+        "categories": ["networking", "lab"],
+        "blocker": null,
+        "notes": null
+      },
+      {
+        "title": "Install Scientific Software on Moisture Analyzer Computer",
+        "type": "task",
+        "status": "completed",
+        "categories": ["lab", "endpoint"],
+        "blocker": null,
+        "notes": "1) Prepare the laptop, 2) Gather necessary cables, 3) Install Driver, 4) Install Application, 5) Connect to Moisture Analyzer, 6) Test."
+      },
+      {
+        "title": "MacBook for Gurbinder",
+        "type": "task",
+        "status": "completed",
+        "categories": ["endpoint"],
+        "blocker": null,
+        "notes": "1) Join to Active Directory, 2) Add N Drive, 3) Add to InTune Company Portal, 4) Install Windows Apps, 5) Add Remote Desktop to Windows VM."
+      },
+      {
+        "title": "Assist with New BET Installation",
+        "type": "task",
+        "status": "completed",
+        "categories": ["lab", "infrastructure"],
+        "blocker": null,
+        "notes": "1) Order Server, 2) Set Up Server, 3) Install Necessary Apps, 4) Provide Peripherals, 5) Assist with installation."
+      },
+      {
+        "title": "New Laptop for Chamber Connect",
+        "type": "task",
+        "status": "completed",
+        "categories": ["lab", "endpoint"],
+        "blocker": null,
+        "notes": "1) Make a new laptop, 2) Install Chamber Connect Software, 3) Verify Chamber Connect software connects to ESPECs, 4) Make a document showing how to use Chamber Connect Software."
+      },
+      {
+        "title": "Burnaby RADIUS Server — Build & Configure",
+        "type": "project",
+        "status": "completed",
+        "categories": ["networking", "security"],
+        "blocker": null,
+        "notes": "Two RADIUS servers built, configured, and operational."
+      },
+      {
+        "title": "Certificate Authority with EAP-TLS (RADIUS)",
+        "type": "project",
+        "status": "completed",
+        "categories": ["security"],
+        "blocker": null,
+        "notes": "Certificate Authority configured to support EAP-TLS authentication with RADIUS."
+      },
+      {
+        "title": "RAID5 Installation & Configuration",
+        "type": "project",
+        "status": "completed",
+        "categories": ["infrastructure"],
+        "blocker": null,
+        "notes": "RAID5 array installed and configured."
+      },
+      {
+        "title": "InTune Profile — macOS Wi-Fi (mobile.config)",
+        "type": "task",
+        "status": "completed",
+        "categories": ["endpoint"],
+        "blocker": null,
+        "notes": "InTune profile deployed to push mobile.config to macOS users for new Wi-Fi connectivity."
+      },
+      {
+        "title": "RDS Server for macOS Users",
+        "type": "project",
+        "status": "completed",
+        "categories": ["services"],
+        "blocker": null,
+        "notes": "Built and deployed an RDS server to allow macOS users to access Windows-only applications."
+      },
+      {
+        "title": "VPN DNS Issue Resolution",
+        "type": "task",
+        "status": "completed",
+        "categories": ["networking"],
+        "blocker": null,
+        "notes": "VPN DNS issues resolved. Separate admin-only VPN also set up."
+      },
+      {
+        "title": "Port Audit & Network Map",
+        "type": "project",
+        "status": "completed",
+        "categories": ["networking"],
+        "blocker": null,
+        "notes": "Full port audit completed and network map configured, including legacy Cisco switch stack."
+      },
+      {
+        "title": "GPO Hardening & Policy Restructure",
+        "type": "project",
+        "status": "completed",
+        "categories": ["security"],
+        "blocker": null,
+        "notes": "Group Policy hardened and restructured. Fixed Daniela's RDS issue that was GPO-related; added VMware tools and scheduled Sunday restarts on the RDS server."
+      },
+      {
+        "title": "VLAN & Networking Reconfiguration (ACLs)",
+        "type": "project",
+        "status": "completed",
+        "categories": ["networking"],
+        "blocker": null,
+        "notes": "Full VLAN reconfiguration including proper ACL setup. Arbin computers connected to AD and segregated."
+      },
+      {
+        "title": "VEEAM Backup — Network & Lab Devices",
+        "type": "project",
+        "status": "completed",
+        "categories": ["infrastructure"],
+        "blocker": null,
+        "notes": "VEEAM backup jobs configured for network and lab devices."
+      },
+      {
+        "title": "VPN Reliability & Security Improvements",
+        "type": "project",
+        "status": "completed",
+        "categories": ["networking", "security"],
+        "blocker": null,
+        "notes": "VPN stability and security improved."
+      },
+      {
+        "title": "Running Windows-Only Software on Macs",
+        "type": "project",
+        "status": "completed",
+        "categories": ["services"],
+        "blocker": null,
+        "notes": "Solution deployed for macOS users to access Windows-only applications."
+      },
+      {
+        "title": "Arbin Troubleshooting (CellTower / MitsPro)",
+        "type": "task",
+        "status": "completed",
+        "categories": ["lab"],
+        "blocker": null,
+        "notes": "Resolved issues with incorrect data in CellTower and MitsPro/DataWatcher version conflicts on Arbin units. Resolved with Arbin support."
+      },
+      {
+        "title": "Microbalance Connection Established",
+        "type": "task",
+        "status": "completed",
+        "categories": ["lab"],
+        "blocker": null,
+        "notes": "Perry's microbalance is now successfully connected to his laptop. Full integration in progress."
+      }
+    ],
+    "jordan": [
+      {
+        "title": "SharePoint Migration",
+        "type": "project",
+        "status": "in-progress",
+        "categories": ["services"],
+        "blocker": null,
+        "notes": "Migrating corporate data and departmental files to SharePoint Online.",
+        "subtasks": [
+          { "title": "Corporate Data Migration", "status": "not-started" },
+          { "title": "Reach out to Pam", "status": "not-started" }
+        ]
+      }
+    ],
+    "blake": [],
+    "maxime": []
+  },
+  "goalsData": {
+    "company": [
+      { "title": "Establish Licensing Deals", "completed": false, "links": [1, 7] },
+      { "title": "Commercial Readiness", "completed": false, "links": [1, 2, 3, 5, 8] },
+      { "title": "Operational Execution and Safety", "completed": false, "links": [3, 4, 5, 6, 8, 9] },
+      { "title": "Collaborate for Innovation", "completed": false, "links": [2, 7, 9] }
+    ],
+    "critical": [
+      { "number": 1, "title": "ERP Implementation", "completed": false },
+      { "number": 2, "title": "SharePoint Implementation", "completed": false },
+      { "number": 3, "title": "Autopilot Implementation", "completed": false },
+      { "number": 4, "title": "Patch Management and Network Optimization", "completed": false },
+      { "number": 5, "title": "Expand ESXi Storage", "completed": false },
+      { "number": 6, "title": "MFA for Admin VPN Access", "completed": false },
+      { "number": 7, "title": "Training (Certifications)", "completed": false },
+      { "number": 8, "title": "Veeam Cloud Backups Fully Configured", "completed": true },
+      { "number": 9, "title": "Shared Virtual Machine for Scientific Users (Ease of Use for Mac Users)", "completed": true }
+    ],
+    "stretch": [
+      { "number": 1, "title": "Network Change Log Documentation Process", "completed": false },
+      { "number": 2, "title": "FOB Access to Scientific Computers", "completed": false },
+      { "number": 3, "title": "Pager Duty Set-up Properly", "completed": false },
+      { "number": 4, "title": "Candiac RADIUS", "completed": false },
+      { "number": 5, "title": "Browser Enforcement for Island", "completed": false }
+    ]
+  }
+}

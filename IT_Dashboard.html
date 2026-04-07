@@ -320,7 +320,78 @@
 
   .card.expanded .card-blocker,
   .card.expanded .card-notes,
-  .card.expanded .card-resolution { display: block; }
+  .card.expanded .card-resolution,
+  .card.expanded .card-subtasks { display: block; }
+
+  .card-subtasks {
+    display: none;
+    margin-top: 10px;
+  }
+
+  .subtasks-label {
+    font-size: 0.67rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--cyan);
+    margin-bottom: 6px;
+  }
+
+  .subtask {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 0;
+    font-size: 0.78rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .subtask:last-child { border-bottom: none; }
+
+  .subtask-status {
+    flex-shrink: 0;
+    font-size: 0.62rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 2px 6px;
+    border-radius: 3px;
+  }
+
+  .subtask-status.not-started { background: var(--gray-bg); color: var(--gray); }
+  .subtask-status.in-progress { background: var(--green-bg); color: var(--green); }
+  .subtask-status.done { background: #14532d44; color: #4ade80; }
+
+  .subtask-title { color: var(--text); }
+  .subtask.is-done .subtask-title { color: var(--muted); text-decoration: line-through; }
+
+  .subtask-progress {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .subtask-progress-bar {
+    flex: 1;
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .subtask-progress-fill {
+    height: 100%;
+    background: var(--green);
+    border-radius: 2px;
+    transition: width 0.3s;
+  }
+
+  .subtask-progress-text {
+    font-size: 0.65rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
 
   .blocker-label {
     font-size: 0.67rem;
@@ -1304,7 +1375,11 @@ const allMembersData = {
       status: "in-progress",
       categories: ["services"],
       blocker: null,
-      notes: null
+      notes: "Migrating corporate data and departmental files to SharePoint Online.",
+      subtasks: [
+        { title: "Corporate Data Migration", status: "not-started" },
+        { title: "Reach out to Pam", status: "not-started" }
+      ]
     }
   ],
   blake: [],
@@ -1507,6 +1582,28 @@ function renderAll() {
       const notesHtml = p.notes ? `<div class="card-notes"><div class="notes-label">Notes</div>${p.notes}</div>` : '';
       const resolutionHtml = p.resolution ? `<div class="card-resolution"><div class="resolution-label">Resolution</div>${p.resolution}</div>` : '';
 
+      let subtasksHtml = '';
+      if (p.subtasks && p.subtasks.length > 0) {
+        const doneCount = p.subtasks.filter(s => s.status === 'done').length;
+        const total = p.subtasks.length;
+        const pct = Math.round((doneCount / total) * 100);
+        const items = p.subtasks.map(s => {
+          const label = s.status === 'not-started' ? 'Not Started' : s.status === 'in-progress' ? 'In Progress' : 'Done';
+          return `<div class="subtask ${s.status === 'done' ? 'is-done' : ''}">
+            <span class="subtask-status ${s.status}">${label}</span>
+            <span class="subtask-title">${s.title}</span>
+          </div>`;
+        }).join('');
+        subtasksHtml = `<div class="card-subtasks">
+          <div class="subtasks-label">Subtasks</div>
+          ${items}
+          <div class="subtask-progress">
+            <div class="subtask-progress-bar"><div class="subtask-progress-fill" style="width:${pct}%"></div></div>
+            <span class="subtask-progress-text">${doneCount}/${total}</span>
+          </div>
+        </div>`;
+      }
+
       if (p.status === 'completed') {
         card.style.padding = '8px 12px';
         const hasDetails = p.notes || p.resolution;
@@ -1528,6 +1625,7 @@ function renderAll() {
           <div class="card-title">${p.title}</div>
           <div>${typeBadge}</div>
           <div class="card-tags" style="margin-top:6px">${tags}</div>
+          ${subtasksHtml}
           ${blockerHtml}
           ${notesHtml}
           ${resolutionHtml}

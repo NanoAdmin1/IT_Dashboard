@@ -2091,9 +2091,8 @@ function renderAll() {
       col.style.display = '';
     }
 
-    // Add drag-and-drop listeners to non-completed columns
-    const nonCompletedCols = ['in-progress', 'waiting', 'not-started', 'blocked', 'study'];
-    if (nonCompletedCols.includes(status)) {
+    // Add drag-and-drop listeners to all columns
+    {
       col.ondragover = onColumnDragOver;
       col.ondragleave = onColumnDragLeave;
       col.ondrop = (e) => onColumnDrop(e, status);
@@ -2405,15 +2404,20 @@ function onColumnDrop(event, targetStatus) {
   if (col) col.classList.remove('column-drop-target');
 
   if (draggedTaskIdx === null || draggedMemberKey === null) return;
-  // Don't allow drop on completed columns
-  if (targetStatus === 'completed-projects' || targetStatus === 'completed-tasks') return;
 
   const task = allMembersData[draggedMemberKey][draggedTaskIdx];
-  if (!task || task.status === 'completed') return;
-  if (task.status === targetStatus) return;
+  if (!task) return;
 
-  task.status = targetStatus;
-  delete task.completedAt;
+  // Handle drop on completed columns
+  if (targetStatus === 'completed-projects' || targetStatus === 'completed-tasks') {
+    if (task.status === 'completed') return; // already completed
+    task.status = 'completed';
+    task.completedAt = new Date().toISOString();
+  } else {
+    if (task.status === targetStatus) return;
+    task.status = targetStatus;
+    delete task.completedAt;
+  }
   projects = allMembersData[activeMember];
   renderAll();
   saveData();

@@ -765,6 +765,20 @@
             <td class="matrix-cell matrix-cell-empty"></td>
             <td class="matrix-cell matrix-cell-orange"><div class="matrix-cell-label">✦ Connected</div>Certified staff are better equipped to evaluate, adopt, and support new tools that enable cross-team and cross-site innovation.</td>
           </tr>
+          <tr>
+            <td class="matrix-row-header" style="text-decoration:line-through;opacity:0.6;">✓ Veeam Cloud Backups Fully Configured</td>
+            <td class="matrix-cell matrix-cell-empty"></td>
+            <td class="matrix-cell matrix-cell-purple" style="opacity:0.7;"><div class="matrix-cell-label">✦ Connected</div>Reliable cloud backups protect business-critical data at commercial scale, ensuring continuity and reducing risk of data loss during growth.</td>
+            <td class="matrix-cell matrix-cell-green" style="opacity:0.7;"><div class="matrix-cell-label">✦ Connected</div>Fully configured offsite backups are a cornerstone of operational safety — ensuring recovery capability for all core systems and lab infrastructure.</td>
+            <td class="matrix-cell matrix-cell-empty"></td>
+          </tr>
+          <tr>
+            <td class="matrix-row-header" style="text-decoration:line-through;opacity:0.6;">✓ Shared Virtual Machine for Scientific Users</td>
+            <td class="matrix-cell matrix-cell-empty"></td>
+            <td class="matrix-cell matrix-cell-empty"></td>
+            <td class="matrix-cell matrix-cell-green" style="opacity:0.7;"><div class="matrix-cell-label">✦ Connected</div>A shared VM gives Mac-based scientific users reliable access to Windows tools and lab software, reducing friction in daily operations.</td>
+            <td class="matrix-cell matrix-cell-orange" style="opacity:0.7;"><div class="matrix-cell-label">✦ Connected</div>Breaking down platform barriers between Mac and Windows users enables scientists and IT to collaborate more effectively on shared tools and data.</td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -1291,9 +1305,9 @@ const allMembersData = {
 const goalsData = {
   company: [
     { title: "Establish Licensing Deals", completed: false, links: [1, 7] },
-    { title: "Commercial Readiness", completed: false, links: [1, 2, 3, 5] },
-    { title: "Operational Execution and Safety", completed: false, links: [3, 4, 5, 6] },
-    { title: "Collaborate for Innovation", completed: false, links: [2, 7] }
+    { title: "Commercial Readiness", completed: false, links: [1, 2, 3, 5, 8] },
+    { title: "Operational Execution and Safety", completed: false, links: [3, 4, 5, 6, 8, 9] },
+    { title: "Collaborate for Innovation", completed: false, links: [2, 7, 9] }
   ],
   critical: [
     { number: 1, title: "ERP Implementation", completed: false },
@@ -1303,8 +1317,8 @@ const goalsData = {
     { number: 5, title: "Expand ESXi Storage", completed: false },
     { number: 6, title: "MFA for Admin VPN Access", completed: false },
     { number: 7, title: "Training (Certifications)", completed: false },
-    { title: "Veeam Cloud Backups Fully Configured", completed: true },
-    { title: "Shared Virtual Machine for Scientific Users (Ease of Use for Mac Users)", completed: true }
+    { number: 8, title: "Veeam Cloud Backups Fully Configured", completed: true },
+    { number: 9, title: "Shared Virtual Machine for Scientific Users (Ease of Use for Mac Users)", completed: true }
   ],
   stretch: [
     { number: 1, title: "Network Change Log Documentation Process", completed: false },

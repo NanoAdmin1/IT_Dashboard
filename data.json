@@ -428,6 +428,14 @@
         "notes": "Set-up laptop and create user account for Hammad Hussain."
       },
       {
+        "title": "Clean up Computers in AD",
+        "type": "task",
+        "status": "not-started",
+        "categories": ["infrastructure"],
+        "blocker": null,
+        "notes": "There are a ton of computers in AD that are probably not in use. They need to be removed."
+      },
+      {
         "title": "Wired RADIUS Configuration with Jordan",
         "type": "project",
         "status": "not-started",

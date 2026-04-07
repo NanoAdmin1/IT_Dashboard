@@ -422,7 +422,7 @@
       {
         "title": "Set-up User Hammad Hussain",
         "type": "task",
-        "status": "in-progress",
+        "status": "waiting",
         "categories": ["support"],
         "blocker": null,
         "notes": "Set-up laptop and create user account for Hammad Hussain."

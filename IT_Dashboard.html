@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nano One IT Dashboard</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22263a;
+    --border: #2e3350;
+    --text: #e2e8f0;
+    --muted: #8892b0;
+    --green: #22c55e;
+    --green-bg: #14532d22;
+    --yellow: #eab308;
+    --yellow-bg: #71350022;
+    --red: #ef4444;
+    --red-bg: #7f1d1d22;
+    --blue: #3b82f6;
+    --blue-bg: #1e3a5f22;
+    --gray: #6b7280;
+    --gray-bg: #1f2937;
+    --purple: #a855f7;
+    --purple-bg: #3b0764;
+    --cyan: #06b6d4;
+    --orange: #f97316;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+
+  header .subtitle {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .last-updated {
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  /* Tab Bar */
+  .tab-bar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 32px;
+    display: flex;
+    gap: 0;
+  }
+
+  .tab-btn {
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: 14px 22px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+    letter-spacing: 0.01em;
+  }
+
+  .tab-btn:hover { color: var(--text); }
+
+  .tab-btn.active {
+    color: var(--text);
+    border-bottom-color: var(--blue);
+  }
+
+  .main {
+    padding: 28px 32px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* Summary Cards */
+  .summary-row {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .summary-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    cursor: pointer;
+    transition: border-color 0.15s, transform 0.1s;
+  }
+
+  .summary-card:hover { transform: translateY(-1px); }
+  .summary-card.active { border-color: var(--blue); }
+
+  .summary-card .count {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .summary-card .label {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Filters */
+  .filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .filter-label {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-right: 4px;
+  }
+
+  .filter-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 0.78rem;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .filter-btn:hover { color: var(--text); border-color: #4a5280; }
+  .filter-btn.active { background: var(--blue); border-color: var(--blue); color: #fff; }
+
+  .search-box {
+    margin-left: auto;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 0.78rem;
+    color: var(--text);
+    width: 200px;
+    outline: none;
+  }
+
+  .search-box::placeholder { color: var(--muted); }
+  .search-box:focus { border-color: var(--blue); }
+
+  /* Columns */
+  .board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  .column-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .column-header .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .column-header h2 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+  }
+
+  .column-header .col-count {
+    margin-left: auto;
+    background: var(--surface2);
+    border-radius: 10px;
+    padding: 1px 8px;
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+
+  /* Cards */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: border-color 0.15s, transform 0.1s;
+    position: relative;
+  }
+
+  .card:hover {
+    border-color: #4a5280;
+    transform: translateY(-1px);
+  }
+
+  .card.expanded { border-color: var(--blue); }
+
+  .card-title {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 8px;
+    line-height: 1.35;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 8px;
+  }
+
+  .tag {
+    border-radius: 4px;
+    padding: 2px 7px;
+    font-size: 0.68rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .tag-networking    { background: #1e3a5f; color: var(--blue); }
+  .tag-security      { background: #3b0764; color: var(--purple); }
+  .tag-infrastructure{ background: #14532d22; color: var(--green); }
+  .tag-endpoint      { background: #1c1f2e; color: #94a3b8; }
+  .tag-lab           { background: #422006; color: #fb923c; }
+  .tag-services      { background: #0c1a2e; color: var(--cyan); }
+  .tag-longterm      { background: #1c1a2e; color: #c084fc; }
+  .tag-certification { background: #1a1030; color: #a78bfa; }
+
+  .type-badge {
+    display: inline-block;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+  }
+  .type-project { background: #1e3040; color: #7dd3fc; border: 1px solid #2563eb44; }
+  .type-task    { background: #1e2830; color: #a3e635; border: 1px solid #4d7c0f44; }
+
+  .card-blocker {
+    display: none;
+    margin-top: 10px;
+    padding: 8px 10px;
+    background: #3f1a1a;
+    border-left: 3px solid var(--red);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: #fca5a5;
+    line-height: 1.45;
+  }
+
+  .card-notes {
+    display: none;
+    margin-top: 10px;
+    padding: 8px 10px;
+    background: var(--surface2);
+    border-left: 3px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  .card-resolution {
+    display: none;
+    margin-top: 10px;
+    padding: 8px 10px;
+    background: #1a2e1a;
+    border-left: 3px solid var(--green);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: #86efac;
+    line-height: 1.55;
+  }
+
+  .card.expanded .card-blocker,
+  .card.expanded .card-notes,
+  .card.expanded .card-resolution { display: block; }
+
+  .blocker-label {
+    font-size: 0.67rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--red);
+    margin-bottom: 4px;
+  }
+
+  .notes-label {
+    font-size: 0.67rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .resolution-label {
+    font-size: 0.67rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--green);
+    margin-bottom: 4px;
+  }
+
+  .hidden { display: none !important; }
+
+  /* Goals Board */
+  .goals-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  .goal-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: border-color 0.15s, transform 0.1s;
+  }
+
+  .goal-card:hover {
+    border-color: #4a5280;
+    transform: translateY(-1px);
+  }
+
+  .goal-card.expanded { border-color: var(--blue); }
+
+  .goal-card-title {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.35;
+    margin-bottom: 8px;
+  }
+
+  .goal-card-notes {
+    display: none;
+    margin-top: 10px;
+    padding: 8px 10px;
+    background: var(--surface2);
+    border-left: 3px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  .goal-card.expanded .goal-card-notes { display: block; }
+
+  @media (max-width: 1100px) {
+    .goals-board { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 680px) {
+    .goals-board { grid-template-columns: 1fr; }
+  }
+
+  /* Responsive */
+  @media (max-width: 1100px) {
+    .board { grid-template-columns: repeat(2, 1fr); }
+    .summary-row { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (max-width: 680px) {
+    .board { grid-template-columns: 1fr; }
+    .summary-row { grid-template-columns: repeat(2, 1fr); }
+    .main { padding: 16px; }
+    .tab-bar { padding: 0 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Nano One IT Dashboard</h1>
+    <div class="subtitle">Nano One Materials — IT Internal</div>
+  </div>
+  <div class="last-updated" id="last-updated-label">Last updated: March 26, 2026</div>
+</header>
+
+<!-- Tab Bar -->
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="switchTab('goals', this)">IT Team Goals</button>
+  <button class="tab-btn" onclick="switchTab('ryan', this)">Ryan Lundrigan</button>
+  <button class="tab-btn" onclick="switchTab('jordan', this)">Jordan Graham</button>
+  <button class="tab-btn" onclick="switchTab('blake', this)">Blake Wickman</button>
+  <button class="tab-btn" onclick="switchTab('maxime', this)">Maxime Archambault</button>
+</div>
+
+<div class="main">
+
+  <!-- Summary Row -->
+  <div class="summary-row">
+    <div class="summary-card" onclick="filterCurrentType('project')" id="card-total-projects">
+      <div class="count" style="color:#7dd3fc" id="count-total-projects">0</div>
+      <div class="label">Current Projects</div>
+    </div>
+    <div class="summary-card" onclick="filterCurrentType('task')" id="card-total-tasks">
+      <div class="count" style="color:#a3e635" id="count-total-tasks">0</div>
+      <div class="label">Current Tasks</div>
+    </div>
+    <div class="summary-card" onclick="filterStatus('in-progress')" id="card-in-progress">
+      <div class="count" style="color:var(--green)" id="count-in-progress">0</div>
+      <div class="label">In Progress</div>
+    </div>
+    <div class="summary-card" onclick="filterStatus('waiting')" id="card-waiting">
+      <div class="count" style="color:var(--yellow)" id="count-waiting">0</div>
+      <div class="label">Waiting</div>
+    </div>
+    <div class="summary-card" onclick="filterStatus('not-started')" id="card-not-started">
+      <div class="count" style="color:var(--gray)" id="count-not-started">0</div>
+      <div class="label">Not Started</div>
+    </div>
+    <div class="summary-card" onclick="filterStatus('blocked')" id="card-blocked">
+      <div class="count" style="color:#f87171" id="count-blocked">0</div>
+      <div class="label">Blocked</div>
+    </div>
+    <div class="summary-card" onclick="filterStatus('completed-projects')" id="card-completed-projects">
+      <div class="count" style="color:#7dd3fc" id="count-completed-projects">0</div>
+      <div class="label">Completed Projects</div>
+    </div>
+    <div class="summary-card" onclick="filterStatus('completed-tasks')" id="card-completed-tasks">
+      <div class="count" style="color:#a3e635" id="count-completed-tasks">0</div>
+      <div class="label">Completed Tasks</div>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="filters">
+    <span class="filter-label">Type:</span>
+    <button class="filter-btn type-btn active" onclick="filterType('all', this)">All</button>
+    <button class="filter-btn type-btn" onclick="filterType('project', this)">Projects</button>
+    <button class="filter-btn type-btn" onclick="filterType('task', this)">Tasks</button>
+    <span style="width:1px;background:var(--border);height:20px;margin:0 4px;"></span>
+    <span class="filter-label">Category:</span>
+    <button class="filter-btn cat-btn active" onclick="filterCategory('all', this)">All</button>
+    <button class="filter-btn cat-btn" onclick="filterCategory('networking', this)">Networking</button>
+    <button class="filter-btn cat-btn" onclick="filterCategory('security', this)">Security</button>
+    <button class="filter-btn cat-btn" onclick="filterCategory('infrastructure', this)">Infrastructure</button>
+    <button class="filter-btn cat-btn" onclick="filterCategory('endpoint', this)">Endpoint</button>
+    <button class="filter-btn cat-btn" onclick="filterCategory('lab', this)">Lab</button>
+    <button class="filter-btn cat-btn" onclick="filterCategory('services', this)">Services</button>
+    <input class="search-box" type="text" id="search-input" placeholder="Search..." oninput="searchProjects(this.value)">
+  </div>
+
+  <!-- Board -->
+  <div class="board">
+    <div class="column" id="col-in-progress">
+      <div class="column-header">
+        <div class="dot" style="background:var(--green)"></div>
+        <h2>In Progress</h2>
+        <span class="col-count" id="hd-in-progress">0</span>
+      </div>
+      <div class="cards" id="cards-in-progress"></div>
+    </div>
+
+    <div class="column" id="col-waiting">
+      <div class="column-header">
+        <div class="dot" style="background:var(--yellow)"></div>
+        <h2>Waiting</h2>
+        <span class="col-count" id="hd-waiting">0</span>
+      </div>
+      <div class="cards" id="cards-waiting"></div>
+    </div>
+
+    <div class="column" id="col-not-started">
+      <div class="column-header">
+        <div class="dot" style="background:var(--gray)"></div>
+        <h2>Not Started</h2>
+        <span class="col-count" id="hd-not-started">0</span>
+      </div>
+      <div class="cards" id="cards-not-started"></div>
+    </div>
+
+    <div class="column" id="col-blocked">
+      <div class="column-header">
+        <div class="dot" style="background:#f87171"></div>
+        <h2>Blocked</h2>
+        <span class="col-count" id="hd-blocked">0</span>
+      </div>
+      <div class="cards" id="cards-blocked"></div>
+    </div>
+
+    <div class="column" id="col-study">
+      <div class="column-header">
+        <div class="dot" style="background:var(--orange)"></div>
+        <h2>Study</h2>
+        <span class="col-count" id="hd-study">0</span>
+      </div>
+      <div class="cards" id="cards-study"></div>
+    </div>
+
+    <div class="column" id="col-completed-projects">
+      <div class="column-header">
+        <div class="dot" style="background:#7dd3fc"></div>
+        <h2>Completed Projects</h2>
+        <span class="col-count" id="hd-completed-projects">0</span>
+      </div>
+      <div class="cards" id="cards-completed-projects"></div>
+    </div>
+
+    <div class="column" id="col-completed-tasks">
+      <div class="column-header">
+        <div class="dot" style="background:#a3e635"></div>
+        <h2>Completed Tasks</h2>
+        <span class="col-count" id="hd-completed-tasks">0</span>
+      </div>
+      <div class="cards" id="cards-completed-tasks"></div>
+    </div>
+  </div>
+
+  <!-- Goals Board -->
+  <div id="goals-section" style="display:none;">
+    <div class="goals-board">
+
+      <div class="column">
+        <div class="column-header">
+          <div class="dot" style="background:var(--blue)"></div>
+          <h2>Company Goals</h2>
+          <span class="col-count" id="hd-company-goals">0</span>
+        </div>
+        <div id="goals-company"></div>
+      </div>
+
+      <div class="column">
+        <div class="column-header">
+          <div class="dot" style="background:var(--red)"></div>
+          <h2>Critical Goals</h2>
+          <span class="col-count" id="hd-critical-goals">0</span>
+        </div>
+        <div id="goals-critical"></div>
+      </div>
+
+      <div class="column">
+        <div class="column-header">
+          <div class="dot" style="background:var(--purple)"></div>
+          <h2>Stretch Goals</h2>
+          <span class="col-count" id="hd-stretch-goals">0</span>
+        </div>
+        <div id="goals-stretch"></div>
+      </div>
+
+      <div class="column">
+        <div class="column-header">
+          <div class="dot" style="background:var(--green)"></div>
+          <h2>Completed Goals</h2>
+          <span class="col-count" id="hd-completed-goals">0</span>
+        </div>
+        <div id="goals-completed"></div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+const allMembersData = {
+  ryan: [
+    // --- IN PROGRESS ---
+    {
+      title: "Update QuickBooks with Trupoint Support",
+      type: "task",
+      status: "completed",
+      categories: ["services"],
+      blocker: null,
+      notes: "Trupoint will be restarting the server. I will need to test that QuickBooks updates properly.",
+      resolution: "Trupoint has updated the software on their end.",
+      completedAt: "2026-03-25T12:52:00"
+    },
+    {
+      title: "RPC Connection Issues on NANOSV01",
+      type: "task",
+      status: "completed",
+      categories: ["infrastructure"],
+      blocker: null,
+      notes: "The RPC server is unavailable when requesting certain information from BDC01 to NANOSV01. BDC01 can connect to port 135 fine with 'Test Connection' and the services show as running on NANOSV01.",
+      resolution: "Allowed connections from BDC01 through the firewall.",
+      completedAt: "2026-03-23T13:30:00"
+    },
+    {
+      title: "ESPEC Chamber Connect",
+      type: "project",
+      status: "blocked",
+      categories: ["networking", "lab"],
+      blocker: "Waiting for Blake to approve purchase of cables and switch (noted 12/3/2025).",
+      notes: "10 ESPEC devices to be connected. Decided to use an isolated network (separate switch) rather than integrating into existing infrastructure. Verified with ESPEC that the program can handle 10 simultaneous devices."
+    },
+    {
+      title: "Install AZTec 6.3 Software on SEM Computer",
+      type: "task",
+      status: "waiting",
+      categories: ["endpoint", "lab"],
+      blocker: null,
+      notes: "SEM can be booked at sempc@nanoone.ca",
+      resolution: null
+    },
+    {
+      title: "Fix IPs on Burnaby Switches",
+      type: "task",
+      status: "waiting",
+      categories: ["networking"],
+      blocker: "Must be completed on a Saturday.",
+      notes: "Burnaby 1 & 2 switches need static IPs assigned to the 98 VLAN (172.16.98.x / 172.16.198.x). 98 VLAN must have VPN enabled for site-to-site traffic. Requires coming in on a Saturday."
+    },
+    {
+      title: "FreeRADIUS Config (Post Switch-IP Fix)",
+      type: "task",
+      status: "waiting",
+      categories: ["networking", "security"],
+      blocker: "Must be completed on a Saturday.",
+      notes: "After switch IPs are corrected, each Burnaby switch needs to be added as a client to the FreeRADIUS server.\n\nclaude --resume 5ff90607-6c56-41e9-9bf9-8d60e3109e9c -> FreeRADIUS config plan from Claude"
+    },
+    {
+      title: "BET Machine Connection Issue",
+      type: "task",
+      status: "waiting",
+      categories: ["lab"],
+      blocker: "Waiting for the machine to get a new Dewar.",
+      notes: "Build a laptop to run the BET machine software to see if the issue lies with the machine or the computer.",
+      resolution: null
+    },
+    {
+      title: "Install Claude Code on FreeRADIUS Server",
+      type: "task",
+      status: "completed",
+      categories: ["infrastructure"],
+      blocker: null,
+      notes: null,
+      completedAt: "2026-03-23T10:30:00"
+    },
+    {
+      title: "Move OneDrive Files for Departed Employees",
+      type: "task",
+      status: "completed",
+      categories: ["services"],
+      blocker: null,
+      notes: "Users: Jean, Mital, Perry, Lida, Vahid",
+      completedAt: "2026-03-23T11:00:00"
+    },
+    {
+      title: "Format PCs of Departed Employees",
+      type: "task",
+      status: "completed",
+      categories: ["endpoint"],
+      blocker: null,
+      notes: null,
+      resolution: null,
+      completedAt: "2026-03-24T11:30:00"
+    },
+    {
+      title: "Help Daniela with Arbin 2",
+      type: "task",
+      status: "completed",
+      categories: ["lab"],
+      blocker: null,
+      notes: null,
+      resolution: "Held the power button down to restart the computer as the Arbins have memory leak issues. Told Daniela she will need to restart them weekly — that's what Perry did.",
+      completedAt: "2026-03-23T13:00:00"
+    },
+    {
+      title: "Investigate Rigaku Software Crash",
+      type: "task",
+      status: "completed",
+      categories: ["lab"],
+      blocker: null,
+      notes: null,
+      resolution: "Ethernet cable connection to XRD machine was not seated properly. Made sure it was connected properly.",
+      completedAt: "2026-03-23T14:00:00"
+    },
+    {
+      title: "Give Gary a License to Claude. Install the Desktop App and Excel Plugin.",
+      type: "task",
+      status: "completed",
+      categories: ["endpoint", "services"],
+      blocker: null,
+      notes: "Give Gary a license and access to the Claude Desktop app and Excel Plugin. Make sure he creates his account before I connect.",
+      resolution: null,
+      completedAt: "2026-04-06T12:59:00"
+    },
+    {
+      title: "Install PDF-5+ 2026 Database Software on XRD Rigaku Computer",
+      type: "task",
+      status: "waiting",
+      categories: ["endpoint", "lab"],
+      blocker: "Waiting on O'Rian to contact the technician for information on license.",
+      notes: "XRD Rigaku will need to be locked off for about 15 minutes to install the software. Coordinate with Alec.",
+      resolution: null
+    },
+    {
+      title: "Get a List of All Ports in 101B and Devices Connected to Switch 1 and 2",
+      type: "task",
+      status: "completed",
+      categories: ["networking"],
+      blocker: null,
+      notes: "Need to know which ports are connected to devices in 101B and which ports feed down into 101A. Anything not in the list of ports in 101B can be disconnected.",
+      resolution: null,
+      completedAt: "2026-03-30T11:56:00"
+    },
+    {
+      title: "Disconnect Ports Not Listed in 101B Ports List",
+      type: "task",
+      status: "completed",
+      categories: ["networking"],
+      blocker: null,
+      notes: "Port list taken from task \"Get a List of All Ports in 101B and Devices Connected to Switch 1 and 2\".",
+      resolution: null,
+      completedAt: "2026-03-30T13:10:00"
+    },
+    {
+      title: "Remove Unused Cables from Patch Panel",
+      type: "task",
+      status: "waiting",
+      categories: ["networking"],
+      blocker: "Needs to be done on a Saturday.",
+      notes: "101A is being rented out and the cables that go down to 101A need to be identified and removed from our patch panel in 101B.",
+      resolution: null
+    },
+    {
+      title: "Grab Equipment from 101A and 101B",
+      type: "task",
+      status: "completed",
+      categories: [],
+      blocker: null,
+      notes: null,
+      resolution: null,
+      completedAt: "2026-03-30T13:11:00"
+    },
+    {
+      title: "Change Microsoft License on Arbin 5",
+      type: "task",
+      status: "completed",
+      categories: ["endpoint", "services"],
+      blocker: null,
+      notes: "Arbin 5 is currently tied to Perry. Needs to be swapped over to someone else (likely me).",
+      resolution: "The N drive needed to be remounted.",
+      completedAt: "2026-03-27T12:59:00"
+    },
+    {
+      title: "Install and Configure Rohos + Omnikey Readers on Science Computers",
+      type: "project",
+      status: "waiting",
+      categories: ["endpoint", "security"],
+      blocker: "Waiting on Rohos support to see if there is a better solution than scanning everyone manually every time.",
+      notes: "Rohos and scanners will need to be installed on 14 science computers. Users will need to scan their fobs for each.",
+      resolution: null
+    },
+    {
+      title: "Remove Licenses from Departed Users",
+      type: "task",
+      status: "completed",
+      categories: ["services"],
+      blocker: null,
+      notes: "Figure out how to do this with MgGraph or something else.",
+      resolution: null,
+      completedAt: "2026-03-26T14:07:00"
+    },
+    {
+      title: "Investigate WinShared Veeam Backup",
+      type: "task",
+      status: "completed",
+      categories: ["infrastructure"],
+      blocker: null,
+      notes: "WinShared computer has not updated properly in Veeam. Need to investigate why.",
+      resolution: "They were just warning us about low space in Data Store 1. The backups are fine.",
+      completedAt: "2026-03-26T14:40:00"
+    },
+    {
+      title: "Investigate Veeam Warnings",
+      type: "task",
+      status: "completed",
+      categories: ["infrastructure"],
+      blocker: null,
+      notes: "WinShared and Burnaby Core finished with warnings. Investigate them.",
+      resolution: "They were just warning us about low space in Data Store 1. The backups are fine.",
+      completedAt: "2026-03-26T14:40:00"
+    },
+    {
+      title: "Free up Space in Lenovo Datastore 1 in vCenter",
+      type: "task",
+      status: "completed",
+      categories: ["infrastructure"],
+      blocker: null,
+      notes: "Either we remove some files or we add more storage.",
+      resolution: "There was a couple large snapshots from 10 months ago that did not need to exist as Veeam had more recent backups.",
+      completedAt: "2026-03-26T14:38:00"
+    },
+    {
+      title: "Investigate if Emma or Carolyn was in Office on Sunday",
+      type: "task",
+      status: "completed",
+      categories: ["security"],
+      blocker: null,
+      notes: "Both Carolyn and Emma show logins from 172.16.9.X IPs on Sunday. These IPs are consistent with on-prem logins, not VPN. Need to confirm if either was physically in the office.",
+      resolution: "They left their laptops here which may have made automatic connections.",
+      completedAt: "2026-03-23T14:30:00"
+    },
+    {
+      title: "Move Equipment out of 101A",
+      type: "task",
+      status: "completed",
+      categories: [],
+      blocker: null,
+      notes: "Some leftover equipment needs to be moved from 101A.",
+      resolution: null,
+      completedAt: "2026-03-26T11:54:00"
+    },
+    {
+      title: "Set-up Laptop for Harsh Singh",
+      type: "task",
+      status: "completed",
+      categories: ["endpoint", "lab"],
+      blocker: null,
+      notes: "Harsh Singh is a lab tech. He will need a laptop with scientific software.",
+      resolution: null,
+      completedAt: "2026-03-24T11:00:00"
+    },
+    {
+      title: "Set-up Laptop for Vincent Kong",
+      type: "task",
+      status: "completed",
+      categories: ["endpoint", "lab"],
+      blocker: null,
+      notes: "Vincent Kong is a lab tech. He will need a laptop with scientific software.",
+      resolution: null,
+      completedAt: "2026-03-25T13:59:00"
+    },
+    {
+      title: "Create Account for Harsh Singh",
+      type: "task",
+      status: "completed",
+      categories: ["endpoint"],
+      blocker: null,
+      notes: "Create AD account, sync, make sure to add to the correct distribution groups.",
+      resolution: null,
+      completedAt: "2026-03-26T11:51:00"
+    },
+    {
+      title: "Create Account for Vincent Kong",
+      type: "task",
+      status: "completed",
+      categories: ["endpoint"],
+      blocker: null,
+      notes: "Create AD account, sync, make sure to add to the correct distribution groups.",
+      resolution: null,
+      completedAt: "2026-03-26T11:51:00"
+    },
+    {
+      title: "Fix Support Bot",
+      type: "task",
+      status: "completed",
+      categories: ["services"],
+      blocker: null,
+      notes: "Support Bot is currently down. Contacted Desk365 for assistance. Jordan is uploading an updated version to our tenant.",
+      resolution: "Uploading the latest update to our Tenant fixed the issue.",
+      completedAt: "2026-03-24T10:00:00"
+    },
+    {
+      title: "InTune Integration Fix",
+      type: "task",
+      status: "completed",
+      categories: ["endpoint"],
+      blocker: null,
+      notes: "Fixing existing InTune integration issues."
+    },
+    {
+      title: "InTune Autopilot Configuration",
+      type: "project",
+      status: "blocked",
+      categories: ["endpoint"],
+      blocker: "Low priority.",
+      notes: "Configuration and investigation of InTune Autopilot for device enrollment."
+    },
+    {
+      title: "Connect Arbins to File Server",
+      type: "task",
+      status: "completed",
+      categories: ["lab", "infrastructure"],
+      blocker: null,
+      notes: "Connect Arbin lab devices to the file server and update/edit the script to make data uploads easier."
+    },
+    {
+      title: "Upgrade, Domain-Join & Back-Up Scientific Computers",
+      type: "project",
+      status: "completed",
+      categories: ["endpoint", "lab"],
+      blocker: null,
+      notes: "Scientific computers around the office need to be upgraded, domain-joined, backed up, or a combination of all three."
+    },
+    {
+      title: "Windows 11 Updates",
+      type: "task",
+      status: "completed",
+      categories: ["endpoint"],
+      blocker: null,
+      notes: "Ongoing Windows 11 update rollout across managed devices."
+    },
+    {
+      title: "Microbalance Software Integration",
+      type: "task",
+      status: "completed",
+      categories: ["lab", "services"],
+      blocker: null,
+      notes: "Perry's microbalance is now connected. Currently integrating other users into the workflow."
+    },
+    {
+      title: "Swap Arbins 4, 5 & 6 to MitsPro7",
+      type: "task",
+      status: "completed",
+      categories: ["lab"],
+      blocker: null,
+      notes: "Perry requested downgrade from MitsPro8 to MitsPro7 due to workload reasons. MitsPro7 installed on Arbin 6 for testing but throws an error on open. IT last messaged Perry 12/2/2025."
+    },
+    {
+      title: "Replace UPS Battery (Arbin UPS)",
+      type: "task",
+      status: "completed",
+      categories: ["lab", "infrastructure"],
+      blocker: null,
+      notes: "Back-UPS 1500 Pro battery failed. Replacement battery identified and purchased pending PO approval."
+    },
+    {
+      title: "Procure & Install RDS Licenses",
+      type: "task",
+      status: "completed",
+      categories: ["services"],
+      blocker: null,
+      notes: "RDS CALs still required. Procurement and installation of Remote Desktop Services licenses."
+    },
+    {
+      title: "Sort NanoOne Corporate Contacts (CiraHub / RO-Nano Corp)",
+      type: "task",
+      status: "blocked",
+      categories: ["services"],
+      blocker: "Need to get in contact with Dan Blondal about this.",
+      notes: "Organize and sync NanoOne corporate contacts. Related to CiraHub integration."
+    },
+    {
+      title: "Add Users and Assign Roles to Infor across Candiac and Burnaby",
+      type: "task",
+      status: "completed",
+      categories: ["services"],
+      blocker: null,
+      notes: "Add 90+ users and assign roles to them in Infor across Candiac and Burnaby manually, 5 at a time, because there is no better way to do it.",
+      completedAt: "2026-04-01T11:37:00"
+    },
+    {
+      title: "False Positives in CrowdStrike",
+      type: "task",
+      status: "completed",
+      categories: ["security"],
+      blocker: null,
+      notes: "Investigating and resolving false positive detections in CrowdStrike."
+    },
+    {
+      title: "AZ-104 Certification Study",
+      type: "project",
+      status: "study",
+      categories: ["certification"],
+      blocker: null,
+      notes: "Ryan studying for AZ-104 (Azure Administrator). Using 2025 education budget."
+    },
+    {
+      title: "Candiac RADIUS Server — Build & Configure",
+      type: "project",
+      status: "blocked",
+      categories: ["networking", "security"],
+      blocker: "I will likely need to fly out to Candiac to assist with proper implementation.",
+      notes: "Server is built and RADIUS installed. Configuration needs to be done and CA needs to be connected."
+    },
+    // --- NOT STARTED / LONG TERM ---
+    {
+      title: "Infor Print Server",
+      type: "project",
+      status: "in-progress",
+      categories: ["infrastructure", "services"],
+      blocker: null,
+      notes: "Infor will need a VM created to host their print server which comes with specific parameters found in an email from Blake."
+    },
+    {
+      title: "Wired RADIUS Configuration with Jordan",
+      type: "project",
+      status: "not-started",
+      categories: ["networking", "security"],
+      blocker: null,
+      notes: "The RADIUS server needs to have Wired configuration added to it."
+    },
+    {
+      title: "AI Training and Certification Study",
+      type: "project",
+      status: "study",
+      categories: ["certification"],
+      blocker: null,
+      notes: "Learning the basics of AI and Claude to get more success out of using them. Study order: 1) Google AI Essentials, 2) AI Fluency, 3) Claude 101, 4) Intro to MCP."
+    },
+    // --- COMPLETED ---
+    { title: "ICP Computer Upgrade", type: "task", status: "completed", categories: ["endpoint", "lab"], blocker: null, notes: null },
+    { title: "Fixing GPO Errors", type: "task", status: "completed", categories: ["security"], blocker: null, notes: null },
+    { title: "Reorganized the Network Structure including VLANs, ACLs and SSIDs", type: "project", status: "completed", categories: ["networking", "security"], blocker: null, notes: null },
+    { title: "Troubleshooting Horiba Computer in 102", type: "task", status: "completed", categories: ["endpoint", "lab"], blocker: null, notes: null },
+    { title: "KB for Updating QuickBooks", type: "task", status: "completed", categories: ["services"], blocker: null, notes: null },
+    { title: "Set Up a New Laptop for Leanne", type: "task", status: "completed", categories: ["endpoint"], blocker: null, notes: null },
+    { title: "Create New Company and User Accounts in QuickBooks", type: "task", status: "completed", categories: ["services"], blocker: null, notes: null },
+    { title: "Assist Matt in Fixing Printer Deployment GPO", type: "task", status: "completed", categories: ["endpoint", "security"], blocker: null, notes: null },
+    { title: "Assisted Wei and Others with Getting into the New QuickBooks", type: "task", status: "completed", categories: ["services"], blocker: null, notes: null },
+    { title: "Renamed Andrew Muckstadt's Computer to New Scheme", type: "task", status: "completed", categories: ["endpoint"], blocker: null, notes: null },
+    { title: "101A Clean Up Equipment", type: "project", status: "completed", categories: ["infrastructure"], blocker: null, notes: null },
+    { title: "InTune Troubleshooting", type: "project", status: "completed", categories: ["endpoint"], blocker: null, notes: null },
+    { title: "Swap Users Over to New WiFi / Investigate GPO Capabilities", type: "project", status: "completed", categories: ["networking", "security"], blocker: null, notes: null },
+    { title: "Make KB on Smart Lab Studio Install", type: "task", status: "completed", categories: ["lab", "services"], blocker: null, notes: null },
+    { title: "Wi-Fi SSID Filtering for Non-Certificate Devices", type: "project", status: "completed", categories: ["networking", "security"], blocker: null, notes: null },
+    { title: "Port Investigation for Devices", type: "project", status: "completed", categories: ["networking"], blocker: null, notes: null },
+    { title: "Fix Arbin Export Script to Export to N: Drive", type: "task", status: "completed", categories: ["lab"], blocker: null, notes: null },
+    { title: "Provide N: Drive Access to Arbins", type: "task", status: "completed", categories: ["lab"], blocker: null, notes: null },
+    { title: "RADIUS Server Config with Jordan", type: "project", status: "completed", categories: ["networking", "security"], blocker: null, notes: null },
+    { title: "Set Up Citrix/QB Accounts for Bec. Install/Configure Citrix Workspace", type: "task", status: "completed", categories: ["services", "endpoint"], blocker: null, notes: null },
+    { title: "Deploying Certs via InTune", type: "project", status: "completed", categories: ["endpoint", "security"], blocker: null, notes: null },
+    { title: "Look at UPS' for Arbins", type: "task", status: "completed", categories: ["lab", "infrastructure"], blocker: null, notes: null },
+    { title: "Add Phone Numbers to AD Objects", type: "task", status: "completed", categories: ["services"], blocker: null, notes: null },
+    { title: "Look into Mounting N Drive on Linux for Rohit", type: "task", status: "completed", categories: ["endpoint"], blocker: null, notes: null },
+    { title: "Jesse Speed Having Issues with Logging In", type: "task", status: "completed", categories: ["endpoint"], blocker: null, notes: null },
+    { title: "Assist Jordan with Verifying Autorun and Autoplay are Disabled", type: "task", status: "completed", categories: ["security", "endpoint"], blocker: null, notes: null },
+    { title: "Install VMware on All VMs / See if Alerts Can Be Forwarded", type: "task", status: "completed", categories: ["infrastructure"], blocker: null, notes: null },
+    { title: "Get the Win11 VM Working on the Old ESXi", type: "task", status: "completed", categories: ["infrastructure"], blocker: null, notes: null },
+    { title: "Route AnyConnect VPN through Site-to-Site VPN", type: "task", status: "completed", categories: ["networking"], blocker: null, notes: null },
+    { title: "Go Through Meraki and Rename Ports/Devices", type: "project", status: "completed", categories: ["networking"], blocker: null, notes: null },
+    { title: "Find if PDUs are Connected to Internet and Connect to Them / Label Devices", type: "task", status: "completed", categories: ["infrastructure", "networking"], blocker: null, notes: null },
+    { title: "Make a Network Map", type: "project", status: "completed", categories: ["networking"], blocker: null, notes: null },
+    { title: "M & KB Go Through — Check Which Work", type: "task", status: "completed", categories: ["endpoint"], blocker: null, notes: null },
+    { title: "Assist Blake with Skyvia Integration in QuickBooks", type: "project", status: "completed", categories: ["services"], blocker: null, notes: null },
+    { title: "AssetPanda - Inventory", type: "task", status: "completed", categories: ["services"], blocker: null, notes: null },
+    { title: "Fixed Splashtop on Hong Zhang's Computer", type: "task", status: "completed", categories: ["endpoint"], blocker: null, notes: null },
+    { title: "Runbook Password Changes", type: "project", status: "completed", categories: ["security"], blocker: null, notes: null },
+    { title: "Explore Meraki Sites (Burnaby, Burnaby-2, Candiac) & Familiarize w/Subnets", type: "task", status: "completed", categories: ["networking"], blocker: null, notes: null },
+    { title: "Fix Job Titles for Users in Candiac", type: "task", status: "completed", categories: ["services"], blocker: null, notes: null },
+    { title: "Fix DNS Servers for Cisco VPN", type: "task", status: "completed", categories: ["networking"], blocker: null, notes: null },
+    { title: "Contact List for Dan", type: "project", status: "completed", categories: ["services"], blocker: null, notes: null },
+    { title: "Investigate the Printer Errors", type: "task", status: "completed", categories: ["endpoint"], blocker: null, notes: null },
+    { title: "Fix Splashtop for Users", type: "task", status: "completed", categories: ["endpoint"], blocker: null, notes: null },
+    { title: "Assist with Fixing InTune", type: "project", status: "completed", categories: ["endpoint"], blocker: null, notes: null },
+    { title: "Remove Inactive Users from Okta", type: "task", status: "completed", categories: ["security"], blocker: null, notes: null },
+    { title: "Look into Teams Dialpad Issue", type: "task", status: "completed", categories: ["services"], blocker: null, notes: null },
+    { title: "Call Disk Repair Shops for Quote", type: "task", status: "completed", categories: ["infrastructure"], blocker: null, notes: null },
+    { title: "Arbin Backups", type: "project", status: "completed", categories: ["lab", "infrastructure"], blocker: null, notes: null },
+    { title: "Veeam RAID5 and Backup Set Up", type: "project", status: "completed", categories: ["infrastructure"], blocker: null, notes: null },
+    { title: "VLAN Configuration for Arbins", type: "project", status: "completed", categories: ["networking", "lab"], blocker: null, notes: null },
+    { title: "Install Scientific Software on Moisture Analyzer Computer", type: "task", status: "completed", categories: ["lab", "endpoint"], blocker: null, notes: "1) Prepare the laptop, 2) Gather necessary cables, 3) Install Driver, 4) Install Application, 5) Connect to Moisture Analyzer, 6) Test." },
+    { title: "MacBook for Gurbinder", type: "task", status: "completed", categories: ["endpoint"], blocker: null, notes: "1) Join to Active Directory, 2) Add N Drive, 3) Add to InTune Company Portal, 4) Install Windows Apps, 5) Add Remote Desktop to Windows VM." },
+    { title: "Assist with New BET Installation", type: "task", status: "completed", categories: ["lab", "infrastructure"], blocker: null, notes: "1) Order Server, 2) Set Up Server, 3) Install Necessary Apps, 4) Provide Peripherals, 5) Assist with installation." },
+    { title: "New Laptop for Chamber Connect", type: "task", status: "completed", categories: ["lab", "endpoint"], blocker: null, notes: "1) Make a new laptop, 2) Install Chamber Connect Software, 3) Verify Chamber Connect software connects to ESPECs, 4) Make a document showing how to use Chamber Connect Software." },
+    { title: "Burnaby RADIUS Server — Build & Configure", type: "project", status: "completed", categories: ["networking", "security"], blocker: null, notes: "Two RADIUS servers built, configured, and operational." },
+    { title: "Certificate Authority with EAP-TLS (RADIUS)", type: "project", status: "completed", categories: ["security"], blocker: null, notes: "Certificate Authority configured to support EAP-TLS authentication with RADIUS." },
+    { title: "RAID5 Installation & Configuration", type: "project", status: "completed", categories: ["infrastructure"], blocker: null, notes: "RAID5 array installed and configured." },
+    { title: "InTune Profile — macOS Wi-Fi (mobile.config)", type: "task", status: "completed", categories: ["endpoint"], blocker: null, notes: "InTune profile deployed to push mobile.config to macOS users for new Wi-Fi connectivity." },
+    { title: "RDS Server for macOS Users", type: "project", status: "completed", categories: ["services"], blocker: null, notes: "Built and deployed an RDS server to allow macOS users to access Windows-only applications." },
+    { title: "VPN DNS Issue Resolution", type: "task", status: "completed", categories: ["networking"], blocker: null, notes: "VPN DNS issues resolved. Separate admin-only VPN also set up." },
+    { title: "Port Audit & Network Map", type: "project", status: "completed", categories: ["networking"], blocker: null, notes: "Full port audit completed and network map configured, including legacy Cisco switch stack." },
+    { title: "GPO Hardening & Policy Restructure", type: "project", status: "completed", categories: ["security"], blocker: null, notes: "Group Policy hardened and restructured. Fixed Daniela's RDS issue that was GPO-related; added VMware tools and scheduled Sunday restarts on the RDS server." },
+    { title: "VLAN & Networking Reconfiguration (ACLs)", type: "project", status: "completed", categories: ["networking"], blocker: null, notes: "Full VLAN reconfiguration including proper ACL setup. Arbin computers connected to AD and segregated." },
+    { title: "VEEAM Backup — Network & Lab Devices", type: "project", status: "completed", categories: ["infrastructure"], blocker: null, notes: "VEEAM backup jobs configured for network and lab devices." },
+    { title: "VPN Reliability & Security Improvements", type: "project", status: "completed", categories: ["networking", "security"], blocker: null, notes: "VPN stability and security improved." },
+    { title: "Running Windows-Only Software on Macs", type: "project", status: "completed", categories: ["services"], blocker: null, notes: "Solution deployed for macOS users to access Windows-only applications." },
+    { title: "Arbin Troubleshooting (CellTower / MitsPro)", type: "task", status: "completed", categories: ["lab"], blocker: null, notes: "Resolved issues with incorrect data in CellTower and MitsPro/DataWatcher version conflicts on Arbin units. Resolved with Arbin support." },
+    { title: "Microbalance Connection Established", type: "task", status: "completed", categories: ["lab"], blocker: null, notes: "Perry's microbalance is now successfully connected to his laptop. Full integration in progress." }
+  ],
+
+  jordan: [],
+  blake: [],
+  maxime: []
+};
+
+const goalsData = {
+  company: [
+    { title: "Establish Licensing Deals", completed: false },
+    { title: "Commercial Readiness", completed: false },
+    { title: "Operational Execution and Safety", completed: false },
+    { title: "Collaborate for Innovation", completed: false }
+  ],
+  critical: [
+    { number: 1, title: "ERP Implementation", completed: false },
+    { number: 2, title: "SharePoint Implementation", completed: false },
+    { number: 3, title: "Autopilot Implementation", completed: false },
+    { number: 4, title: "Patch Management and Network Optimization", completed: false },
+    { number: 5, title: "Expand ESXi Storage", completed: false },
+    { number: 6, title: "MFA for Admin VPN Access", completed: false },
+    { number: 7, title: "Training (Certifications)", completed: false },
+    { title: "Veeam Cloud Backups Fully Configured", completed: true },
+    { title: "Shared Virtual Machine for Scientific Users (Ease of Use for Mac Users)", completed: true }
+  ],
+  stretch: [
+    { number: 1, title: "Network Change Log Documentation Process", completed: false },
+    { number: 2, title: "FOB Access to Scientific Computers", completed: false },
+    { number: 3, title: "Pager Duty Set-up Properly", completed: false },
+    { number: 4, title: "Candiac RADIUS", completed: false },
+    { number: 5, title: "Browser Enforcement for Island", completed: false }
+  ]
+};
+
+// State
+let activeMember = 'goals';
+let projects = allMembersData['ryan'];
+let currentStatus = 'all';
+let currentCategory = 'all';
+let currentType = 'all';
+let currentSearch = '';
+let currentExcludeCompleted = false;
+
+function switchTab(member, btn) {
+  activeMember = member;
+
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const projectBoard = document.querySelector('.summary-row');
+  const filtersEl = document.querySelector('.filters');
+  const boardEl = document.querySelector('.board');
+  const goalsSection = document.getElementById('goals-section');
+
+  if (member === 'goals') {
+    projectBoard.style.display = 'none';
+    filtersEl.style.display = 'none';
+    boardEl.style.display = 'none';
+    goalsSection.style.display = '';
+    renderGoals();
+    return;
+  }
+
+  projectBoard.style.display = '';
+  filtersEl.style.display = '';
+  boardEl.style.display = '';
+  goalsSection.style.display = 'none';
+
+  projects = allMembersData[member];
+
+  // Reset filters
+  currentStatus = 'all';
+  currentCategory = 'all';
+  currentType = 'all';
+  currentSearch = '';
+  currentExcludeCompleted = false;
+
+  document.getElementById('search-input').value = '';
+  document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.type-btn')[0].classList.add('active');
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.cat-btn')[0].classList.add('active');
+
+  renderAll();
+}
+
+function renderGoals() {
+  // Render company, critical, stretch columns — completed items go to bottom with strikethrough
+  ['company', 'critical', 'stretch'].forEach(col => {
+    const container = document.getElementById('goals-' + col);
+    container.innerHTML = '';
+    const items = goalsData[col] || [];
+    const active = items.filter(g => !g.completed);
+    const done = items.filter(g => g.completed);
+    const ordered = [...active, ...done];
+    document.getElementById('hd-' + col + '-goals').textContent = items.length;
+    ordered.forEach(g => {
+      const card = document.createElement('div');
+      card.className = 'goal-card';
+      const notesHtml = g.notes ? `<div class="goal-card-notes"><div class="notes-label">Notes</div>${g.notes}</div>` : '';
+      if (notesHtml) card.onclick = () => card.classList.toggle('expanded');
+      const titleStyle = g.completed ? 'text-decoration:line-through;color:var(--muted);' : '';
+      const numberPrefix = (!g.completed && g.number) ? `<span style="color:var(--muted);font-size:0.75rem;font-weight:700;margin-right:8px;">${g.number}.</span>` : '';
+      card.innerHTML = `<div class="goal-card-title" style="${titleStyle}">${numberPrefix}${g.title}</div>${notesHtml}`;
+      container.appendChild(card);
+    });
+  });
+
+  // Completed column — gather all completed items from all columns
+  const completedContainer = document.getElementById('goals-completed');
+  completedContainer.innerHTML = '';
+  const completedItems = [
+    ...goalsData.company.filter(g => g.completed),
+    ...goalsData.critical.filter(g => g.completed),
+    ...goalsData.stretch.filter(g => g.completed)
+  ];
+  document.getElementById('hd-completed-goals').textContent = completedItems.length;
+  completedItems.forEach(g => {
+    const card = document.createElement('div');
+    card.className = 'goal-card';
+    card.innerHTML = `<div class="goal-card-title">${g.title}</div>`;
+    completedContainer.appendChild(card);
+  });
+}
+
+function renderAll() {
+  const statuses = ['in-progress', 'waiting', 'not-started', 'blocked', 'study', 'completed-projects', 'completed-tasks'];
+
+  const counts = { 'in-progress': 0, 'waiting': 0, 'not-started': 0, 'blocked': 0, 'study': 0, 'completed-projects': 0, 'completed-tasks': 0 };
+  projects.forEach(p => {
+    const key = p.status === 'completed' ? 'completed-' + p.type + 's' : p.status;
+    if (counts[key] !== undefined) counts[key]++;
+  });
+  Object.entries(counts).forEach(([k, v]) => {
+    const el = document.getElementById('count-' + k);
+    if (el) el.textContent = v;
+  });
+
+  const currentProjects = projects.filter(p => p.type === 'project' && p.status !== 'completed').length;
+  const currentTasks = projects.filter(p => p.type === 'task' && p.status !== 'completed').length;
+  document.getElementById('count-total-projects').textContent = currentProjects;
+  document.getElementById('count-total-tasks').textContent = currentTasks;
+
+  document.querySelectorAll('.summary-card').forEach(c => c.classList.remove('active'));
+  const activeCard = document.getElementById('card-' + currentStatus);
+  if (activeCard) activeCard.classList.add('active');
+
+  statuses.forEach(status => {
+    const container = document.getElementById('cards-' + status);
+    container.innerHTML = '';
+
+    let visible = 0;
+    const effectiveStatus = (p) => {
+      if (p.status === 'completed') return 'completed-' + p.type + 's';
+      return p.status;
+    };
+
+    const filtered = projects.filter(p => {
+      if (currentExcludeCompleted && p.status === 'completed') return false;
+      if (currentStatus !== 'all' && currentStatus !== 'completed' && p.status !== currentStatus && effectiveStatus(p) !== currentStatus) return false;
+      if (currentType !== 'all' && p.type !== currentType) return false;
+      if (currentCategory !== 'all' && !p.categories.includes(currentCategory)) return false;
+      if (currentSearch) {
+        const q = currentSearch.toLowerCase();
+        if (!p.title.toLowerCase().includes(q) && !(p.notes || '').toLowerCase().includes(q) && !(p.blocker || '').toLowerCase().includes(q)) return false;
+      }
+      return effectiveStatus(p) === status;
+    });
+
+    if (status === 'completed-projects' || status === 'completed-tasks') {
+      filtered.sort((a, b) => {
+        if (a.completedAt && b.completedAt) return new Date(b.completedAt) - new Date(a.completedAt);
+        if (a.completedAt) return -1;
+        if (b.completedAt) return 1;
+        return 0;
+      });
+    }
+
+    filtered.forEach(p => {
+      visible++;
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.onclick = () => card.classList.toggle('expanded');
+
+      const typeBadge = `<span class="type-badge type-${p.type}">${p.type}</span>`;
+      const tags = p.categories.map(c => `<span class="tag tag-${c}">${c}</span>`).join('');
+      const blockerHtml = p.blocker ? `<div class="card-blocker"><div class="blocker-label">Blocker</div>${p.blocker}</div>` : '';
+      const notesHtml = p.notes ? `<div class="card-notes"><div class="notes-label">Notes</div>${p.notes}</div>` : '';
+      const resolutionHtml = p.resolution ? `<div class="card-resolution"><div class="resolution-label">Resolution</div>${p.resolution}</div>` : '';
+
+      if (p.status === 'completed') {
+        card.style.padding = '8px 12px';
+        const hasDetails = p.notes || p.resolution;
+        if (hasDetails) card.style.cursor = 'pointer';
+        const dateStr = p.completedAt ? `<span style="font-size:0.65rem;color:var(--blue);margin-left:8px;white-space:nowrap;">${new Date(p.completedAt).toLocaleDateString('en-CA')}</span>` : '';
+        card.innerHTML = `
+          <div class="card-title" style="margin-bottom:0;font-size:0.8rem;color:var(--muted);display:flex;justify-content:space-between;align-items:center;">
+            <span>${p.title}</span>
+            <span style="display:flex;align-items:center;gap:6px;">
+              ${dateStr}
+              ${hasDetails ? `<span style="font-size:0.65rem;color:var(--border);">▸</span>` : ''}
+            </span>
+          </div>
+          ${notesHtml}
+          ${resolutionHtml}
+        `;
+      } else {
+        card.innerHTML = `
+          <div class="card-title">${p.title}</div>
+          <div>${typeBadge}</div>
+          <div class="card-tags" style="margin-top:6px">${tags}</div>
+          ${blockerHtml}
+          ${notesHtml}
+          ${resolutionHtml}
+        `;
+      }
+      container.appendChild(card);
+    });
+
+    document.getElementById('hd-' + status).textContent = visible;
+
+    const col = document.getElementById('col-' + status);
+    if (currentStatus !== 'all' && currentStatus !== status) {
+      col.style.display = 'none';
+    } else {
+      col.style.display = '';
+    }
+  });
+}
+
+function filterStatus(s) {
+  currentStatus = s;
+  currentExcludeCompleted = false;
+  document.querySelectorAll('.summary-card').forEach(c => c.classList.remove('active'));
+  const el = document.getElementById('card-' + s);
+  if (el) el.classList.add('active');
+  renderAll();
+}
+
+function filterType(t, btn) {
+  currentType = t;
+  currentExcludeCompleted = false;
+  document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderAll();
+}
+
+function filterCurrentType(t) {
+  currentType = t;
+  currentStatus = 'all';
+  document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.summary-card').forEach(c => c.classList.remove('active'));
+  document.getElementById('card-total-' + (t === 'project' ? 'projects' : 'tasks')).classList.add('active');
+  currentExcludeCompleted = true;
+  renderAll();
+}
+
+function filterCategory(cat, btn) {
+  currentCategory = cat;
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderAll();
+}
+
+function searchProjects(val) {
+  currentSearch = val;
+  renderAll();
+}
+
+// Init — start on Goals tab
+(function() {
+  const projectBoard = document.querySelector('.summary-row');
+  const filtersEl = document.querySelector('.filters');
+  const boardEl = document.querySelector('.board');
+  const goalsSection = document.getElementById('goals-section');
+  projectBoard.style.display = 'none';
+  filtersEl.style.display = 'none';
+  boardEl.style.display = 'none';
+  goalsSection.style.display = '';
+  renderGoals();
+})();
+</script>
+</body>
+</html>

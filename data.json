@@ -420,6 +420,14 @@
         "notes": "Infor will need a VM created to host their print server which comes with specific parameters found in an email from Blake."
       },
       {
+        "title": "Set-up User Hammad Hussain",
+        "type": "task",
+        "status": "in-progress",
+        "categories": ["support"],
+        "blocker": null,
+        "notes": "Set-up laptop and create user account for Hammad Hussain."
+      },
+      {
         "title": "Wired RADIUS Configuration with Jordan",
         "type": "project",
         "status": "not-started",

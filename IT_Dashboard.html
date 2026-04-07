@@ -405,6 +405,106 @@
     .goals-board { grid-template-columns: 1fr; }
   }
 
+  /* Goals Matrix */
+  .matrix-section {
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 2px solid var(--border);
+  }
+
+  .matrix-section h3 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .goals-matrix {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  .matrix-corner { background: var(--bg); width: 200px; min-width: 160px; }
+
+  .matrix-col-header {
+    padding: 12px 14px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-align: center;
+    border: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.35;
+  }
+
+  .matrix-col-header .col-label {
+    font-size: 0.58rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+    opacity: 0.65;
+    display: block;
+  }
+
+  .mcol-blue   { background: #0e1929; color: #93c5fd; border-color: #2563eb44; }
+  .mcol-purple { background: #130d1f; color: #d8b4fe; border-color: #7c3aed44; }
+  .mcol-green  { background: #0b1a12; color: #86efac; border-color: #16a34a44; }
+  .mcol-orange { background: #1a1008; color: #fdba74; border-color: #c2410c44; }
+
+  .matrix-row-header {
+    padding: 10px 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    vertical-align: middle;
+    line-height: 1.35;
+  }
+
+  .matrix-row-header .row-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background: var(--surface2);
+    border-radius: 50%;
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: var(--muted);
+    margin-right: 7px;
+    flex-shrink: 0;
+    vertical-align: middle;
+  }
+
+  .matrix-cell {
+    padding: 9px 11px;
+    border: 1px solid var(--border);
+    vertical-align: top;
+    font-size: 0.71rem;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  .matrix-cell-empty { background: #0c0e14; border-color: #1e2030; }
+  .matrix-cell-blue   { background: #0e1929; color: #bfdbfe; border-color: #2563eb33; }
+  .matrix-cell-purple { background: #130d1f; color: #e9d5ff; border-color: #7c3aed33; }
+  .matrix-cell-green  { background: #0b1a12; color: #bbf7d0; border-color: #16a34a33; }
+  .matrix-cell-orange { background: #1a1008; color: #fed7aa; border-color: #c2410c33; }
+
+  .matrix-cell-label {
+    font-size: 0.58rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+    opacity: 0.7;
+  }
+
   /* Responsive */
   @media (max-width: 1100px) {
     .board { grid-template-columns: repeat(2, 1fr); }
@@ -601,6 +701,74 @@
       </div>
 
     </div>
+
+    <!-- Goals Matrix -->
+    <div class="matrix-section">
+      <h3>Alignment Matrix — How Critical Goals Support Company Goals</h3>
+      <table class="goals-matrix">
+        <thead>
+          <tr>
+            <th class="matrix-corner"></th>
+            <th class="matrix-col-header mcol-blue"><span class="col-label">Company Goal</span>Establish Licensing Deals</th>
+            <th class="matrix-col-header mcol-purple"><span class="col-label">Company Goal</span>Commercial Readiness</th>
+            <th class="matrix-col-header mcol-green"><span class="col-label">Company Goal</span>Operational Execution and Safety</th>
+            <th class="matrix-col-header mcol-orange"><span class="col-label">Company Goal</span>Collaborate for Innovation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="matrix-row-header"><span class="row-num">1</span>ERP Implementation</td>
+            <td class="matrix-cell matrix-cell-blue"><div class="matrix-cell-label">✦ Connected</div>ERP centralizes contract and licensing deal data, giving visibility into deal pipelines and revenue tracking.</td>
+            <td class="matrix-cell matrix-cell-purple"><div class="matrix-cell-label">✦ Connected</div>ERP is the core operational system for commercial-scale production — inventory, procurement, and financials all depend on it.</td>
+            <td class="matrix-cell matrix-cell-empty"></td>
+            <td class="matrix-cell matrix-cell-empty"></td>
+          </tr>
+          <tr>
+            <td class="matrix-row-header"><span class="row-num">2</span>SharePoint Implementation</td>
+            <td class="matrix-cell matrix-cell-empty"></td>
+            <td class="matrix-cell matrix-cell-purple"><div class="matrix-cell-label">✦ Connected</div>Centralized documentation supports compliance, process standardization, and audit readiness required for commercial operations.</td>
+            <td class="matrix-cell matrix-cell-empty"></td>
+            <td class="matrix-cell matrix-cell-orange"><div class="matrix-cell-label">✦ Connected</div>SharePoint is the collaboration backbone — enabling teams across Burnaby and Candiac to share research, data, and project work.</td>
+          </tr>
+          <tr>
+            <td class="matrix-row-header"><span class="row-num">3</span>Autopilot Implementation</td>
+            <td class="matrix-cell matrix-cell-empty"></td>
+            <td class="matrix-cell matrix-cell-purple"><div class="matrix-cell-label">✦ Connected</div>Scalable, zero-touch device provisioning allows IT to keep pace with headcount growth as the company moves to commercial scale.</td>
+            <td class="matrix-cell matrix-cell-green"><div class="matrix-cell-label">✦ Connected</div>Ensures every device is consistently configured and policy-compliant from day one, reducing security risk and support overhead.</td>
+            <td class="matrix-cell matrix-cell-empty"></td>
+          </tr>
+          <tr>
+            <td class="matrix-row-header"><span class="row-num">4</span>Patch Management and Network Optimization</td>
+            <td class="matrix-cell matrix-cell-empty"></td>
+            <td class="matrix-cell matrix-cell-empty"></td>
+            <td class="matrix-cell matrix-cell-green"><div class="matrix-cell-label">✦ Connected</div>Patched systems and an optimized network directly reduce downtime, security vulnerabilities, and risk to lab and production operations.</td>
+            <td class="matrix-cell matrix-cell-empty"></td>
+          </tr>
+          <tr>
+            <td class="matrix-row-header"><span class="row-num">5</span>Expand ESXi Storage</td>
+            <td class="matrix-cell matrix-cell-empty"></td>
+            <td class="matrix-cell matrix-cell-purple"><div class="matrix-cell-label">✦ Connected</div>Growing data volumes from commercial workloads require expanded infrastructure capacity to remain stable and performant.</td>
+            <td class="matrix-cell matrix-cell-green"><div class="matrix-cell-label">✦ Connected</div>Adequate storage prevents data loss and system instability across VMs that support lab equipment and core business operations.</td>
+            <td class="matrix-cell matrix-cell-empty"></td>
+          </tr>
+          <tr>
+            <td class="matrix-row-header"><span class="row-num">6</span>MFA for Admin VPN Access</td>
+            <td class="matrix-cell matrix-cell-empty"></td>
+            <td class="matrix-cell matrix-cell-empty"></td>
+            <td class="matrix-cell matrix-cell-green"><div class="matrix-cell-label">✦ Connected</div>Adds a critical layer of access control for privileged accounts, protecting core infrastructure from unauthorized access or breach.</td>
+            <td class="matrix-cell matrix-cell-empty"></td>
+          </tr>
+          <tr>
+            <td class="matrix-row-header"><span class="row-num">7</span>Training (Certifications)</td>
+            <td class="matrix-cell matrix-cell-blue"><div class="matrix-cell-label">✦ Connected</div>A certified IT team signals technical credibility and competence to technology partners involved in licensing discussions.</td>
+            <td class="matrix-cell matrix-cell-empty"></td>
+            <td class="matrix-cell matrix-cell-empty"></td>
+            <td class="matrix-cell matrix-cell-orange"><div class="matrix-cell-label">✦ Connected</div>Certified staff are better equipped to evaluate, adopt, and support new tools that enable cross-team and cross-site innovation.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
   </div>
 
 </div>
@@ -1122,10 +1290,10 @@ const allMembersData = {
 
 const goalsData = {
   company: [
-    { title: "Establish Licensing Deals", completed: false },
-    { title: "Commercial Readiness", completed: false },
-    { title: "Operational Execution and Safety", completed: false },
-    { title: "Collaborate for Innovation", completed: false }
+    { title: "Establish Licensing Deals", completed: false, links: [1, 7] },
+    { title: "Commercial Readiness", completed: false, links: [1, 2, 3, 5] },
+    { title: "Operational Execution and Safety", completed: false, links: [3, 4, 5, 6] },
+    { title: "Collaborate for Innovation", completed: false, links: [2, 7] }
   ],
   critical: [
     { number: 1, title: "ERP Implementation", completed: false },
@@ -1216,7 +1384,20 @@ function renderGoals() {
       if (notesHtml) card.onclick = () => card.classList.toggle('expanded');
       const titleStyle = g.completed ? 'text-decoration:line-through;color:var(--muted);' : '';
       const numberPrefix = (!g.completed && g.number) ? `<span style="color:var(--muted);font-size:0.75rem;font-weight:700;margin-right:8px;">${g.number}.</span>` : '';
-      card.innerHTML = `<div class="goal-card-title" style="${titleStyle}">${numberPrefix}${g.title}</div>${notesHtml}`;
+
+      // Company goals: show linked critical goals as chips
+      let linksHtml = '';
+      if (col === 'company' && g.links && g.links.length && !g.completed) {
+        const chips = g.links.map(num => {
+          const crit = goalsData.critical.find(c => c.number === num);
+          if (!crit) return '';
+          const strikeStyle = crit.completed ? 'text-decoration:line-through;opacity:0.5;' : '';
+          return `<div style="display:flex;align-items:center;background:var(--surface2);border:1px solid #4a5280;border-radius:6px;padding:5px 10px;font-size:0.75rem;color:var(--text);${strikeStyle}">${crit.title}</div>`;
+        }).join('');
+        linksHtml = `<div style="margin-top:10px;border-top:1px solid var(--border);padding-top:8px;"><div style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--muted);margin-bottom:8px;">Supporting IT Critical Goals</div><div style="display:flex;flex-direction:column;gap:5px;">${chips}</div></div>`;
+      }
+
+      card.innerHTML = `<div class="goal-card-title" style="${titleStyle}">${numberPrefix}${g.title}</div>${linksHtml}${notesHtml}`;
       container.appendChild(card);
     });
   });

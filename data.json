@@ -123,7 +123,7 @@
         ],
         "blocker": null,
         "notes": null,
-        "resolution": "Held the power button down to restart the computer as the Arbins have memory leak issues. Told Daniela she will need to restart them weekly — that's what Perry did.",
+        "resolution": "Held the power button down to restart the computer as the Arbins have memory leak issues. Told Daniela she will need to restart them weekly - that's what Perry did.",
         "completedAt": "2026-03-23T13:00:00"
       },
       {
@@ -501,7 +501,7 @@
         "notes": "Ryan studying for AZ-104 (Azure Administrator). Using 2025 education budget."
       },
       {
-        "title": "Candiac RADIUS Server — Build & Configure",
+        "title": "Candiac RADIUS Server - Build & Configure",
         "type": "project",
         "status": "blocked",
         "categories": [
@@ -897,7 +897,7 @@
         "notes": null
       },
       {
-        "title": "M & KB Go Through — Check Which Work",
+        "title": "M & KB Go Through - Check Which Work",
         "type": "task",
         "status": "completed",
         "categories": [
@@ -1122,7 +1122,7 @@
         "notes": "1) Make a new laptop, 2) Install Chamber Connect Software, 3) Verify Chamber Connect software connects to ESPECs, 4) Make a document showing how to use Chamber Connect Software."
       },
       {
-        "title": "Burnaby RADIUS Server — Build & Configure",
+        "title": "Burnaby RADIUS Server - Build & Configure",
         "type": "project",
         "status": "completed",
         "categories": [
@@ -1153,7 +1153,7 @@
         "notes": "RAID5 array installed and configured."
       },
       {
-        "title": "InTune Profile — macOS Wi-Fi (mobile.config)",
+        "title": "InTune Profile - macOS Wi-Fi (mobile.config)",
         "type": "task",
         "status": "completed",
         "categories": [
@@ -1213,7 +1213,7 @@
         "notes": "Full VLAN reconfiguration including proper ACL setup. Arbin computers connected to AD and segregated."
       },
       {
-        "title": "VEEAM Backup — Network & Lab Devices",
+        "title": "VEEAM Backup - Network & Lab Devices",
         "type": "project",
         "status": "completed",
         "categories": [
@@ -1290,7 +1290,7 @@
         ]
       },
       {
-        "title": "Wired RADIUS Setup — Burnaby",
+        "title": "Wired RADIUS Setup - Burnaby",
         "type": "task",
         "status": "not-started",
         "categories": [
@@ -1301,7 +1301,7 @@
         "notes": "Set up 802.1X wired RADIUS authentication at the Burnaby site."
       },
       {
-        "title": "Wired RADIUS Setup — Candiac",
+        "title": "Wired RADIUS Setup - Candiac",
         "type": "task",
         "status": "not-started",
         "categories": [
@@ -1345,7 +1345,7 @@
         ]
       },
       {
-        "title": "CIS 2.2 — Ensure Authorized Software Is Currently Supported",
+        "title": "CIS 2.2 - Ensure Authorized Software Is Currently Supported",
         "type": "project",
         "status": "not-started",
         "categories": [
@@ -1382,7 +1382,7 @@
         ]
       },
       {
-        "title": "CIS 3.4 — Enforce Data Retention",
+        "title": "CIS 3.4 - Enforce Data Retention",
         "type": "project",
         "status": "not-started",
         "categories": [
@@ -1390,7 +1390,7 @@
           "services"
         ],
         "blocker": null,
-        "notes": "Define and enforce data retention policies — what data is kept, for how long, and where. Ensure automated disposal of data past retention period.",
+        "notes": "Define and enforce data retention policies - what data is kept, for how long, and where. Ensure automated disposal of data past retention period.",
         "subtasks": [
           {
             "title": "Identify data types and storage locations (SharePoint, file servers, email, backups)",
@@ -1423,7 +1423,7 @@
         ]
       },
       {
-        "title": "CIS 4.2 — Enforce Unique Credentials",
+        "title": "CIS 4.2 - Enforce Unique Credentials",
         "type": "project",
         "status": "not-started",
         "categories": [
@@ -1455,7 +1455,7 @@
         ]
       },
       {
-        "title": "CIS 4.6 — Require MFA for Externally-Exposed Applications",
+        "title": "CIS 4.6 - Require MFA for Externally-Exposed Applications",
         "type": "project",
         "status": "in-progress",
         "categories": [
@@ -1492,7 +1492,7 @@
         ]
       },
       {
-        "title": "CIS 4.7 — Manage Default Accounts on Enterprise Assets",
+        "title": "CIS 4.7 - Manage Default Accounts on Enterprise Assets",
         "type": "project",
         "status": "not-started",
         "categories": [
@@ -1584,7 +1584,7 @@
             "status": "not-started"
           },
           {
-            "title": "One-on-one with Barry — learn how to facilitate a TableTop",
+            "title": "One-on-one with Barry - learn how to facilitate a TableTop",
             "status": "not-started"
           },
           {
@@ -1633,7 +1633,7 @@
             "status": "not-started"
           },
           {
-            "title": "Test MFA flow end-to-end (VPN → Meraki → Duo → RADIUS)",
+            "title": "Test MFA flow end-to-end (VPN -> Meraki -> Duo -> RADIUS)",
             "status": "not-started"
           },
           {
@@ -1643,7 +1643,7 @@
         ]
       },
       {
-        "title": "SIEM Setup — Wazuh",
+        "title": "SIEM Setup - Wazuh",
         "type": "project",
         "status": "in-progress",
         "categories": [

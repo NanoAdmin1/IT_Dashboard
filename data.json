@@ -1306,18 +1306,84 @@
         "notes": "Set up 802.1X wired RADIUS authentication at the Candiac site."
       },
       {
-        "title": "CIS Safeguard Implementation",
+        "title": "CIS 2.2 — Ensure Authorized Software Is Currently Supported",
+        "type": "project",
+        "status": "not-started",
+        "categories": ["security", "endpoint"],
+        "blocker": null,
+        "notes": "Inventory all installed software and ensure only vendor-supported versions are in use. Remove or upgrade end-of-life software.",
+        "subtasks": [
+          { "title": "Build inventory of all installed software across endpoints and servers", "status": "not-started" },
+          { "title": "Identify end-of-life or unsupported software", "status": "not-started" },
+          { "title": "Create upgrade/removal plan for unsupported software", "status": "not-started" },
+          { "title": "Execute upgrades and removals", "status": "not-started" },
+          { "title": "Configure Intune or SIEM to alert on unauthorized/unsupported installs", "status": "not-started" },
+          { "title": "Document approved software list and review schedule", "status": "not-started" }
+        ]
+      },
+      {
+        "title": "CIS 3.4 — Enforce Data Retention",
+        "type": "project",
+        "status": "not-started",
+        "categories": ["security", "services"],
+        "blocker": null,
+        "notes": "Define and enforce data retention policies — what data is kept, for how long, and where. Ensure automated disposal of data past retention period.",
+        "subtasks": [
+          { "title": "Identify data types and storage locations (SharePoint, file servers, email, backups)", "status": "not-started" },
+          { "title": "Define retention periods per data classification", "status": "not-started" },
+          { "title": "Draft data retention policy document", "status": "not-started" },
+          { "title": "Get policy approval from management", "status": "not-started" },
+          { "title": "Configure retention policies in M365 / SharePoint", "status": "not-started" },
+          { "title": "Configure backup retention to align with policy", "status": "not-started" },
+          { "title": "Set up periodic review to verify compliance", "status": "not-started" }
+        ]
+      },
+      {
+        "title": "CIS 4.2 — Enforce Unique Credentials",
         "type": "project",
         "status": "not-started",
         "categories": ["security"],
         "blocker": null,
-        "notes": "Implement selected CIS Controls safeguards across the environment.",
+        "notes": "Ensure every user and service account has unique credentials. Eliminate shared accounts and default passwords.",
         "subtasks": [
-          { "title": "2.2 — Ensure Authorized Software Is Currently Supported", "status": "not-started" },
-          { "title": "3.4 — Enforce Data Retention", "status": "not-started" },
-          { "title": "4.2 — Enforce Unique Credentials", "status": "not-started" },
-          { "title": "4.6 — Require MFA for Externally-Exposed Applications", "status": "not-started" },
-          { "title": "4.7 — Manage Default Accounts on Enterprise Assets and Software", "status": "not-started" }
+          { "title": "Audit AD for shared or generic accounts", "status": "not-started" },
+          { "title": "Audit service accounts for shared credentials", "status": "not-started" },
+          { "title": "Assign unique credentials to all shared accounts or decommission them", "status": "not-started" },
+          { "title": "Enforce password policy in AD (complexity, rotation, no reuse)", "status": "not-started" },
+          { "title": "Document exceptions and justifications for any remaining shared accounts", "status": "not-started" }
+        ]
+      },
+      {
+        "title": "CIS 4.6 — Require MFA for Externally-Exposed Applications",
+        "type": "project",
+        "status": "not-started",
+        "categories": ["security", "networking"],
+        "blocker": null,
+        "notes": "Ensure all externally-accessible applications and services require multi-factor authentication.",
+        "subtasks": [
+          { "title": "Inventory all externally-exposed applications and services", "status": "not-started" },
+          { "title": "Identify which already have MFA enforced", "status": "not-started" },
+          { "title": "Enable MFA for M365 / Azure AD external access (Conditional Access)", "status": "not-started" },
+          { "title": "Enable MFA for VPN access (ties into Duo/Meraki project)", "status": "not-started" },
+          { "title": "Enable MFA for any remaining external-facing services", "status": "not-started" },
+          { "title": "Verify MFA enforcement with test logins from external networks", "status": "not-started" }
+        ]
+      },
+      {
+        "title": "CIS 4.7 — Manage Default Accounts on Enterprise Assets",
+        "type": "project",
+        "status": "not-started",
+        "categories": ["security", "infrastructure"],
+        "blocker": null,
+        "notes": "Disable, rename, or change passwords on all default/built-in accounts across enterprise assets and software.",
+        "subtasks": [
+          { "title": "Inventory default accounts on network devices (switches, firewalls, APs)", "status": "not-started" },
+          { "title": "Inventory default accounts on servers and endpoints (local admin, guest)", "status": "not-started" },
+          { "title": "Inventory default accounts in applications and services", "status": "not-started" },
+          { "title": "Disable or rename default accounts where possible", "status": "not-started" },
+          { "title": "Change default passwords on accounts that cannot be disabled", "status": "not-started" },
+          { "title": "Configure Intune/GPO to enforce local admin account management (LAPS)", "status": "not-started" },
+          { "title": "Document all changes and create recurring audit schedule", "status": "not-started" }
         ]
       },
       {

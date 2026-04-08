@@ -1312,6 +1312,39 @@
         "notes": "Set up 802.1X wired RADIUS authentication at the Candiac site."
       },
       {
+        "title": "DarkTrace Backup Setup",
+        "type": "project",
+        "status": "not-started",
+        "categories": [
+          "security",
+          "infrastructure"
+        ],
+        "blocker": null,
+        "notes": "Configure backups for the DarkTrace server to ensure config and threat data can be restored if the appliance fails.",
+        "subtasks": [
+          {
+            "title": "Identify what needs backing up (config, threat intel, packet captures, logs)",
+            "status": "not-started"
+          },
+          {
+            "title": "Determine backup destination (NAS, Veeam, off-site)",
+            "status": "not-started"
+          },
+          {
+            "title": "Configure scheduled backups on the DarkTrace appliance",
+            "status": "not-started"
+          },
+          {
+            "title": "Test backup restore to verify integrity",
+            "status": "not-started"
+          },
+          {
+            "title": "Document backup schedule and restore procedure",
+            "status": "not-started"
+          }
+        ]
+      },
+      {
         "title": "CIS 2.2 â Ensure Authorized Software Is Currently Supported",
         "type": "project",
         "status": "not-started",

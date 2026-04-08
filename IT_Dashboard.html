@@ -758,10 +758,14 @@
   }
   .chips-toggle-header:hover { color: var(--text); }
   .chips-chevron {
-    font-size: 0.7rem;
+    font-size: 0.85rem;
     transition: transform 0.2s ease;
     display: inline-block;
+    color: var(--text);
+    opacity: 0.7;
+    line-height: 1;
   }
+  .chips-toggle-header:hover .chips-chevron { opacity: 1; }
   .chips-chevron.collapsed { transform: rotate(-90deg); }
   .chips-body {
     display: flex;
@@ -1939,7 +1943,7 @@ function renderGoals() {
           const checkmark = crit.completed ? '<span style="color:#4ade80;margin-right:6px;">&#10003;</span>' : '';
           return `<div style="display:flex;align-items:center;background:var(--surface2);border:1px solid #4a5280;border-radius:6px;padding:5px 10px;font-size:0.75rem;color:var(--text);">${checkmark}${crit.title}</div>`;
         }).join('');
-        linksHtml = `<div style="margin-top:10px;border-top:1px solid var(--border);padding-top:8px;"><div class="chips-toggle-header" onclick="toggleChips(event, this)">Supporting IT Critical Goals<span class="chips-chevron">▾</span></div><div class="chips-body">${chips}</div></div>`;
+        linksHtml = `<div style="margin-top:10px;border-top:1px solid var(--border);padding-top:8px;"><div class="chips-toggle-header" onclick="toggleChips(event, this)">Supporting IT Critical Goals<span class="chips-chevron">▼</span></div><div class="chips-body">${chips}</div></div>`;
       }
 
       card.innerHTML = `<div class="goal-card-title" style="display:flex;align-items:center;${titleStyle}">${goalToggle}${numberPrefix}${g.title}</div>${linksHtml}${notesHtml}`;

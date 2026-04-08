@@ -1975,6 +1975,8 @@ function renderGoals() {
   });
 }
 
+const expandedCards = new Set();
+
 function renderAll() {
   const statuses = ['in-progress', 'waiting', 'not-started', 'blocked', 'study', 'completed-projects', 'completed-tasks'];
 
@@ -2032,7 +2034,6 @@ function renderAll() {
       visible++;
       const card = document.createElement('div');
       card.className = 'card';
-      card.onclick = () => card.classList.toggle('expanded');
 
       const memberKey = activeMember;
       const taskIdx = projects.indexOf(p);
@@ -2129,13 +2130,34 @@ function renderAll() {
       }
 
       // Show category editor when expanded
+      const cardKey = memberKey + '-' + taskIdx;
       if (p.status !== 'completed') {
-        const origOnclick = card.onclick;
         card.onclick = () => {
           card.classList.toggle('expanded');
+          if (card.classList.contains('expanded')) {
+            expandedCards.add(cardKey);
+          } else {
+            expandedCards.delete(cardKey);
+          }
           const editor = card.querySelector('.category-editor');
           if (editor) editor.style.display = card.classList.contains('expanded') ? 'flex' : 'none';
         };
+      } else {
+        card.onclick = () => {
+          card.classList.toggle('expanded');
+          if (card.classList.contains('expanded')) {
+            expandedCards.add(cardKey);
+          } else {
+            expandedCards.delete(cardKey);
+          }
+        };
+      }
+
+      // Restore expanded state after re-render
+      if (expandedCards.has(cardKey)) {
+        card.classList.add('expanded');
+        const editor = card.querySelector('.category-editor');
+        if (editor) editor.style.display = 'flex';
       }
 
       container.appendChild(card);

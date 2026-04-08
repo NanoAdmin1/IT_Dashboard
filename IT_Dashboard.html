@@ -743,6 +743,37 @@
 
   .goal-card.expanded .goal-card-notes { display: block; }
 
+  .chips-toggle-header {
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+    margin-bottom: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+  }
+  .chips-toggle-header:hover { color: var(--text); }
+  .chips-chevron {
+    font-size: 0.7rem;
+    transition: transform 0.2s ease;
+    display: inline-block;
+  }
+  .chips-chevron.collapsed { transform: rotate(-90deg); }
+  .chips-body {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow: hidden;
+    transition: max-height 0.25s ease, opacity 0.2s ease;
+    max-height: 600px;
+    opacity: 1;
+  }
+  .chips-body.collapsed { max-height: 0; opacity: 0; }
+
   @media (max-width: 1100px) {
     .goals-board { grid-template-columns: repeat(2, 1fr); }
   }
@@ -1908,7 +1939,7 @@ function renderGoals() {
           const checkmark = crit.completed ? '<span style="color:#4ade80;margin-right:6px;">&#10003;</span>' : '';
           return `<div style="display:flex;align-items:center;background:var(--surface2);border:1px solid #4a5280;border-radius:6px;padding:5px 10px;font-size:0.75rem;color:var(--text);">${checkmark}${crit.title}</div>`;
         }).join('');
-        linksHtml = `<div style="margin-top:10px;border-top:1px solid var(--border);padding-top:8px;"><div style="font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--muted);margin-bottom:8px;">Supporting IT Critical Goals</div><div style="display:flex;flex-direction:column;gap:5px;">${chips}</div></div>`;
+        linksHtml = `<div style="margin-top:10px;border-top:1px solid var(--border);padding-top:8px;"><div class="chips-toggle-header" onclick="toggleChips(event, this)">Supporting IT Critical Goals<span class="chips-chevron">▾</span></div><div class="chips-body">${chips}</div></div>`;
       }
 
       card.innerHTML = `<div class="goal-card-title" style="display:flex;align-items:center;${titleStyle}">${goalToggle}${numberPrefix}${g.title}</div>${linksHtml}${notesHtml}`;
@@ -2463,6 +2494,14 @@ function toggleCategory(event, memberKey, taskIdx, category) {
 }
 
 // 6. Goal Completion Toggle
+function toggleChips(event, header) {
+  event.stopPropagation();
+  const body = header.nextElementSibling;
+  const chevron = header.querySelector('.chips-chevron');
+  body.classList.toggle('collapsed');
+  chevron.classList.toggle('collapsed');
+}
+
 function toggleGoalCompleted(event, colKey, goalIdx) {
   event.stopPropagation();
   goalsData[colKey][goalIdx].completed = !goalsData[colKey][goalIdx].completed;

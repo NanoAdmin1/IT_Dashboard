@@ -1290,7 +1290,7 @@
         ]
       },
       {
-        "title": "Wired RADIUS Setup â Burnaby",
+        "title": "Wired RADIUS Setup — Burnaby",
         "type": "task",
         "status": "not-started",
         "categories": [
@@ -1301,7 +1301,7 @@
         "notes": "Set up 802.1X wired RADIUS authentication at the Burnaby site."
       },
       {
-        "title": "Wired RADIUS Setup â Candiac",
+        "title": "Wired RADIUS Setup — Candiac",
         "type": "task",
         "status": "not-started",
         "categories": [
@@ -1345,7 +1345,7 @@
         ]
       },
       {
-        "title": "CIS 2.2 â Ensure Authorized Software Is Currently Supported",
+        "title": "CIS 2.2 — Ensure Authorized Software Is Currently Supported",
         "type": "project",
         "status": "not-started",
         "categories": [
@@ -1382,7 +1382,7 @@
         ]
       },
       {
-        "title": "CIS 3.4 â Enforce Data Retention",
+        "title": "CIS 3.4 — Enforce Data Retention",
         "type": "project",
         "status": "not-started",
         "categories": [
@@ -1390,7 +1390,7 @@
           "services"
         ],
         "blocker": null,
-        "notes": "Define and enforce data retention policies â what data is kept, for how long, and where. Ensure automated disposal of data past retention period.",
+        "notes": "Define and enforce data retention policies — what data is kept, for how long, and where. Ensure automated disposal of data past retention period.",
         "subtasks": [
           {
             "title": "Identify data types and storage locations (SharePoint, file servers, email, backups)",
@@ -1423,7 +1423,7 @@
         ]
       },
       {
-        "title": "CIS 4.2 â Enforce Unique Credentials",
+        "title": "CIS 4.2 — Enforce Unique Credentials",
         "type": "project",
         "status": "not-started",
         "categories": [
@@ -1455,7 +1455,7 @@
         ]
       },
       {
-        "title": "CIS 4.6 â Require MFA for Externally-Exposed Applications",
+        "title": "CIS 4.6 — Require MFA for Externally-Exposed Applications",
         "type": "project",
         "status": "in-progress",
         "categories": [
@@ -1492,7 +1492,7 @@
         ]
       },
       {
-        "title": "CIS 4.7 â Manage Default Accounts on Enterprise Assets",
+        "title": "CIS 4.7 — Manage Default Accounts on Enterprise Assets",
         "type": "project",
         "status": "not-started",
         "categories": [
@@ -1584,7 +1584,7 @@
             "status": "not-started"
           },
           {
-            "title": "One-on-one with Barry â learn how to facilitate a TableTop",
+            "title": "One-on-one with Barry — learn how to facilitate a TableTop",
             "status": "not-started"
           },
           {
@@ -1643,7 +1643,7 @@
         ]
       },
       {
-        "title": "SIEM Setup â Wazuh",
+        "title": "SIEM Setup — Wazuh",
         "type": "project",
         "status": "in-progress",
         "categories": [

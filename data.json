@@ -1424,7 +1424,7 @@
       {
         "title": "CIS 4.6 â Require MFA for Externally-Exposed Applications",
         "type": "project",
-        "status": "not-started",
+        "status": "in-progress",
         "categories": [
           "security",
           "networking"

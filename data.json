@@ -123,7 +123,7 @@
         ],
         "blocker": null,
         "notes": null,
-        "resolution": "Held the power button down to restart the computer as the Arbins have memory leak issues. Told Daniela she will need to restart them weekly ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ that's what Perry did.",
+        "resolution": "Held the power button down to restart the computer as the Arbins have memory leak issues. Told Daniela she will need to restart them weekly ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ that's what Perry did.",
         "completedAt": "2026-03-23T13:00:00"
       },
       {
@@ -501,7 +501,7 @@
         "notes": "Ryan studying for AZ-104 (Azure Administrator). Using 2025 education budget."
       },
       {
-        "title": "Candiac RADIUS Server ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Build & Configure",
+        "title": "Candiac RADIUS Server ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Build & Configure",
         "type": "project",
         "status": "blocked",
         "categories": [
@@ -897,7 +897,7 @@
         "notes": null
       },
       {
-        "title": "M & KB Go Through ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Check Which Work",
+        "title": "M & KB Go Through ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Check Which Work",
         "type": "task",
         "status": "completed",
         "categories": [
@@ -1122,7 +1122,7 @@
         "notes": "1) Make a new laptop, 2) Install Chamber Connect Software, 3) Verify Chamber Connect software connects to ESPECs, 4) Make a document showing how to use Chamber Connect Software."
       },
       {
-        "title": "Burnaby RADIUS Server ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Build & Configure",
+        "title": "Burnaby RADIUS Server ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Build & Configure",
         "type": "project",
         "status": "completed",
         "categories": [
@@ -1153,7 +1153,7 @@
         "notes": "RAID5 array installed and configured."
       },
       {
-        "title": "InTune Profile ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ macOS Wi-Fi (mobile.config)",
+        "title": "InTune Profile ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ macOS Wi-Fi (mobile.config)",
         "type": "task",
         "status": "completed",
         "categories": [
@@ -1213,7 +1213,7 @@
         "notes": "Full VLAN reconfiguration including proper ACL setup. Arbin computers connected to AD and segregated."
       },
       {
-        "title": "VEEAM Backup ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ Network & Lab Devices",
+        "title": "VEEAM Backup ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ Network & Lab Devices",
         "type": "project",
         "status": "completed",
         "categories": [
@@ -1290,183 +1290,409 @@
         ]
       },
       {
-        "title": "Wired RADIUS Setup — Burnaby",
+        "title": "Wired RADIUS Setup â Burnaby",
         "type": "task",
         "status": "not-started",
-        "categories": ["networking", "security"],
+        "categories": [
+          "networking",
+          "security"
+        ],
         "blocker": null,
         "notes": "Set up 802.1X wired RADIUS authentication at the Burnaby site."
       },
       {
-        "title": "Wired RADIUS Setup — Candiac",
+        "title": "Wired RADIUS Setup â Candiac",
         "type": "task",
         "status": "not-started",
-        "categories": ["networking", "security"],
+        "categories": [
+          "networking",
+          "security"
+        ],
         "blocker": null,
         "notes": "Set up 802.1X wired RADIUS authentication at the Candiac site."
       },
       {
-        "title": "CIS 2.2 — Ensure Authorized Software Is Currently Supported",
+        "title": "CIS 2.2 â Ensure Authorized Software Is Currently Supported",
         "type": "project",
         "status": "not-started",
-        "categories": ["security", "endpoint"],
+        "categories": [
+          "security",
+          "endpoint"
+        ],
         "blocker": null,
         "notes": "Inventory all installed software and ensure only vendor-supported versions are in use. Remove or upgrade end-of-life software.",
         "subtasks": [
-          { "title": "Build inventory of all installed software across endpoints and servers", "status": "not-started" },
-          { "title": "Identify end-of-life or unsupported software", "status": "not-started" },
-          { "title": "Create upgrade/removal plan for unsupported software", "status": "not-started" },
-          { "title": "Execute upgrades and removals", "status": "not-started" },
-          { "title": "Configure Intune or SIEM to alert on unauthorized/unsupported installs", "status": "not-started" },
-          { "title": "Document approved software list and review schedule", "status": "not-started" }
+          {
+            "title": "Build inventory of all installed software across endpoints and servers",
+            "status": "not-started"
+          },
+          {
+            "title": "Identify end-of-life or unsupported software",
+            "status": "not-started"
+          },
+          {
+            "title": "Create upgrade/removal plan for unsupported software",
+            "status": "not-started"
+          },
+          {
+            "title": "Execute upgrades and removals",
+            "status": "not-started"
+          },
+          {
+            "title": "Configure Intune or SIEM to alert on unauthorized/unsupported installs",
+            "status": "not-started"
+          },
+          {
+            "title": "Document approved software list and review schedule",
+            "status": "not-started"
+          }
         ]
       },
       {
-        "title": "CIS 3.4 — Enforce Data Retention",
+        "title": "CIS 3.4 â Enforce Data Retention",
         "type": "project",
         "status": "not-started",
-        "categories": ["security", "services"],
+        "categories": [
+          "security",
+          "services"
+        ],
         "blocker": null,
-        "notes": "Define and enforce data retention policies — what data is kept, for how long, and where. Ensure automated disposal of data past retention period.",
+        "notes": "Define and enforce data retention policies â what data is kept, for how long, and where. Ensure automated disposal of data past retention period.",
         "subtasks": [
-          { "title": "Identify data types and storage locations (SharePoint, file servers, email, backups)", "status": "not-started" },
-          { "title": "Define retention periods per data classification", "status": "not-started" },
-          { "title": "Draft data retention policy document", "status": "not-started" },
-          { "title": "Get policy approval from management", "status": "not-started" },
-          { "title": "Configure retention policies in M365 / SharePoint", "status": "not-started" },
-          { "title": "Configure backup retention to align with policy", "status": "not-started" },
-          { "title": "Set up periodic review to verify compliance", "status": "not-started" }
+          {
+            "title": "Identify data types and storage locations (SharePoint, file servers, email, backups)",
+            "status": "not-started"
+          },
+          {
+            "title": "Define retention periods per data classification",
+            "status": "not-started"
+          },
+          {
+            "title": "Draft data retention policy document",
+            "status": "not-started"
+          },
+          {
+            "title": "Get policy approval from management",
+            "status": "not-started"
+          },
+          {
+            "title": "Configure retention policies in M365 / SharePoint",
+            "status": "not-started"
+          },
+          {
+            "title": "Configure backup retention to align with policy",
+            "status": "not-started"
+          },
+          {
+            "title": "Set up periodic review to verify compliance",
+            "status": "not-started"
+          }
         ]
       },
       {
-        "title": "CIS 4.2 — Enforce Unique Credentials",
+        "title": "CIS 4.2 â Enforce Unique Credentials",
         "type": "project",
         "status": "not-started",
-        "categories": ["security"],
+        "categories": [
+          "security"
+        ],
         "blocker": null,
         "notes": "Ensure every user and service account has unique credentials. Eliminate shared accounts and default passwords.",
         "subtasks": [
-          { "title": "Audit AD for shared or generic accounts", "status": "not-started" },
-          { "title": "Audit service accounts for shared credentials", "status": "not-started" },
-          { "title": "Assign unique credentials to all shared accounts or decommission them", "status": "not-started" },
-          { "title": "Enforce password policy in AD (complexity, rotation, no reuse)", "status": "not-started" },
-          { "title": "Document exceptions and justifications for any remaining shared accounts", "status": "not-started" }
+          {
+            "title": "Audit AD for shared or generic accounts",
+            "status": "not-started"
+          },
+          {
+            "title": "Audit service accounts for shared credentials",
+            "status": "not-started"
+          },
+          {
+            "title": "Assign unique credentials to all shared accounts or decommission them",
+            "status": "not-started"
+          },
+          {
+            "title": "Enforce password policy in AD (complexity, rotation, no reuse)",
+            "status": "not-started"
+          },
+          {
+            "title": "Document exceptions and justifications for any remaining shared accounts",
+            "status": "not-started"
+          }
         ]
       },
       {
-        "title": "CIS 4.6 — Require MFA for Externally-Exposed Applications",
+        "title": "CIS 4.6 â Require MFA for Externally-Exposed Applications",
         "type": "project",
         "status": "not-started",
-        "categories": ["security", "networking"],
+        "categories": [
+          "security",
+          "networking"
+        ],
         "blocker": null,
         "notes": "Ensure all externally-accessible applications and services require multi-factor authentication.",
         "subtasks": [
-          { "title": "Inventory all externally-exposed applications and services", "status": "not-started" },
-          { "title": "Identify which already have MFA enforced", "status": "not-started" },
-          { "title": "Enable MFA for M365 / Azure AD external access (Conditional Access)", "status": "not-started" },
-          { "title": "Enable MFA for VPN access (ties into Duo/Meraki project)", "status": "not-started" },
-          { "title": "Enable MFA for any remaining external-facing services", "status": "not-started" },
-          { "title": "Verify MFA enforcement with test logins from external networks", "status": "not-started" }
+          {
+            "title": "Inventory all externally-exposed applications and services",
+            "status": "not-started"
+          },
+          {
+            "title": "Identify which already have MFA enforced",
+            "status": "not-started"
+          },
+          {
+            "title": "Enable MFA for M365 / Azure AD external access (Conditional Access)",
+            "status": "not-started"
+          },
+          {
+            "title": "Enable MFA for VPN access (ties into Duo/Meraki project)",
+            "status": "not-started"
+          },
+          {
+            "title": "Enable MFA for any remaining external-facing services",
+            "status": "not-started"
+          },
+          {
+            "title": "Verify MFA enforcement with test logins from external networks",
+            "status": "not-started"
+          }
         ]
       },
       {
-        "title": "CIS 4.7 — Manage Default Accounts on Enterprise Assets",
+        "title": "CIS 4.7 â Manage Default Accounts on Enterprise Assets",
         "type": "project",
         "status": "not-started",
-        "categories": ["security", "infrastructure"],
+        "categories": [
+          "security",
+          "infrastructure"
+        ],
         "blocker": null,
         "notes": "Disable, rename, or change passwords on all default/built-in accounts across enterprise assets and software.",
         "subtasks": [
-          { "title": "Inventory default accounts on network devices (switches, firewalls, APs)", "status": "not-started" },
-          { "title": "Inventory default accounts on servers and endpoints (local admin, guest)", "status": "not-started" },
-          { "title": "Inventory default accounts in applications and services", "status": "not-started" },
-          { "title": "Disable or rename default accounts where possible", "status": "not-started" },
-          { "title": "Change default passwords on accounts that cannot be disabled", "status": "not-started" },
-          { "title": "Configure Intune/GPO to enforce local admin account management (LAPS)", "status": "not-started" },
-          { "title": "Document all changes and create recurring audit schedule", "status": "not-started" }
+          {
+            "title": "Inventory default accounts on network devices (switches, firewalls, APs)",
+            "status": "not-started"
+          },
+          {
+            "title": "Inventory default accounts on servers and endpoints (local admin, guest)",
+            "status": "not-started"
+          },
+          {
+            "title": "Inventory default accounts in applications and services",
+            "status": "not-started"
+          },
+          {
+            "title": "Disable or rename default accounts where possible",
+            "status": "not-started"
+          },
+          {
+            "title": "Change default passwords on accounts that cannot be disabled",
+            "status": "not-started"
+          },
+          {
+            "title": "Configure Intune/GPO to enforce local admin account management (LAPS)",
+            "status": "not-started"
+          },
+          {
+            "title": "Document all changes and create recurring audit schedule",
+            "status": "not-started"
+          }
         ]
       },
       {
         "title": "Disaster Response Planning",
         "type": "project",
         "status": "not-started",
-        "categories": ["security", "infrastructure"],
+        "categories": [
+          "security",
+          "infrastructure"
+        ],
         "blocker": null,
         "notes": "Review and update the organization's disaster response plan, reassign roles, and prepare the team.",
         "subtasks": [
-          { "title": "Review current Disaster Response Plan", "status": "not-started" },
-          { "title": "Determine role changes needed", "status": "not-started" },
-          { "title": "Inform team of role changes", "status": "not-started" },
-          { "title": "Organize a meeting of the new DR team", "status": "not-started" },
-          { "title": "Schedule tentative date for TableTop exercise", "status": "not-started" }
+          {
+            "title": "Review current Disaster Response Plan",
+            "status": "not-started"
+          },
+          {
+            "title": "Determine role changes needed",
+            "status": "not-started"
+          },
+          {
+            "title": "Inform team of role changes",
+            "status": "not-started"
+          },
+          {
+            "title": "Organize a meeting of the new DR team",
+            "status": "not-started"
+          },
+          {
+            "title": "Schedule tentative date for TableTop exercise",
+            "status": "not-started"
+          }
         ]
       },
       {
         "title": "TableTop Exercise",
         "type": "project",
         "status": "not-started",
-        "categories": ["security"],
+        "categories": [
+          "security"
+        ],
         "blocker": null,
         "notes": "Plan and execute a disaster recovery tabletop exercise.",
         "subtasks": [
-          { "title": "Define exercise scenario and objectives", "status": "not-started" },
-          { "title": "Prepare exercise materials (injects, timeline, roles)", "status": "not-started" },
-          { "title": "One-on-one with Barry — learn how to facilitate a TableTop", "status": "not-started" },
-          { "title": "Practice run #1 (internal dry run)", "status": "not-started" },
-          { "title": "Practice run #2 (refine based on #1 feedback)", "status": "not-started" },
-          { "title": "Run live TableTop exercise", "status": "not-started" },
-          { "title": "Document lessons learned and action items", "status": "not-started" }
+          {
+            "title": "Define exercise scenario and objectives",
+            "status": "not-started"
+          },
+          {
+            "title": "Prepare exercise materials (injects, timeline, roles)",
+            "status": "not-started"
+          },
+          {
+            "title": "One-on-one with Barry â learn how to facilitate a TableTop",
+            "status": "not-started"
+          },
+          {
+            "title": "Practice run #1 (internal dry run)",
+            "status": "not-started"
+          },
+          {
+            "title": "Practice run #2 (refine based on #1 feedback)",
+            "status": "not-started"
+          },
+          {
+            "title": "Run live TableTop exercise",
+            "status": "not-started"
+          },
+          {
+            "title": "Document lessons learned and action items",
+            "status": "not-started"
+          }
         ]
       },
       {
         "title": "MFA for Admins over VPN",
         "type": "project",
         "status": "not-started",
-        "categories": ["security", "networking"],
+        "categories": [
+          "security",
+          "networking"
+        ],
         "blocker": null,
         "notes": "Set up MFA for admin VPN access using Duo, Meraki, and existing RADIUS server. Duo needs to be integrated as a RADIUS proxy.",
         "subtasks": [
-          { "title": "Configure Duo Authentication Proxy as RADIUS proxy", "status": "not-started" },
-          { "title": "Integrate Duo proxy with existing RADIUS server", "status": "not-started" },
-          { "title": "Configure Meraki VPN to authenticate through Duo RADIUS proxy", "status": "not-started" },
-          { "title": "Create Duo admin group and enroll admin users", "status": "not-started" },
-          { "title": "Test MFA flow end-to-end (VPN → Meraki → Duo → RADIUS)", "status": "not-started" },
-          { "title": "Document configuration and rollback procedure", "status": "not-started" }
+          {
+            "title": "Configure Duo Authentication Proxy as RADIUS proxy",
+            "status": "not-started"
+          },
+          {
+            "title": "Integrate Duo proxy with existing RADIUS server",
+            "status": "not-started"
+          },
+          {
+            "title": "Configure Meraki VPN to authenticate through Duo RADIUS proxy",
+            "status": "not-started"
+          },
+          {
+            "title": "Create Duo admin group and enroll admin users",
+            "status": "not-started"
+          },
+          {
+            "title": "Test MFA flow end-to-end (VPN â Meraki â Duo â RADIUS)",
+            "status": "not-started"
+          },
+          {
+            "title": "Document configuration and rollback procedure",
+            "status": "not-started"
+          }
         ]
       },
       {
-        "title": "SIEM Setup — Wazuh",
+        "title": "SIEM Setup â Wazuh",
         "type": "project",
-        "status": "not-started",
-        "categories": ["security", "infrastructure"],
+        "status": "in-progress",
+        "categories": [
+          "security",
+          "infrastructure"
+        ],
         "blocker": null,
         "notes": "Wazuh manager is deployed. Need to roll out agents, configure rules/alerts, and build dashboards.",
         "subtasks": [
-          { "title": "Deploy Wazuh agents to Windows endpoints", "status": "not-started" },
-          { "title": "Deploy Wazuh agents to Mac endpoints", "status": "not-started" },
-          { "title": "Deploy Wazuh agents to servers", "status": "not-started" },
-          { "title": "Configure log sources (firewall, switches, AD)", "status": "not-started" },
-          { "title": "Tune detection rules and alert thresholds", "status": "not-started" },
-          { "title": "Build operational dashboards", "status": "not-started" },
-          { "title": "Set up alert notifications (email/Slack/Teams)", "status": "not-started" },
-          { "title": "Document SIEM runbook (triage procedures)", "status": "not-started" }
+          {
+            "title": "Deploy Wazuh agents to Windows endpoints",
+            "status": "not-started"
+          },
+          {
+            "title": "Deploy Wazuh agents to Mac endpoints",
+            "status": "not-started"
+          },
+          {
+            "title": "Deploy Wazuh agents to servers",
+            "status": "not-started"
+          },
+          {
+            "title": "Configure log sources (firewall, switches, AD)",
+            "status": "not-started"
+          },
+          {
+            "title": "Tune detection rules and alert thresholds",
+            "status": "not-started"
+          },
+          {
+            "title": "Build operational dashboards",
+            "status": "not-started"
+          },
+          {
+            "title": "Set up alert notifications (email/Slack/Teams)",
+            "status": "not-started"
+          },
+          {
+            "title": "Document SIEM runbook (triage procedures)",
+            "status": "not-started"
+          }
         ]
       },
       {
         "title": "OS Hardening & Baseline Images",
         "type": "project",
         "status": "not-started",
-        "categories": ["security", "endpoint"],
+        "categories": [
+          "security",
+          "endpoint"
+        ],
         "blocker": null,
         "notes": "Build hardened baseline images for Windows and Mac endpoints, managed through Intune.",
         "subtasks": [
-          { "title": "Define hardening standards (CIS benchmarks for Windows + macOS)", "status": "not-started" },
-          { "title": "Build Windows baseline image", "status": "not-started" },
-          { "title": "Build macOS baseline image", "status": "not-started" },
-          { "title": "Create Intune compliance policies for Windows", "status": "not-started" },
-          { "title": "Create Intune compliance policies for Mac", "status": "not-started" },
-          { "title": "Test baseline images on pilot devices", "status": "not-started" },
-          { "title": "Document image build and update process", "status": "not-started" }
+          {
+            "title": "Define hardening standards (CIS benchmarks for Windows + macOS)",
+            "status": "not-started"
+          },
+          {
+            "title": "Build Windows baseline image",
+            "status": "not-started"
+          },
+          {
+            "title": "Build macOS baseline image",
+            "status": "not-started"
+          },
+          {
+            "title": "Create Intune compliance policies for Windows",
+            "status": "not-started"
+          },
+          {
+            "title": "Create Intune compliance policies for Mac",
+            "status": "not-started"
+          },
+          {
+            "title": "Test baseline images on pilot devices",
+            "status": "not-started"
+          },
+          {
+            "title": "Document image build and update process",
+            "status": "not-started"
+          }
         ]
       }
     ],

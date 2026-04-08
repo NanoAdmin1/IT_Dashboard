@@ -1288,6 +1288,120 @@
             "status": "not-started"
           }
         ]
+      },
+      {
+        "title": "Wired RADIUS Setup — Burnaby",
+        "type": "task",
+        "status": "not-started",
+        "categories": ["networking", "security"],
+        "blocker": null,
+        "notes": "Set up 802.1X wired RADIUS authentication at the Burnaby site."
+      },
+      {
+        "title": "Wired RADIUS Setup — Candiac",
+        "type": "task",
+        "status": "not-started",
+        "categories": ["networking", "security"],
+        "blocker": null,
+        "notes": "Set up 802.1X wired RADIUS authentication at the Candiac site."
+      },
+      {
+        "title": "CIS Safeguard Implementation",
+        "type": "project",
+        "status": "not-started",
+        "categories": ["security"],
+        "blocker": null,
+        "notes": "Implement selected CIS Controls safeguards across the environment.",
+        "subtasks": [
+          { "title": "2.2 — Ensure Authorized Software Is Currently Supported", "status": "not-started" },
+          { "title": "3.4 — Enforce Data Retention", "status": "not-started" },
+          { "title": "4.2 — Enforce Unique Credentials", "status": "not-started" },
+          { "title": "4.6 — Require MFA for Externally-Exposed Applications", "status": "not-started" },
+          { "title": "4.7 — Manage Default Accounts on Enterprise Assets and Software", "status": "not-started" }
+        ]
+      },
+      {
+        "title": "Disaster Response Planning",
+        "type": "project",
+        "status": "not-started",
+        "categories": ["security", "infrastructure"],
+        "blocker": null,
+        "notes": "Review and update the organization's disaster response plan, reassign roles, and prepare the team.",
+        "subtasks": [
+          { "title": "Review current Disaster Response Plan", "status": "not-started" },
+          { "title": "Determine role changes needed", "status": "not-started" },
+          { "title": "Inform team of role changes", "status": "not-started" },
+          { "title": "Organize a meeting of the new DR team", "status": "not-started" },
+          { "title": "Schedule tentative date for TableTop exercise", "status": "not-started" }
+        ]
+      },
+      {
+        "title": "TableTop Exercise",
+        "type": "project",
+        "status": "not-started",
+        "categories": ["security"],
+        "blocker": null,
+        "notes": "Plan and execute a disaster recovery tabletop exercise.",
+        "subtasks": [
+          { "title": "Define exercise scenario and objectives", "status": "not-started" },
+          { "title": "Prepare exercise materials (injects, timeline, roles)", "status": "not-started" },
+          { "title": "One-on-one with Barry — learn how to facilitate a TableTop", "status": "not-started" },
+          { "title": "Practice run #1 (internal dry run)", "status": "not-started" },
+          { "title": "Practice run #2 (refine based on #1 feedback)", "status": "not-started" },
+          { "title": "Run live TableTop exercise", "status": "not-started" },
+          { "title": "Document lessons learned and action items", "status": "not-started" }
+        ]
+      },
+      {
+        "title": "MFA for Admins over VPN",
+        "type": "project",
+        "status": "not-started",
+        "categories": ["security", "networking"],
+        "blocker": null,
+        "notes": "Set up MFA for admin VPN access using Duo, Meraki, and existing RADIUS server. Duo needs to be integrated as a RADIUS proxy.",
+        "subtasks": [
+          { "title": "Configure Duo Authentication Proxy as RADIUS proxy", "status": "not-started" },
+          { "title": "Integrate Duo proxy with existing RADIUS server", "status": "not-started" },
+          { "title": "Configure Meraki VPN to authenticate through Duo RADIUS proxy", "status": "not-started" },
+          { "title": "Create Duo admin group and enroll admin users", "status": "not-started" },
+          { "title": "Test MFA flow end-to-end (VPN → Meraki → Duo → RADIUS)", "status": "not-started" },
+          { "title": "Document configuration and rollback procedure", "status": "not-started" }
+        ]
+      },
+      {
+        "title": "SIEM Setup — Wazuh",
+        "type": "project",
+        "status": "not-started",
+        "categories": ["security", "infrastructure"],
+        "blocker": null,
+        "notes": "Wazuh manager is deployed. Need to roll out agents, configure rules/alerts, and build dashboards.",
+        "subtasks": [
+          { "title": "Deploy Wazuh agents to Windows endpoints", "status": "not-started" },
+          { "title": "Deploy Wazuh agents to Mac endpoints", "status": "not-started" },
+          { "title": "Deploy Wazuh agents to servers", "status": "not-started" },
+          { "title": "Configure log sources (firewall, switches, AD)", "status": "not-started" },
+          { "title": "Tune detection rules and alert thresholds", "status": "not-started" },
+          { "title": "Build operational dashboards", "status": "not-started" },
+          { "title": "Set up alert notifications (email/Slack/Teams)", "status": "not-started" },
+          { "title": "Document SIEM runbook (triage procedures)", "status": "not-started" }
+        ]
+      },
+      {
+        "title": "OS Hardening & Baseline Images",
+        "type": "project",
+        "status": "not-started",
+        "categories": ["security", "endpoint"],
+        "blocker": null,
+        "notes": "Build hardened baseline images for Windows and Mac endpoints, managed through Intune.",
+        "subtasks": [
+          { "title": "Define hardening standards (CIS benchmarks for Windows + macOS)", "status": "not-started" },
+          { "title": "Build Windows baseline image", "status": "not-started" },
+          { "title": "Build macOS baseline image", "status": "not-started" },
+          { "title": "Create Intune compliance policies for Windows", "status": "not-started" },
+          { "title": "Create Intune compliance policies for Mac", "status": "not-started" },
+          { "title": "Test baseline images on pilot devices", "status": "not-started" },
+          { "title": "Document image build and update process", "status": "not-started" }
+        ]
       }
     ],
     "blake": [],

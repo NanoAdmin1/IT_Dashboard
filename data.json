@@ -1016,9 +1016,9 @@
   "goalsData": {
     "company": [
       { "title": "Establish Licensing Deals", "completed": false, "links": [1, 7] },
-      { "title": "Commercial Readiness", "completed": false, "links": [1, 2, 3, 5, 8] },
-      { "title": "Operational Execution and Safety", "completed": false, "links": [3, 4, 5, 6, 8, 9] },
-      { "title": "Collaborate for Innovation", "completed": false, "links": [2, 7, 9] }
+      { "title": "Commercial Readiness", "completed": false, "links": [1, 2, 3, 5, 8, 9, 10] },
+      { "title": "Operational Execution and Safety", "completed": false, "links": [3, 4, 5, 6, 8, 9, 10, 11] },
+      { "title": "Collaborate for Innovation", "completed": false, "links": [2, 7, 9, 11] }
     ],
     "critical": [
       { "number": 1, "title": "ERP Implementation", "completed": false },
@@ -1028,8 +1028,10 @@
       { "number": 5, "title": "Expand ESXi Storage", "completed": false },
       { "number": 6, "title": "MFA for Admin VPN Access", "completed": false },
       { "number": 7, "title": "Training (Certifications)", "completed": false },
-      { "number": 8, "title": "Veeam Cloud Backups Fully Configured", "completed": true },
-      { "number": 9, "title": "Shared Virtual Machine for Scientific Users (Ease of Use for Mac Users)", "completed": true }
+      { "number": 8, "title": "KPIs for Tickets", "completed": false },
+      { "number": 9, "title": "LIMS Implementation", "completed": false },
+      { "number": 10, "title": "Veeam Cloud Backups Fully Configured", "completed": true },
+      { "number": 11, "title": "Shared Virtual Machine for Scientific Users (Ease of Use for Mac Users)", "completed": true }
     ],
     "stretch": [
       { "number": 1, "title": "Network Change Log Documentation Process", "completed": false },

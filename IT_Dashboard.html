@@ -1115,6 +1115,20 @@
             <td class="matrix-cell matrix-cell-orange"><div class="matrix-cell-label">✦ Connected</div>Certified staff are better equipped to evaluate, adopt, and support new tools that enable cross-team and cross-site innovation.</td>
           </tr>
           <tr>
+            <td class="matrix-row-header"><span class="row-num">8</span>KPIs for Tickets</td>
+            <td class="matrix-cell matrix-cell-empty"></td>
+            <td class="matrix-cell matrix-cell-purple"><div class="matrix-cell-label">✦ Connected</div>Ticket KPIs provide measurable evidence of IT service maturity, demonstrating the operational readiness expected at commercial scale.</td>
+            <td class="matrix-cell matrix-cell-green"><div class="matrix-cell-label">✦ Connected</div>Tracking ticket volume, response times, and resolution rates gives direct visibility into IT operational health and service delivery performance.</td>
+            <td class="matrix-cell matrix-cell-empty"></td>
+          </tr>
+          <tr>
+            <td class="matrix-row-header"><span class="row-num">9</span>LIMS Implementation</td>
+            <td class="matrix-cell matrix-cell-empty"></td>
+            <td class="matrix-cell matrix-cell-purple"><div class="matrix-cell-label">✦ Connected</div>A LIMS is essential for managing lab data at commercial scale — enabling traceability, compliance, and structured data workflows required for commercial operations.</td>
+            <td class="matrix-cell matrix-cell-green"><div class="matrix-cell-label">✦ Connected</div>LIMS enforces standardized lab procedures and data integrity, directly supporting safety and operational consistency across lab environments.</td>
+            <td class="matrix-cell matrix-cell-orange"><div class="matrix-cell-label">✦ Connected</div>LIMS enables scientific teams to share, access, and collaborate on lab data across sites, breaking down silos between researchers and IT systems.</td>
+          </tr>
+          <tr>
             <td class="matrix-row-header">✓ Veeam Cloud Backups Fully Configured</td>
             <td class="matrix-cell matrix-cell-empty"></td>
             <td class="matrix-cell matrix-cell-purple"><div class="matrix-cell-label">✦ Connected</div>Reliable cloud backups protect business-critical data at commercial scale, ensuring continuity and reducing risk of data loss during growth.</td>
@@ -1769,9 +1783,9 @@ const FALLBACK_allMembersData = {
 const FALLBACK_goalsData = {
   company: [
     { title: "Establish Licensing Deals", completed: false, links: [1, 7] },
-    { title: "Commercial Readiness", completed: false, links: [1, 2, 3, 5, 8] },
-    { title: "Operational Execution and Safety", completed: false, links: [3, 4, 5, 6, 8, 9] },
-    { title: "Collaborate for Innovation", completed: false, links: [2, 7, 9] }
+    { title: "Commercial Readiness", completed: false, links: [1, 2, 3, 5, 8, 9, 10] },
+    { title: "Operational Execution and Safety", completed: false, links: [3, 4, 5, 6, 8, 9, 10, 11] },
+    { title: "Collaborate for Innovation", completed: false, links: [2, 7, 9, 11] }
   ],
   critical: [
     { number: 1, title: "ERP Implementation", completed: false },
@@ -1781,8 +1795,10 @@ const FALLBACK_goalsData = {
     { number: 5, title: "Expand ESXi Storage", completed: false },
     { number: 6, title: "MFA for Admin VPN Access", completed: false },
     { number: 7, title: "Training (Certifications)", completed: false },
-    { number: 8, title: "Veeam Cloud Backups Fully Configured", completed: true },
-    { number: 9, title: "Shared Virtual Machine for Scientific Users (Ease of Use for Mac Users)", completed: true }
+    { number: 8, title: "KPIs for Tickets", completed: false },
+    { number: 9, title: "LIMS Implementation", completed: false },
+    { number: 10, title: "Veeam Cloud Backups Fully Configured", completed: true },
+    { number: 11, title: "Shared Virtual Machine for Scientific Users (Ease of Use for Mac Users)", completed: true }
   ],
   stretch: [
     { number: 1, title: "Network Change Log Documentation Process", completed: false },

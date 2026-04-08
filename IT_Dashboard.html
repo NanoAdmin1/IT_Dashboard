@@ -886,10 +886,99 @@
     opacity: 0.7;
   }
 
+  /* Desk365 Tickets Section */
+  .desk365-section {
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--border);
+  }
+  .desk365-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .desk365-header h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .desk365-updated {
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+  .desk365-tables {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .desk365-table-wrap h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .desk365-table-wrap h3 .d365-count {
+    background: var(--surface2);
+    border-radius: 10px;
+    padding: 1px 8px;
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+  .desk365-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .desk365-table th {
+    background: var(--surface2);
+    text-align: left;
+    padding: 8px 12px;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .desk365-table td {
+    padding: 8px 12px;
+    font-size: 0.82rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+  .desk365-table tr:last-child td { border-bottom: none; }
+  .desk365-table tr:hover { background: var(--surface2); }
+  .desk365-table .d365-id a {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .desk365-table .d365-id a:hover { text-decoration: underline; }
+  .desk365-table .d365-subject { max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .desk365-table .d365-date { font-size: 0.75rem; color: var(--muted); white-space: nowrap; }
+  .d365-priority { padding: 2px 7px; border-radius: 4px; font-size: 0.66rem; font-weight: 600; text-transform: uppercase; }
+  .d365-priority-low { background: #14532d22; color: var(--green); }
+  .d365-priority-medium { background: var(--yellow-bg); color: var(--yellow); }
+  .d365-priority-high { background: #7f1d1d22; color: #fb923c; }
+  .d365-priority-urgent { background: var(--red-bg); color: var(--red); }
+  .d365-status { padding: 2px 7px; border-radius: 4px; font-size: 0.66rem; font-weight: 500; background: #1e3a5f; color: #93c5fd; }
+  .desk365-empty { text-align: center; color: var(--muted); padding: 16px; font-size: 0.82rem; font-style: italic; }
+  .desk365-unavailable { color: var(--muted); font-size: 0.82rem; font-style: italic; padding: 12px 0; }
+
   /* Responsive */
   @media (max-width: 1100px) {
     .board { grid-template-columns: repeat(2, 1fr); }
     .summary-row { grid-template-columns: repeat(3, 1fr); }
+    .desk365-tables { grid-template-columns: 1fr; }
   }
 
   @media (max-width: 680px) {
@@ -923,6 +1012,9 @@
 </div>
 
 <div class="main">
+
+  <!-- Desk365 Tickets Section (Ryan's tab only) -->
+  <div id="desk365-section" class="desk365-section" style="display:none;"></div>
 
   <!-- Summary Row -->
   <div class="summary-row">
@@ -1185,6 +1277,7 @@
 
 </div>
 
+<script src="desk365_data.js"></script>
 <script>
 // --- GitHub API Integration ---
 const GITHUB_REPO = 'NanoAdmin1/IT_Dashboard';
@@ -1794,6 +1887,14 @@ const FALLBACK_allMembersData = {
       categories: ["support"],
       blocker: null,
       notes: "Set-up laptop and create user account for Hammad Hussain."
+    },
+    {
+      title: "Figure out Licensing for Nano One",
+      type: "task",
+      status: "in-progress",
+      categories: ["services"],
+      blocker: null,
+      notes: "Currently licensing for Nano One is a mess and there are licenses that we have no idea where they came from."
     }
   ],
 
@@ -1877,12 +1978,14 @@ function switchTab(member, btn) {
   const filtersEl = document.querySelector('.filters');
   const boardEl = document.querySelector('.board');
   const goalsSection = document.getElementById('goals-section');
+  const desk365Section = document.getElementById('desk365-section');
 
   if (member === 'goals') {
     projectBoard.style.display = 'none';
     filtersEl.style.display = 'none';
     boardEl.style.display = 'none';
     goalsSection.style.display = '';
+    desk365Section.style.display = 'none';
     renderGoals();
     return;
   }
@@ -1891,6 +1994,13 @@ function switchTab(member, btn) {
   filtersEl.style.display = '';
   boardEl.style.display = '';
   goalsSection.style.display = 'none';
+
+  if (member === 'ryan') {
+    desk365Section.style.display = '';
+    renderDesk365();
+  } else {
+    desk365Section.style.display = 'none';
+  }
 
   projects = allMembersData[member];
 
@@ -2544,6 +2654,77 @@ function deleteTask(event, memberKey, taskIdx) {
   projects = allMembersData[activeMember];
   renderAll();
   saveData();
+}
+
+// --- Desk365 Tickets Rendering ---
+function renderDesk365() {
+  const section = document.getElementById('desk365-section');
+  if (typeof DESK365_TICKETS === 'undefined') {
+    section.innerHTML = '<div class="desk365-unavailable">Desk365 data not available — run desk365_poller.py to generate.</div>';
+    return;
+  }
+
+  const data = DESK365_TICKETS;
+  const updated = data.lastUpdated ? new Date(data.lastUpdated).toLocaleString() : 'Unknown';
+
+  const PRIORITY_MAP = { 1: 'Low', 2: 'Medium', 3: 'High', 4: 'Urgent' };
+  function priorityLabel(p) {
+    if (typeof p === 'number') return PRIORITY_MAP[p] || 'Low';
+    return String(p) || 'Low';
+  }
+  function priorityClass(p) {
+    const pl = priorityLabel(p).toLowerCase();
+    if (pl.includes('urgent') || pl.includes('critical')) return 'd365-priority-urgent';
+    if (pl.includes('high')) return 'd365-priority-high';
+    if (pl.includes('medium')) return 'd365-priority-medium';
+    return 'd365-priority-low';
+  }
+
+  function formatDate(d) {
+    if (!d) return '';
+    try { return new Date(d).toLocaleDateString('en-CA'); } catch (e) { return d; }
+  }
+
+  function ticketRows(tickets) {
+    if (!tickets || tickets.length === 0) {
+      return '<tr><td colspan="5" class="desk365-empty">No tickets</td></tr>';
+    }
+    return tickets.map(t => {
+      const subj = String(t.subject || '').length > 60
+        ? String(t.subject).substring(0, 60) + '\u2026'
+        : (t.subject || '');
+      return `<tr>
+        <td class="d365-id"><a href="https://nanoone.desk365.io/app/tickets/ticketdetails?view=indVw&tktNum=${t.ticket_number}" target="_blank">#${t.ticket_number}</a></td>
+        <td class="d365-subject" title="${(t.subject || '').replace(/"/g, '&quot;')}">${subj}</td>
+        <td><span class="d365-status">${t.status || ''}</span></td>
+        <td><span class="d365-priority ${priorityClass(t.priority)}">${priorityLabel(t.priority)}</span></td>
+        <td class="d365-date">${t.contact_name || ''}</td>
+      </tr>`;
+    }).join('');
+  }
+
+  section.innerHTML = `
+    <div class="desk365-header">
+      <h2>Desk365 Tickets</h2>
+      <span class="desk365-updated">Last updated: ${updated}</span>
+    </div>
+    <div class="desk365-tables">
+      <div class="desk365-table-wrap">
+        <h3>Unassigned <span class="d365-count">${(data.unassigned || []).length}</span></h3>
+        <table class="desk365-table">
+          <thead><tr><th>ID</th><th>Subject</th><th>Status</th><th>Priority</th><th>Contact</th></tr></thead>
+          <tbody>${ticketRows(data.unassigned)}</tbody>
+        </table>
+      </div>
+      <div class="desk365-table-wrap">
+        <h3>My Tickets <span class="d365-count">${(data.assigned || []).length}</span></h3>
+        <table class="desk365-table">
+          <thead><tr><th>ID</th><th>Subject</th><th>Status</th><th>Priority</th><th>Contact</th></tr></thead>
+          <tbody>${ticketRows(data.assigned)}</tbody>
+        </table>
+      </div>
+    </div>
+  `;
 }
 
 // Init — start on Goals tab

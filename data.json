@@ -533,6 +533,16 @@
         "notes": "Set-up laptop and create user account for Hammad Hussain."
       },
       {
+        "title": "Figure out Licensing for Nano One",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "services"
+        ],
+        "blocker": null,
+        "notes": "Currently licensing for Nano One is a mess and there are licenses that we have no idea where they came from."
+      },
+      {
         "title": "Clean up Computers in AD",
         "type": "task",
         "status": "not-started",

@@ -123,7 +123,7 @@
         ],
         "blocker": null,
         "notes": null,
-        "resolution": "Held the power button down to restart the computer as the Arbins have memory leak issues. Told Daniela she will need to restart them weekly â that's what Perry did.",
+        "resolution": "Held the power button down to restart the computer as the Arbins have memory leak issues. Told Daniela she will need to restart them weekly Ã¢ÂÂ that's what Perry did.",
         "completedAt": "2026-03-23T13:00:00"
       },
       {
@@ -501,7 +501,7 @@
         "notes": "Ryan studying for AZ-104 (Azure Administrator). Using 2025 education budget."
       },
       {
-        "title": "Candiac RADIUS Server â Build & Configure",
+        "title": "Candiac RADIUS Server Ã¢ÂÂ Build & Configure",
         "type": "project",
         "status": "blocked",
         "categories": [
@@ -897,7 +897,7 @@
         "notes": null
       },
       {
-        "title": "M & KB Go Through â Check Which Work",
+        "title": "M & KB Go Through Ã¢ÂÂ Check Which Work",
         "type": "task",
         "status": "completed",
         "categories": [
@@ -1122,7 +1122,7 @@
         "notes": "1) Make a new laptop, 2) Install Chamber Connect Software, 3) Verify Chamber Connect software connects to ESPECs, 4) Make a document showing how to use Chamber Connect Software."
       },
       {
-        "title": "Burnaby RADIUS Server â Build & Configure",
+        "title": "Burnaby RADIUS Server Ã¢ÂÂ Build & Configure",
         "type": "project",
         "status": "completed",
         "categories": [
@@ -1153,7 +1153,7 @@
         "notes": "RAID5 array installed and configured."
       },
       {
-        "title": "InTune Profile â macOS Wi-Fi (mobile.config)",
+        "title": "InTune Profile Ã¢ÂÂ macOS Wi-Fi (mobile.config)",
         "type": "task",
         "status": "completed",
         "categories": [
@@ -1213,7 +1213,7 @@
         "notes": "Full VLAN reconfiguration including proper ACL setup. Arbin computers connected to AD and segregated."
       },
       {
-        "title": "VEEAM Backup â Network & Lab Devices",
+        "title": "VEEAM Backup Ã¢ÂÂ Network & Lab Devices",
         "type": "project",
         "status": "completed",
         "categories": [
@@ -1328,7 +1328,7 @@
       },
       {
         "title": "Collaborate for Innovation",
-        "completed": true,
+        "completed": false,
         "links": [
           2,
           4,

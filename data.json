@@ -1737,15 +1737,6 @@
             "status": "not-started"
           }
         ]
-      },
-      {
-        "title": "PageryDuty Licenses for Sam",
-        "type": "task",
-        "status": "waiting",
-        "categories": [],
-        "blocker": null,
-        "notes": null,
-        "resolution": null
       }
     ],
     "blake": [],

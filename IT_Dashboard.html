@@ -2154,7 +2154,9 @@ function renderAll() {
       // Editable blocker
       const blockerHtml = p.blocker ? `<div class="card-blocker"><div class="blocker-label">Blocker</div><span class="blocker-content editable" ondblclick="startEditBlocker(event, '${memberKey}', ${taskIdx})">${p.blocker}</span></div>` : '';
       // Editable notes
-      const notesHtml = p.notes ? `<div class="card-notes"><div class="notes-label">Notes</div><span class="notes-content editable" ondblclick="startEditNotes(event, '${memberKey}', ${taskIdx})">${p.notes}</span></div>` : '';
+      const notesHtml = p.notes
+        ? `<div class="card-notes"><div class="notes-label">Notes</div><span class="notes-content editable" ondblclick="startEditNotes(event, '${memberKey}', ${taskIdx})">${p.notes}</span></div>`
+        : (p.status !== 'completed' ? `<div class="card-notes"><button class="add-subtask-trigger" onclick="addNotes(event, '${memberKey}', ${taskIdx})">+ Add Notes</button></div>` : '');
       const resolutionHtml = p.resolution ? `<div class="card-resolution"><div class="resolution-label">Resolution</div>${p.resolution}</div>` : '';
 
       // Delete button
@@ -2193,7 +2195,7 @@ function renderAll() {
           </div>
           ${addSubBtn}
         </div>`;
-      } else if (p.type === 'project' && p.status !== 'completed') {
+      } else if (p.status !== 'completed') {
         subtasksHtml = `<div class="card-subtasks">
           <div class="subtasks-label">Subtasks</div>
           <div style="font-size:0.72rem;color:var(--muted);font-style:italic;">No subtasks yet</div>
@@ -2432,7 +2434,7 @@ function submitNewTask(btn, status) {
     notes: null,
     resolution: null
   };
-  if (type === 'project') newTask.subtasks = [];
+  newTask.subtasks = [];
 
   allMembersData[activeMember].push(newTask);
   projects = allMembersData[activeMember];
@@ -2506,7 +2508,24 @@ function finishEditTitle(input, memberKey, taskIdx) {
   renderAll();
 }
 
-// 3b. Inline Editing — notes
+// 3b. Add Notes (when none exist)
+function addNotes(event, memberKey, taskIdx) {
+  event.stopPropagation();
+  const card = event.target.closest('.card');
+  const notesDiv = card.querySelector('.card-notes');
+  notesDiv.innerHTML = `<div class="notes-label">Notes</div>`;
+  const textarea = document.createElement('textarea');
+  textarea.className = 'editing';
+  textarea.value = '';
+  textarea.rows = 3;
+  textarea.onclick = (e) => e.stopPropagation();
+  textarea.onblur = () => finishEditNotes(textarea, memberKey, taskIdx);
+  textarea.onkeydown = (e) => { if (e.key === 'Escape') { textarea.dataset.cancel = '1'; textarea.blur(); } };
+  notesDiv.appendChild(textarea);
+  textarea.focus();
+}
+
+// 3c. Inline Editing — notes
 function startEditNotes(event, memberKey, taskIdx) {
   event.stopPropagation();
   const notesEl = event.target.closest('.card-notes') || event.target;

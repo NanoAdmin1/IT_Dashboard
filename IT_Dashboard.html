@@ -1956,6 +1956,14 @@ async function initData() {
     goalsData = FALLBACK_goalsData;
   }
   projects = allMembersData['ryan'];
+  const savedTab = localStorage.getItem('activeTab');
+  if (savedTab) {
+    const tabBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => {
+      const onclickAttr = b.getAttribute('onclick');
+      return onclickAttr && onclickAttr.includes(`'${savedTab}'`);
+    });
+    if (tabBtn) { switchTab(savedTab, tabBtn); return; }
+  }
   renderGoals();
 }
 
@@ -1970,6 +1978,7 @@ let currentExcludeCompleted = false;
 
 function switchTab(member, btn) {
   activeMember = member;
+  localStorage.setItem('activeTab', member);
 
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');

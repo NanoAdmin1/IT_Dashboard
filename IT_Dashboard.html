@@ -1417,18 +1417,20 @@ const FALLBACK_allMembersData = {
     {
       title: "Fix IPs on Burnaby Switches",
       type: "task",
-      status: "waiting",
+      status: "completed",
       categories: ["networking"],
-      blocker: "Must be completed on a Saturday.",
-      notes: "Burnaby 1 & 2 switches need static IPs assigned to the 98 VLAN (172.16.98.x / 172.16.198.x). 98 VLAN must have VPN enabled for site-to-site traffic. Requires coming in on a Saturday."
+      blocker: null,
+      notes: "Burnaby 1 & 2 switches need static IPs assigned to the 98 VLAN (172.16.98.x / 172.16.198.x). 98 VLAN must have VPN enabled for site-to-site traffic. Requires coming in on a Saturday.",
+      completedAt: "2026-04-13T12:00:00"
     },
     {
       title: "FreeRADIUS Config (Post Switch-IP Fix)",
       type: "task",
-      status: "waiting",
+      status: "completed",
       categories: ["networking", "security"],
-      blocker: "Must be completed on a Saturday.",
-      notes: "After switch IPs are corrected, each Burnaby switch needs to be added as a client to the FreeRADIUS server.\n\nclaude --resume 5ff90607-6c56-41e9-9bf9-8d60e3109e9c -> FreeRADIUS config plan from Claude"
+      blocker: null,
+      notes: "After switch IPs are corrected, each Burnaby switch needs to be added as a client to the FreeRADIUS server.\n\nclaude --resume 5ff90607-6c56-41e9-9bf9-8d60e3109e9c -> FreeRADIUS config plan from Claude",
+      completedAt: "2026-04-13T12:00:00"
     },
     {
       title: "BET Machine Connection Issue",
@@ -1792,10 +1794,19 @@ const FALLBACK_allMembersData = {
     {
       title: "Infor Print Server",
       type: "project",
-      status: "in-progress",
+      status: "completed",
       categories: ["infrastructure", "services"],
       blocker: null,
-      notes: "Infor will need a VM created to host their print server which comes with specific parameters found in an email from Blake."
+      notes: "Infor will need a VM created to host their print server which comes with specific parameters found in an email from Blake.",
+      completedAt: "2026-04-13T12:00:00"
+    },
+    {
+      title: "MFA for Infor Print Server",
+      type: "task",
+      status: "blocked",
+      categories: ["security", "infrastructure"],
+      blocker: "Waiting for Blake to get in contact with Infor about this",
+      notes: "Infor Print Server will need an MFA solution set-up on it."
     },
     {
       title: "Clean up Computers in AD",

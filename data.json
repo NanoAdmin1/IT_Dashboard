@@ -613,6 +613,16 @@
         "notes": "On the Arbins and the XRD, MAB stopped access to the N drive. Unsure as to why this is happening, needs investigating."
       },
       {
+        "title": "Assign a Claude License to Maryam",
+        "type": "task",
+        "status": "not-started",
+        "categories": [
+          "services"
+        ],
+        "blocker": null,
+        "notes": "Maryam has requested a license to Claude"
+      },
+      {
         "title": "Wired RADIUS Configuration with Jordan",
         "type": "project",
         "status": "in-progress",

@@ -614,6 +614,16 @@
         "notes": "On the Arbins and the XRD, MAB stopped access to the N drive. Unsure as to why this is happening, needs investigating."
       },
       {
+        "title": "Use AI to find an easier way to go through Azure Logs",
+        "type": "task",
+        "status": "not-started",
+        "categories": [
+          "security"
+        ],
+        "blocker": null,
+        "notes": "Use AI (perhaps integrated Copilot) to go through the Azure logs to help look for anomalies"
+      },
+      {
         "title": "Investigate Netlogon issues",
         "type": "task",
         "status": "not-started",

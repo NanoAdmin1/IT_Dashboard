@@ -637,12 +637,13 @@
       {
         "title": "Investigate Netlogon issues",
         "type": "task",
-        "status": "not-started",
+        "status": "completed",
         "categories": [
           "infrastructure"
         ],
         "blocker": null,
-        "notes": "NANOLT17, NANOLT46 and BWS-SC-176851 are showing NETLOGON errors. Investigate."
+        "notes": "NANOLT17, NANOLT46 and BWS-SC-176851 are showing NETLOGON errors. Investigate.",
+        "completedAt": "2026-04-14T12:00:00"
       },
       {
         "title": "Assign a Claude License to Maryam",

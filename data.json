@@ -657,6 +657,17 @@
         "completedAt": "2026-04-13T12:00:00"
       },
       {
+        "title": "Create Relay for Finance Printer",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "infrastructure",
+          "support"
+        ],
+        "blocker": null,
+        "notes": "Scanning is not working on the Finance Printer. Need to create a relay so the printer can function properly."
+      },
+      {
         "title": "Assist Jordan with SIEM Set-up",
         "type": "project",
         "status": "in-progress",

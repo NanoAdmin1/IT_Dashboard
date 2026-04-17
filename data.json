@@ -1901,7 +1901,7 @@
         "completed": false,
         "links": [
           1,
-          9
+          10
         ]
       },
       {
@@ -1913,8 +1913,9 @@
           3,
           4,
           5,
-          7,
-          10
+          6,
+          8,
+          11
         ]
       },
       {
@@ -1927,8 +1928,9 @@
           6,
           7,
           8,
-          10,
-          11
+          9,
+          11,
+          12
         ]
       },
       {
@@ -1937,8 +1939,8 @@
         "links": [
           2,
           4,
-          9,
-          11
+          10,
+          12
         ]
       }
     ],
@@ -1965,36 +1967,41 @@
       },
       {
         "number": 5,
-        "title": "Autopilot Implementation",
+        "title": "SIEM Implementation",
         "completed": false
       },
       {
         "number": 6,
-        "title": "Patch Management and Network Optimization",
+        "title": "Autopilot Implementation",
         "completed": false
       },
       {
         "number": 7,
-        "title": "Expand ESXi Storage",
+        "title": "Patch Management and Network Optimization",
         "completed": false
       },
       {
         "number": 8,
-        "title": "MFA for Admin VPN Access",
+        "title": "Expand ESXi Storage",
         "completed": false
       },
       {
         "number": 9,
-        "title": "Training (Certifications)",
+        "title": "MFA for Admin VPN Access",
         "completed": false
       },
       {
         "number": 10,
+        "title": "Training (Certifications)",
+        "completed": false
+      },
+      {
+        "number": 11,
         "title": "Veeam Cloud Backups Fully Configured",
         "completed": true
       },
       {
-        "number": 11,
+        "number": 12,
         "title": "Shared Virtual Machine for Scientific Users (Ease of Use for Mac Users)",
         "completed": true
       }

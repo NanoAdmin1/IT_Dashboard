@@ -194,13 +194,14 @@
       {
         "title": "Remove Unused Cables from Patch Panel",
         "type": "task",
-        "status": "waiting",
+        "status": "completed",
         "categories": [
           "networking"
         ],
-        "blocker": "Needs to be done on a Saturday.",
+        "blocker": null,
         "notes": "101A is being rented out and the cables that go down to 101A need to be identified and removed from our patch panel in 101B.",
-        "resolution": null
+        "resolution": null,
+        "completedAt": "2026-04-17T12:00:00"
       },
       {
         "title": "Grab Equipment from 101A and 101B",
@@ -655,6 +656,16 @@
         "blocker": null,
         "notes": "Maryam has requested a license to Claude",
         "completedAt": "2026-04-13T12:00:00"
+      },
+      {
+        "title": "Onboarding of Raymond Li",
+        "type": "task",
+        "status": "not-started",
+        "categories": [
+          "support"
+        ],
+        "blocker": null,
+        "notes": "Raymond Li will need his accounts created and Laptop set-up."
       },
       {
         "title": "New Laptop for Marcus",

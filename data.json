@@ -498,16 +498,6 @@
         "notes": "Investigating and resolving false positive detections in CrowdStrike."
       },
       {
-        "title": "AZ-104 Certification Study",
-        "type": "project",
-        "status": "study",
-        "categories": [
-          "certification"
-        ],
-        "blocker": null,
-        "notes": "Ryan studying for AZ-104 (Azure Administrator). Using 2025 education budget."
-      },
-      {
         "title": "Candiac RADIUS Server - Build & Configure",
         "type": "project",
         "status": "blocked",

@@ -1851,7 +1851,7 @@
           },
           {
             "title": "Set up alert notifications (email/Slack/Teams)",
-            "status": "not-started"
+            "status": "in-progress"
           },
           {
             "title": "Document SIEM runbook (triage procedures)",

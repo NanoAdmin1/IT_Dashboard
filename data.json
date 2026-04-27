@@ -1827,11 +1827,11 @@
           },
           {
             "title": "Deploy Wazuh agents to servers",
-            "status": "not-started"
+            "status": "in-progress"
           },
           {
             "title": "Configure log sources (firewall, switches, AD)",
-            "status": "not-started"
+            "status": "in-progress"
           },
           {
             "title": "Tune detection rules and alert thresholds",

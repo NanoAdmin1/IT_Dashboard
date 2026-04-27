@@ -1819,7 +1819,7 @@
         "subtasks": [
           {
             "title": "Deploy Wazuh agents to Windows endpoints",
-            "status": "not-started"
+            "status": "in-progress"
           },
           {
             "title": "Deploy Wazuh agents to Mac endpoints",

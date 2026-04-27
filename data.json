@@ -1823,7 +1823,7 @@
           },
           {
             "title": "Deploy Wazuh agents to Mac endpoints",
-            "status": "not-started"
+            "status": "in-progress"
           },
           {
             "title": "Deploy Wazuh agents to servers",

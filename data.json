@@ -1855,7 +1855,7 @@
           },
           {
             "title": "Document SIEM runbook (triage procedures)",
-            "status": "in-progress"
+            "status": "done"
           }
         ]
       },
@@ -1907,7 +1907,13 @@
         "categories": [],
         "blocker": null,
         "notes": null,
-        "resolution": null
+        "resolution": null,
+        "subtasks": [
+          {
+            "title": "buy 8 license",
+            "status": "not-started"
+          }
+        ]
       }
     ],
     "blake": [],

@@ -1831,11 +1831,11 @@
           },
           {
             "title": "Configure log sources (firewall, switches, AD)",
-            "status": "in-progress"
+            "status": "done"
           },
           {
             "title": "Tune detection rules and alert thresholds",
-            "status": "in-progress"
+            "status": "done"
           },
           {
             "title": "Build operational dashboards",

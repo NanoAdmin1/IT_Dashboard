@@ -382,7 +382,7 @@
         "notes": "Fixing existing InTune integration issues."
       },
       {
-        "title": "InTune Autopilot Configuration",
+        "title": "Figure out computer upload for InTune autopilot",
         "type": "project",
         "status": "blocked",
         "categories": [

@@ -1823,11 +1823,11 @@
           },
           {
             "title": "Deploy Wazuh agents to Mac endpoints",
-            "status": "in-progress"
+            "status": "done"
           },
           {
             "title": "Deploy Wazuh agents to servers",
-            "status": "in-progress"
+            "status": "done"
           },
           {
             "title": "Configure log sources (firewall, switches, AD)",

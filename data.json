@@ -1449,7 +1449,7 @@
           },
           {
             "title": "Wednesday Follow up with Pam",
-            "status": "in-progress"
+            "status": "done"
           }
         ]
       },
@@ -1839,7 +1839,7 @@
           },
           {
             "title": "Build operational dashboards",
-            "status": "in-progress"
+            "status": "done"
           },
           {
             "title": "Set up alert notifications (email/Slack/Teams)",

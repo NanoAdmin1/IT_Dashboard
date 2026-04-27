@@ -671,6 +671,16 @@
         "completedAt": "2026-04-17T12:00:00"
       },
       {
+        "title": "Fix boot loop on computer in 107",
+        "type": "task",
+        "status": "not-started",
+        "categories": [
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": null
+      },
+      {
         "title": "Onboarding of Raymond Li",
         "type": "task",
         "status": "not-started",

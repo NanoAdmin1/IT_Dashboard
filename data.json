@@ -671,6 +671,17 @@
         "notes": null
       },
       {
+        "title": "Offboard Maxwell Bernier on May 1st at 5pm",
+        "type": "task",
+        "status": "waiting",
+        "categories": [
+          "support",
+          "security"
+        ],
+        "blocker": "Waiting until 5pm on May 1st to remove access.",
+        "notes": "Wait until end of day May 1st to remove access. Ruilin wants emails and OneDrive."
+      },
+      {
         "title": "Onboarding of Raymond Li",
         "type": "task",
         "status": "in-progress",

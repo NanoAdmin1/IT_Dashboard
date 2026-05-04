@@ -1828,11 +1828,11 @@
         "subtasks": [
           {
             "title": "Configure Duo Authentication Proxy as RADIUS proxy",
-            "status": "in-progress"
+            "status": "done"
           },
           {
             "title": "Integrate Duo proxy with existing RADIUS server",
-            "status": "in-progress"
+            "status": "done"
           },
           {
             "title": "Configure Meraki VPN to authenticate through Duo RADIUS proxy",

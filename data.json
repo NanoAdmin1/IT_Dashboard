@@ -1828,7 +1828,7 @@
         "subtasks": [
           {
             "title": "Configure Duo Authentication Proxy as RADIUS proxy",
-            "status": "not-started"
+            "status": "in-progress"
           },
           {
             "title": "Integrate Duo proxy with existing RADIUS server",

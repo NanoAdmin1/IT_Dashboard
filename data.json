@@ -1840,7 +1840,7 @@
           },
           {
             "title": "Create Duo admin group and enroll admin users",
-            "status": "in-progress"
+            "status": "done"
           },
           {
             "title": "Test MFA flow end-to-end (VPN -> Meraki -> Duo -> RADIUS)",

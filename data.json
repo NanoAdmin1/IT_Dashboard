@@ -1836,7 +1836,7 @@
           },
           {
             "title": "Configure Meraki VPN to authenticate through Duo RADIUS proxy",
-            "status": "in-progress"
+            "status": "done"
           },
           {
             "title": "Create Duo admin group and enroll admin users",

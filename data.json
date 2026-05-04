@@ -1844,7 +1844,7 @@
           },
           {
             "title": "Test MFA flow end-to-end (VPN -> Meraki -> Duo -> RADIUS)",
-            "status": "not-started"
+            "status": "in-progress"
           },
           {
             "title": "Document configuration and rollback procedure",

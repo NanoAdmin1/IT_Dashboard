@@ -1818,7 +1818,7 @@
       {
         "title": "MFA for Admins over VPN",
         "type": "project",
-        "status": "not-started",
+        "status": "in-progress",
         "categories": [
           "security",
           "networking"
@@ -1848,7 +1848,7 @@
           },
           {
             "title": "Document configuration and rollback procedure",
-            "status": "in-progress"
+            "status": "done"
           }
         ]
       },

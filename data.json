@@ -685,58 +685,23 @@
       {
         "title": "Offboard Maxwell Bernier on May 1st at 5pm",
         "type": "task",
-        "status": "completed",
+        "status": "waiting",
         "categories": [
           "support",
           "security"
         ],
-        "blocker": null,
-        "notes": "Wait until end of day May 1st to remove access. Ruilin wants emails and OneDrive.",
-        "completedAt": "2026-05-01T17:00:00"
-      },
-      {
-        "title": "Create a new IT onboarding form",
-        "type": "task",
-        "status": "completed",
-        "categories": [
-          "support"
-        ],
-        "blocker": null,
-        "notes": null,
-        "completedAt": "2026-04-28T12:00:00"
-      },
-      {
-        "title": "Create a new IT offboarding form",
-        "type": "task",
-        "status": "completed",
-        "categories": [
-          "support"
-        ],
-        "blocker": null,
-        "notes": null,
-        "completedAt": "2026-04-28T12:00:00"
-      },
-      {
-        "title": "Create a new manager onboarding form",
-        "type": "task",
-        "status": "completed",
-        "categories": [
-          "support"
-        ],
-        "blocker": null,
-        "notes": null,
-        "completedAt": "2026-04-28T12:00:00"
+        "blocker": "Waiting until 5pm on May 1st to remove access.",
+        "notes": "Wait until end of day May 1st to remove access. Ruilin wants emails and OneDrive."
       },
       {
         "title": "Onboarding of Raymond Li",
         "type": "task",
-        "status": "completed",
+        "status": "in-progress",
         "categories": [
           "support"
         ],
         "blocker": null,
-        "notes": "Raymond Li will need his accounts created and Laptop set-up.",
-        "completedAt": "2026-04-28T12:00:00"
+        "notes": "Raymond Li will need his accounts created and Laptop set-up."
       },
       {
         "title": "New Laptop for Marcus",
@@ -1884,6 +1849,10 @@
           {
             "title": "Document configuration and rollback procedure",
             "status": "done"
+          },
+          {
+            "title": "Anyconnect VPN + MFA working",
+            "status": "not-started"
           }
         ]
       },

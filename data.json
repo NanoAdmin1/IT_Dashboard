@@ -1832,7 +1832,7 @@
           },
           {
             "title": "Integrate Duo proxy with existing RADIUS server",
-            "status": "not-started"
+            "status": "in-progress"
           },
           {
             "title": "Configure Meraki VPN to authenticate through Duo RADIUS proxy",

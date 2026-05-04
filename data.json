@@ -1941,7 +1941,7 @@
       {
         "title": "PagerDuty Licenses for Sam",
         "type": "task",
-        "status": "blocked",
+        "status": "completed",
         "categories": [],
         "blocker": null,
         "notes": "We bought 8 licenses for Sam and it ended up applykng 5 of them to our 5 free users (IT team + Reenu), leaving us with 3 only. Need to get 5 more now or figure out another solution.",
@@ -1955,7 +1955,20 @@
             "title": "buy 5 more",
             "status": "in-progress"
           }
-        ]
+        ],
+        "completedAt": "2026-05-04T16:13:15.728Z"
+      },
+      {
+        "title": "SaaS License & Access Inventory",
+        "type": "task",
+        "status": "not-started",
+        "categories": [
+          "longterm"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "blake": [],

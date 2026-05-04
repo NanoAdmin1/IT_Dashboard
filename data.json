@@ -1852,6 +1852,10 @@
           },
           {
             "title": "Anyconnect VPN + MFA working",
+            "status": "done"
+          },
+          {
+            "title": "IPSec VPN + MFA working",
             "status": "not-started"
           }
         ]

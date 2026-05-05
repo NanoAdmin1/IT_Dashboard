@@ -672,6 +672,17 @@
         "completedAt": "2026-04-28T12:00:00"
       },
       {
+        "title": "Test Label Printer for connection issues if it needs to be moved",
+        "type": "task",
+        "status": "not-started",
+        "categories": [
+          "networking",
+          "support"
+        ],
+        "blocker": null,
+        "notes": "Tamara wants to move the label printer, test to make sure it will reconnect okay. The label printer itself may need an IP reservation."
+      },
+      {
         "title": "Expand ESXi storage to cover ≥24 months of forecasted growth",
         "type": "project",
         "status": "not-started",

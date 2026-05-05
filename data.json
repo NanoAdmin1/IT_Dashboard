@@ -672,6 +672,27 @@
         "completedAt": "2026-04-28T12:00:00"
       },
       {
+        "title": "Expand ESXi storage to cover ≥24 months of forecasted growth",
+        "type": "project",
+        "status": "not-started",
+        "categories": [
+          "infrastructure"
+        ],
+        "blocker": null,
+        "notes": "ESXi growth needs to be forcasted by Q3 then Expanded by Q4."
+      },
+      {
+        "title": "Establish network-performance baseline and deliver measurable improvement",
+        "type": "project",
+        "status": "not-started",
+        "categories": [
+          "networking",
+          "infrastructure"
+        ],
+        "blocker": null,
+        "notes": "Baseline by Q3. Improvement Target by Q4."
+      },
+      {
         "title": "Replace Nicolet 6700 FTIR computer to Win 11 if possible",
         "type": "task",
         "status": "waiting",

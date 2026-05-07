@@ -674,13 +674,14 @@
       {
         "title": "Set-up new Label Printers for Bluetooth use",
         "type": "task",
-        "status": "not-started",
+        "status": "completed",
         "categories": [
           "endpoint",
           "support"
         ],
         "blocker": null,
-        "notes": "BlueTooth Label Printers arrive today. Grab them and set them up."
+        "notes": "BlueTooth Label Printers arrive today. Grab them and set them up.",
+        "completedAt": "2026-05-04T12:00:00"
       },
       {
         "title": "Test Label Printer for connection issues if it needs to be moved",

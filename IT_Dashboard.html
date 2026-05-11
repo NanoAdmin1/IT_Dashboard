@@ -1303,7 +1303,12 @@ async function loadData() {
       if (resp.ok) {
         const meta = await resp.json();
         dataSha = meta.sha;
-        const content = JSON.parse(atob(meta.content));
+        // GitHub returns base64-encoded UTF-8. atob() yields a binary string,
+        // so we must round-trip through TextDecoder to preserve non-ASCII chars
+        // (e.g. ≥, é) — otherwise UTF-8 bytes are read as Latin-1 = mojibake.
+        const bytes = Uint8Array.from(atob(meta.content), c => c.charCodeAt(0));
+        const text = new TextDecoder('utf-8').decode(bytes);
+        const content = JSON.parse(text);
         return content;
       }
     }

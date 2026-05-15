@@ -2083,12 +2083,13 @@
       {
         "title": "Review Maria's CRM software tooling request",
         "type": "task",
-        "status": "blocked",
+        "status": "completed",
         "categories": [],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-05-15T16:25:09.976Z"
       },
       {
         "title": "Set up DarkTrace Backups",

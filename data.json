@@ -2083,7 +2083,7 @@
       {
         "title": "Review Maria's CRM software tooling request",
         "type": "task",
-        "status": "waiting",
+        "status": "blocked",
         "categories": [],
         "blocker": null,
         "notes": null,

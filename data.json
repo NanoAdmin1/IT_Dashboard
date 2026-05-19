@@ -1580,14 +1580,15 @@
       {
         "title": "Set-up AP08",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "networking"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-05-19T20:45:07.995Z"
       }
     ],
     "jordan": [

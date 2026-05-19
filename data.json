@@ -731,7 +731,7 @@
       {
         "title": "Replace Nicolet 6700 FTIR computer CMOS battery",
         "type": "task",
-        "status": "waiting",
+        "status": "in-progress",
         "categories": [
           "endpoint",
           "lab"

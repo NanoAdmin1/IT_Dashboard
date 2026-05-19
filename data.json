@@ -75,13 +75,14 @@
       {
         "title": "BET Machine Connection Issue",
         "type": "task",
-        "status": "waiting",
+        "status": "completed",
         "categories": [
           "lab"
         ],
-        "blocker": "Waiting for the machine to get a new Dewar.",
+        "blocker": null,
         "notes": "Build a laptop to run the BET machine software to see if the issue lies with the machine or the computer.",
-        "resolution": null
+        "resolution": "Saving the files locally seems to be the fix.",
+        "completedAt": "2026-05-19T00:00:00"
       },
       {
         "title": "Install Claude Code on FreeRADIUS Server",
@@ -607,6 +608,22 @@
         "notes": "On the Arbins and the XRD, MAB stopped access to the N drive. Unsure as to why this is happening, needs investigating."
       },
       {
+        "title": "Investigate Issues Documented in Monitoring.md",
+        "type": "task",
+        "status": "not-started",
+        "categories": ["infrastructure", "security"],
+        "blocker": null,
+        "notes": "There is a document called monitoring.md on the SIEM machine. Some stuff there needs to be investigated."
+      },
+      {
+        "title": "New Laptop for Marcus Gian",
+        "type": "task",
+        "status": "not-started",
+        "categories": ["endpoint"],
+        "blocker": null,
+        "notes": "Onboarding of Marcus Gian."
+      },
+      {
         "title": "Investigate MDM GPO errors",
         "type": "task",
         "status": "not-started",
@@ -739,13 +756,15 @@
       {
         "title": "Replace Nicolet 6700 FTIR computer CMOS battery",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint",
           "lab"
         ],
-        "blocker": "Waiting for confirmation from Thermo Fisher that software and instrument can connect to Win 11.",
-        "notes": null
+        "blocker": null,
+        "notes": null,
+        "resolution": "Battery changed.",
+        "completedAt": "2026-05-19T00:00:00"
       },
       {
         "title": "Offboard Maxwell Bernier on May 1st at 5pm",

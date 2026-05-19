@@ -75,7 +75,6 @@
       {
         "title": "BET Machine Connection Issue",
         "type": "task",
-        "status": "completed",
         "status": "in-progress",
         "categories": [
           "lab"
@@ -612,15 +611,20 @@
         "title": "Investigate Issues Documented in Monitoring.md",
         "type": "task",
         "status": "not-started",
-        "categories": ["infrastructure", "security"],
+        "categories": [
+          "infrastructure",
+          "security"
+        ],
         "blocker": null,
         "notes": "There is a document called monitoring.md on the SIEM machine. Some stuff there needs to be investigated."
       },
       {
         "title": "New Laptop for Marcus Gian",
         "type": "task",
-        "status": "not-started",
-        "categories": ["endpoint"],
+        "status": "in-progress",
+        "categories": [
+          "endpoint"
+        ],
         "blocker": null,
         "notes": "Onboarding of Marcus Gian."
       },

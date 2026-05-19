@@ -729,7 +729,7 @@
         "notes": "Baseline by Q3. Improvement Target by Q4."
       },
       {
-        "title": "Replace Nicolet 6700 FTIR computer to Win 11 if possible",
+        "title": "Replace Nicolet 6700 FTIR computer",
         "type": "task",
         "status": "waiting",
         "categories": [
@@ -1567,7 +1567,7 @@
         "subtasks": [
           {
             "title": "Corporate Data Migration",
-            "status": "done"
+            "status": "in-progress"
           },
           {
             "title": "Reach out to Pam",
@@ -1587,10 +1587,6 @@
           },
           {
             "title": "Legal files ready for migration",
-            "status": "done"
-          },
-          {
-            "title": "Legal Migration complete",
             "status": "in-progress"
           }
         ]
@@ -1912,9 +1908,9 @@
         ]
       },
       {
-        "title": "MFA for Admins over VPN Burnaby",
+        "title": "MFA for Admins over VPN",
         "type": "project",
-        "status": "completed",
+        "status": "in-progress",
         "categories": [
           "security",
           "networking"
@@ -1952,19 +1948,18 @@
           },
           {
             "title": "IPSec VPN + MFA working",
-            "status": "done"
+            "status": "in-progress"
           },
           {
             "title": "All Admins Added to Duo Group",
-            "status": "done"
+            "status": "in-progress"
           }
-        ],
-        "completedAt": "2026-05-14T16:13:37.022Z"
+        ]
       },
       {
         "title": "SIEM Setup - Wazuh",
         "type": "project",
-        "status": "completed",
+        "status": "in-progress",
         "categories": [
           "security",
           "infrastructure"
@@ -2004,8 +1999,7 @@
             "title": "Document SIEM runbook (triage procedures)",
             "status": "done"
           }
-        ],
-        "completedAt": "2026-05-14T16:22:42.809Z"
+        ]
       },
       {
         "title": "OS Hardening & Baseline Images",
@@ -2074,72 +2068,6 @@
         "status": "in-progress",
         "categories": [
           "longterm"
-        ],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": []
-      },
-      {
-        "title": "Review Maria's CRM software tooling request",
-        "type": "task",
-        "status": "completed",
-        "categories": [],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": [],
-        "completedAt": "2026-05-15T16:25:09.976Z"
-      },
-      {
-        "title": "Set up DarkTrace Backups",
-        "type": "task",
-        "status": "waiting",
-        "categories": [
-          "security",
-          "infrastructure"
-        ],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": []
-      },
-      {
-        "title": "Set up VPN-MFA for Admins for Candiac VPN",
-        "type": "project",
-        "status": "in-progress",
-        "categories": [
-          "networking",
-          "security"
-        ],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": [
-          {
-            "title": "Duplicate VM settings from Burnaby and create a new VM in Candiac ESXi",
-            "status": "not-started"
-          },
-          {
-            "title": "Modify IP addresses, ensure domains and users are added in DUO admin policy",
-            "status": "not-started"
-          },
-          {
-            "title": "Run Radtests locally to test push notifications",
-            "status": "not-started"
-          },
-          {
-            "title": "Cutover from AD auth to RADIUS auth for VPN",
-            "status": "not-started"
-          }
-        ]
-      },
-      {
-        "title": "DOD NIST self-assesment",
-        "type": "project",
-        "status": "waiting",
-        "categories": [
-          "security"
         ],
         "blocker": null,
         "notes": null,

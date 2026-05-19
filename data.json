@@ -76,6 +76,7 @@
         "title": "BET Machine Connection Issue",
         "type": "task",
         "status": "completed",
+        "status": "in-progress",
         "categories": [
           "lab"
         ],
@@ -744,14 +745,6 @@
         ],
         "blocker": null,
         "notes": "Baseline by Q3. Improvement Target by Q4."
-      },
-      {
-        "title": "Set Up AP-08 in Meraki",
-        "type": "task",
-        "status": "in-progress",
-        "categories": ["networking"],
-        "blocker": null,
-        "notes": "AP-08 needs to be set up in Meraki."
       },
       {
         "title": "Replace Nicolet 6700 FTIR computer CMOS battery",

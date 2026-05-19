@@ -1581,7 +1581,9 @@
         "title": "Set-up AP08",
         "type": "task",
         "status": "in-progress",
-        "categories": [],
+        "categories": [
+          "networking"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,

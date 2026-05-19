@@ -75,14 +75,14 @@
       {
         "title": "BET Machine Connection Issue",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "lab"
         ],
         "blocker": null,
         "notes": "Build a laptop to run the BET machine software to see if the issue lies with the machine or the computer.",
         "resolution": "Saving the files locally seems to be the fix.",
-        "completedAt": "2026-05-19T00:00:00"
+        "completedAt": "2026-05-19T16:39:07.624Z"
       },
       {
         "title": "Install Claude Code on FreeRADIUS Server",

@@ -1874,7 +1874,7 @@
       {
         "title": "Disaster Response Planning",
         "type": "project",
-        "status": "not-started",
+        "status": "waiting",
         "categories": [
           "security",
           "infrastructure"

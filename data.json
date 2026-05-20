@@ -2102,7 +2102,7 @@
       {
         "title": "SaaS License & Access Inventory",
         "type": "task",
-        "status": "in-progress",
+        "status": "waiting",
         "categories": [
           "longterm"
         ],

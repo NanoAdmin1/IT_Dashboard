@@ -2043,6 +2043,10 @@
           {
             "title": "DarkTrace Logging",
             "status": "not-started"
+          },
+          {
+            "title": "Crowdstrike Logging",
+            "status": "not-started"
           }
         ]
       },

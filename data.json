@@ -2039,6 +2039,10 @@
           {
             "title": "ESXi logging",
             "status": "not-started"
+          },
+          {
+            "title": "DarkTrace Logging",
+            "status": "not-started"
           }
         ]
       },

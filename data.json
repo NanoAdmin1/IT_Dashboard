@@ -2035,6 +2035,10 @@
           {
             "title": "Document SIEM runbook (triage procedures)",
             "status": "done"
+          },
+          {
+            "title": "ESXi logging",
+            "status": "not-started"
           }
         ]
       },

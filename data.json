@@ -2047,6 +2047,10 @@
           {
             "title": "Crowdstrike Logging",
             "status": "not-started"
+          },
+          {
+            "title": "Veeam Logging",
+            "status": "not-started"
           }
         ]
       },

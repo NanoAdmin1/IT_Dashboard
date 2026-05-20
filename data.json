@@ -1653,7 +1653,7 @@
       {
         "title": "DarkTrace Backup Setup",
         "type": "project",
-        "status": "not-started",
+        "status": "in-progress",
         "categories": [
           "security",
           "infrastructure"

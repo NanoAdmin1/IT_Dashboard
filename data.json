@@ -2373,6 +2373,20 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-05-21T19:06:27.363Z"
+      },
+      {
+        "title": "Darktrace Appliance Issue",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "networking",
+          "security",
+          "infrastructure"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ]
   },

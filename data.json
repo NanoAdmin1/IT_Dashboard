@@ -2338,12 +2338,13 @@
       {
         "title": "Broken Computer in Control Room",
         "type": "task",
-        "status": "blocked",
+        "status": "completed",
         "categories": [],
         "blocker": null,
         "notes": "Device replaced with one of the new EUD",
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-05-21T19:04:28.671Z"
       }
     ]
   },

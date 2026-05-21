@@ -2362,7 +2362,7 @@
       {
         "title": "Crowdstrike Renewal",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "networking",
           "security",
@@ -2371,7 +2371,8 @@
         "blocker": null,
         "notes": "Completed",
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-05-21T19:06:27.363Z"
       }
     ]
   },

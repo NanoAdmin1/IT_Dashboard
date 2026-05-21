@@ -2324,7 +2324,7 @@
       {
         "title": "Dynamic Groups for Burnaby",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "security",
           "infrastructure"
@@ -2332,7 +2332,8 @@
         "blocker": null,
         "notes": "Completed with Jordan",
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-05-21T19:03:48.622Z"
       }
     ]
   },

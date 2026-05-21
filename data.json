@@ -2354,7 +2354,7 @@
           "infrastructure"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": "Faulty hardware was swapped from known good hardware from the faulty hardware from OnePot",
         "resolution": null,
         "subtasks": []
       }

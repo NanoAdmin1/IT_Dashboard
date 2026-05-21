@@ -2129,7 +2129,22 @@
       }
     ],
     "blake": [],
-    "maxime": []
+    "maxime": [
+      {
+        "title": "Intune Autopilot",
+        "type": "project",
+        "status": "in-progress",
+        "categories": [
+          "security",
+          "infrastructure",
+          "longterm"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      }
+    ]
   },
   "goalsData": {
     "company": [

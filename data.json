@@ -2257,6 +2257,21 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Island Browser Enforcement",
+        "type": "project",
+        "status": "in-progress",
+        "categories": [
+          "security",
+          "infrastructure",
+          "services",
+          "longterm"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ]
   },

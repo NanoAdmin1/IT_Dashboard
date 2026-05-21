@@ -2334,6 +2334,16 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-05-21T19:03:48.622Z"
+      },
+      {
+        "title": "Broken Computer in Control Room",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ]
   },

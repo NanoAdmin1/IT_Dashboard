@@ -2147,7 +2147,7 @@
       {
         "title": "External (Outside) AP for Consultants",
         "type": "task",
-        "status": "in-progress",
+        "status": "waiting",
         "categories": [
           "networking",
           "security",

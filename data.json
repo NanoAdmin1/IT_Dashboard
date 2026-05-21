@@ -2176,9 +2176,7 @@
         "title": "Production SharePoint Migration",
         "type": "task",
         "status": "not-started",
-        "categories": [
-          "infrastructure"
-        ],
+        "categories": [],
         "blocker": null,
         "notes": null,
         "resolution": null,

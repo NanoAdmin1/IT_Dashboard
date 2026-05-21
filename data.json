@@ -2338,7 +2338,7 @@
       {
         "title": "Broken Computer in Control Room",
         "type": "task",
-        "status": "waiting",
+        "status": "blocked",
         "categories": [],
         "blocker": null,
         "notes": "Device replaced with one of the new EUD",

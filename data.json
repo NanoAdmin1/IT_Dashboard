@@ -2220,6 +2220,18 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Find New Weekly Training Program",
+        "type": "task",
+        "status": "study",
+        "categories": [
+          "certification"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ]
   },

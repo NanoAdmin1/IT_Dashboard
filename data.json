@@ -2286,6 +2286,19 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Install Island on TruPoint VM",
+        "type": "task",
+        "status": "waiting",
+        "categories": [
+          "security",
+          "infrastructure"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ]
   },

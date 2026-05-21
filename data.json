@@ -2129,7 +2129,18 @@
       }
     ],
     "blake": [],
-    "maxime": []
+    "maxime": [
+      {
+        "title": "test",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      }
+    ]
   },
   "goalsData": {
     "company": [

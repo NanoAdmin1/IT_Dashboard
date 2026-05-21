@@ -2377,7 +2377,7 @@
       {
         "title": "Darktrace Appliance Issue",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "networking",
           "security",
@@ -2386,7 +2386,8 @@
         "blocker": null,
         "notes": "New appliance installed and old one returned.",
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-05-21T19:06:53.654Z"
       }
     ]
   },

@@ -2202,7 +2202,8 @@
         "status": "not-started",
         "categories": [
           "infrastructure",
-          "longterm"
+          "longterm",
+          "services"
         ],
         "blocker": null,
         "notes": null,

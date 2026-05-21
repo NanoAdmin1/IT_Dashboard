@@ -2358,6 +2358,20 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-05-21T19:06:06.447Z"
+      },
+      {
+        "title": "Crowdstrike Renewal",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "networking",
+          "security",
+          "infrastructure"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ]
   },

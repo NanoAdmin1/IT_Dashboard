@@ -2320,6 +2320,19 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-05-21T19:03:21.487Z"
+      },
+      {
+        "title": "Dynamic Groups for Burnaby",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "security",
+          "infrastructure"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ]
   },

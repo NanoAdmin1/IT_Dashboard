@@ -2193,6 +2193,19 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Create SharePoint Training Documentation",
+        "type": "task",
+        "status": "not-started",
+        "categories": [
+          "infrastructure",
+          "longterm"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ]
   },

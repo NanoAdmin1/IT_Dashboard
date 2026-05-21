@@ -2254,7 +2254,7 @@
           "lab"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": "Need more testing with VMs in a safe environment since WinXP is no longer supported by Microsoft",
         "resolution": null,
         "subtasks": []
       },

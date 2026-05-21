@@ -2296,7 +2296,7 @@
           "infrastructure"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": "Before Island Browser Enforcement in place",
         "resolution": null,
         "subtasks": []
       },

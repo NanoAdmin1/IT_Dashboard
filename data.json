@@ -2245,6 +2245,18 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "WinXP PC in XRD Lab - Sys32 Repair",
+        "type": "task",
+        "status": "waiting",
+        "categories": [
+          "lab"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ]
   },

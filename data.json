@@ -2313,12 +2313,13 @@
       {
         "title": "Find EUD replacements for Candiac and Burnaby",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-05-21T19:03:21.487Z"
       }
     ]
   },

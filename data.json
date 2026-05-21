@@ -2157,6 +2157,20 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Veeam Backup Upgrade",
+        "type": "project",
+        "status": "in-progress",
+        "categories": [
+          "networking",
+          "security",
+          "infrastructure"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ]
   },

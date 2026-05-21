@@ -2201,9 +2201,20 @@
         "type": "task",
         "status": "not-started",
         "categories": [
-          "infrastructure",
           "longterm",
           "services"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
+        "title": "CompTIA A+",
+        "type": "task",
+        "status": "study",
+        "categories": [
+          "certification"
         ],
         "blocker": null,
         "notes": null,

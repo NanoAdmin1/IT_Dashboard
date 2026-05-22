@@ -731,7 +731,7 @@
         "completedAt": "2026-05-04T12:00:00"
       },
       {
-        "title": "Expand ESXi storage to cover ≥ 24 months of forecasted growth",
+        "title": "Expand ESXi storage to cover \u2265 24 months of forecasted growth",
         "type": "project",
         "status": "not-started",
         "categories": [
@@ -1590,6 +1590,26 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-05-19T20:45:07.995Z"
+      },
+      {
+        "title": "SharePoint Systems Migration",
+        "type": "project",
+        "status": "in-progress",
+        "categories": [
+          "services"
+        ],
+        "blocker": null,
+        "notes": "Contact Christian Lungu."
+      },
+      {
+        "title": "SharePoint Procurement Migration",
+        "type": "project",
+        "status": "in-progress",
+        "categories": [
+          "services"
+        ],
+        "blocker": null,
+        "notes": "Check in with Maryam to see what needs to be done."
       }
     ],
     "jordan": [

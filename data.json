@@ -2310,6 +2310,16 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-05-22T17:36:06.681Z"
+      },
+      {
+        "title": "Dynamic Groups Burnaby",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ]
   },

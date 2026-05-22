@@ -1370,16 +1370,81 @@ async function saveData() {
   }
   try {
     showSaveStatus('Saving...', 'saving');
-    const content = btoa(unescape(encodeURIComponent(JSON.stringify({ allMembersData, goalsData, sharepointData }, null, 2))));
 
-    // Get latest SHA to avoid conflicts
+    // --- Read-before-write merge ---
+    // Fetch latest from GitHub so we don't stomp concurrent edits
     const metaResp = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${DATA_FILE}`, {
       headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github.v3+json' }
     });
+
+    let mergedAllMembers = allMembersData;
+    let mergedGoals = goalsData;
+    let mergedSharepoint = sharepointData;
+
     if (metaResp.ok) {
       const meta = await metaResp.json();
       dataSha = meta.sha;
+
+      // Decode remote content
+      const bytes = Uint8Array.from(atob(meta.content.replace(/\n/g, '')), c => c.charCodeAt(0));
+      const remoteData = JSON.parse(new TextDecoder('utf-8').decode(bytes));
+
+      if (loadedSnapshot) {
+        // Per-member merge for allMembersData
+        mergedAllMembers = {};
+        const allMembers = new Set([
+          ...Object.keys(remoteData.allMembersData || {}),
+          ...Object.keys(allMembersData)
+        ]);
+        for (const member of allMembers) {
+          const remoteStr = JSON.stringify(remoteData.allMembersData?.[member] || []);
+          const snapStr   = JSON.stringify(loadedSnapshot.allMembersData?.[member] || []);
+          const localStr  = JSON.stringify(allMembersData[member] || []);
+          if (localStr !== snapStr) {
+            // We changed this member → our version wins
+            mergedAllMembers[member] = allMembersData[member] || [];
+          } else if (remoteStr !== snapStr) {
+            // Remote changed this member, we didn't → take remote
+            mergedAllMembers[member] = remoteData.allMembersData[member] || [];
+          } else {
+            mergedAllMembers[member] = allMembersData[member] || [];
+          }
+        }
+
+        // Goals: section-level merge
+        const remoteGoalsStr = JSON.stringify(remoteData.goalsData);
+        const snapGoalsStr   = JSON.stringify(loadedSnapshot.goalsData);
+        const localGoalsStr  = JSON.stringify(goalsData);
+        if (localGoalsStr !== snapGoalsStr) {
+          mergedGoals = goalsData;
+        } else if (remoteGoalsStr !== snapGoalsStr) {
+          mergedGoals = remoteData.goalsData;
+        }
+
+        // SharePoint: section-level merge
+        const remoteSpStr = JSON.stringify(remoteData.sharepointData);
+        const snapSpStr   = JSON.stringify(loadedSnapshot.sharepointData);
+        const localSpStr  = JSON.stringify(sharepointData);
+        if (localSpStr !== snapSpStr) {
+          mergedSharepoint = sharepointData;
+        } else if (remoteSpStr !== snapSpStr) {
+          mergedSharepoint = remoteData.sharepointData || [];
+        }
+      } else {
+        // No snapshot (loaded from fallback) — just use remote as base for members we didn't touch
+        mergedAllMembers = { ...remoteData.allMembersData, ...allMembersData };
+        mergedGoals = goalsData;
+        mergedSharepoint = sharepointData;
+      }
     }
+
+    // Update in-memory data with merged result and refresh snapshot
+    allMembersData = mergedAllMembers;
+    goalsData = mergedGoals;
+    sharepointData = mergedSharepoint;
+    loadedSnapshot = JSON.parse(JSON.stringify({ allMembersData, goalsData, sharepointData }));
+
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify({ allMembersData, goalsData, sharepointData }, null, 2))));
 
     const resp = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${DATA_FILE}`, {
       method: 'PUT',
@@ -1429,6 +1494,7 @@ function promptToken() {
 let allMembersData = {};
 let goalsData = {};
 let sharepointData = [];
+let loadedSnapshot = null; // snapshot of data as-loaded from GitHub, used for merge-on-save
 
 const FALLBACK_allMembersData = {
   ryan: [
@@ -2247,10 +2313,12 @@ async function initData() {
     allMembersData = loaded.allMembersData;
     goalsData = loaded.goalsData;
     sharepointData = loaded.sharepointData || [];
+    loadedSnapshot = JSON.parse(JSON.stringify({ allMembersData, goalsData, sharepointData }));
   } else {
     allMembersData = FALLBACK_allMembersData;
     goalsData = FALLBACK_goalsData;
     sharepointData = [];
+    loadedSnapshot = null;
   }
   projects = allMembersData['ryan'];
   const savedTab = localStorage.getItem('activeTab');

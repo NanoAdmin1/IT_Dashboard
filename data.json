@@ -2199,6 +2199,20 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "GPO Improvement - Better User Experience",
+        "type": "project",
+        "status": "waiting",
+        "categories": [
+          "security",
+          "infrastructure",
+          "longterm"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ]
   },

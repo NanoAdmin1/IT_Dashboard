@@ -1294,6 +1294,7 @@
           <span class="col-count" id="sp-hd-not-started">0</span>
         </div>
         <div class="cards" id="sp-col-not-started"></div>
+        <div class="add-task-trigger" onclick="showSpAddForm('not-started')">+ Add Task</div>
       </div>
       <div class="column">
         <div class="column-header">
@@ -1302,6 +1303,7 @@
           <span class="col-count" id="sp-hd-in-progress">0</span>
         </div>
         <div class="cards" id="sp-col-in-progress"></div>
+        <div class="add-task-trigger" onclick="showSpAddForm('in-progress')">+ Add Task</div>
       </div>
       <div class="column">
         <div class="column-header">
@@ -1310,6 +1312,7 @@
           <span class="col-count" id="sp-hd-pending">0</span>
         </div>
         <div class="cards" id="sp-col-pending"></div>
+        <div class="add-task-trigger" onclick="showSpAddForm('pending')">+ Add Task</div>
       </div>
       <div class="column">
         <div class="column-header">
@@ -1367,7 +1370,7 @@ async function saveData() {
   }
   try {
     showSaveStatus('Saving...', 'saving');
-    const content = btoa(unescape(encodeURIComponent(JSON.stringify({ allMembersData, goalsData }, null, 2))));
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify({ allMembersData, goalsData, sharepointData }, null, 2))));
 
     // Get latest SHA to avoid conflicts
     const metaResp = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${DATA_FILE}`, {
@@ -2406,6 +2409,8 @@ const expandedCards = new Set();
 
 function renderSharePoint() {
   const statuses = ['not-started', 'in-progress', 'pending', 'completed'];
+  const assigneeColors = { ryan: '#3b82f6', jordan: '#a855f7', blake: '#22c55e', maxime: '#f97316' };
+  const assigneeLabels = { ryan: 'Ryan', jordan: 'Jordan', blake: 'Blake', maxime: 'Maxime' };
   statuses.forEach(s => {
     const container = document.getElementById('sp-col-' + s);
     if (!container) return;
@@ -2418,10 +2423,51 @@ function renderSharePoint() {
       const titleStyle = s === 'completed' ? 'text-decoration:line-through;color:var(--muted);' : '';
       const notesHtml = item.notes ? `<div class="goal-card-notes"><div class="notes-label">Notes</div>${item.notes}</div>` : '';
       if (notesHtml) card.onclick = () => card.classList.toggle('expanded');
-      card.innerHTML = `<div class="goal-card-title" style="${titleStyle}">${item.title}</div>${notesHtml}`;
+      const color = item.assignedTo ? assigneeColors[item.assignedTo] : 'var(--muted)';
+      const label = item.assignedTo ? assigneeLabels[item.assignedTo] : 'Unassigned';
+      const assigneeHtml = `<div style="margin-top:7px;"><span style="font-size:0.7rem;padding:2px 8px;border-radius:4px;background:${color}22;color:${color};border:1px solid ${color}44;">${label}</span></div>`;
+      card.innerHTML = `<div class="goal-card-title" style="${titleStyle}">${item.title}</div>${assigneeHtml}${notesHtml}`;
       container.appendChild(card);
     });
   });
+}
+
+function showSpAddForm(status) {
+  document.querySelectorAll('.sp-add-form').forEach(f => f.remove());
+  const container = document.getElementById('sp-col-' + status);
+  if (!container) return;
+  const form = document.createElement('div');
+  form.className = 'add-task-form sp-add-form';
+  form.onclick = e => e.stopPropagation();
+  form.innerHTML = `
+    <input type="text" placeholder="Task title..." class="new-task-title" onkeydown="if(event.key==='Enter')this.parentElement.querySelector('.add-task-btn').click()">
+    <select class="sp-task-assignee">
+      <option value="">Unassigned</option>
+      <option value="ryan">Ryan</option>
+      <option value="jordan">Jordan</option>
+      <option value="blake">Blake</option>
+      <option value="maxime">Maxime</option>
+    </select>
+    <input type="text" placeholder="Notes (optional)..." class="sp-task-notes" style="margin-top:6px;">
+    <div class="form-actions">
+      <button class="add-task-btn" onclick="submitSpTask(this, '${status}')">Save</button>
+      <button class="cancel-task-btn" onclick="this.closest('.sp-add-form').remove()">Cancel</button>
+    </div>
+  `;
+  container.parentElement.insertBefore(form, container.nextSibling);
+  form.querySelector('.new-task-title').focus();
+}
+
+function submitSpTask(btn, status) {
+  const form = btn.closest('.sp-add-form');
+  const title = form.querySelector('.new-task-title').value.trim();
+  if (!title) { form.querySelector('.new-task-title').style.borderColor = 'var(--red)'; return; }
+  const assignedTo = form.querySelector('.sp-task-assignee').value || null;
+  const notes = form.querySelector('.sp-task-notes').value.trim() || null;
+  sharepointData.push({ title, status, assignedTo, notes });
+  form.remove();
+  renderSharePoint();
+  saveData();
 }
 
 function renderAll() {

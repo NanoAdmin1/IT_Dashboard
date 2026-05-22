@@ -2284,6 +2284,12 @@
       "status": "not-started",
       "assignedTo": "maxime",
       "notes": "With Blake"
+    },
+    {
+      "title": "Quality",
+      "status": "not-started",
+      "assignedTo": "maxime",
+      "notes": null
     }
   ]
 }

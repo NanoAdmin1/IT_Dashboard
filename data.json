@@ -2389,14 +2389,15 @@
       {
         "title": "Install LibreOffice on all Offline Lab PCs",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "lab"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-05-22T19:41:56.668Z"
       }
     ]
   },

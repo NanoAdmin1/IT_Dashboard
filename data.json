@@ -2296,6 +2296,12 @@
       "status": "not-started",
       "assignedTo": "maxime",
       "notes": null
+    },
+    {
+      "title": "5S/Systems",
+      "status": "not-started",
+      "assignedTo": "ryan",
+      "notes": "Christian Lungu and Alan Macfarlane"
     }
   ]
 }

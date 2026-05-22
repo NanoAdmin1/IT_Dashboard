@@ -2250,6 +2250,19 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Fix Immutable ID for Entra Accounts",
+        "type": "task",
+        "status": "not-started",
+        "categories": [
+          "security",
+          "infrastructure"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ]
   },

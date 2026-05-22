@@ -1604,7 +1604,7 @@
       {
         "title": "SharePoint Procurement Migration",
         "type": "project",
-        "status": "in-progress",
+        "status": "waiting",
         "categories": [
           "services"
         ],

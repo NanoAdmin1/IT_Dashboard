@@ -2314,6 +2314,12 @@
       "status": "not-started",
       "assignedTo": "ryan",
       "notes": "Map site overview to the mapping document (as best you can)"
+    },
+    {
+      "title": "Business Development Check-in",
+      "status": "not-started",
+      "assignedTo": "jordan",
+      "notes": "Alex, Andrew and Pierre"
     }
   ]
 }

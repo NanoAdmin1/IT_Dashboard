@@ -2130,7 +2130,51 @@
       }
     ],
     "blake": [],
-    "maxime": []
+    "maxime": [
+      {
+        "title": "Intune Autopilot",
+        "type": "project",
+        "status": "in-progress",
+        "categories": [
+          "security",
+          "infrastructure",
+          "longterm"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
+        "title": "Veeam Backup Upgrade",
+        "type": "project",
+        "status": "in-progress",
+        "categories": [
+          "networking",
+          "security",
+          "infrastructure"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
+        "title": "Island Browser Enforcement",
+        "type": "project",
+        "status": "in-progress",
+        "categories": [
+          "security",
+          "infrastructure",
+          "services",
+          "longterm"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      }
+    ]
   },
   "goalsData": {
     "company": [
@@ -2295,36 +2339,6 @@
       "title": "Pilote Plant Commercialization",
       "status": "not-started",
       "assignedTo": "maxime",
-      "notes": null
-    },
-    {
-      "title": "5S/Systems",
-      "status": "not-started",
-      "assignedTo": "ryan",
-      "notes": "Christian Lungu and Alan Macfarlane"
-    },
-    {
-      "title": "P&C Subsite Share ENV",
-      "status": "not-started",
-      "assignedTo": "jordan",
-      "notes": null
-    },
-    {
-      "title": "Procurement/Supply Chain",
-      "status": "not-started",
-      "assignedTo": "ryan",
-      "notes": "Map site overview to the mapping document (as best you can)"
-    },
-    {
-      "title": "Business Development Check-in",
-      "status": "not-started",
-      "assignedTo": "jordan",
-      "notes": "Alex, Andrew and Pierre"
-    },
-    {
-      "title": "Policies & Procedures",
-      "status": "not-started",
-      "assignedTo": "blake",
       "notes": null
     }
   ]

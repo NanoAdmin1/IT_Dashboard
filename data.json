@@ -2289,6 +2289,12 @@
       "status": "not-started",
       "assignedTo": "jordan",
       "notes": null
+    },
+    {
+      "title": "Nano One Projects",
+      "status": "not-started",
+      "assignedTo": "maxime",
+      "notes": "With Blake"
     }
   ]
 }

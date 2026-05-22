@@ -2150,7 +2150,243 @@
       }
     ],
     "blake": [],
-    "maxime": []
+    "maxime": [
+      {
+        "title": "Intune Autopilot",
+        "type": "project",
+        "status": "in-progress",
+        "categories": [
+          "security",
+          "infrastructure",
+          "longterm"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
+        "title": "Veeam Backup Upgrade",
+        "type": "project",
+        "status": "in-progress",
+        "categories": [
+          "networking",
+          "security",
+          "infrastructure"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
+        "title": "Island Browser Enforcement",
+        "type": "project",
+        "status": "in-progress",
+        "categories": [
+          "security",
+          "infrastructure",
+          "services",
+          "longterm"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
+        "title": "External (Outside) AP for Consultants",
+        "type": "task",
+        "status": "waiting",
+        "categories": [
+          "networking",
+          "security",
+          "infrastructure"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
+        "title": "WinXP PC in XRD Lab - sys32 Repair",
+        "type": "task",
+        "status": "waiting",
+        "categories": [
+          "lab"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
+        "title": "GPO Improvement - Better User Experience",
+        "type": "project",
+        "status": "waiting",
+        "categories": [
+          "security",
+          "infrastructure",
+          "longterm"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
+        "title": "Production SP Migration",
+        "type": "task",
+        "status": "not-started",
+        "categories": [
+          "services"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
+        "title": "SIMDUT EHS Training",
+        "type": "task",
+        "status": "not-started",
+        "categories": [
+          "certification"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
+        "title": "Create SP Training Documentation",
+        "type": "task",
+        "status": "not-started",
+        "categories": [
+          "services",
+          "longterm"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
+        "title": "Fix Immutable ID for Entra Accounts",
+        "type": "task",
+        "status": "not-started",
+        "categories": [
+          "security",
+          "infrastructure"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
+        "title": "Install Island to TruPoint VM",
+        "type": "task",
+        "status": "not-started",
+        "categories": [
+          "security"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
+        "title": "CompTIA A+",
+        "type": "task",
+        "status": "study",
+        "categories": [
+          "certification"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
+        "title": "Find New Weekly Training Program",
+        "type": "task",
+        "status": "study",
+        "categories": [
+          "certification"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
+        "title": "CDW Hardware Upgrade",
+        "type": "project",
+        "status": "completed",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": [],
+        "completedAt": "2026-05-22T17:36:06.681Z"
+      },
+      {
+        "title": "Dynamic Groups Burnaby",
+        "type": "task",
+        "status": "completed",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": [],
+        "completedAt": "2026-05-22T17:36:21.964Z"
+      },
+      {
+        "title": "Broken Computer in Control Room",
+        "type": "task",
+        "status": "completed",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": [],
+        "completedAt": "2026-05-22T17:36:36.132Z"
+      },
+      {
+        "title": "LifePower Conference Room Down",
+        "type": "task",
+        "status": "completed",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": [],
+        "completedAt": "2026-05-22T17:36:48.390Z"
+      },
+      {
+        "title": "Crowdstrike Renewal",
+        "type": "task",
+        "status": "completed",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": [],
+        "completedAt": "2026-05-22T17:37:03.015Z"
+      },
+      {
+        "title": "Darktrace Appliance Issue",
+        "type": "task",
+        "status": "completed",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": [],
+        "completedAt": "2026-05-22T17:37:14.305Z"
+      }
+    ]
   },
   "goalsData": {
     "company": [
@@ -2318,10 +2554,10 @@
       "notes": null
     },
     {
-      "title": "5S/Systems",
+      "title": "test",
       "status": "not-started",
-      "assignedTo": "ryan",
-      "notes": "Christian Lungu and Alan Macfarlane"
+      "assignedTo": null,
+      "notes": null
     }
   ]
 }

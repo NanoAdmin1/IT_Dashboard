@@ -2225,6 +2225,18 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "SIMDUT EHS Training",
+        "type": "task",
+        "status": "not-started",
+        "categories": [
+          "certification"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ]
   },

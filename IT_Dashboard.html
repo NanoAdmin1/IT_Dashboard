@@ -1010,6 +1010,7 @@
   <button class="tab-btn" onclick="switchTab('jordan', this)">Jordan Graham</button>
   <button class="tab-btn" onclick="switchTab('blake', this)">Blake Wickman</button>
   <button class="tab-btn" onclick="switchTab('maxime', this)">Maxime Archambault</button>
+  <button class="tab-btn" onclick="switchTab('sharepoint', this)">SharePoint</button>
 </div>
 
 <div class="main">
@@ -1283,6 +1284,44 @@
 
   </div>
 
+  <!-- SharePoint Tab -->
+  <div id="sharepoint-section" style="display:none;">
+    <div class="goals-board">
+      <div class="column">
+        <div class="column-header">
+          <div class="dot" style="background:var(--gray)"></div>
+          <h2>Not Started</h2>
+          <span class="col-count" id="sp-hd-not-started">0</span>
+        </div>
+        <div class="cards" id="sp-col-not-started"></div>
+      </div>
+      <div class="column">
+        <div class="column-header">
+          <div class="dot" style="background:var(--green)"></div>
+          <h2>In Progress</h2>
+          <span class="col-count" id="sp-hd-in-progress">0</span>
+        </div>
+        <div class="cards" id="sp-col-in-progress"></div>
+      </div>
+      <div class="column">
+        <div class="column-header">
+          <div class="dot" style="background:var(--yellow)"></div>
+          <h2>Pending</h2>
+          <span class="col-count" id="sp-hd-pending">0</span>
+        </div>
+        <div class="cards" id="sp-col-pending"></div>
+      </div>
+      <div class="column">
+        <div class="column-header">
+          <div class="dot" style="background:var(--blue)"></div>
+          <h2>Completed</h2>
+          <span class="col-count" id="sp-hd-completed">0</span>
+        </div>
+        <div class="cards" id="sp-col-completed"></div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <script src="desk365_data.js"></script>
@@ -1386,6 +1425,7 @@ function promptToken() {
 // --- Data (loaded async, fallback to inline) ---
 let allMembersData = {};
 let goalsData = {};
+let sharepointData = [];
 
 const FALLBACK_allMembersData = {
   ryan: [
@@ -2203,9 +2243,11 @@ async function initData() {
   if (loaded) {
     allMembersData = loaded.allMembersData;
     goalsData = loaded.goalsData;
+    sharepointData = loaded.sharepointData || [];
   } else {
     allMembersData = FALLBACK_allMembersData;
     goalsData = FALLBACK_goalsData;
+    sharepointData = [];
   }
   projects = allMembersData['ryan'];
   const savedTab = localStorage.getItem('activeTab');
@@ -2240,6 +2282,7 @@ function switchTab(member, btn) {
   const boardEl = document.querySelector('.board');
   const goalsSection = document.getElementById('goals-section');
   const desk365Section = document.getElementById('desk365-section');
+  const sharepointSection = document.getElementById('sharepoint-section');
 
   if (member === 'goals') {
     projectBoard.style.display = 'none';
@@ -2247,7 +2290,19 @@ function switchTab(member, btn) {
     boardEl.style.display = 'none';
     goalsSection.style.display = '';
     desk365Section.style.display = 'none';
+    sharepointSection.style.display = 'none';
     renderGoals();
+    return;
+  }
+
+  if (member === 'sharepoint') {
+    projectBoard.style.display = 'none';
+    filtersEl.style.display = 'none';
+    boardEl.style.display = 'none';
+    goalsSection.style.display = 'none';
+    desk365Section.style.display = 'none';
+    sharepointSection.style.display = '';
+    renderSharePoint();
     return;
   }
 
@@ -2255,6 +2310,7 @@ function switchTab(member, btn) {
   filtersEl.style.display = '';
   boardEl.style.display = '';
   goalsSection.style.display = 'none';
+  sharepointSection.style.display = 'none';
 
   if (member === 'ryan') {
     desk365Section.style.display = '';
@@ -2347,6 +2403,26 @@ function renderGoals() {
 }
 
 const expandedCards = new Set();
+
+function renderSharePoint() {
+  const statuses = ['not-started', 'in-progress', 'pending', 'completed'];
+  statuses.forEach(s => {
+    const container = document.getElementById('sp-col-' + s);
+    if (!container) return;
+    container.innerHTML = '';
+    const items = (sharepointData || []).filter(item => item.status === s);
+    document.getElementById('sp-hd-' + s).textContent = items.length;
+    items.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'goal-card';
+      const titleStyle = s === 'completed' ? 'text-decoration:line-through;color:var(--muted);' : '';
+      const notesHtml = item.notes ? `<div class="goal-card-notes"><div class="notes-label">Notes</div>${item.notes}</div>` : '';
+      if (notesHtml) card.onclick = () => card.classList.toggle('expanded');
+      card.innerHTML = `<div class="goal-card-title" style="${titleStyle}">${item.title}</div>${notesHtml}`;
+      container.appendChild(card);
+    });
+  });
+}
 
 function renderAll() {
   const statuses = ['in-progress', 'waiting', 'not-started', 'blocked', 'study', 'completed-projects', 'completed-tasks'];

@@ -485,6 +485,7 @@
   .card-status-badge.st-waiting { background: var(--yellow-bg); color: var(--yellow); }
   .card-status-badge.st-blocked { background: var(--red-bg); color: var(--red); }
   .card-status-badge.st-study { background: #422006; color: var(--orange); }
+  .card-status-badge.st-pending { background: var(--blue-bg); color: var(--blue); }
 
   /* Delete button */
   .card-delete {
@@ -2475,29 +2476,230 @@ function renderGoals() {
 
 const expandedCards = new Set();
 
+const SP_STATUS_CYCLE = ['not-started', 'in-progress', 'pending', 'completed'];
+const SP_STATUS_LABEL = { 'not-started': 'Not Started', 'in-progress': 'In Progress', 'pending': 'Pending', 'completed': 'Completed' };
+const SP_ASSIGNEE_COLORS = { ryan: '#3b82f6', jordan: '#a855f7', blake: '#22c55e', maxime: '#f97316' };
+const SP_ASSIGNEE_LABELS = { ryan: 'Ryan', jordan: 'Jordan', blake: 'Blake', maxime: 'Maxime' };
+const spExpandedCards = new Set();
+
 function renderSharePoint() {
   const statuses = ['not-started', 'in-progress', 'pending', 'completed'];
-  const assigneeColors = { ryan: '#3b82f6', jordan: '#a855f7', blake: '#22c55e', maxime: '#f97316' };
-  const assigneeLabels = { ryan: 'Ryan', jordan: 'Jordan', blake: 'Blake', maxime: 'Maxime' };
   statuses.forEach(s => {
     const container = document.getElementById('sp-col-' + s);
     if (!container) return;
     container.innerHTML = '';
     const items = (sharepointData || []).filter(item => item.status === s);
     document.getElementById('sp-hd-' + s).textContent = items.length;
-    items.forEach(item => {
+
+    items.forEach((item, localIdx) => {
+      const idx = sharepointData.indexOf(item);
       const card = document.createElement('div');
-      card.className = 'goal-card';
-      const titleStyle = s === 'completed' ? 'text-decoration:line-through;color:var(--muted);' : '';
-      const notesHtml = item.notes ? `<div class="goal-card-notes"><div class="notes-label">Notes</div>${item.notes}</div>` : '';
-      if (notesHtml) card.onclick = () => card.classList.toggle('expanded');
-      const color = item.assignedTo ? assigneeColors[item.assignedTo] : 'var(--muted)';
-      const label = item.assignedTo ? assigneeLabels[item.assignedTo] : 'Unassigned';
-      const assigneeHtml = `<div style="margin-top:7px;"><span style="font-size:0.7rem;padding:2px 8px;border-radius:4px;background:${color}22;color:${color};border:1px solid ${color}44;">${label}</span></div>`;
-      card.innerHTML = `<div class="goal-card-title" style="${titleStyle}">${item.title}</div>${assigneeHtml}${notesHtml}`;
+      card.className = 'card';
+
+      const isCompleted = s === 'completed';
+
+      // Delete button
+      const deleteBtn = `<button class="card-delete" onclick="deleteSpTask(event, ${idx})" title="Delete">&times;</button>`;
+
+      // Assignee chip
+      const color = item.assignedTo ? SP_ASSIGNEE_COLORS[item.assignedTo] : 'var(--muted)';
+      const label = item.assignedTo ? SP_ASSIGNEE_LABELS[item.assignedTo] : 'Unassigned';
+      const assigneeHtml = `<div style="margin-top:6px;"><span style="font-size:0.7rem;padding:2px 8px;border-radius:4px;background:${color}22;color:${color};border:1px solid ${color}44;">${label}</span></div>`;
+
+      if (isCompleted) {
+        card.style.padding = '8px 12px';
+        const notesHtml = item.notes ? `<div class="card-notes"><div class="notes-label">Notes</div><span class="notes-content">${item.notes}</span></div>` : '';
+        card.innerHTML = `
+          ${deleteBtn}
+          <div class="card-title" style="margin-bottom:0;font-size:0.8rem;color:var(--muted);">${item.title}</div>
+          ${assigneeHtml}
+          ${notesHtml}
+        `;
+        card.onclick = () => card.classList.toggle('expanded');
+      } else {
+        // Status badge
+        const statusBadge = `<span class="card-status-badge st-${s}" onclick="cycleSpStatus(event, ${idx})" title="Click to change status">${SP_STATUS_LABEL[s]}</span>`;
+
+        // Notes
+        const notesHtml = item.notes
+          ? `<div class="card-notes"><div class="notes-label">Notes</div><span class="notes-content editable" ondblclick="startEditSpNotes(event, ${idx})">${item.notes}</span></div>`
+          : `<div class="card-notes"><button class="add-subtask-trigger" onclick="addSpNotes(event, ${idx})">+ Add Notes</button></div>`;
+
+        // Subtasks
+        let subtasksHtml = '';
+        if (item.subtasks && item.subtasks.length > 0) {
+          const doneCount = item.subtasks.filter(sub => sub.status === 'done').length;
+          const total = item.subtasks.length;
+          const pct = Math.round((doneCount / total) * 100);
+          const subItems = item.subtasks.map((sub, si) => {
+            const subLabel = sub.status === 'not-started' ? 'Not Started' : sub.status === 'in-progress' ? 'In Progress' : 'Done';
+            return `<div class="subtask ${sub.status === 'done' ? 'is-done' : ''}">
+              <span class="subtask-status ${sub.status} clickable" onclick="cycleSpSubtask(event, ${idx}, ${si})">${subLabel}</span>
+              <span class="subtask-title">${sub.title}</span>
+            </div>`;
+          }).join('');
+          subtasksHtml = `<div class="card-subtasks">
+            <div class="subtasks-label">Subtasks</div>
+            ${subItems}
+            <div class="subtask-progress">
+              <div class="subtask-progress-bar"><div class="subtask-progress-fill" style="width:${pct}%"></div></div>
+              <span class="subtask-progress-text">${doneCount}/${total}</span>
+            </div>
+            <button class="add-subtask-trigger" onclick="showAddSpSubtaskForm(event, ${idx})">+ Add Subtask</button>
+          </div>`;
+        } else {
+          subtasksHtml = `<div class="card-subtasks">
+            <div class="subtasks-label">Subtasks</div>
+            <div style="font-size:0.72rem;color:var(--muted);font-style:italic;">No subtasks yet</div>
+            <button class="add-subtask-trigger" onclick="showAddSpSubtaskForm(event, ${idx})">+ Add Subtask</button>
+          </div>`;
+        }
+
+        card.innerHTML = `
+          ${deleteBtn}
+          <div class="card-title editable" ondblclick="startEditSpTitle(event, ${idx})">${item.title}</div>
+          <div>${statusBadge}</div>
+          ${assigneeHtml}
+          ${subtasksHtml}
+          ${notesHtml}
+        `;
+
+        card.onclick = () => {
+          card.classList.toggle('expanded');
+          if (card.classList.contains('expanded')) spExpandedCards.add(idx);
+          else spExpandedCards.delete(idx);
+        };
+      }
+
+      if (spExpandedCards.has(idx)) card.classList.add('expanded');
       container.appendChild(card);
     });
   });
+}
+
+// SP Status cycling
+function cycleSpStatus(event, idx) {
+  event.stopPropagation();
+  const item = sharepointData[idx];
+  const cur = SP_STATUS_CYCLE.indexOf(item.status);
+  item.status = SP_STATUS_CYCLE[(cur + 1) % SP_STATUS_CYCLE.length];
+  renderSharePoint();
+  saveData();
+}
+
+// SP Delete
+function deleteSpTask(event, idx) {
+  event.stopPropagation();
+  if (!confirm(`Delete "${sharepointData[idx].title}"?`)) return;
+  sharepointData.splice(idx, 1);
+  renderSharePoint();
+  saveData();
+}
+
+// SP Subtask cycling
+function cycleSpSubtask(event, idx, subIdx) {
+  event.stopPropagation();
+  const sub = sharepointData[idx].subtasks[subIdx];
+  const cur = SUBTASK_CYCLE.indexOf(sub.status);
+  sub.status = SUBTASK_CYCLE[(cur + 1) % SUBTASK_CYCLE.length];
+  renderSharePoint();
+  saveData();
+}
+
+// SP Add subtask form
+function showAddSpSubtaskForm(event, idx) {
+  event.stopPropagation();
+  document.querySelectorAll('.add-subtask-form').forEach(f => f.remove());
+  const card = event.target.closest('.card');
+  const subtasksDiv = card.querySelector('.card-subtasks');
+  if (!subtasksDiv) return;
+  const form = document.createElement('div');
+  form.className = 'add-subtask-form';
+  form.style.cssText = 'display:flex;gap:6px;margin-top:6px;align-items:center;';
+  form.onclick = e => e.stopPropagation();
+  form.innerHTML = `
+    <input type="text" placeholder="Subtask title..." style="flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:4px;color:var(--text);padding:4px 8px;font-size:0.75rem;outline:none;font-family:inherit;" onkeydown="if(event.key==='Enter')this.nextElementSibling.click()">
+    <button style="background:var(--blue);border:none;border-radius:4px;color:#fff;padding:4px 10px;font-size:0.72rem;cursor:pointer;font-family:inherit;" onclick="submitSpSubtask(this, ${idx})">Add</button>
+    <button style="background:transparent;border:1px solid var(--border);border-radius:4px;color:var(--muted);padding:4px 8px;font-size:0.72rem;cursor:pointer;font-family:inherit;" onclick="this.parentElement.remove()">X</button>
+  `;
+  subtasksDiv.appendChild(form);
+  form.querySelector('input').focus();
+}
+
+function submitSpSubtask(btn, idx) {
+  const title = btn.parentElement.querySelector('input').value.trim();
+  if (!title) return;
+  if (!sharepointData[idx].subtasks) sharepointData[idx].subtasks = [];
+  sharepointData[idx].subtasks.push({ title, status: 'not-started' });
+  renderSharePoint();
+  saveData();
+}
+
+// SP Notes editing
+function addSpNotes(event, idx) {
+  event.stopPropagation();
+  const card = event.target.closest('.card');
+  const notesDiv = card.querySelector('.card-notes');
+  notesDiv.innerHTML = `<div class="notes-label">Notes</div>`;
+  const textarea = document.createElement('textarea');
+  textarea.className = 'editing';
+  textarea.value = '';
+  textarea.rows = 3;
+  textarea.onclick = e => e.stopPropagation();
+  textarea.onblur = () => finishEditSpNotes(textarea, idx);
+  textarea.onkeydown = e => { if (e.key === 'Escape') { textarea.dataset.cancel = '1'; textarea.blur(); } };
+  notesDiv.appendChild(textarea);
+  textarea.focus();
+}
+
+function startEditSpNotes(event, idx) {
+  event.stopPropagation();
+  const notesEl = event.target.closest('.card-notes');
+  const textarea = document.createElement('textarea');
+  textarea.className = 'editing';
+  textarea.value = sharepointData[idx].notes || '';
+  textarea.rows = 3;
+  textarea.onclick = e => e.stopPropagation();
+  textarea.onblur = () => finishEditSpNotes(textarea, idx);
+  textarea.onkeydown = e => { if (e.key === 'Escape') { textarea.dataset.cancel = '1'; textarea.blur(); } };
+  const contentEl = notesEl.querySelector('.notes-content') || notesEl;
+  contentEl.replaceWith(textarea);
+  textarea.focus();
+}
+
+function finishEditSpNotes(textarea, idx) {
+  if (textarea.dataset.cancel === '1') { renderSharePoint(); return; }
+  const val = textarea.value.trim();
+  sharepointData[idx].notes = val || null;
+  saveData();
+  renderSharePoint();
+}
+
+// SP Title editing
+function startEditSpTitle(event, idx) {
+  event.stopPropagation();
+  const card = event.target.closest('.card');
+  const titleEl = card.querySelector('.card-title');
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.className = 'editing';
+  input.value = sharepointData[idx].title;
+  input.onclick = e => e.stopPropagation();
+  input.onblur = () => finishEditSpTitle(input, idx);
+  input.onkeydown = e => {
+    if (e.key === 'Enter') input.blur();
+    if (e.key === 'Escape') { input.dataset.cancel = '1'; input.blur(); }
+  };
+  titleEl.replaceWith(input);
+  input.select();
+}
+
+function finishEditSpTitle(input, idx) {
+  if (input.dataset.cancel === '1') { renderSharePoint(); return; }
+  const val = input.value.trim();
+  if (val) sharepointData[idx].title = val;
+  saveData();
+  renderSharePoint();
 }
 
 function showSpAddForm(status) {
@@ -2532,7 +2734,7 @@ function submitSpTask(btn, status) {
   if (!title) { form.querySelector('.new-task-title').style.borderColor = 'var(--red)'; return; }
   const assignedTo = form.querySelector('.sp-task-assignee').value || null;
   const notes = form.querySelector('.sp-task-notes').value.trim() || null;
-  sharepointData.push({ title, status, assignedTo, notes });
+  sharepointData.push({ title, status, assignedTo, notes, subtasks: [] });
   form.remove();
   renderSharePoint();
   saveData();

@@ -2343,6 +2343,16 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-05-22T17:36:48.390Z"
+      },
+      {
+        "title": "Crowdstrike Renewal",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ]
   },

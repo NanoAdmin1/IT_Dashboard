@@ -621,12 +621,13 @@
       {
         "title": "New Laptop for Marcus Gian",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
-        "notes": "Onboarding of Marcus Gian."
+        "notes": "Onboarding of Marcus Gian.",
+        "completedAt": "2026-05-22T16:44:02.648Z"
       },
       {
         "title": "Investigate MDM GPO errors",
@@ -2131,263 +2132,14 @@
     "blake": [],
     "maxime": [
       {
-        "title": "Intune Autopilot",
-        "type": "project",
+        "title": "test",
+        "type": "task",
         "status": "in-progress",
-        "categories": [
-          "security",
-          "infrastructure",
-          "longterm"
-        ],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": []
-      },
-      {
-        "title": "External (Outside) AP for Consultants",
-        "type": "task",
-        "status": "waiting",
-        "categories": [
-          "networking",
-          "security",
-          "infrastructure"
-        ],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": []
-      },
-      {
-        "title": "Veeam Backup Upgrade",
-        "type": "project",
-        "status": "in-progress",
-        "categories": [
-          "networking",
-          "security",
-          "infrastructure"
-        ],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": []
-      },
-      {
-        "title": "Production SharePoint Migration",
-        "type": "task",
-        "status": "not-started",
-        "categories": [
-          "services"
-        ],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": []
-      },
-      {
-        "title": "SIMDUT EHS Training",
-        "type": "task",
-        "status": "not-started",
-        "categories": [
-          "certification"
-        ],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": []
-      },
-      {
-        "title": "Create SharePoint Training Documentation",
-        "type": "task",
-        "status": "not-started",
-        "categories": [
-          "longterm",
-          "services"
-        ],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": []
-      },
-      {
-        "title": "CompTIA A+",
-        "type": "task",
-        "status": "study",
-        "categories": [
-          "certification"
-        ],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": []
-      },
-      {
-        "title": "Find New Weekly Training Program",
-        "type": "task",
-        "status": "study",
-        "categories": [
-          "certification"
-        ],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": []
-      },
-      {
-        "title": "Fix Immutable ID for Entra Accounts",
-        "type": "task",
-        "status": "not-started",
-        "categories": [
-          "security",
-          "infrastructure"
-        ],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": []
-      },
-      {
-        "title": "WinXP PC in XRD Lab - Sys32 Repair",
-        "type": "task",
-        "status": "waiting",
-        "categories": [
-          "lab"
-        ],
-        "blocker": null,
-        "notes": "Need more testing with VMs in a safe environment since WinXP is no longer supported by Microsoft",
-        "resolution": null,
-        "subtasks": []
-      },
-      {
-        "title": "Island Browser Enforcement",
-        "type": "project",
-        "status": "in-progress",
-        "categories": [
-          "security",
-          "infrastructure",
-          "services",
-          "longterm"
-        ],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": []
-      },
-      {
-        "title": "GPO Improvements - Better User Experience",
-        "type": "project",
-        "status": "waiting",
-        "categories": [
-          "security",
-          "infrastructure",
-          "longterm"
-        ],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": []
-      },
-      {
-        "title": "Install Island on TruPoint VM",
-        "type": "task",
-        "status": "waiting",
-        "categories": [
-          "security",
-          "infrastructure"
-        ],
-        "blocker": null,
-        "notes": "Before Island Browser Enforcement in place",
-        "resolution": null,
-        "subtasks": []
-      },
-      {
-        "title": "SharePoint Training for Plant staff",
-        "type": "task",
-        "status": "not-started",
         "categories": [],
         "blocker": null,
         "notes": null,
         "resolution": null,
         "subtasks": []
-      },
-      {
-        "title": "Find EUD replacements for Candiac and Burnaby",
-        "type": "task",
-        "status": "completed",
-        "categories": [],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": [],
-        "completedAt": "2026-05-21T19:03:21.487Z"
-      },
-      {
-        "title": "Dynamic Groups for Burnaby",
-        "type": "task",
-        "status": "completed",
-        "categories": [
-          "security",
-          "infrastructure"
-        ],
-        "blocker": null,
-        "notes": "Completed with Jordan",
-        "resolution": null,
-        "subtasks": [],
-        "completedAt": "2026-05-21T19:03:48.622Z"
-      },
-      {
-        "title": "Broken Computer in Control Room",
-        "type": "task",
-        "status": "completed",
-        "categories": [],
-        "blocker": null,
-        "notes": "Device replaced with one of the new EUD",
-        "resolution": null,
-        "subtasks": [],
-        "completedAt": "2026-05-21T19:04:28.671Z"
-      },
-      {
-        "title": "LifePower Conference room PC Issue",
-        "type": "task",
-        "status": "completed",
-        "categories": [
-          "infrastructure"
-        ],
-        "blocker": null,
-        "notes": "Faulty hardware was swapped from known good hardware from the faulty hardware from OnePot",
-        "resolution": null,
-        "subtasks": [],
-        "completedAt": "2026-05-21T19:06:06.447Z"
-      },
-      {
-        "title": "Crowdstrike Renewal",
-        "type": "task",
-        "status": "completed",
-        "categories": [
-          "networking",
-          "security",
-          "infrastructure"
-        ],
-        "blocker": null,
-        "notes": "Completed",
-        "resolution": null,
-        "subtasks": [],
-        "completedAt": "2026-05-21T19:06:27.363Z"
-      },
-      {
-        "title": "Darktrace Appliance Issue",
-        "type": "task",
-        "status": "completed",
-        "categories": [
-          "networking",
-          "security",
-          "infrastructure"
-        ],
-        "blocker": null,
-        "notes": "New appliance installed and old one returned.",
-        "resolution": null,
-        "subtasks": [],
-        "completedAt": "2026-05-21T19:06:53.654Z"
       }
     ]
   },

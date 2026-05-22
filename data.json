@@ -1579,26 +1579,6 @@
         "notes": "Perry's microbalance is now successfully connected to his laptop. Full integration in progress."
       },
       {
-        "title": "SharePoint Systems Migration",
-        "type": "project",
-        "status": "in-progress",
-        "categories": [
-          "services"
-        ],
-        "blocker": null,
-        "notes": "Contact Christian Lungu."
-      },
-      {
-        "title": "SharePoint Procurement Migration",
-        "type": "project",
-        "status": "in-progress",
-        "categories": [
-          "services"
-        ],
-        "blocker": null,
-        "notes": "Check in with Maryam to see what needs to be done."
-      },
-      {
         "title": "Set-up AP08",
         "type": "task",
         "status": "completed",
@@ -2554,10 +2534,22 @@
       "notes": null
     },
     {
-      "title": "test",
+      "title": "Systems/5S",
       "status": "not-started",
-      "assignedTo": null,
+      "assignedTo": "ryan",
       "notes": null
+    },
+    {
+      "title": "Procurement Check-in",
+      "status": "not-started",
+      "assignedTo": "ryan",
+      "notes": null
+    },
+    {
+      "title": "P&C Subsite Share ENV",
+      "status": "not-started",
+      "assignedTo": "jordan",
+      "notes": "Check in with Kelli"
     }
   ]
 }

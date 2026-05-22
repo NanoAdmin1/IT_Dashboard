@@ -2572,8 +2572,24 @@ function renderSharePoint() {
       }
 
       if (spExpandedCards.has(idx)) card.classList.add('expanded');
+
+      // Drag and drop for non-completed cards
+      if (!isCompleted) {
+        card.draggable = true;
+        card.ondragstart = (e) => onSpDragStart(e, idx);
+        card.ondragend = onSpDragEnd;
+      }
+
       container.appendChild(card);
     });
+
+    // Column drop targets
+    const colEl = container.closest('.column');
+    if (colEl) {
+      colEl.ondragover = onColumnDragOver;
+      colEl.ondragleave = onColumnDragLeave;
+      colEl.ondrop = (e) => onSpColumnDrop(e, s);
+    }
   });
 }
 
@@ -3233,6 +3249,7 @@ function finishEditBlocker(textarea, memberKey, taskIdx) {
 // 4. Drag and Drop
 let draggedTaskIdx = null;
 let draggedMemberKey = null;
+let draggedSpIdx = null;
 
 function onDragStart(event, memberKey, taskIdx) {
   draggedTaskIdx = taskIdx;
@@ -3283,6 +3300,32 @@ function onColumnDrop(event, targetStatus) {
   }
   projects = allMembersData[activeMember];
   renderAll();
+  saveData();
+}
+
+// 4b. SharePoint Drag and Drop
+function onSpDragStart(event, idx) {
+  draggedSpIdx = idx;
+  event.target.classList.add('dragging');
+  event.dataTransfer.effectAllowed = 'move';
+  event.dataTransfer.setData('text/plain', idx.toString());
+}
+
+function onSpDragEnd(event) {
+  event.target.classList.remove('dragging');
+  document.querySelectorAll('.column-drop-target').forEach(c => c.classList.remove('column-drop-target'));
+  draggedSpIdx = null;
+}
+
+function onSpColumnDrop(event, targetStatus) {
+  event.preventDefault();
+  const col = event.target.closest('.column');
+  if (col) col.classList.remove('column-drop-target');
+  if (draggedSpIdx === null) return;
+  const item = sharepointData[draggedSpIdx];
+  if (!item || item.status === targetStatus) return;
+  item.status = targetStatus;
+  renderSharePoint();
   saveData();
 }
 

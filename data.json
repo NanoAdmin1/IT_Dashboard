@@ -2237,6 +2237,19 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Create SP Training Documentation",
+        "type": "task",
+        "status": "not-started",
+        "categories": [
+          "services",
+          "longterm"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ]
   },

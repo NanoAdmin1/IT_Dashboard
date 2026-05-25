@@ -1352,7 +1352,7 @@ async function loadData() {
   if (githubToken) {
     try {
       const resp = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${DATA_FILE}?t=${Date.now()}`, {
-        headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github.v3+json', 'Cache-Control': 'no-cache' }
+        headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github.v3+json' }
       });
       if (resp.ok) {
         const meta = await resp.json();

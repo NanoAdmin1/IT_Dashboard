@@ -1489,7 +1489,22 @@ function promptToken() {
   if (token) {
     githubToken = token.trim();
     localStorage.setItem('gh_dashboard_token', githubToken);
-    showSaveStatus('Token saved ✓', 'success');
+    showSaveStatus('Loading data from GitHub...', 'saving');
+    loadData().then(loaded => {
+      if (loaded) {
+        allMembersData = loaded.allMembersData;
+        goalsData = loaded.goalsData;
+        sharepointData = loaded.sharepointData || [];
+        loadedSnapshot = JSON.parse(JSON.stringify({ allMembersData, goalsData, sharepointData }));
+        projects = allMembersData[activeMember] || allMembersData['ryan'];
+        renderGoals();
+        if (activeMember !== 'goals') renderAll();
+        if (activeMember === 'sharepoint') renderSharePoint();
+        showSaveStatus('Data loaded ✓', 'success');
+      } else {
+        showSaveStatus('Token saved — could not load data', 'error');
+      }
+    });
   }
 }
 

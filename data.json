@@ -1594,7 +1594,7 @@
       {
         "title": "SharePoint Systems Migration",
         "type": "project",
-        "status": "waiting",
+        "status": "in-progress",
         "categories": [
           "services"
         ],

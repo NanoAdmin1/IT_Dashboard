@@ -1347,30 +1347,29 @@ let dataSha = null; // needed for GitHub API updates
 
 async function loadData() {
   try {
-    // Try loading from GitHub API first (gets us the SHA for updates)
-    if (githubToken) {
-      const resp = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${DATA_FILE}?t=${Date.now()}`, {
-        headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github.v3+json', 'Cache-Control': 'no-cache' }
-      });
-      if (resp.ok) {
-        const meta = await resp.json();
-        dataSha = meta.sha;
-        // GitHub returns base64-encoded UTF-8. atob() yields a binary string,
-        // so we must round-trip through TextDecoder to preserve non-ASCII chars
-        // (e.g. ≥, é) — otherwise UTF-8 bytes are read as Latin-1 = mojibake.
-        const bytes = Uint8Array.from(atob(meta.content), c => c.charCodeAt(0));
-        const text = new TextDecoder('utf-8').decode(bytes);
-        const content = JSON.parse(text);
-        return content;
-      } else {
-        let body = '';
-        try { body = await resp.text(); } catch(_) {}
-        console.error(`GitHub API error: HTTP ${resp.status} ${resp.statusText}`, body);
-        showSaveStatus(`GitHub error: ${resp.status} ${resp.statusText}`, 'error');
+    // Repo is public — fetch raw content directly (no token needed, no CORS issues)
+    const rawUrl = `https://raw.githubusercontent.com/${GITHUB_REPO}/main/${DATA_FILE}?t=${Date.now()}`;
+    const rawResp = await fetch(rawUrl, { cache: 'no-store' });
+    if (rawResp.ok) {
+      const content = await rawResp.json();
+      // Also fetch SHA via API if we have a token (needed for saving)
+      if (githubToken) {
+        try {
+          const metaResp = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${DATA_FILE}`, {
+            headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github.v3+json' }
+          });
+          if (metaResp.ok) {
+            const meta = await metaResp.json();
+            dataSha = meta.sha;
+          }
+        } catch(_) { /* SHA fetch failed — saves won't work but reads are fine */ }
       }
+      return content;
+    } else {
+      showSaveStatus(`Load failed: HTTP ${rawResp.status}`, 'error');
     }
   } catch (e) {
-    console.error('Failed to load from GitHub:', e);
+    console.error('Failed to load data:', e);
     showSaveStatus(`Load failed: ${e.message}`, 'error');
   }
   return null;

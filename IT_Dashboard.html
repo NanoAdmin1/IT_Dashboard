@@ -1396,7 +1396,12 @@ async function saveData() {
     let mergedGoals = goalsData;
     let mergedSharepoint = sharepointData;
 
-    if (metaResp.ok) {
+    if (!metaResp.ok) {
+      const errBody = await metaResp.json().catch(() => ({}));
+      showSaveStatus(`Save failed: could not fetch SHA (${metaResp.status} ${errBody.message || ''})`, 'error');
+      return;
+    }
+    {
       const meta = await metaResp.json();
       dataSha = meta.sha;
 

@@ -1002,6 +1002,7 @@
   </div>
   <div class="header-actions">
     <span class="save-status" id="save-status"></span>
+    <span id="dash-version" style="font-size:10px;opacity:0.4;margin-right:6px;"></span>
     <button class="header-btn" onclick="promptToken()" title="Set GitHub token for saving">🔑</button>
   </div>
 </header>
@@ -1340,15 +1341,16 @@
 <script src="desk365_data.js"></script>
 <script>
 // --- GitHub API Integration ---
+const DASHBOARD_VERSION = 'v2026-05-25c';
 const GITHUB_REPO = 'NanoAdmin1/IT_Dashboard';
 const DATA_FILE = 'data.json';
 let githubToken = localStorage.getItem('gh_dashboard_token');
 let dataSha = null; // needed for GitHub API updates
 
 async function loadData() {
-  try {
-    // With token: use GitHub API — fresh data, no CDN cache, gets SHA for saves
-    if (githubToken) {
+  // With token: try GitHub API first — fresh data, no CDN cache, gets SHA for saves
+  if (githubToken) {
+    try {
       const resp = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${DATA_FILE}?t=${Date.now()}`, {
         headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github.v3+json', 'Cache-Control': 'no-cache' }
       });
@@ -1361,13 +1363,16 @@ async function loadData() {
       } else {
         console.warn(`GitHub API ${resp.status} — falling back to raw`);
       }
+    } catch (e) {
+      console.warn('GitHub API fetch threw, falling back to raw:', e.message);
     }
-    // No token / API failed: fall back to raw.githubusercontent.com (public, may be ~5 min cached)
+  }
+  // Fallback: raw.githubusercontent.com — public repo, no token needed, may be ~5 min cached
+  try {
     const rawResp = await fetch(`https://raw.githubusercontent.com/${GITHUB_REPO}/main/${DATA_FILE}?t=${Date.now()}`, { cache: 'no-store' });
     if (rawResp.ok) return await rawResp.json();
     showSaveStatus(`Load failed: HTTP ${rawResp.status}`, 'error');
   } catch (e) {
-    console.error('Failed to load data:', e);
     showSaveStatus(`Load failed: ${e.message}`, 'error');
   }
   return null;
@@ -1509,7 +1514,7 @@ function promptToken() {
         if (activeMember === 'sharepoint') renderSharePoint();
         showSaveStatus('Data loaded ✓', 'success');
       } else {
-        showSaveStatus('Token saved — could not load data', 'error');
+        // Don't overwrite — loadData() already showed the specific error
       }
     });
   }
@@ -3539,6 +3544,8 @@ function renderDesk365() {
   filtersEl.style.display = 'none';
   boardEl.style.display = 'none';
   goalsSection.style.display = '';
+  const verEl = document.getElementById('dash-version');
+  if (verEl) verEl.textContent = DASHBOARD_VERSION;
   await initData();
 })();
 </script>

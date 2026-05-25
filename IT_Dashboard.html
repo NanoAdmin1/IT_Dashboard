@@ -673,6 +673,8 @@
   .card.dragging { opacity: 0.4; transform: rotate(2deg); }
   .column-drop-target { background: #1e3a5f22; border: 2px dashed var(--blue); border-radius: 10px; transition: all 0.2s; }
   .column-drop-target .cards { min-height: 60px; }
+  .card.drag-over-top { border-top: 2px solid var(--blue); }
+  .card.drag-over-bottom { border-bottom: 2px solid var(--blue); }
 
   /* Goal card completed toggle */
   .goal-card .goal-toggle {
@@ -2574,6 +2576,7 @@ function renderSharePoint() {
       if (spExpandedCards.has(idx)) card.classList.add('expanded');
 
       // Drag and drop for non-completed cards
+      card.dataset.spIdx = idx;
       if (!isCompleted) {
         card.draggable = true;
         card.ondragstart = (e) => onSpDragStart(e, idx);
@@ -2873,6 +2876,7 @@ function renderAll() {
       }
 
       // Drag and drop attributes for non-completed cards
+      card.dataset.taskIdx = taskIdx;
       if (p.status !== 'completed') {
         card.draggable = true;
         card.ondragstart = (e) => onDragStart(e, memberKey, taskIdx);
@@ -3250,6 +3254,8 @@ function finishEditBlocker(textarea, memberKey, taskIdx) {
 let draggedTaskIdx = null;
 let draggedMemberKey = null;
 let draggedSpIdx = null;
+let dragOverCardEl = null;
+let dragOverPosition = null; // 'before' or 'after'
 
 function onDragStart(event, memberKey, taskIdx) {
   draggedTaskIdx = taskIdx;
@@ -3259,9 +3265,18 @@ function onDragStart(event, memberKey, taskIdx) {
   event.dataTransfer.setData('text/plain', taskIdx.toString());
 }
 
+function clearDragOverCard() {
+  if (dragOverCardEl) {
+    dragOverCardEl.classList.remove('drag-over-top', 'drag-over-bottom');
+    dragOverCardEl = null;
+    dragOverPosition = null;
+  }
+}
+
 function onDragEnd(event) {
   event.target.classList.remove('dragging');
   document.querySelectorAll('.column-drop-target').forEach(c => c.classList.remove('column-drop-target'));
+  clearDragOverCard();
   draggedTaskIdx = null;
   draggedMemberKey = null;
 }
@@ -3271,11 +3286,30 @@ function onColumnDragOver(event) {
   event.dataTransfer.dropEffect = 'move';
   const col = event.target.closest('.column');
   if (col) col.classList.add('column-drop-target');
+
+  // Track which card we're hovering over for intra-column reordering
+  const card = event.target.closest('.card');
+  if (card && card !== event.target.closest('.dragging')) {
+    if (dragOverCardEl && dragOverCardEl !== card) clearDragOverCard();
+    const rect = card.getBoundingClientRect();
+    const pos = event.clientY < rect.top + rect.height / 2 ? 'before' : 'after';
+    if (pos !== dragOverPosition || dragOverCardEl !== card) {
+      clearDragOverCard();
+      dragOverCardEl = card;
+      dragOverPosition = pos;
+      card.classList.add(pos === 'before' ? 'drag-over-top' : 'drag-over-bottom');
+    }
+  } else if (!card) {
+    clearDragOverCard();
+  }
 }
 
 function onColumnDragLeave(event) {
   const col = event.target.closest('.column');
-  if (col && !col.contains(event.relatedTarget)) col.classList.remove('column-drop-target');
+  if (col && !col.contains(event.relatedTarget)) {
+    col.classList.remove('column-drop-target');
+    clearDragOverCard();
+  }
 }
 
 function onColumnDrop(event, targetStatus) {
@@ -3283,21 +3317,38 @@ function onColumnDrop(event, targetStatus) {
   const col = event.target.closest('.column');
   if (col) col.classList.remove('column-drop-target');
 
-  if (draggedTaskIdx === null || draggedMemberKey === null) return;
+  if (draggedTaskIdx === null || draggedMemberKey === null) { clearDragOverCard(); return; }
 
   const task = allMembersData[draggedMemberKey][draggedTaskIdx];
-  if (!task) return;
+  if (!task) { clearDragOverCard(); return; }
 
-  // Handle drop on completed columns
-  if (targetStatus === 'completed-projects' || targetStatus === 'completed-tasks') {
-    if (task.status === 'completed') return; // already completed
+  const isCompletedTarget = targetStatus === 'completed-projects' || targetStatus === 'completed-tasks';
+  const alreadyCompleted = task.status === 'completed';
+  const sameStatus = (!isCompletedTarget && task.status === targetStatus) || (isCompletedTarget && alreadyCompleted);
+
+  if (sameStatus && dragOverCardEl) {
+    // Intra-column reorder
+    const targetIdx = parseInt(dragOverCardEl.dataset.taskIdx);
+    if (!isNaN(targetIdx) && targetIdx !== draggedTaskIdx) {
+      const arr = allMembersData[draggedMemberKey];
+      const [item] = arr.splice(draggedTaskIdx, 1);
+      let insertAt = arr.indexOf(allMembersData[draggedMemberKey][targetIdx < draggedTaskIdx ? targetIdx : targetIdx - 1]);
+      // Recalculate after splice
+      const newTargetIdx = draggedTaskIdx < targetIdx ? targetIdx - 1 : targetIdx;
+      const finalIdx = dragOverPosition === 'after' ? newTargetIdx + 1 : newTargetIdx;
+      arr.splice(Math.max(0, Math.min(arr.length, finalIdx)), 0, item);
+    }
+  } else if (isCompletedTarget) {
+    if (alreadyCompleted) { clearDragOverCard(); return; }
     task.status = 'completed';
     task.completedAt = new Date().toISOString();
   } else {
-    if (task.status === targetStatus) return;
+    if (task.status === targetStatus) { clearDragOverCard(); return; }
     task.status = targetStatus;
     delete task.completedAt;
   }
+
+  clearDragOverCard();
   projects = allMembersData[activeMember];
   renderAll();
   saveData();
@@ -3314,6 +3365,7 @@ function onSpDragStart(event, idx) {
 function onSpDragEnd(event) {
   event.target.classList.remove('dragging');
   document.querySelectorAll('.column-drop-target').forEach(c => c.classList.remove('column-drop-target'));
+  clearDragOverCard();
   draggedSpIdx = null;
 }
 
@@ -3321,10 +3373,24 @@ function onSpColumnDrop(event, targetStatus) {
   event.preventDefault();
   const col = event.target.closest('.column');
   if (col) col.classList.remove('column-drop-target');
-  if (draggedSpIdx === null) return;
+  if (draggedSpIdx === null) { clearDragOverCard(); return; }
   const item = sharepointData[draggedSpIdx];
-  if (!item || item.status === targetStatus) return;
-  item.status = targetStatus;
+  if (!item) { clearDragOverCard(); return; }
+
+  if (item.status === targetStatus && dragOverCardEl) {
+    // Intra-column reorder
+    const targetIdx = parseInt(dragOverCardEl.dataset.spIdx);
+    if (!isNaN(targetIdx) && targetIdx !== draggedSpIdx) {
+      const [removed] = sharepointData.splice(draggedSpIdx, 1);
+      const newTargetIdx = draggedSpIdx < targetIdx ? targetIdx - 1 : targetIdx;
+      const finalIdx = dragOverPosition === 'after' ? newTargetIdx + 1 : newTargetIdx;
+      sharepointData.splice(Math.max(0, Math.min(sharepointData.length, finalIdx)), 0, removed);
+    }
+  } else if (item.status !== targetStatus) {
+    item.status = targetStatus;
+  }
+
+  clearDragOverCard();
   renderSharePoint();
   saveData();
 }

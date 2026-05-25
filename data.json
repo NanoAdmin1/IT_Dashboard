@@ -731,7 +731,7 @@
         "completedAt": "2026-05-04T12:00:00"
       },
       {
-        "title": "Expand ESXi storage to cover ≥ 24 months of forecasted growth",
+        "title": "Expand ESXi storage to cover \u2265 24 months of forecasted growth",
         "type": "project",
         "status": "not-started",
         "categories": [
@@ -2452,8 +2452,7 @@
         "title": "Establish Licensing Deals",
         "completed": false,
         "links": [
-          1,
-          10
+          1
         ]
       },
       {
@@ -2467,7 +2466,7 @@
           5,
           6,
           8,
-          11
+          10
         ]
       },
       {
@@ -2481,8 +2480,8 @@
           7,
           8,
           9,
-          11,
-          12
+          10,
+          11
         ]
       },
       {
@@ -2491,8 +2490,7 @@
         "links": [
           2,
           4,
-          10,
-          12
+          11
         ]
       }
     ],
@@ -2544,16 +2542,11 @@
       },
       {
         "number": 10,
-        "title": "Training (Certifications)",
-        "completed": false
-      },
-      {
-        "number": 11,
         "title": "Veeam Cloud Backups Fully Configured",
         "completed": true
       },
       {
-        "number": 12,
+        "number": 11,
         "title": "Shared Virtual Machine for Scientific Users (Ease of Use for Mac Users)",
         "completed": true
       }
@@ -2582,6 +2575,11 @@
       {
         "number": 5,
         "title": "Browser Enforcement for Island",
+        "completed": false
+      },
+      {
+        "number": 6,
+        "title": "Training (Certifications)",
         "completed": false
       }
     ]

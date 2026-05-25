@@ -2412,14 +2412,15 @@
       {
         "title": "Excel Issue in Lab computers",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "lab"
         ],
         "blocker": null,
         "notes": "Completed. Installed LibreOffice on all offline lab computers.",
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-05-25T15:21:53.058Z"
       }
     ]
   },

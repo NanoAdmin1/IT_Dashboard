@@ -731,7 +731,7 @@
         "completedAt": "2026-05-04T12:00:00"
       },
       {
-        "title": "Expand ESXi storage to cover \u2265 24 months of forecasted growth",
+        "title": "Expand ESXi storage to cover ≥ 24 months of forecasted growth",
         "type": "project",
         "status": "not-started",
         "categories": [
@@ -1592,6 +1592,18 @@
         "completedAt": "2026-05-19T20:45:07.995Z"
       },
       {
+        "title": "Onboarding Marcus GIan",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
         "title": "SharePoint Procurement Migration",
         "type": "project",
         "status": "in-progress",
@@ -1610,18 +1622,6 @@
         ],
         "blocker": null,
         "notes": "Contact Christian Lungu."
-      },
-      {
-        "title": "Onboarding Marcus GIan",
-        "type": "task",
-        "status": "in-progress",
-        "categories": [
-          "endpoint"
-        ],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": []
       }
     ],
     "jordan": [

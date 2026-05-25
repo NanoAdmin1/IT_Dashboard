@@ -1347,27 +1347,25 @@ let dataSha = null; // needed for GitHub API updates
 
 async function loadData() {
   try {
-    // Repo is public — fetch raw content directly (no token needed, no CORS issues)
-    const rawUrl = `https://raw.githubusercontent.com/${GITHUB_REPO}/main/${DATA_FILE}?t=${Date.now()}`;
-    const rawResp = await fetch(rawUrl, { cache: 'no-store' });
-    if (rawResp.ok) {
-      const content = await rawResp.json();
-      // Also fetch SHA via API if we have a token (needed for saving)
-      if (githubToken) {
-        try {
-          const metaResp = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${DATA_FILE}`, {
-            headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github.v3+json' }
-          });
-          if (metaResp.ok) {
-            const meta = await metaResp.json();
-            dataSha = meta.sha;
-          }
-        } catch(_) { /* SHA fetch failed — saves won't work but reads are fine */ }
+    // With token: use GitHub API — fresh data, no CDN cache, gets SHA for saves
+    if (githubToken) {
+      const resp = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${DATA_FILE}?t=${Date.now()}`, {
+        headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github.v3+json', 'Cache-Control': 'no-cache' }
+      });
+      if (resp.ok) {
+        const meta = await resp.json();
+        dataSha = meta.sha;
+        const bytes = Uint8Array.from(atob(meta.content.replace(/\n/g, '')), c => c.charCodeAt(0));
+        const text = new TextDecoder('utf-8').decode(bytes);
+        return JSON.parse(text);
+      } else {
+        console.warn(`GitHub API ${resp.status} — falling back to raw`);
       }
-      return content;
-    } else {
-      showSaveStatus(`Load failed: HTTP ${rawResp.status}`, 'error');
     }
+    // No token / API failed: fall back to raw.githubusercontent.com (public, may be ~5 min cached)
+    const rawResp = await fetch(`https://raw.githubusercontent.com/${GITHUB_REPO}/main/${DATA_FILE}?t=${Date.now()}`, { cache: 'no-store' });
+    if (rawResp.ok) return await rawResp.json();
+    showSaveStatus(`Load failed: HTTP ${rawResp.status}`, 'error');
   } catch (e) {
     console.error('Failed to load data:', e);
     showSaveStatus(`Load failed: ${e.message}`, 'error');

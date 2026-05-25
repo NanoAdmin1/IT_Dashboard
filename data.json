@@ -731,7 +731,7 @@
         "completedAt": "2026-05-04T12:00:00"
       },
       {
-        "title": "Expand ESXi storage to cover ≥ 24 months of forecasted growth",
+        "title": "Expand ESXi storage to cover \u2265 24 months of forecasted growth",
         "type": "project",
         "status": "not-started",
         "categories": [
@@ -2466,7 +2466,8 @@
           5,
           6,
           8,
-          10
+          10,
+          13
         ]
       },
       {
@@ -2481,7 +2482,9 @@
           8,
           9,
           10,
-          11
+          11,
+          12,
+          13
         ]
       },
       {
@@ -2549,6 +2552,16 @@
         "number": 11,
         "title": "Shared Virtual Machine for Scientific Users (Ease of Use for Mac Users)",
         "completed": true
+      },
+      {
+        "number": 12,
+        "title": "FOB Access to Scientific Computers",
+        "completed": false
+      },
+      {
+        "number": 13,
+        "title": "Candiac RADIUS",
+        "completed": false
       }
     ],
     "stretch": [
@@ -2559,26 +2572,11 @@
       },
       {
         "number": 2,
-        "title": "FOB Access to Scientific Computers",
-        "completed": false
-      },
-      {
-        "number": 3,
-        "title": "Pager Duty Set-up Properly",
-        "completed": false
-      },
-      {
-        "number": 4,
-        "title": "Candiac RADIUS",
-        "completed": false
-      },
-      {
-        "number": 5,
         "title": "Browser Enforcement for Island",
         "completed": false
       },
       {
-        "number": 6,
+        "number": 3,
         "title": "Training (Certifications)",
         "completed": false
       }

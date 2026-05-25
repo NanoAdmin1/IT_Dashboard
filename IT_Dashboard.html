@@ -1362,10 +1362,16 @@ async function loadData() {
         const text = new TextDecoder('utf-8').decode(bytes);
         const content = JSON.parse(text);
         return content;
+      } else {
+        let body = '';
+        try { body = await resp.text(); } catch(_) {}
+        console.error(`GitHub API error: HTTP ${resp.status} ${resp.statusText}`, body);
+        showSaveStatus(`GitHub error: ${resp.status} ${resp.statusText}`, 'error');
       }
     }
   } catch (e) {
-    console.warn('Failed to load from GitHub:', e);
+    console.error('Failed to load from GitHub:', e);
+    showSaveStatus(`Load failed: ${e.message}`, 'error');
   }
   return null;
 }

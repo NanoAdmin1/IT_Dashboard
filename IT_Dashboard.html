@@ -1364,11 +1364,8 @@ async function loadData() {
         return content;
       }
     }
-    // Fallback: load data.json directly (works for local file:// or hosted)
-    const resp = await fetch('data.json');
-    if (resp.ok) return await resp.json();
   } catch (e) {
-    console.warn('Failed to load data.json:', e);
+    console.warn('Failed to load from GitHub:', e);
   }
   return null;
 }

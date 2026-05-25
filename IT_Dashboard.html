@@ -1342,8 +1342,8 @@ async function loadData() {
   try {
     // Try loading from GitHub API first (gets us the SHA for updates)
     if (githubToken) {
-      const resp = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${DATA_FILE}`, {
-        headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github.v3+json' }
+      const resp = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${DATA_FILE}?t=${Date.now()}`, {
+        headers: { 'Authorization': `token ${githubToken}`, 'Accept': 'application/vnd.github.v3+json', 'Cache-Control': 'no-cache' }
       });
       if (resp.ok) {
         const meta = await resp.json();

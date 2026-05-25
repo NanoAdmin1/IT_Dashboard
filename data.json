@@ -2177,12 +2177,13 @@
       {
         "title": "Chen Wang Laptop Issue",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [],
         "blocker": null,
         "notes": "Chen's laptop stopped charging and will not boot even after unplugging the battery. I swapped the drive to a known good laptop and will be setting up a new laptop for her.",
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-05-25T19:56:50.216Z"
       },
       {
         "title": "Intune Autopilot",

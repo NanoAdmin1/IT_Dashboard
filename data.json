@@ -1610,6 +1610,18 @@
         ],
         "blocker": null,
         "notes": "Check in with Maryam to see what needs to be done."
+      },
+      {
+        "title": "Onboarding Marcus GIan",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

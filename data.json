@@ -1622,6 +1622,16 @@
         ],
         "blocker": null,
         "notes": "Contact Christian Lungu."
+      },
+      {
+        "title": "test task",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

@@ -731,7 +731,7 @@
         "completedAt": "2026-05-04T12:00:00"
       },
       {
-        "title": "Expand ESXi storage to cover ≥ 24 months of forecasted growth",
+        "title": "Expand ESXi storage to cover \u2265 24 months of forecasted growth",
         "type": "project",
         "status": "not-started",
         "categories": [
@@ -2466,8 +2466,8 @@
           5,
           6,
           8,
-          10,
-          13
+          11,
+          12
         ]
       },
       {
@@ -2493,7 +2493,7 @@
         "links": [
           2,
           4,
-          11
+          13
         ]
       }
     ],
@@ -2545,23 +2545,23 @@
       },
       {
         "number": 10,
-        "title": "Veeam Cloud Backups Fully Configured",
-        "completed": true
-      },
-      {
-        "number": 11,
-        "title": "Shared Virtual Machine for Scientific Users (Ease of Use for Mac Users)",
-        "completed": true
-      },
-      {
-        "number": 12,
         "title": "FOB Access to Scientific Computers",
         "completed": false
       },
       {
-        "number": 13,
+        "number": 11,
         "title": "Candiac RADIUS",
         "completed": false
+      },
+      {
+        "number": 12,
+        "title": "Veeam Cloud Backups Fully Configured",
+        "completed": true
+      },
+      {
+        "number": 13,
+        "title": "Shared Virtual Machine for Scientific Users (Ease of Use for Mac Users)",
+        "completed": true
       }
     ],
     "stretch": [

@@ -1359,18 +1359,26 @@ async function loadData() {
         dataSha = meta.sha;
         const bytes = Uint8Array.from(atob(meta.content.replace(/\n/g, '')), c => c.charCodeAt(0));
         const text = new TextDecoder('utf-8').decode(bytes);
+        const verEl = document.getElementById('dash-version');
+        if (verEl) verEl.textContent = DASHBOARD_VERSION + ' [API]';
         return JSON.parse(text);
       } else {
         console.warn(`GitHub API ${resp.status} — falling back to raw`);
+        showSaveStatus(`API ${resp.status} — using cached data`, 'error');
       }
     } catch (e) {
       console.warn('GitHub API fetch threw, falling back to raw:', e.message);
+      showSaveStatus(`API error: ${e.message} — using cached data`, 'error');
     }
   }
   // Fallback: raw.githubusercontent.com — public repo, no token needed, may be ~5 min cached
   try {
     const rawResp = await fetch(`https://raw.githubusercontent.com/${GITHUB_REPO}/main/${DATA_FILE}?t=${Date.now()}`, { cache: 'no-store' });
-    if (rawResp.ok) return await rawResp.json();
+    if (rawResp.ok) {
+      const verEl = document.getElementById('dash-version');
+      if (verEl) verEl.textContent = DASHBOARD_VERSION + ' [RAW]';
+      return await rawResp.json();
+    }
     showSaveStatus(`Load failed: HTTP ${rawResp.status}`, 'error');
   } catch (e) {
     showSaveStatus(`Load failed: ${e.message}`, 'error');

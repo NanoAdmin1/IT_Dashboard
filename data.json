@@ -2428,7 +2428,7 @@
         "status": "in-progress",
         "categories": [],
         "blocker": null,
-        "notes": null,
+        "notes": "Chen's laptop stopped charging and will not boot even after unplugging the battery. I swapped the drive to a known good laptop and will be setting up a new laptop for her.",
         "resolution": null,
         "subtasks": []
       }

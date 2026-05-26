@@ -361,6 +361,17 @@
     flex-shrink: 0;
   }
   .note-delete:hover { opacity: 1; color: #f87171; }
+  .note-edit {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 11px;
+    padding: 0 2px;
+    line-height: 1;
+    opacity: 0.35;
+    flex-shrink: 0;
+  }
+  .note-edit:hover { opacity: 1; }
 
   .card-notes {
     display: none;
@@ -3214,7 +3225,8 @@ function renderNotesHtml(notes, memberKey, taskIdx, isCompleted) {
   const list = normalizeNotes(notes);
   const items = list.map((n, ni) => `
     <div class="note-item">
-      <span class="note-text editable" ondblclick="editNote(event,'${memberKey}',${taskIdx},${ni})">${n.text.replace(/\n/g,'<br>')}</span>
+      <span class="note-text">${n.text.replace(/\n/g,'<br>')}</span>
+      <button class="note-edit" onclick="editNote(event,'${memberKey}',${taskIdx},${ni})" title="Edit note">✏️</button>
       <button class="note-delete" onclick="deleteNote(event,'${memberKey}',${taskIdx},${ni})" title="Delete note">&times;</button>
     </div>`).join('');
   const addBtn = isCompleted ? '' : `<button class="add-subtask-trigger" onclick="addNote(event,'${memberKey}',${taskIdx})">+ Add Note</button>`;
@@ -3225,7 +3237,8 @@ function renderSpNotesHtml(notes, idx) {
   const list = normalizeNotes(notes);
   const items = list.map((n, ni) => `
     <div class="note-item">
-      <span class="note-text editable" ondblclick="editSpNote(event,${idx},${ni})">${n.text.replace(/\n/g,'<br>')}</span>
+      <span class="note-text">${n.text.replace(/\n/g,'<br>')}</span>
+      <button class="note-edit" onclick="editSpNote(event,${idx},${ni})" title="Edit note">✏️</button>
       <button class="note-delete" onclick="deleteSpNote(event,${idx},${ni})" title="Delete note">&times;</button>
     </div>`).join('');
   return `<div class="card-notes">${list.length ? '<div class="notes-label">Notes</div>' : ''}${items}<button class="add-subtask-trigger" onclick="addSpNote(event,${idx})">+ Add Note</button></div>`;
@@ -3273,6 +3286,7 @@ function editNote(event, memberKey, taskIdx, noteIdx) {
   textarea.className = 'editing';
   textarea.value = list[noteIdx].text;
   textarea.rows = 3;
+  textarea.style.flex = '1';
   textarea.onclick = e => e.stopPropagation();
   textarea.onkeydown = e => { if (e.key === 'Escape') { textarea.dataset.cancel = '1'; textarea.blur(); } };
   textarea.onblur = () => {
@@ -3323,6 +3337,7 @@ function editSpNote(event, idx, noteIdx) {
   textarea.className = 'editing';
   textarea.value = list[noteIdx].text;
   textarea.rows = 3;
+  textarea.style.flex = '1';
   textarea.onclick = e => e.stopPropagation();
   textarea.onkeydown = e => { if (e.key === 'Escape') { textarea.dataset.cancel = '1'; textarea.blur(); } };
   textarea.onblur = () => {

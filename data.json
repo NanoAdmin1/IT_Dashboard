@@ -2642,7 +2642,16 @@
       "title": "P&C Subsite Share ENV",
       "status": "in-progress",
       "assignedTo": "jordan",
-      "notes": "Check in with Kelli"
+      "notes": [
+        {
+          "text": "Check in with Kelli",
+          "createdAt": null
+        },
+        {
+          "text": "Checked in with Reenu, she has set a meeting with Kelli and Brigitte for June 10th to go over strucutre. all current folders that need migration are in their personal onedrives and I will be giving the control to migrate to the Leadership development site. From there I will tackle access control.",
+          "createdAt": "2026-05-26T17:13:59.485Z"
+        }
+      ]
     },
     {
       "title": "Policies & Procedures",

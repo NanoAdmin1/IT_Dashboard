@@ -2634,7 +2634,14 @@
       "title": "Pilote Plant Commercialization",
       "status": "in-progress",
       "assignedTo": "maxime",
-      "notes": null
+      "notes": null,
+      "subtasks": [
+        {
+          "title": "Mapping",
+          "status": "not-started",
+          "createdAt": "2026-05-26T17:40:29.024Z"
+        }
+      ]
     },
     {
       "title": "Systems/5S",

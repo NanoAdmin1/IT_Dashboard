@@ -2631,12 +2631,7 @@
       "title": "Procurement Check-in",
       "status": "in-progress",
       "assignedTo": "ryan",
-      "notes": [
-        {
-          "text": "Test",
-          "createdAt": "2026-05-26T17:12:38.718Z"
-        }
-      ]
+      "notes": null
     },
     {
       "title": "P&C Subsite Share ENV",

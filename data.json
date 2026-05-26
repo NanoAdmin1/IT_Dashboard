@@ -2613,7 +2613,16 @@
       "title": "Nano One Projects",
       "status": "in-progress",
       "assignedTo": "maxime",
-      "notes": "With Blake"
+      "notes": [
+        {
+          "text": "With Blake",
+          "createdAt": null
+        },
+        {
+          "text": "Site Built and used. Follow up 05-27",
+          "createdAt": "2026-05-26T17:40:12.738Z"
+        }
+      ]
     },
     {
       "title": "Quality",

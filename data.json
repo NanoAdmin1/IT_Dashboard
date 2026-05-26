@@ -2601,7 +2601,12 @@
       "title": "OKR Site",
       "status": "pending",
       "assignedTo": "jordan",
-      "notes": null
+      "notes": [
+        {
+          "text": "Waiting for Andrea's return in mid-april",
+          "createdAt": "2026-05-26T17:18:25.628Z"
+        }
+      ]
     },
     {
       "title": "Nano One Projects",

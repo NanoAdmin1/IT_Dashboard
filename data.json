@@ -2642,7 +2642,13 @@
       "title": "P&C Subsite Share ENV",
       "status": "in-progress",
       "assignedTo": "jordan",
-      "notes": "Check in with Kelli"
+      "notes": [
+        {
+          "text": "Check in with Kelli",
+          "createdAt": null,
+          "editedAt": "2026-05-26T17:12:50.751Z"
+        }
+      ]
     },
     {
       "title": "Policies & Procedures",

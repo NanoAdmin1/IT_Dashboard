@@ -2160,16 +2160,6 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
-      },
-      {
-        "title": "test3",
-        "type": "task",
-        "status": "blocked",
-        "categories": [],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": []
       }
     ],
     "blake": [],

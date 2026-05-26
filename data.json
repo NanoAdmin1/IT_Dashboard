@@ -2629,7 +2629,7 @@
     },
     {
       "title": "Procurement Check-in",
-      "status": "not-started",
+      "status": "in-progress",
       "assignedTo": "ryan",
       "notes": null
     },

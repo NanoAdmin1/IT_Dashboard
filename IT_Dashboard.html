@@ -372,6 +372,14 @@
     flex-shrink: 0;
   }
   .note-edit:hover { opacity: 1; }
+  .note-stamp {
+    display: inline-block;
+    margin-left: 6px;
+    font-size: 10px;
+    color: var(--muted);
+    opacity: 0.6;
+    vertical-align: middle;
+  }
 
   .card-notes {
     display: none;
@@ -2610,9 +2618,10 @@ function renderSharePoint() {
           const pct = Math.round((doneCount / total) * 100);
           const subItems = item.subtasks.map((sub, si) => {
             const subLabel = sub.status === 'not-started' ? 'Not Started' : sub.status === 'in-progress' ? 'In Progress' : 'Done';
+            const stamp = sub.createdAt ? `<span class="note-stamp">${fmtStamp(sub.createdAt)}</span>` : '';
             return `<div class="subtask ${sub.status === 'done' ? 'is-done' : ''}">
               <span class="subtask-status ${sub.status} clickable" onclick="cycleSpSubtask(event, ${idx}, ${si})">${subLabel}</span>
-              <span class="subtask-title">${sub.title}</span>
+              <span class="subtask-title">${sub.title}${stamp}</span>
             </div>`;
           }).join('');
           subtasksHtml = `<div class="card-subtasks">
@@ -2724,7 +2733,7 @@ function submitSpSubtask(btn, idx) {
   const title = btn.parentElement.querySelector('input').value.trim();
   if (!title) return;
   if (!sharepointData[idx].subtasks) sharepointData[idx].subtasks = [];
-  sharepointData[idx].subtasks.push({ title, status: 'not-started' });
+  sharepointData[idx].subtasks.push({ title, status: 'not-started', createdAt: new Date().toISOString() });
   renderSharePoint();
   saveData();
 }
@@ -2885,9 +2894,10 @@ function renderAll() {
         const pct = Math.round((doneCount / total) * 100);
         const items = p.subtasks.map((s, si) => {
           const label = s.status === 'not-started' ? 'Not Started' : s.status === 'in-progress' ? 'In Progress' : 'Done';
+          const stamp = s.createdAt ? `<span class="note-stamp">${fmtStamp(s.createdAt)}</span>` : '';
           return `<div class="subtask ${s.status === 'done' ? 'is-done' : ''}">
             <span class="subtask-status ${s.status} clickable" onclick="cycleSubtask(event, '${memberKey}', ${taskIdx}, ${si})">${label}</span>
-            <span class="subtask-title">${s.title}</span>
+            <span class="subtask-title">${s.title}${stamp}</span>
           </div>`;
         }).join('');
         const addSubBtn = `<button class="add-subtask-trigger" onclick="showAddSubtaskForm(event, '${memberKey}', ${taskIdx})">+ Add Subtask</button>`;
@@ -3179,7 +3189,7 @@ function submitNewSubtask(btn, memberKey, taskIdx) {
 
   const task = allMembersData[memberKey][taskIdx];
   if (!task.subtasks) task.subtasks = [];
-  task.subtasks.push({ title: title, status: 'not-started' });
+  task.subtasks.push({ title: title, status: 'not-started', createdAt: new Date().toISOString() });
 
   projects = allMembersData[activeMember];
   renderAll();
@@ -3214,6 +3224,13 @@ function finishEditTitle(input, memberKey, taskIdx) {
   renderAll();
 }
 
+// --- Timestamp helper ---
+function fmtStamp(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+}
+
 // --- Multi-note helpers ---
 function normalizeNotes(notes) {
   if (!notes) return [];
@@ -3225,7 +3242,7 @@ function renderNotesHtml(notes, memberKey, taskIdx, isCompleted) {
   const list = normalizeNotes(notes);
   const items = list.map((n, ni) => `
     <div class="note-item">
-      <span class="note-text">${n.text.replace(/\n/g,'<br>')}</span>
+      <span class="note-text">${n.text.replace(/\n/g,'<br>')}${n.createdAt ? `<span class="note-stamp">${fmtStamp(n.editedAt || n.createdAt)}</span>` : ''}</span>
       <button class="note-edit" onclick="editNote(event,'${memberKey}',${taskIdx},${ni})" title="Edit note">✏️</button>
       <button class="note-delete" onclick="deleteNote(event,'${memberKey}',${taskIdx},${ni})" title="Delete note">&times;</button>
     </div>`).join('');

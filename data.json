@@ -2663,7 +2663,16 @@
       "title": "Development site",
       "status": "in-progress",
       "assignedTo": "jordan",
-      "notes": "Corporate Dev, Gov funding, Business dev   Alex, Pierre, Andrew"
+      "notes": [
+        {
+          "text": "Corporate Dev, Gov funding, Business dev   Alex, Pierre, Andrew",
+          "createdAt": null
+        },
+        {
+          "text": "Email Sent to Alex Holmes on May 26",
+          "createdAt": "2026-05-26T17:14:20.833Z"
+        }
+      ]
     },
     {
       "title": "P&C - Finance collab site",

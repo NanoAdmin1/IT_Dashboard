@@ -2674,6 +2674,10 @@
         {
           "text": "Test Note",
           "createdAt": "2026-05-26T17:10:54.789Z"
+        },
+        {
+          "text": "Maryam has informed me that Procurement is working fine and they are working out of SharePoint and not the N: Drive. The folder structure is not quite the same but I don't think that matters right now. With Syteline coming in the folder structure and some stuff was deprecated anyways.",
+          "createdAt": "2026-05-27T18:10:58.061Z"
         }
       ]
     },

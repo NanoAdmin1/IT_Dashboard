@@ -2469,6 +2469,16 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-05-25T15:21:53.058Z"
+      },
+      {
+        "title": "DE&I French Site",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ]
   },

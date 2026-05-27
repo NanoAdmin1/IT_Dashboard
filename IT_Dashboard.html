@@ -2595,7 +2595,7 @@ function renderSharePoint() {
 
       if (isCompleted) {
         card.style.padding = '8px 12px';
-        const notesHtml = item.notes ? `<div class="card-notes"><div class="notes-label">Notes</div><span class="notes-content">${item.notes}</span></div>` : '';
+        const notesHtml = renderSpNotesHtml(item.notes, idx);
         card.innerHTML = `
           ${deleteBtn}
           <div class="card-title" style="margin-bottom:0;font-size:0.8rem;color:var(--muted);">${item.title}</div>
@@ -2842,7 +2842,8 @@ function renderAll() {
       if (currentCategory !== 'all' && !p.categories.includes(currentCategory)) return false;
       if (currentSearch) {
         const q = currentSearch.toLowerCase();
-        if (!p.title.toLowerCase().includes(q) && !(p.notes || '').toLowerCase().includes(q) && !(p.blocker || '').toLowerCase().includes(q)) return false;
+        const notesText = normalizeNotes(p.notes).map(n => n.text).join(' ');
+        if (!p.title.toLowerCase().includes(q) && !notesText.toLowerCase().includes(q) && !(p.blocker || '').toLowerCase().includes(q)) return false;
       }
       return effectiveStatus(p) === status;
     });
@@ -2928,7 +2929,7 @@ function renderAll() {
 
       if (p.status === 'completed') {
         card.style.padding = '8px 12px';
-        const hasDetails = p.notes || p.resolution;
+        const hasDetails = normalizeNotes(p.notes).length > 0 || p.resolution;
         if (hasDetails) card.style.cursor = 'pointer';
         const dateStr = p.completedAt ? `<span style="font-size:0.65rem;color:var(--blue);margin-left:8px;white-space:nowrap;">${new Date(p.completedAt).toLocaleDateString('en-CA')}</span>` : '';
         card.innerHTML = `

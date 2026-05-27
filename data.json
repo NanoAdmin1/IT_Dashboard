@@ -2685,7 +2685,7 @@
     },
     {
       "title": "Procurement Check-in",
-      "status": "in-progress",
+      "status": "completed",
       "assignedTo": "ryan",
       "notes": [
         {

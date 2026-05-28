@@ -2678,7 +2678,7 @@
     {
       "title": "Systems/5S",
       "status": "in-progress",
-      "assignedTo": null,
+      "assignedTo": "jordan",
       "notes": null,
       "subtasks": [
         {

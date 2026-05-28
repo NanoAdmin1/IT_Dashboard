@@ -2043,7 +2043,7 @@
           },
           {
             "title": "IPSec VPN + MFA working",
-            "status": "in-progress"
+            "status": "done"
           },
           {
             "title": "All Admins Added to Duo Group",

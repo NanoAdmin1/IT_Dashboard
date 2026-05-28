@@ -2054,7 +2054,7 @@
       {
         "title": "SIEM Setup - Wazuh",
         "type": "project",
-        "status": "waiting",
+        "status": "completed",
         "categories": [
           "security",
           "infrastructure"
@@ -2110,7 +2110,8 @@
             "title": "Veeam Logging",
             "status": "done"
           }
-        ]
+        ],
+        "completedAt": "2026-05-28T20:20:19.324Z"
       },
       {
         "title": "OS Hardening & Baseline Images",

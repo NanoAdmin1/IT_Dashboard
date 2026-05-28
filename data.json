@@ -2104,11 +2104,11 @@
           },
           {
             "title": "Crowdstrike Logging",
-            "status": "in-progress"
+            "status": "done"
           },
           {
             "title": "Veeam Logging",
-            "status": "in-progress"
+            "status": "done"
           }
         ]
       },

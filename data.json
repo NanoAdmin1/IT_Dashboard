@@ -2096,7 +2096,7 @@
           },
           {
             "title": "ESXi logging",
-            "status": "in-progress"
+            "status": "done"
           },
           {
             "title": "DarkTrace Logging",
@@ -2104,7 +2104,7 @@
           },
           {
             "title": "Crowdstrike Logging",
-            "status": "not-started"
+            "status": "in-progress"
           },
           {
             "title": "Veeam Logging",

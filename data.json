@@ -1721,7 +1721,7 @@
         "subtasks": [
           {
             "title": "Identify what needs backing up (config, threat intel, packet captures, logs)",
-            "status": "not-started"
+            "status": "in-progress"
           },
           {
             "title": "Determine backup destination (NAS, Veeam, off-site)",

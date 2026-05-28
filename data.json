@@ -1725,7 +1725,7 @@
           },
           {
             "title": "Determine backup destination (NAS, Veeam, off-site)",
-            "status": "not-started"
+            "status": "in-progress"
           },
           {
             "title": "Configure scheduled backups on the DarkTrace appliance",

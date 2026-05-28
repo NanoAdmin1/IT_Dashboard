@@ -2096,11 +2096,11 @@
           },
           {
             "title": "ESXi logging",
-            "status": "done"
+            "status": "not-started"
           },
           {
             "title": "DarkTrace Logging",
-            "status": "not-started"
+            "status": "done"
           },
           {
             "title": "Crowdstrike Logging",

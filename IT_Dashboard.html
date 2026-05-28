@@ -2588,10 +2588,10 @@ function renderSharePoint() {
       // Delete button
       const deleteBtn = `<button class="card-delete" onclick="deleteSpTask(event, ${idx})" title="Delete">&times;</button>`;
 
-      // Assignee chip
+      // Assignee chip (clickable to change)
       const color = item.assignedTo ? SP_ASSIGNEE_COLORS[item.assignedTo] : 'var(--muted)';
       const label = item.assignedTo ? SP_ASSIGNEE_LABELS[item.assignedTo] : 'Unassigned';
-      const assigneeHtml = `<div style="margin-top:6px;"><span style="font-size:0.7rem;padding:2px 8px;border-radius:4px;background:${color}22;color:${color};border:1px solid ${color}44;">${label}</span></div>`;
+      const assigneeHtml = `<div style="margin-top:6px;"><span class="sp-assignee-chip" onclick="cycleSpAssignee(event,${idx})" title="Click to change assignee" style="cursor:pointer;font-size:0.7rem;padding:2px 8px;border-radius:4px;background:${color}22;color:${color};border:1px solid ${color}44;">${label}</span></div>`;
 
       if (isCompleted) {
         card.style.padding = '8px 12px';
@@ -2686,6 +2686,15 @@ function cycleSpStatus(event, idx) {
   const item = sharepointData[idx];
   const cur = SP_STATUS_CYCLE.indexOf(item.status);
   item.status = SP_STATUS_CYCLE[(cur + 1) % SP_STATUS_CYCLE.length];
+  renderSharePoint();
+  saveData();
+}
+
+function cycleSpAssignee(event, idx) {
+  event.stopPropagation();
+  const members = [null, ...Object.keys(SP_ASSIGNEE_LABELS)];
+  const cur = members.indexOf(sharepointData[idx].assignedTo);
+  sharepointData[idx].assignedTo = members[(cur + 1) % members.length];
   renderSharePoint();
   saveData();
 }

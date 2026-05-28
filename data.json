@@ -2054,7 +2054,7 @@
       {
         "title": "SIEM Setup - Wazuh",
         "type": "project",
-        "status": "in-progress",
+        "status": "waiting",
         "categories": [
           "security",
           "infrastructure"

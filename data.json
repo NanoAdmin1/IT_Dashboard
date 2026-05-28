@@ -2096,7 +2096,7 @@
           },
           {
             "title": "ESXi logging",
-            "status": "not-started"
+            "status": "in-progress"
           },
           {
             "title": "DarkTrace Logging",

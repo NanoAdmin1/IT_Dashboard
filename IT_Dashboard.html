@@ -2591,7 +2591,7 @@ function renderSharePoint() {
       // Assignee chip (clickable to change)
       const color = item.assignedTo ? SP_ASSIGNEE_COLORS[item.assignedTo] : 'var(--muted)';
       const label = item.assignedTo ? SP_ASSIGNEE_LABELS[item.assignedTo] : 'Unassigned';
-      const assigneeHtml = `<div style="margin-top:6px;"><span class="sp-assignee-chip" onclick="cycleSpAssignee(event,${idx})" title="Click to change assignee" style="cursor:pointer;font-size:0.7rem;padding:2px 8px;border-radius:4px;background:${color}22;color:${color};border:1px solid ${color}44;">${label}</span></div>`;
+      const assigneeHtml = `<div style="margin-top:6px;"><span class="sp-assignee-chip" onclick="cycleSpAssignee(event,${idx})" title="Click to reassign" style="cursor:pointer;font-size:0.7rem;padding:2px 8px;border-radius:4px;background:${color}22;color:${color};border:1px solid ${color}44;">${label} ▾</span></div>`;
 
       if (isCompleted) {
         card.style.padding = '8px 12px';
@@ -2692,11 +2692,26 @@ function cycleSpStatus(event, idx) {
 
 function cycleSpAssignee(event, idx) {
   event.stopPropagation();
-  const members = [null, ...Object.keys(SP_ASSIGNEE_LABELS)];
-  const cur = members.indexOf(sharepointData[idx].assignedTo);
-  sharepointData[idx].assignedTo = members[(cur + 1) % members.length];
-  renderSharePoint();
-  saveData();
+  const chip = event.target;
+  const select = document.createElement('select');
+  select.style.cssText = 'font-size:0.7rem;padding:2px 4px;border-radius:4px;border:1px solid var(--border);background:var(--surface2);color:var(--text);cursor:pointer;';
+  const options = [['', 'Unassigned'], ...Object.entries(SP_ASSIGNEE_LABELS)];
+  options.forEach(([val, lbl]) => {
+    const opt = document.createElement('option');
+    opt.value = val;
+    opt.textContent = lbl;
+    if ((sharepointData[idx].assignedTo || '') === val) opt.selected = true;
+    select.appendChild(opt);
+  });
+  select.onclick = e => e.stopPropagation();
+  select.onchange = () => {
+    sharepointData[idx].assignedTo = select.value || null;
+    renderSharePoint();
+    saveData();
+  };
+  select.onblur = () => renderSharePoint();
+  chip.replaceWith(select);
+  select.focus();
 }
 
 // SP Delete

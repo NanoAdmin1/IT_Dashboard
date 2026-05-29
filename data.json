@@ -2289,18 +2289,6 @@
         "subtasks": []
       },
       {
-        "title": "Production SP Migration",
-        "type": "task",
-        "status": "in-progress",
-        "categories": [
-          "services"
-        ],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": []
-      },
-      {
         "title": "SIMDUT EHS Training",
         "type": "task",
         "status": "not-started",
@@ -2458,6 +2446,18 @@
         "type": "project",
         "status": "in-progress",
         "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
+        "title": "Production SP Migration",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "services"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,

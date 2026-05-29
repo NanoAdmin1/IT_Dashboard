@@ -2479,12 +2479,13 @@
       {
         "title": "DE&I French Site",
         "type": "task",
-        "status": "blocked",
+        "status": "completed",
         "categories": [],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-05-29T16:37:35.229Z"
       }
     ]
   },

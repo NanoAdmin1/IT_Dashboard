@@ -2678,7 +2678,12 @@
       "title": "Pilote Plant Commercialization",
       "status": "in-progress",
       "assignedTo": "maxime",
-      "notes": null,
+      "notes": [
+        {
+          "text": "test",
+          "createdAt": "2026-06-04T16:22:10.526Z"
+        }
+      ],
       "subtasks": [
         {
           "title": "Mapping",
@@ -2692,7 +2697,7 @@
         },
         {
           "title": "Create Documentation/Training documents",
-          "status": "in-progress",
+          "status": "done",
           "createdAt": "2026-05-28T16:37:16.983Z"
         }
       ]

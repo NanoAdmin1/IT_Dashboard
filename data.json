@@ -2663,7 +2663,16 @@
       "title": "Quality",
       "status": "in-progress",
       "assignedTo": "maxime",
-      "notes": "Teams site, Lots of Metadata, check-in/out documents"
+      "notes": [
+        {
+          "text": "Teams site, Lots of Metadata, check-in/out documents",
+          "createdAt": null
+        },
+        {
+          "text": "Merged with Systems. Closing this, continuing under Systems",
+          "createdAt": "2026-06-04T16:21:03.404Z"
+        }
+      ]
     },
     {
       "title": "Pilote Plant Commercialization",

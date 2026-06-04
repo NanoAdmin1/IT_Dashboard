@@ -2461,7 +2461,13 @@
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [
+          {
+            "title": "Training",
+            "status": "not-started",
+            "createdAt": "2026-06-04T15:59:48.697Z"
+          }
+        ]
       },
       {
         "title": "Excel Issue in Lab computers",

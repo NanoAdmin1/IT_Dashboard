@@ -457,16 +457,6 @@
         "notes": "RDS CALs still required. Procurement and installation of Remote Desktop Services licenses."
       },
       {
-        "title": "Sort NanoOne Corporate Contacts (CiraHub / RO-Nano Corp)",
-        "type": "task",
-        "status": "blocked",
-        "categories": [
-          "services"
-        ],
-        "blocker": "Need to get in contact with Dan Blondal about this.",
-        "notes": "Organize and sync NanoOne corporate contacts. Related to CiraHub integration."
-      },
-      {
         "title": "Add Users and Assign Roles to Infor across Candiac and Burnaby",
         "type": "task",
         "status": "completed",

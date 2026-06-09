@@ -26,17 +26,6 @@
         "completedAt": "2026-03-23T13:30:00"
       },
       {
-        "title": "ESPEC Chamber Connect",
-        "type": "project",
-        "status": "blocked",
-        "categories": [
-          "networking",
-          "lab"
-        ],
-        "blocker": "Waiting for Blake to approve purchase of cables and switch (noted 12/3/2025).",
-        "notes": "10 ESPEC devices to be connected. Decided to use an isolated network (separate switch) rather than integrating into existing infrastructure. Verified with ESPEC that the program can handle 10 simultaneous devices."
-      },
-      {
         "title": "Install AZTec 6.3 Software on SEM Computer",
         "type": "task",
         "status": "completed",

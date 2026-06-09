@@ -1573,16 +1573,6 @@
         "completedAt": "2026-05-25T18:54:57.488Z"
       },
       {
-        "title": "SharePoint Procurement Migration",
-        "type": "project",
-        "status": "in-progress",
-        "categories": [
-          "services"
-        ],
-        "blocker": null,
-        "notes": "Check in with Maryam to see what needs to be done."
-      },
-      {
         "title": "SharePoint Systems Migration",
         "type": "project",
         "status": "in-progress",

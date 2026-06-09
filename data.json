@@ -511,17 +511,6 @@
         "completedAt": "2026-04-13T12:00:00"
       },
       {
-        "title": "MFA for Infor Print Server",
-        "type": "task",
-        "status": "blocked",
-        "categories": [
-          "security",
-          "infrastructure"
-        ],
-        "blocker": "Waiting for Blake to get in contact with Infor about this",
-        "notes": "Infor Print Server will need an MFA solution set-up on it."
-      },
-      {
         "title": "Set-up User Hammad Hussain",
         "type": "task",
         "status": "completed",

@@ -2201,7 +2201,13 @@
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [
+          {
+            "title": "Read Self Assesment Guide level 1 and determine steps needed",
+            "status": "not-started",
+            "createdAt": "2026-06-09T15:51:42.370Z"
+          }
+        ]
       }
     ],
     "blake": [],

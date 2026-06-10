@@ -1759,6 +1759,19 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-06-10T16:34:47.961Z"
+      },
+      {
+        "title": "0x12 events for svc_QuestAdmin and matt.pastuch_admin",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "security",
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

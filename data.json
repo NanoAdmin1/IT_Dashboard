@@ -1652,6 +1652,18 @@
         "title": "Ruilin Laptop Set-up",
         "type": "task",
         "status": "in-progress",
+        "categories": [
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
+        "title": "Alec Laptop Set-up",
+        "type": "task",
+        "status": "in-progress",
         "categories": [],
         "blocker": null,
         "notes": null,

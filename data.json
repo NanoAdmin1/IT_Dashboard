@@ -1576,14 +1576,15 @@
       {
         "title": "Fix Arbin 7 Excel Issue",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-06-10T19:51:44.258Z"
       },
       {
         "title": "NTLM V1 investigation on SIEM",

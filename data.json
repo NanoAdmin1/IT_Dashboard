@@ -1707,6 +1707,19 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "60:54:64:C0:05:78 dissociation errors",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "networking",
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

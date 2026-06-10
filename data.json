@@ -1686,7 +1686,9 @@
         "title": "Ian and Maxime noise on CFPS01",
         "type": "task",
         "status": "in-progress",
-        "categories": [],
+        "categories": [
+          "networking"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,

@@ -1713,7 +1713,7 @@
       {
         "title": "Wistron device on SW_01 port 29",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "security",
           "endpoint"
@@ -1721,7 +1721,8 @@
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-06-10T18:37:33.959Z"
       },
       {
         "title": "ShareGate integrity hash failure",

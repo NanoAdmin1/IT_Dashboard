@@ -1592,7 +1592,12 @@
           "networking"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "Meraki is sending NTLM V1 logs but Claude recommends NTLM V2.",
+            "createdAt": "2026-06-10T16:15:09.304Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       }

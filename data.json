@@ -1776,7 +1776,7 @@
       {
         "title": "citadmin failed login against Candiac FW",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "networking",
           "security"
@@ -1784,7 +1784,8 @@
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-06-10T16:37:13.004Z"
       }
     ],
     "jordan": [

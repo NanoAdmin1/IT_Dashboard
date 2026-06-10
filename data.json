@@ -1587,7 +1587,7 @@
       {
         "title": "NTLM V1 investigation on SIEM",
         "type": "task",
-        "status": "in-progress",
+        "status": "blocked",
         "categories": [
           "networking"
         ],
@@ -1596,6 +1596,10 @@
           {
             "text": "Meraki is sending NTLM V1 logs but Claude recommends NTLM V2.",
             "createdAt": "2026-06-10T16:15:09.304Z"
+          },
+          {
+            "text": "No way to fix this until Meraki supports it",
+            "createdAt": "2026-06-10T16:15:22.311Z"
           }
         ],
         "resolution": null,

@@ -1669,6 +1669,18 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Update/Upgrade CVEEAM01",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "security"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

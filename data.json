@@ -1750,7 +1750,10 @@
         "title": "Users authenticating even through disabled",
         "type": "task",
         "status": "in-progress",
-        "categories": [],
+        "categories": [
+          "security",
+          "endpoint"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,

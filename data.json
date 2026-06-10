@@ -1613,7 +1613,12 @@
           "security"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "Account is failing logins on BVEEAM01 and BFS01",
+            "createdAt": "2026-06-10T16:16:12.217Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       }

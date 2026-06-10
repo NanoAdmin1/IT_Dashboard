@@ -1733,6 +1733,18 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Update listed users Island Browser",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

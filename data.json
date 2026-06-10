@@ -578,7 +578,7 @@
       {
         "title": "Investigate Issues Documented in Monitoring.md",
         "type": "task",
-        "status": "not-started",
+        "status": "in-progress",
         "categories": [
           "infrastructure",
           "security"

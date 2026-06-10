@@ -1622,6 +1622,18 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-06-10T16:16:14.456Z"
+      },
+      {
+        "title": "ShareGate integrity hash failure",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "security"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

@@ -1720,6 +1720,19 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Wistron device on SW_01 port 29",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "security",
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

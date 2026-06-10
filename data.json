@@ -1652,9 +1652,7 @@
         "title": "Ruilin Laptop Set-up",
         "type": "task",
         "status": "in-progress",
-        "categories": [
-          "endpoint"
-        ],
+        "categories": [],
         "blocker": null,
         "notes": null,
         "resolution": null,

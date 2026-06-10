@@ -1687,7 +1687,8 @@
         "type": "task",
         "status": "in-progress",
         "categories": [
-          "networking"
+          "networking",
+          "security"
         ],
         "blocker": null,
         "notes": null,

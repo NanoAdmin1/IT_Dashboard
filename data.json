@@ -1609,7 +1609,9 @@
         "title": "ryan.lundrigan_admin failed login attempts",
         "type": "task",
         "status": "in-progress",
-        "categories": [],
+        "categories": [
+          "security"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,

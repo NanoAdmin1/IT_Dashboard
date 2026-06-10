@@ -1694,6 +1694,19 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Candiac syslogs not feeding into SIEM",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "security",
+          "services"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

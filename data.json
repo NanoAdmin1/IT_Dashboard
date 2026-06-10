@@ -1673,7 +1673,7 @@
       {
         "title": "Ian and Maxime noise on CFPS01",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "networking",
           "security"
@@ -1681,7 +1681,8 @@
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-06-10T18:37:37.815Z"
       },
       {
         "title": "Candiac syslogs not feeding into SIEM",

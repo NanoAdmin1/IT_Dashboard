@@ -1772,6 +1772,19 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "citadmin failed login against Candiac FW",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "networking",
+          "security"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

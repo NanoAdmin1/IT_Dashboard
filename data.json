@@ -1750,12 +1750,17 @@
       {
         "title": "Update listed users Island Browser",
         "type": "task",
-        "status": "in-progress",
+        "status": "waiting",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "Messages sent, may look for a way to force update.",
+            "createdAt": "2026-06-12T15:50:02.637Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       },

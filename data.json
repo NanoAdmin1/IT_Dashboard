@@ -1646,7 +1646,12 @@
           "endpoint"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "Waiting",
+            "createdAt": "2026-06-12T15:49:49.093Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       },

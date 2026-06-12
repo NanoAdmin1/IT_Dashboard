@@ -1648,8 +1648,9 @@
         "blocker": null,
         "notes": [
           {
-            "text": "Waiting",
-            "createdAt": "2026-06-12T15:49:49.093Z"
+            "text": "Waiting for Ruilin",
+            "createdAt": "2026-06-12T15:49:49.093Z",
+            "editedAt": "2026-06-12T15:50:08.621Z"
           }
         ],
         "resolution": null,

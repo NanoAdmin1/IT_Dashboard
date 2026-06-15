@@ -1641,7 +1641,7 @@
       {
         "title": "Ruilin Laptop Set-up",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
@@ -1654,7 +1654,8 @@
           }
         ],
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-06-15T20:13:39.489Z"
       },
       {
         "title": "Alec Laptop Set-up",

@@ -1820,6 +1820,18 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-06-10T16:39:26.769Z"
+      },
+      {
+        "title": "Fix console in 107 boardroom",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

@@ -1833,6 +1833,18 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-06-16T17:27:39.672Z"
+      },
+      {
+        "title": "Fix Ivans laptop connection in 101b meeting room",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

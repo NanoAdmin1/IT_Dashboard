@@ -2914,7 +2914,7 @@
     },
     {
       "title": "Pilote Plant Commercialization",
-      "status": "in-progress",
+      "status": "pending",
       "assignedTo": "maxime",
       "notes": null,
       "subtasks": [
@@ -2935,12 +2935,12 @@
         },
         {
           "title": "Access Groups",
-          "status": "in-progress",
+          "status": "done",
           "createdAt": "2026-06-16T18:59:08.615Z"
         },
         {
           "title": "Migration",
-          "status": "not-started",
+          "status": "done",
           "createdAt": "2026-06-16T18:59:13.813Z"
         }
       ]

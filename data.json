@@ -1847,6 +1847,16 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-06-17T21:59:13.424Z"
+      },
+      {
+        "title": "Finish Vincent Offboarding",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

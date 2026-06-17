@@ -1838,14 +1838,15 @@
       {
         "title": "Fix Ivans laptop connection in 101b meeting room",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-06-17T21:59:13.424Z"
       }
     ],
     "jordan": [

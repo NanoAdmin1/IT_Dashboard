@@ -1860,6 +1860,19 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-06-18T16:07:04.600Z"
+      },
+      {
+        "title": "Format laptops 6/26/2026",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "security",
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

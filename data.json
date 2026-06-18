@@ -1870,7 +1870,12 @@
           "endpoint"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "Kelli and Vincent laptops need formatting on 6/26",
+            "createdAt": "2026-06-18T16:07:31.628Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       }

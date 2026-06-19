@@ -1878,6 +1878,18 @@
         ],
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Pam DraftPro Issue",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

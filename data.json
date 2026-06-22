@@ -2623,7 +2623,7 @@
       {
         "title": "Install Island to TruPoint VM",
         "type": "task",
-        "status": "not-started",
+        "status": "blocked",
         "categories": [
           "security"
         ],

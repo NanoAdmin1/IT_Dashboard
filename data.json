@@ -700,7 +700,7 @@
         "completedAt": "2026-05-04T12:00:00"
       },
       {
-        "title": "Expand ESXi storage to cover ≥ 24 months of forecasted growth",
+        "title": "Expand ESXi storage to cover \u2265 24 months of forecasted growth",
         "type": "project",
         "status": "not-started",
         "categories": [
@@ -2810,9 +2810,8 @@
           4,
           5,
           6,
-          8,
-          11,
-          12
+          10,
+          11
         ]
       },
       {
@@ -2828,8 +2827,7 @@
           9,
           10,
           11,
-          12,
-          13
+          12
         ]
       },
       {
@@ -2838,7 +2836,7 @@
         "links": [
           2,
           4,
-          13
+          12
         ]
       }
     ],
@@ -2880,31 +2878,26 @@
       },
       {
         "number": 8,
-        "title": "Expand ESXi Storage",
-        "completed": false
-      },
-      {
-        "number": 9,
         "title": "MFA for Admin VPN Access",
         "completed": true
       },
       {
-        "number": 10,
+        "number": 9,
         "title": "FOB Access to Scientific Computers",
         "completed": true
       },
       {
-        "number": 11,
+        "number": 10,
         "title": "Candiac RADIUS",
         "completed": false
       },
       {
-        "number": 12,
+        "number": 11,
         "title": "Veeam Cloud Backups Fully Configured",
         "completed": true
       },
       {
-        "number": 13,
+        "number": 12,
         "title": "Shared Virtual Machine for Scientific Users (Ease of Use for Mac Users)",
         "completed": true
       }
@@ -2923,6 +2916,11 @@
       {
         "number": 3,
         "title": "Training (Certifications)",
+        "completed": false
+      },
+      {
+        "number": 4,
+        "title": "Expand ESXi Storage",
         "completed": false
       }
     ]
@@ -3010,7 +3008,7 @@
       "notes": null,
       "subtasks": [
         {
-          "title": "Amélioration Continue",
+          "title": "Am\u00e9lioration Continue",
           "status": "done",
           "createdAt": "2026-05-27T19:48:22.251Z"
         },

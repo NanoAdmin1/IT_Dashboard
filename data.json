@@ -2866,7 +2866,7 @@
       {
         "number": 5,
         "title": "SIEM Implementation",
-        "completed": true
+        "completed": false
       },
       {
         "number": 6,
@@ -2891,7 +2891,7 @@
       {
         "number": 10,
         "title": "FOB Access to Scientific Computers",
-        "completed": false
+        "completed": true
       },
       {
         "number": 11,

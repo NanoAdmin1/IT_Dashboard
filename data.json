@@ -2623,14 +2623,15 @@
       {
         "title": "Install Island to TruPoint VM",
         "type": "task",
-        "status": "blocked",
+        "status": "completed",
         "categories": [
           "security"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-06-22T16:08:43.294Z"
       },
       {
         "title": "CompTIA A+",

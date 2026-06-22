@@ -2546,7 +2546,12 @@
           "infrastructure"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "24 Juillet",
+            "createdAt": "2026-06-22T15:39:45.533Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       },

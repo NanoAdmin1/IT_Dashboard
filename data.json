@@ -2866,7 +2866,7 @@
       {
         "number": 5,
         "title": "SIEM Implementation",
-        "completed": false
+        "completed": true
       },
       {
         "number": 6,

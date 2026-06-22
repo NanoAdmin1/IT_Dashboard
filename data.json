@@ -2747,7 +2747,7 @@
       {
         "title": "Production SP Migration",
         "type": "task",
-        "status": "in-progress",
+        "status": "waiting",
         "categories": [
           "services"
         ],

@@ -2856,7 +2856,7 @@
       {
         "number": 3,
         "title": "KPIs for Tickets",
-        "completed": false
+        "completed": true
       },
       {
         "number": 4,

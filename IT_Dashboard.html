@@ -2496,9 +2496,9 @@ function renderGoals() {
     container.innerHTML = '';
     const items = goalsData[col] || [];
     const active = items.filter(g => !g.completed);
-    const done = items.filter(g => g.completed);
-    const ordered = [...active, ...done];
-    document.getElementById('hd-' + col + '-goals').textContent = items.length;
+    // Completed goals move exclusively to the Completed column — not shown here
+    const ordered = [...active];
+    document.getElementById('hd-' + col + '-goals').textContent = active.length;
     ordered.forEach((g, displayIdx) => {
       // Find actual index in goalsData[col]
       const goalIdx = items.indexOf(g);

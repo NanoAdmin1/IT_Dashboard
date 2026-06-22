@@ -2596,7 +2596,7 @@
       {
         "title": "Create SP Training Documentation",
         "type": "task",
-        "status": "not-started",
+        "status": "completed",
         "categories": [
           "services",
           "longterm"
@@ -2604,7 +2604,8 @@
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-06-22T15:41:03.219Z"
       },
       {
         "title": "Fix Immutable ID for Entra Accounts",

@@ -2747,7 +2747,7 @@
       {
         "title": "Production SP Migration",
         "type": "task",
-        "status": "waiting",
+        "status": "completed",
         "categories": [
           "services"
         ],
@@ -2760,7 +2760,8 @@
             "status": "not-started",
             "createdAt": "2026-06-04T15:59:48.697Z"
           }
-        ]
+        ],
+        "completedAt": "2026-06-22T15:40:55.417Z"
       },
       {
         "title": "Excel Issue in Lab computers",

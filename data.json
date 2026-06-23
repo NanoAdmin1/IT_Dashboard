@@ -1882,7 +1882,7 @@
       {
         "title": "Pam DraftPro Issue",
         "type": "task",
-        "status": "in-progress",
+        "status": "waiting",
         "categories": [
           "endpoint"
         ],

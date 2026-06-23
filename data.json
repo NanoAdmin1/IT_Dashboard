@@ -1924,7 +1924,12 @@
           "networking"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "45 TB of traffic viewed on the Switches 23 Up 22 Down for the month",
+            "createdAt": "2026-06-23T18:39:53.379Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       }

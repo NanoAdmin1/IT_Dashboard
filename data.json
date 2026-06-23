@@ -1753,7 +1753,7 @@
       {
         "title": "Update listed users Island Browser",
         "type": "task",
-        "status": "waiting",
+        "status": "in-progress",
         "categories": [
           "endpoint"
         ],

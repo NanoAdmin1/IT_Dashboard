@@ -1919,7 +1919,7 @@
       {
         "title": "Investigate BBY Network Usage",
         "type": "project",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "networking"
         ],
@@ -1943,7 +1943,8 @@
           }
         ],
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-06-23T18:42:43.191Z"
       }
     ],
     "jordan": [

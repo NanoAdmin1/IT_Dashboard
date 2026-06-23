@@ -1932,6 +1932,10 @@
           {
             "text": "95% of this traffic is Veeam. Verifying if it's normal",
             "createdAt": "2026-06-23T18:41:19.837Z"
+          },
+          {
+            "text": "Veeam traffic adds up. It's normal.",
+            "createdAt": "2026-06-23T18:41:36.708Z"
           }
         ],
         "resolution": null,

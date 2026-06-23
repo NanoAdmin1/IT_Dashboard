@@ -1936,6 +1936,10 @@
           {
             "text": "Veeam traffic adds up. It's normal.",
             "createdAt": "2026-06-23T18:41:36.708Z"
+          },
+          {
+            "text": "45 TB/month on these switches is reconciled backup traffic and sits well within their capacity — no performance concern and nothing unexpected in the volume.",
+            "createdAt": "2026-06-23T18:42:38.037Z"
           }
         ],
         "resolution": null,

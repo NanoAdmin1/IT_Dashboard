@@ -519,7 +519,16 @@
           "services"
         ],
         "blocker": "Waiting for Report from CDW on our current licensing which they are requesting from Microsoft.",
-        "notes": "Currently licensing for Nano One is a mess and there are licenses that we have no idea where they came from."
+        "notes": [
+          {
+            "text": "Currently licensing for Nano One is a mess and there are licenses that we have no idea where they came from.",
+            "createdAt": null
+          },
+          {
+            "text": "Last message sent to CDW 6/24/2026",
+            "createdAt": "2026-06-24T15:39:49.540Z"
+          }
+        ]
       },
       {
         "title": "Clean up Computers in AD",

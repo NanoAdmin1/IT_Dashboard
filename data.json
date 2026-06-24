@@ -1909,18 +1909,6 @@
         "subtasks": []
       },
       {
-        "title": "Claude auto-update for Mac",
-        "type": "task",
-        "status": "not-started",
-        "categories": [
-          "endpoint"
-        ],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": []
-      },
-      {
         "title": "Investigate BBY Network Usage",
         "type": "project",
         "status": "completed",

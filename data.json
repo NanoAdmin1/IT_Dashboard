@@ -582,7 +582,16 @@
           "networking"
         ],
         "blocker": null,
-        "notes": "On the Arbins and the XRD, MAB stopped access to the N drive. Unsure as to why this is happening, needs investigating."
+        "notes": [
+          {
+            "text": "On the Arbins and the XRD, MAB stopped access to the N drive. Unsure as to why this is happening, needs investigating.",
+            "createdAt": null
+          },
+          {
+            "text": "Low priority right now",
+            "createdAt": "2026-06-24T15:40:02.851Z"
+          }
+        ]
       },
       {
         "title": "Investigate Issues Documented in Monitoring.md",

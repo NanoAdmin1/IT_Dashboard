@@ -1912,7 +1912,7 @@
       {
         "title": "Pam DraftPro Issue",
         "type": "task",
-        "status": "waiting",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
@@ -1928,7 +1928,8 @@
           }
         ],
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-06-25T15:50:15.169Z"
       },
       {
         "title": "Investigate BBY Network Usage",

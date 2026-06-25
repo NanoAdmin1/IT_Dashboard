@@ -1972,6 +1972,19 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Dig into Meraki network alerts",
+        "type": "project",
+        "status": "in-progress",
+        "categories": [
+          "networking",
+          "security"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

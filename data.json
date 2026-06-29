@@ -1894,7 +1894,7 @@
       {
         "title": "Format laptops 6/26/2026",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "security",
           "endpoint"
@@ -1907,7 +1907,8 @@
           }
         ],
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-06-29T16:32:17.127Z"
       },
       {
         "title": "Pam DraftPro Issue",

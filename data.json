@@ -1977,7 +1977,7 @@
       {
         "title": "Dig into Meraki network alerts",
         "type": "project",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "networking",
           "security"
@@ -1985,7 +1985,8 @@
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-06-29T15:57:29.318Z"
       },
       {
         "title": "Figure out Meraki notifications issue",

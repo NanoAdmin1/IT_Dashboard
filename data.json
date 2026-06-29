@@ -1991,7 +1991,9 @@
         "title": "Figure out Meraki notifications issue",
         "type": "task",
         "status": "in-progress",
-        "categories": [],
+        "categories": [
+          "networking"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,

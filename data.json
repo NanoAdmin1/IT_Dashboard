@@ -2005,7 +2005,9 @@
         "title": "Figure Out Zoom Situation",
         "type": "task",
         "status": "in-progress",
-        "categories": [],
+        "categories": [
+          "endpoint"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,

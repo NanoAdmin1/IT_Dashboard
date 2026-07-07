@@ -480,7 +480,7 @@
       {
         "title": "Candiac RADIUS Server - Build & Configure",
         "type": "project",
-        "status": "blocked",
+        "status": "in-progress",
         "categories": [
           "networking",
           "security"

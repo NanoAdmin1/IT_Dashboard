@@ -1814,7 +1814,7 @@
       {
         "title": "0x12 events for svc_QuestAdmin and matt.pastuch_admin",
         "type": "task",
-        "status": "in-progress",
+        "status": "waiting",
         "categories": [
           "security",
           "endpoint"

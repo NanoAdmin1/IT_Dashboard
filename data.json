@@ -2667,7 +2667,7 @@
       {
         "title": "External (Outside) AP for Consultants",
         "type": "task",
-        "status": "blocked",
+        "status": "completed",
         "categories": [
           "networking",
           "security",
@@ -2681,7 +2681,8 @@
           }
         ],
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-07-07T15:37:14.871Z"
       },
       {
         "title": "WinXP PC in XRD Lab - sys32 Repair",

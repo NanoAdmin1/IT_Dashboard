@@ -2004,14 +2004,15 @@
       {
         "title": "Figure Out Zoom Situation",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-07-07T18:28:41.773Z"
       }
     ],
     "jordan": [

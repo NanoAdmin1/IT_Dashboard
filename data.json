@@ -480,13 +480,14 @@
       {
         "title": "Candiac RADIUS Server - Build & Configure",
         "type": "project",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "networking",
           "security"
         ],
         "blocker": "I will likely need to fly out to Candiac to assist with proper implementation.",
-        "notes": "Server is built and RADIUS installed. Configuration needs to be done and CA needs to be connected."
+        "notes": "Server is built and RADIUS installed. Configuration needs to be done and CA needs to be connected.",
+        "completedAt": "2026-07-09T13:37:51.669Z"
       },
       {
         "title": "Infor Print Server",

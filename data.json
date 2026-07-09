@@ -2034,7 +2034,6 @@
         "status": "in-progress",
         "categories": [
           "networking",
-          "security",
           "infrastructure"
         ],
         "blocker": null,

@@ -578,7 +578,7 @@
       {
         "title": "Figure out why MAB is blocking shared drive access",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "networking"
         ],
@@ -592,7 +592,8 @@
             "text": "Low priority right now",
             "createdAt": "2026-06-24T15:40:02.851Z"
           }
-        ]
+        ],
+        "completedAt": "2026-07-09T13:37:54.810Z"
       },
       {
         "title": "Investigate Issues Documented in Monitoring.md",

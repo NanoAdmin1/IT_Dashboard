@@ -2037,7 +2037,12 @@
           "infrastructure"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "Right now anything on the Catalyst Switches are going through a 100Mpbs link. Needs to be fixed.",
+            "createdAt": "2026-07-09T13:40:05.326Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       }

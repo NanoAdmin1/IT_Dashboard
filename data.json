@@ -2015,6 +2015,18 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-07-07T18:28:41.773Z"
+      },
+      {
+        "title": "Marcus Shipping/Receiving Computer",
+        "type": "task",
+        "status": "waiting",
+        "categories": [
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

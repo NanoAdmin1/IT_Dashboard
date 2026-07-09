@@ -2033,7 +2033,9 @@
         "type": "task",
         "status": "in-progress",
         "categories": [
-          "networking"
+          "networking",
+          "security",
+          "infrastructure"
         ],
         "blocker": null,
         "notes": null,

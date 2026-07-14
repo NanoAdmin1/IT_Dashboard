@@ -3265,27 +3265,10 @@
   ],
   "discussionData": [
     {
-      "title": "International Calling for Igor",
+      "title": "Test",
       "status": "to-discuss",
-      "notes": [
-        {
-          "text": "Mainly US, China and maybe Europe",
-          "createdAt": "2026-07-14T16:13:27.675Z",
-          "editedAt": "2026-07-14T16:13:37.275Z"
-        }
-      ],
-      "createdAt": "2026-07-14T16:12:09.287Z"
-    },
-    {
-      "title": "Solidworks computer (perhaps Russells tower)",
-      "status": "to-discuss",
-      "notes": [
-        {
-          "text": "Need to figure out if Russell still needs the tower",
-          "createdAt": "2026-07-14T16:14:35.685Z"
-        }
-      ],
-      "createdAt": "2026-07-14T16:13:47.708Z"
+      "notes": [],
+      "createdAt": "2026-07-14T17:39:44.222Z"
     }
   ]
 }

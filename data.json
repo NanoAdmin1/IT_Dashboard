@@ -720,7 +720,7 @@
         "completedAt": "2026-05-04T12:00:00"
       },
       {
-        "title": "Expand ESXi storage to cover ≥ 24 months of forecasted growth",
+        "title": "Expand ESXi storage to cover \u2265 24 months of forecasted growth",
         "type": "project",
         "status": "not-started",
         "categories": [
@@ -1956,7 +1956,7 @@
             "createdAt": "2026-06-23T18:41:36.708Z"
           },
           {
-            "text": "45 TB/month on these switches is reconciled backup traffic and sits well within their capacity — no performance concern and nothing unexpected in the volume.",
+            "text": "45 TB/month on these switches is reconciled backup traffic and sits well within their capacity \u2014 no performance concern and nothing unexpected in the volume.",
             "createdAt": "2026-06-23T18:42:38.037Z"
           }
         ],
@@ -3183,7 +3183,7 @@
       "notes": null,
       "subtasks": [
         {
-          "title": "Amélioration Continue",
+          "title": "Am\u00e9lioration Continue",
           "status": "done",
           "createdAt": "2026-05-27T19:48:22.251Z"
         },
@@ -3269,6 +3269,17 @@
       "status": "to-discuss",
       "notes": [],
       "createdAt": "2026-07-14T17:39:44.222Z"
+    },
+    {
+      "title": "Long Distance for Igor",
+      "status": "to-discuss",
+      "notes": [
+        {
+          "text": "He needs to call China, the US and Europe.",
+          "createdAt": "2026-07-14T17:56:48.027683"
+        }
+      ],
+      "createdAt": "2026-07-14T17:56:48.027703"
     }
   ]
 }

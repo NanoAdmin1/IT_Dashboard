@@ -2058,6 +2058,18 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Monitor and Docking Station for Igor",
+        "type": "task",
+        "status": "completed",
+        "categories": [
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "completedAt": "2026-07-14T20:07:06.600789"
       }
     ],
     "jordan": [

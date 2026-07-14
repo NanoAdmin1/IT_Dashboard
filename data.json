@@ -3267,7 +3267,12 @@
     {
       "title": "International Calling for Igor",
       "status": "to-discuss",
-      "notes": [],
+      "notes": [
+        {
+          "text": "Mainly US, China and",
+          "createdAt": "2026-07-14T16:13:27.675Z"
+        }
+      ],
       "createdAt": "2026-07-14T16:12:09.287Z"
     }
   ]

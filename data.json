@@ -3263,5 +3263,12 @@
       "subtasks": []
     }
   ],
-  "discussionData": []
+  "discussionData": [
+    {
+      "title": "International Calling for Igor",
+      "status": "to-discuss",
+      "notes": [],
+      "createdAt": "2026-07-14T16:12:09.287Z"
+    }
+  ]
 }

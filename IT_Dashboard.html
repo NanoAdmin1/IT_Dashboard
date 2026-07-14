@@ -1061,6 +1061,7 @@
   <button class="tab-btn" onclick="switchTab('blake', this)">Blake Wickman</button>
   <button class="tab-btn" onclick="switchTab('maxime', this)">Maxime Archambault</button>
   <button class="tab-btn" onclick="switchTab('sharepoint', this)">SharePoint</button>
+  <button class="tab-btn" onclick="switchTab('discussion', this)">Discussion</button>
 </div>
 
 <div class="main">
@@ -1375,6 +1376,36 @@
     </div>
   </div>
 
+  <!-- Discussion Tab -->
+  <div id="discussion-section" style="display:none;">
+    <div class="goals-board">
+      <div class="column">
+        <div class="column-header">
+          <div class="dot" style="background:var(--blue)"></div>
+          <h2>To Discuss</h2>
+          <span class="col-count" id="disc-hd-to-discuss">0</span>
+        </div>
+        <div class="cards" id="disc-col-to-discuss"></div>
+        <div class="add-task-trigger" onclick="showDiscAddForm()">+ Add Item</div>
+        <div id="disc-add-form" style="display:none;padding:10px;">
+          <input type="text" id="disc-add-title" placeholder="Discussion topic..." style="width:100%;padding:6px 8px;border-radius:6px;border:1px solid var(--border);background:var(--surface2);color:var(--text);font-size:0.85rem;box-sizing:border-box;">
+          <div style="margin-top:6px;display:flex;gap:6px;">
+            <button onclick="submitDiscItem()" style="flex:1;padding:5px;border-radius:6px;border:none;background:var(--blue);color:#fff;cursor:pointer;font-size:0.8rem;">Add</button>
+            <button onclick="cancelDiscAddForm()" style="flex:1;padding:5px;border-radius:6px;border:1px solid var(--border);background:none;color:var(--text);cursor:pointer;font-size:0.8rem;">Cancel</button>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="column-header">
+          <div class="dot" style="background:var(--green)"></div>
+          <h2>Discussed</h2>
+          <span class="col-count" id="disc-hd-discussed">0</span>
+        </div>
+        <div class="cards" id="disc-col-discussed"></div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <script src="desk365_data.js"></script>
@@ -1442,6 +1473,7 @@ async function saveData() {
     let mergedAllMembers = allMembersData;
     let mergedGoals = goalsData;
     let mergedSharepoint = sharepointData;
+    let mergedDiscussion = discussionData;
 
     if (!metaResp.ok) {
       const errBody = await metaResp.json().catch(() => ({}));
@@ -1497,11 +1529,22 @@ async function saveData() {
         } else if (remoteSpStr !== snapSpStr) {
           mergedSharepoint = remoteData.sharepointData || [];
         }
+
+        // Discussion: section-level merge
+        const remoteDiscStr = JSON.stringify(remoteData.discussionData);
+        const snapDiscStr   = JSON.stringify(loadedSnapshot.discussionData);
+        const localDiscStr  = JSON.stringify(discussionData);
+        if (localDiscStr !== snapDiscStr) {
+          mergedDiscussion = discussionData;
+        } else if (remoteDiscStr !== snapDiscStr) {
+          mergedDiscussion = remoteData.discussionData || [];
+        }
       } else {
         // No snapshot (loaded from fallback) — just use remote as base for members we didn't touch
         mergedAllMembers = { ...remoteData.allMembersData, ...allMembersData };
         mergedGoals = goalsData;
         mergedSharepoint = sharepointData;
+        mergedDiscussion = discussionData;
       }
     }
 
@@ -1509,9 +1552,10 @@ async function saveData() {
     allMembersData = mergedAllMembers;
     goalsData = mergedGoals;
     sharepointData = mergedSharepoint;
-    loadedSnapshot = JSON.parse(JSON.stringify({ allMembersData, goalsData, sharepointData }));
+    discussionData = mergedDiscussion;
+    loadedSnapshot = JSON.parse(JSON.stringify({ allMembersData, goalsData, sharepointData, discussionData }));
 
-    const content = btoa(unescape(encodeURIComponent(JSON.stringify({ allMembersData, goalsData, sharepointData }, null, 2))));
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify({ allMembersData, goalsData, sharepointData, discussionData }, null, 2))));
 
     const resp = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${DATA_FILE}`, {
       method: 'PUT',
@@ -1559,7 +1603,8 @@ function promptToken() {
         allMembersData = loaded.allMembersData;
         goalsData = loaded.goalsData;
         sharepointData = loaded.sharepointData || [];
-        loadedSnapshot = JSON.parse(JSON.stringify({ allMembersData, goalsData, sharepointData }));
+        discussionData = loaded.discussionData || [];
+        loadedSnapshot = JSON.parse(JSON.stringify({ allMembersData, goalsData, sharepointData, discussionData }));
         projects = allMembersData[activeMember] || allMembersData['ryan'];
         renderGoals();
         if (activeMember !== 'goals') renderAll();
@@ -1576,6 +1621,7 @@ function promptToken() {
 let allMembersData = {};
 let goalsData = {};
 let sharepointData = [];
+let discussionData = [];
 let loadedSnapshot = null; // snapshot of data as-loaded from GitHub, used for merge-on-save
 
 const FALLBACK_allMembersData = {
@@ -2394,11 +2440,12 @@ async function initData() {
     allMembersData = loaded.allMembersData;
     goalsData = loaded.goalsData;
     sharepointData = loaded.sharepointData || [];
-    loadedSnapshot = JSON.parse(JSON.stringify({ allMembersData, goalsData, sharepointData }));
+    loadedSnapshot = JSON.parse(JSON.stringify({ allMembersData, goalsData, sharepointData, discussionData }));
   } else {
     allMembersData = FALLBACK_allMembersData;
     goalsData = FALLBACK_goalsData;
     sharepointData = [];
+    discussionData = [];
     loadedSnapshot = null;
   }
   projects = allMembersData['ryan'];
@@ -2443,6 +2490,7 @@ function switchTab(member, btn) {
     goalsSection.style.display = '';
     desk365Section.style.display = 'none';
     sharepointSection.style.display = 'none';
+    document.getElementById('discussion-section').style.display = 'none';
     renderGoals();
     return;
   }
@@ -2454,7 +2502,20 @@ function switchTab(member, btn) {
     goalsSection.style.display = 'none';
     desk365Section.style.display = 'none';
     sharepointSection.style.display = '';
+    document.getElementById('discussion-section').style.display = 'none';
     renderSharePoint();
+    return;
+  }
+
+  if (member === 'discussion') {
+    projectBoard.style.display = 'none';
+    filtersEl.style.display = 'none';
+    boardEl.style.display = 'none';
+    goalsSection.style.display = 'none';
+    desk365Section.style.display = 'none';
+    sharepointSection.style.display = 'none';
+    document.getElementById('discussion-section').style.display = '';
+    renderDiscussion();
     return;
   }
 
@@ -2463,6 +2524,7 @@ function switchTab(member, btn) {
   boardEl.style.display = '';
   goalsSection.style.display = 'none';
   sharepointSection.style.display = 'none';
+  document.getElementById('discussion-section').style.display = 'none';
 
   if (member === 'ryan') {
     desk365Section.style.display = '';
@@ -3265,6 +3327,132 @@ function fmtStamp(iso) {
   if (!iso) return '';
   const d = new Date(iso);
   return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+}
+
+// --- Discussion Tab ---
+function renderDiscussion() {
+  const toDiscuss = discussionData.filter(d => d.status === 'to-discuss');
+  const discussed = discussionData.filter(d => d.status === 'discussed');
+
+  document.getElementById('disc-hd-to-discuss').textContent = toDiscuss.length;
+  document.getElementById('disc-hd-discussed').textContent = discussed.length;
+
+  ['to-discuss', 'discussed'].forEach(status => {
+    const col = document.getElementById(`disc-col-${status}`);
+    col.innerHTML = '';
+    const items = discussionData.map((d, i) => ({ ...d, _idx: i })).filter(d => d.status === status);
+    items.forEach(({ _idx: idx, ...item }) => {
+      const card = document.createElement('div');
+      card.className = 'card expanded';
+      card.style.marginBottom = '10px';
+
+      const stamp = item.createdAt ? `<span style="font-size:10px;color:var(--muted);margin-left:6px;">${fmtStamp(item.createdAt)}</span>` : '';
+      const deleteBtn = `<button class="card-delete" onclick="deleteDiscItem(event,${idx})" title="Delete">&times;</button>`;
+      const actionLabel = item.status === 'to-discuss' ? 'Mark Discussed' : 'Reopen';
+      const actionStyle = item.status === 'to-discuss'
+        ? 'background:var(--green);color:#fff;'
+        : 'background:var(--surface2);color:var(--text);border:1px solid var(--border);';
+      const actionBtn = `<button onclick="toggleDiscStatus(event,${idx})" style="margin-top:8px;padding:4px 10px;border-radius:6px;border:none;cursor:pointer;font-size:0.75rem;${actionStyle}">${actionLabel}</button>`;
+      const notesHtml = renderDiscNotesHtml(item.notes, idx);
+
+      card.innerHTML = `
+        ${deleteBtn}
+        <div class="card-title" style="padding-right:20px;">${item.title}${stamp}</div>
+        ${notesHtml}
+        ${actionBtn}`;
+      col.appendChild(card);
+    });
+  });
+}
+
+function renderDiscNotesHtml(notes, idx) {
+  const list = normalizeNotes(notes);
+  const items = list.map((n, ni) => `
+    <div class="note-item">
+      <span class="note-text">${n.text.replace(/\n/g,'<br>')}${n.createdAt ? `<span class="note-stamp">${fmtStamp(n.editedAt || n.createdAt)}</span>` : ''}</span>
+      <button class="note-edit" onclick="editDiscNote(event,${idx},${ni})" title="Edit">✏️</button>
+      <button class="note-delete" onclick="deleteDiscNote(event,${idx},${ni})" title="Delete">&times;</button>
+    </div>`).join('');
+  return `<div class="card-notes" style="display:block;">${list.length ? '<div class="notes-label">Notes</div>' : ''}${items}<button class="add-subtask-trigger" onclick="addDiscNote(event,${idx})">+ Add Note</button></div>`;
+}
+
+function showDiscAddForm() {
+  document.getElementById('disc-add-form').style.display = 'block';
+  document.getElementById('disc-add-title').focus();
+}
+
+function cancelDiscAddForm() {
+  document.getElementById('disc-add-form').style.display = 'none';
+  document.getElementById('disc-add-title').value = '';
+}
+
+function submitDiscItem() {
+  const title = document.getElementById('disc-add-title').value.trim();
+  if (!title) return;
+  discussionData.push({ title, status: 'to-discuss', notes: [], createdAt: new Date().toISOString() });
+  cancelDiscAddForm();
+  renderDiscussion();
+  saveData();
+}
+
+function toggleDiscStatus(event, idx) {
+  event.stopPropagation();
+  discussionData[idx].status = discussionData[idx].status === 'to-discuss' ? 'discussed' : 'to-discuss';
+  renderDiscussion();
+  saveData();
+}
+
+function deleteDiscItem(event, idx) {
+  event.stopPropagation();
+  if (!confirm(`Delete "${discussionData[idx].title}"?`)) return;
+  discussionData.splice(idx, 1);
+  renderDiscussion();
+  saveData();
+}
+
+function addDiscNote(event, idx) {
+  event.stopPropagation();
+  const notesDiv = event.target.closest('.card-notes');
+  event.target.style.display = 'none';
+  openNoteEditor(notesDiv, '', val => {
+    if (!val) { renderDiscussion(); return; }
+    const list = normalizeNotes(discussionData[idx].notes);
+    list.push({ text: val, createdAt: new Date().toISOString() });
+    discussionData[idx].notes = list;
+    renderDiscussion(); saveData();
+  });
+}
+
+function editDiscNote(event, idx, noteIdx) {
+  event.stopPropagation();
+  const noteItem = event.target.closest('.note-item');
+  const list = normalizeNotes(discussionData[idx].notes);
+  const span = noteItem.querySelector('.note-text');
+  const textarea = document.createElement('textarea');
+  textarea.className = 'editing';
+  textarea.value = list[noteIdx].text;
+  textarea.rows = 3;
+  textarea.style.flex = '1';
+  textarea.onclick = e => e.stopPropagation();
+  textarea.onkeydown = e => { if (e.key === 'Escape') { textarea.dataset.cancel = '1'; textarea.blur(); } };
+  textarea.onblur = () => {
+    if (textarea.dataset.cancel === '1') { renderDiscussion(); return; }
+    const val = textarea.value.trim();
+    if (val) { list[noteIdx].text = val; list[noteIdx].editedAt = new Date().toISOString(); }
+    else { list.splice(noteIdx, 1); }
+    discussionData[idx].notes = list.length ? list : [];
+    renderDiscussion(); saveData();
+  };
+  span.replaceWith(textarea);
+  textarea.focus();
+}
+
+function deleteDiscNote(event, idx, noteIdx) {
+  event.stopPropagation();
+  const list = normalizeNotes(discussionData[idx].notes);
+  list.splice(noteIdx, 1);
+  discussionData[idx].notes = list;
+  renderDiscussion(); saveData();
 }
 
 // --- Multi-note helpers ---

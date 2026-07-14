@@ -3279,7 +3279,12 @@
     {
       "title": "Solidworks computer (perhaps Russells tower)",
       "status": "to-discuss",
-      "notes": [],
+      "notes": [
+        {
+          "text": "Need to figure out if Russell still needs the tower",
+          "createdAt": "2026-07-14T16:14:35.685Z"
+        }
+      ],
       "createdAt": "2026-07-14T16:13:47.708Z"
     }
   ]

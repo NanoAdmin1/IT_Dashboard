@@ -2087,7 +2087,9 @@
         "title": "Provide temporary internet access to Arbin10",
         "type": "task",
         "status": "in-progress",
-        "categories": [],
+        "categories": [
+          "networking"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,

@@ -1994,14 +1994,15 @@
       {
         "title": "Figure out Meraki notifications issue",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "networking"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-07-15T18:17:17.808Z"
       },
       {
         "title": "Figure Out Zoom Situation",

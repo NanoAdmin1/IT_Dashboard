@@ -2082,6 +2082,16 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-07-15T22:10:23.130Z"
+      },
+      {
+        "title": "Provide temporary internet access to Arbin10",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

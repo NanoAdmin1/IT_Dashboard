@@ -2075,12 +2075,13 @@
       {
         "title": "Set-up remote connection for O'rian to Solidworks",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-07-15T22:10:23.130Z"
       }
     ],
     "jordan": [

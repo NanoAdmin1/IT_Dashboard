@@ -2088,7 +2088,8 @@
         "type": "task",
         "status": "in-progress",
         "categories": [
-          "networking"
+          "networking",
+          "endpoint"
         ],
         "blocker": null,
         "notes": null,

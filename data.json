@@ -621,12 +621,13 @@
       {
         "title": "Investigate MDM GPO errors",
         "type": "task",
-        "status": "not-started",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
-        "notes": "MDM GPO errors are coming up a lot. They don't seem to cause issues but worth investigating"
+        "notes": "MDM GPO errors are coming up a lot. They don't seem to cause issues but worth investigating",
+        "completedAt": "2026-07-16T17:43:40.154Z"
       },
       {
         "title": "Use AI to find an easier way to go through Azure Logs",

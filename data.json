@@ -1817,7 +1817,7 @@
       {
         "title": "0x12 events for svc_QuestAdmin and matt.pastuch_admin",
         "type": "task",
-        "status": "waiting",
+        "status": "completed",
         "categories": [
           "security",
           "endpoint"
@@ -1825,7 +1825,8 @@
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-07-16T19:30:12.010Z"
       },
       {
         "title": "citadmin failed login against Candiac FW",

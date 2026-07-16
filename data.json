@@ -2113,7 +2113,9 @@
         "title": "Remote Access to Solidworks PC for Igor",
         "type": "task",
         "status": "in-progress",
-        "categories": [],
+        "categories": [
+          "endpoint"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,

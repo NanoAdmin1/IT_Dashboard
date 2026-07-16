@@ -515,7 +515,7 @@
       {
         "title": "Figure out Licensing for Nano One",
         "type": "task",
-        "status": "waiting",
+        "status": "blocked",
         "categories": [
           "services"
         ],

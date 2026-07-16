@@ -2103,7 +2103,9 @@
         "title": "Set up new  Carbon Sulfur computer",
         "type": "task",
         "status": "in-progress",
-        "categories": [],
+        "categories": [
+          "endpoint"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,
@@ -2114,7 +2116,8 @@
         "type": "task",
         "status": "in-progress",
         "categories": [
-          "endpoint"
+          "endpoint",
+          "services"
         ],
         "blocker": null,
         "notes": null,

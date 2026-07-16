@@ -2098,6 +2098,16 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-07-16T17:07:19.728Z"
+      },
+      {
+        "title": "Set up new  Carbon Sulfur computer",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

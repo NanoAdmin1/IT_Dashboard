@@ -2104,7 +2104,8 @@
         "type": "task",
         "status": "in-progress",
         "categories": [
-          "endpoint"
+          "endpoint",
+          "services"
         ],
         "blocker": null,
         "notes": null,
@@ -2114,7 +2115,7 @@
       {
         "title": "Remote Access to Solidworks PC for Igor",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint",
           "services"
@@ -2122,7 +2123,8 @@
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-07-17T18:13:49.559Z"
       }
     ],
     "jordan": [

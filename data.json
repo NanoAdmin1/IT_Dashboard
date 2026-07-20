@@ -2131,7 +2131,9 @@
         "title": "Move Arbin 7 PC to Arbin 10",
         "type": "task",
         "status": "in-progress",
-        "categories": [],
+        "categories": [
+          "endpoint"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,

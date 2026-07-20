@@ -2102,7 +2102,7 @@
       {
         "title": "Set up new  Carbon Sulfur computer",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint",
           "services"
@@ -2110,7 +2110,8 @@
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-07-20T15:52:31.777Z"
       },
       {
         "title": "Remote Access to Solidworks PC for Igor",

@@ -2126,6 +2126,16 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-07-17T18:13:49.559Z"
+      },
+      {
+        "title": "Move Arbin 7 PC to Arbin 10",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

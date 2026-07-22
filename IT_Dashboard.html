@@ -532,6 +532,7 @@
   .card-status-badge.st-blocked { background: var(--red-bg); color: var(--red); }
   .card-status-badge.st-study { background: #422006; color: var(--orange); }
   .card-status-badge.st-pending { background: var(--blue-bg); color: var(--blue); }
+  .card-status-badge.st-shelved { background: rgba(148,163,184,0.15); color: #94a3b8; }
 
   /* Delete button */
   .card-delete {
@@ -1372,6 +1373,15 @@
           <span class="col-count" id="sp-hd-completed">0</span>
         </div>
         <div class="cards" id="sp-col-completed"></div>
+      </div>
+      <div class="column">
+        <div class="column-header">
+          <div class="dot" style="background:#94a3b8"></div>
+          <h2>Shelved</h2>
+          <span class="col-count" id="sp-hd-shelved">0</span>
+        </div>
+        <div class="cards" id="sp-col-shelved"></div>
+        <div class="add-task-trigger" onclick="showSpAddForm('shelved')">+ Add Task</div>
       </div>
     </div>
   </div>
@@ -2636,14 +2646,14 @@ function updateMatrixCheckmarks() {
 
 const expandedCards = new Set();
 
-const SP_STATUS_CYCLE = ['not-started', 'in-progress', 'pending', 'completed'];
-const SP_STATUS_LABEL = { 'not-started': 'Not Started', 'in-progress': 'In Progress', 'pending': 'Pending', 'completed': 'Completed' };
+const SP_STATUS_CYCLE = ['not-started', 'in-progress', 'pending', 'completed', 'shelved'];
+const SP_STATUS_LABEL = { 'not-started': 'Not Started', 'in-progress': 'In Progress', 'pending': 'Pending', 'completed': 'Completed', 'shelved': 'Shelved' };
 const SP_ASSIGNEE_COLORS = { ryan: '#3b82f6', jordan: '#a855f7', blake: '#22c55e', maxime: '#f97316' };
 const SP_ASSIGNEE_LABELS = { ryan: 'Ryan', jordan: 'Jordan', blake: 'Blake', maxime: 'Maxime' };
 const spExpandedCards = new Set();
 
 function renderSharePoint() {
-  const statuses = ['not-started', 'in-progress', 'pending', 'completed'];
+  const statuses = ['not-started', 'in-progress', 'pending', 'completed', 'shelved'];
   statuses.forEach(s => {
     const container = document.getElementById('sp-col-' + s);
     if (!container) return;
@@ -2657,6 +2667,8 @@ function renderSharePoint() {
       card.className = 'card';
 
       const isCompleted = s === 'completed';
+      const isShelved = s === 'shelved';
+      const isCompact = isCompleted || isShelved;
 
       // Delete button
       const deleteBtn = `<button class="card-delete" onclick="deleteSpTask(event, ${idx})" title="Delete">&times;</button>`;
@@ -2666,11 +2678,13 @@ function renderSharePoint() {
       const label = item.assignedTo ? SP_ASSIGNEE_LABELS[item.assignedTo] : 'Unassigned';
       const assigneeHtml = `<div style="margin-top:6px;"><span class="sp-assignee-chip" onclick="cycleSpAssignee(event,${idx})" title="Click to reassign" style="cursor:pointer;font-size:0.7rem;padding:2px 8px;border-radius:4px;background:${color}22;color:${color};border:1px solid ${color}44;">${label} ▾</span></div>`;
 
-      if (isCompleted) {
+      if (isCompact) {
         card.style.padding = '8px 12px';
         const notesHtml = renderSpNotesHtml(item.notes, idx);
+        const shelvedBadge = isShelved ? `<div style="margin-bottom:4px;"><span class="card-status-badge st-shelved" onclick="cycleSpStatus(event, ${idx})" title="Click to change status">Shelved</span></div>` : '';
         card.innerHTML = `
           ${deleteBtn}
+          ${shelvedBadge}
           <div class="card-title" style="margin-bottom:0;font-size:0.8rem;color:var(--muted);">${item.title}</div>
           ${assigneeHtml}
           ${notesHtml}

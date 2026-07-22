@@ -2138,6 +2138,19 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Arbin 2 remote support session 9:30am",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "networking",
+          "security"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

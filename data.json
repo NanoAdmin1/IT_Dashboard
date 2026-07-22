@@ -3316,7 +3316,7 @@
       ]
     },
     {
-      "title": "P&C - Finance collab site",
+      "title": "P&C/Finance + Payroll",
       "status": "in-progress",
       "assignedTo": "ryan",
       "notes": [
@@ -3333,13 +3333,6 @@
           "createdAt": "2026-06-12T16:14:56.120Z"
         }
       ],
-      "subtasks": []
-    },
-    {
-      "title": "Payroll",
-      "status": "in-progress",
-      "assignedTo": "ryan",
-      "notes": null,
       "subtasks": []
     }
   ],

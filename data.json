@@ -2182,7 +2182,9 @@
         "title": "Allow Internet Access Arbin 10",
         "type": "task",
         "status": "in-progress",
-        "categories": [],
+        "categories": [
+          "networking"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,

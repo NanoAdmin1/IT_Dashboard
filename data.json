@@ -2142,7 +2142,7 @@
       {
         "title": "Arbin 2 remote support session 9:30am",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "networking",
           "security"
@@ -2150,7 +2150,8 @@
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-07-23T17:34:39.445Z"
       },
       {
         "title": "Onboarding of Jeff Wang",

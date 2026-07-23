@@ -2130,14 +2130,15 @@
       {
         "title": "Move Arbin 7 PC to Arbin 10",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-07-23T17:34:41.504Z"
       },
       {
         "title": "Arbin 2 remote support session 9:30am",

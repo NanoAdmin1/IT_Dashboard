@@ -2181,7 +2181,7 @@
       {
         "title": "Allow Internet Access Arbin 10",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "networking",
           "security"
@@ -2189,7 +2189,8 @@
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-07-23T20:37:46.542Z"
       }
     ],
     "jordan": [

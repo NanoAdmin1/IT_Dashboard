@@ -2193,6 +2193,19 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-07-23T20:37:46.542Z"
+      },
+      {
+        "title": "8x8 X3 License for Igor",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "endpoint",
+          "services"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

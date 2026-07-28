@@ -3112,7 +3112,13 @@
           }
         ],
         "resolution": null,
-        "subtasks": []
+        "subtasks": [
+          {
+            "title": "Workflow Creation",
+            "status": "not-started",
+            "createdAt": "2026-07-28T15:16:38.631Z"
+          }
+        ]
       }
     ]
   },

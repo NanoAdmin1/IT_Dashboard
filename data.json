@@ -3104,7 +3104,12 @@
         "status": "not-started",
         "categories": [],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "Need to create a workflow on SP Site",
+            "createdAt": "2026-07-28T15:15:40.939Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       }

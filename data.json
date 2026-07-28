@@ -3106,8 +3106,9 @@
         "blocker": null,
         "notes": [
           {
-            "text": "Need to create a workflow on SP Site",
-            "createdAt": "2026-07-28T15:15:40.939Z"
+            "text": "Need to create a workflow on SP Site Candiac facturation&Reception to allow automatic",
+            "createdAt": "2026-07-28T15:15:40.939Z",
+            "editedAt": "2026-07-28T15:15:56.115Z"
           }
         ],
         "resolution": null,

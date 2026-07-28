@@ -3428,27 +3428,10 @@
   ],
   "discussionData": [
     {
-      "title": "Test",
+      "title": "SolidWorks computer for Igor",
       "status": "to-discuss",
       "notes": [],
-      "createdAt": "2026-07-14T17:39:44.222Z"
-    },
-    {
-      "title": "Long Distance for Igor",
-      "status": "discussed",
-      "notes": [
-        {
-          "text": "He needs to call China, the US and Europe.",
-          "createdAt": "2026-07-14T17:56:48.027683"
-        }
-      ],
-      "createdAt": "2026-07-14T17:56:48.027703"
-    },
-    {
-      "title": "SolidWorks Computer for Igor",
-      "status": "to-discuss",
-      "notes": [],
-      "createdAt": "2026-07-28T18:41:04.338Z"
+      "createdAt": "2026-07-28T18:41:36.172Z"
     }
   ]
 }

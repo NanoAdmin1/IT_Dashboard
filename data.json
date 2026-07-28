@@ -3426,23 +3426,5 @@
       "subtasks": []
     }
   ],
-  "discussionData": [
-    {
-      "title": "Test",
-      "status": "to-discuss",
-      "notes": [],
-      "createdAt": "2026-07-14T17:39:44.222Z"
-    },
-    {
-      "title": "Long Distance for Igor",
-      "status": "discussed",
-      "notes": [
-        {
-          "text": "He needs to call China, the US and Europe.",
-          "createdAt": "2026-07-14T17:56:48.027683"
-        }
-      ],
-      "createdAt": "2026-07-14T17:56:48.027703"
-    }
-  ]
+  "discussionData": []
 }

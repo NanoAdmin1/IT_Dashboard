@@ -2210,8 +2210,22 @@
       {
         "title": "Investigate Meraki Alerts in admin@nanoone.ca",
         "type": "project",
-        "status": "waiting",
+        "status": "not-started",
         "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
+        "title": "Create Backup for DarkTrace",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "security",
+          "endpoint",
+          "services"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,

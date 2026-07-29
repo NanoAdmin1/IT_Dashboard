@@ -2223,7 +2223,7 @@
       {
         "title": "Create Backup for DarkTrace",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "security",
           "endpoint",
@@ -2232,7 +2232,8 @@
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-07-29T19:13:14.585Z"
       },
       {
         "title": "Network Security for Appliances",

@@ -2211,7 +2211,9 @@
         "title": "Investigate Meraki Alerts in admin@nanoone.ca",
         "type": "project",
         "status": "not-started",
-        "categories": [],
+        "categories": [
+          "networking"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,

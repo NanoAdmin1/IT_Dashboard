@@ -2212,7 +2212,8 @@
         "type": "project",
         "status": "not-started",
         "categories": [
-          "networking"
+          "networking",
+          "security"
         ],
         "blocker": null,
         "notes": null,
@@ -2227,6 +2228,19 @@
           "security",
           "endpoint",
           "services"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
+        "title": "Network Security for Appliances",
+        "type": "project",
+        "status": "not-started",
+        "categories": [
+          "networking",
+          "security"
         ],
         "blocker": null,
         "notes": null,

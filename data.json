@@ -2208,6 +2208,19 @@
         "subtasks": []
       },
       {
+        "title": "Network Security for Appliances",
+        "type": "project",
+        "status": "not-started",
+        "categories": [
+          "networking",
+          "security"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
         "title": "Investigate Meraki Alerts in admin@nanoone.ca",
         "type": "project",
         "status": "not-started",
@@ -2234,19 +2247,6 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-07-29T19:13:14.585Z"
-      },
-      {
-        "title": "Network Security for Appliances",
-        "type": "project",
-        "status": "not-started",
-        "categories": [
-          "networking",
-          "security"
-        ],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": []
       },
       {
         "title": "Onboarding Aleem Ladak",

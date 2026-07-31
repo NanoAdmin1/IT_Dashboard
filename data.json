@@ -3414,7 +3414,12 @@
       "title": "Systems",
       "status": "in-progress",
       "assignedTo": "maxime",
-      "notes": null,
+      "notes": [
+        {
+          "text": "Waiting for permission list from Christian",
+          "createdAt": "2026-07-31T17:22:17.735Z"
+        }
+      ],
       "subtasks": [
         {
           "title": "Amélioration Continue",

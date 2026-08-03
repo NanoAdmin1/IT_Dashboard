@@ -3211,8 +3211,9 @@
         "blocker": null,
         "notes": [
           {
-            "text": "Fedex, CRA,",
-            "createdAt": "2026-08-03T14:44:36.569Z"
+            "text": "Fedex, CRA, https://www.perkinelmer.com/",
+            "createdAt": "2026-08-03T14:44:36.569Z",
+            "editedAt": "2026-08-03T14:44:44.900Z"
           }
         ],
         "resolution": null,

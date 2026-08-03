@@ -3209,7 +3209,12 @@
           "services"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "Fedex, CRA,",
+            "createdAt": "2026-08-03T14:44:36.569Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       }

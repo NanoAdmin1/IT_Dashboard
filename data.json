@@ -3198,6 +3198,20 @@
             "createdAt": "2026-07-28T15:16:38.631Z"
           }
         ]
+      },
+      {
+        "title": "Issue Reaching Multiple Different Websites from Candiac Network",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "networking",
+          "endpoint",
+          "services"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ]
   },

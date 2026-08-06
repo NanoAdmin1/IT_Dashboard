@@ -2197,7 +2197,7 @@
       {
         "title": "8x8 X3 License for Igor",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint",
           "services"
@@ -2205,7 +2205,8 @@
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-08-06T16:20:30.685Z"
       },
       {
         "title": "Network Security for Appliances",

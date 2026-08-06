@@ -2284,6 +2284,16 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-08-06T16:20:58.999Z"
+      },
+      {
+        "title": "New Headset for Orian",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

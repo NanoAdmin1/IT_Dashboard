@@ -2273,6 +2273,16 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-07-31T18:22:05.747Z"
+      },
+      {
+        "title": "Set-up iPad for 107",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

@@ -2251,12 +2251,13 @@
       {
         "title": "Onboarding Aleem Ladak",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-08-06T16:20:28.802Z"
       },
       {
         "title": "Investigate Federation Capabilities",

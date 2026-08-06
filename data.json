@@ -2277,12 +2277,13 @@
       {
         "title": "Set-up iPad for 107",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-08-06T16:20:58.999Z"
       }
     ],
     "jordan": [

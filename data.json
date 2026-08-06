@@ -2301,26 +2301,28 @@
       {
         "title": "Keyboard for Ygor",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-08-06T17:26:26.097Z"
       },
       {
         "title": "HDMI to DP cable for Ygor",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-08-06T17:26:24.748Z"
       },
       {
         "title": "Wired RADIUS overview with Jordan",

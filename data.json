@@ -2288,14 +2288,15 @@
       {
         "title": "New Headset for Orian",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-08-06T17:26:23.456Z"
       },
       {
         "title": "Keyboard for Ygor",

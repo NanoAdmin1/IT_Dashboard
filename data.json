@@ -2289,7 +2289,9 @@
         "title": "New Headset for Orian",
         "type": "task",
         "status": "in-progress",
-        "categories": [],
+        "categories": [
+          "endpoint"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,

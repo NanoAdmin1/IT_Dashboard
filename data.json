@@ -1774,7 +1774,7 @@
       {
         "title": "Update listed users Island Browser",
         "type": "task",
-        "status": "waiting",
+        "status": "blocked",
         "categories": [
           "endpoint"
         ],

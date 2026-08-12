@@ -2351,14 +2351,15 @@
       {
         "title": "Install RAM for Bec",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-08-12T16:49:38.479Z"
       },
       {
         "title": "Call with Aleem for laptop issues",

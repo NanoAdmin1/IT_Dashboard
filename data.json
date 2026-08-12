@@ -2347,6 +2347,18 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-08-06T17:32:33.175Z"
+      },
+      {
+        "title": "Install RAM for Bec",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

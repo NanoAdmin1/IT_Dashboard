@@ -2377,12 +2377,13 @@
       {
         "title": "Scheduled Task for DarkTrace backup removal",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-08-13T16:05:18.387Z"
       }
     ],
     "jordan": [

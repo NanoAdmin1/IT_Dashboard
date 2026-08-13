@@ -2364,14 +2364,15 @@
       {
         "title": "Call with Aleem for laptop issues",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-08-13T15:53:28.058Z"
       },
       {
         "title": "Scheduled Task for DarkTrace backup removal",

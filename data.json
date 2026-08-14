@@ -2385,6 +2385,18 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-08-13T16:05:18.387Z"
+      },
+      {
+        "title": "Arbin Software Upgrade",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

@@ -2410,6 +2410,18 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Renew Veeam September 1st",
+        "type": "task",
+        "status": "waiting",
+        "categories": [
+          "infrastructure"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

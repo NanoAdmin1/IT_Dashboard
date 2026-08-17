@@ -2054,14 +2054,15 @@
       {
         "title": "Solidworks Computer for Igor",
         "type": "task",
-        "status": "waiting",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-08-17T16:22:01.321Z"
       },
       {
         "title": "Monitor and Docking Station for Igor",

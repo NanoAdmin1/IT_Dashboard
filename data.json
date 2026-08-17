@@ -2223,19 +2223,6 @@
         "subtasks": []
       },
       {
-        "title": "Investigate Meraki Alerts in admin@nanoone.ca",
-        "type": "project",
-        "status": "in-progress",
-        "categories": [
-          "networking",
-          "security"
-        ],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": []
-      },
-      {
         "title": "Create Backup for DarkTrace",
         "type": "task",
         "status": "completed",
@@ -2385,6 +2372,19 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-08-13T16:05:18.387Z"
+      },
+      {
+        "title": "Investigate Meraki Alerts in admin@nanoone.ca",
+        "type": "project",
+        "status": "in-progress",
+        "categories": [
+          "networking",
+          "security"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       },
       {
         "title": "Arbin Software Upgrade",

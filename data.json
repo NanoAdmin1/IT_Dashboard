@@ -2390,14 +2390,15 @@
       {
         "title": "Arbin Software Upgrade",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-08-17T19:50:28.650Z"
       },
       {
         "title": "Fix Replication",

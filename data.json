@@ -3038,6 +3038,11 @@
             "title": "Replication",
             "status": "not-started",
             "createdAt": "2026-08-17T13:49:34.735Z"
+          },
+          {
+            "title": "Cloud Replication",
+            "status": "not-started",
+            "createdAt": "2026-08-17T13:49:49.056Z"
           }
         ]
       },

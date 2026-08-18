@@ -2440,7 +2440,9 @@
         "title": "Arbin Support 11am Aug 19",
         "type": "task",
         "status": "in-progress",
-        "categories": [],
+        "categories": [
+          "security"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,

@@ -2322,7 +2322,12 @@
           "security"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "Working with Jordan and his availability to do this. Wired RADIUS is in place just needs to be turned on.",
+            "createdAt": "2026-08-19T15:56:05.070Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       },

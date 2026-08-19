@@ -2408,7 +2408,12 @@
           "infrastructure"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "Some research already done. Waiting on other tasks with higher priority to be done.",
+            "createdAt": "2026-08-19T15:55:42.357Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       },

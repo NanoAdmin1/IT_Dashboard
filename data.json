@@ -2498,7 +2498,7 @@
       {
         "title": "Super AI Computer set-up",
         "type": "task",
-        "status": "waiting",
+        "status": "in-progress",
         "categories": [
           "endpoint",
           "security"

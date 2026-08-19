@@ -2484,14 +2484,15 @@
       {
         "title": "Fix Ahmadreza monitors 10am Aug 19",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-08-19T17:08:01.576Z"
       },
       {
         "title": "Super AI Computer set-up",

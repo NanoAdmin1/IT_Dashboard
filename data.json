@@ -2498,10 +2498,16 @@
         "type": "task",
         "status": "waiting",
         "categories": [
-          "endpoint"
+          "endpoint",
+          "security"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "Waiting on O'rian to message me",
+            "createdAt": "2026-08-19T16:02:46.652Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       }

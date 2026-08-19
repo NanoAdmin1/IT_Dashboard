@@ -2427,12 +2427,17 @@
       {
         "title": "Bec Computer issue with Syteline",
         "type": "task",
-        "status": "in-progress",
+        "status": "waiting",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "Meeting with ESS is being arranged by Blake. Waiting to see if she needs a new computer.",
+            "createdAt": "2026-08-19T15:54:42.614Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       },

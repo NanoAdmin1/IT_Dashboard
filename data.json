@@ -2498,7 +2498,7 @@
       {
         "title": "Super AI Computer set-up Thursday",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint",
           "security"
@@ -2511,7 +2511,8 @@
           }
         ],
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-08-21T15:44:05.099Z"
       }
     ],
     "jordan": [

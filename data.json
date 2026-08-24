@@ -2514,6 +2514,19 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-08-21T15:44:05.099Z"
+      },
+      {
+        "title": "Move or Rebuild RADIUS server",
+        "type": "project",
+        "status": "in-progress",
+        "categories": [
+          "networking",
+          "security"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

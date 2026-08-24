@@ -2442,7 +2442,7 @@
       {
         "title": "Bec Computer issue with Syteline",
         "type": "task",
-        "status": "waiting",
+        "status": "in-progress",
         "categories": [
           "endpoint"
         ],

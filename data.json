@@ -2546,14 +2546,15 @@
       {
         "title": "Fix 101B Printer",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-08-24T18:42:20.995Z"
       },
       {
         "title": "Arbin 2 not Powering on",

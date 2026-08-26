@@ -2572,14 +2572,15 @@
       {
         "title": "Arbin 5 needs Network Share Access",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-08-26T15:59:55.149Z"
       }
     ],
     "jordan": [

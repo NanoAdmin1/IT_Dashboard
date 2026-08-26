@@ -2581,6 +2581,18 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-08-26T15:59:55.149Z"
+      },
+      {
+        "title": "Onboarding Elijah Bliss",
+        "type": "task",
+        "status": "waiting",
+        "categories": [
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

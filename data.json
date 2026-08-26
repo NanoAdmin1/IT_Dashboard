@@ -2610,9 +2610,7 @@
         "title": "Offboarding Amy Lei",
         "type": "task",
         "status": "waiting",
-        "categories": [
-          "endpoint"
-        ],
+        "categories": [],
         "blocker": null,
         "notes": null,
         "resolution": null,

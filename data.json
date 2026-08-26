@@ -2610,7 +2610,9 @@
         "title": "Offboarding Amy Lei",
         "type": "task",
         "status": "waiting",
-        "categories": [],
+        "categories": [
+          "endpoint"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,
@@ -2618,6 +2620,18 @@
       },
       {
         "title": "Offboarding Tarun Jassi",
+        "type": "task",
+        "status": "waiting",
+        "categories": [
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
+        "title": "Offboarding Amanda Quiding",
         "type": "task",
         "status": "waiting",
         "categories": [

@@ -3597,6 +3597,10 @@
           {
             "text": "more websites:",
             "createdAt": "2026-08-21T15:48:40.395Z"
+          },
+          {
+            "text": "Problem fixed. New DNS are Bell Toronto and Google 8.8.8.8",
+            "createdAt": "2026-08-28T16:20:43.871Z"
           }
         ],
         "resolution": null,

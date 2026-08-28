@@ -3581,7 +3581,7 @@
       {
         "title": "Issue Reaching Multiple Different Websites from Candiac Network",
         "type": "task",
-        "status": "in-progress",
+        "status": "waiting",
         "categories": [
           "networking",
           "endpoint",

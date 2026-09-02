@@ -2427,23 +2427,6 @@
         "subtasks": []
       },
       {
-        "title": "Renew Veeam September 1st",
-        "type": "task",
-        "status": "in-progress",
-        "categories": [
-          "infrastructure"
-        ],
-        "blocker": null,
-        "notes": [
-          {
-            "text": "Waiting until September 1st",
-            "createdAt": "2026-08-19T15:54:57.095Z"
-          }
-        ],
-        "resolution": null,
-        "subtasks": []
-      },
-      {
         "title": "Bec Computer issue with Syteline",
         "type": "task",
         "status": "completed",

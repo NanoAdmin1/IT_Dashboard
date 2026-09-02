@@ -2593,26 +2593,28 @@
       {
         "title": "Offboarding Amy Lei Aug 28",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-09-02T18:33:36.621Z"
       },
       {
         "title": "Offboarding Tarun Jassi Aug 28",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-09-02T18:33:35.120Z"
       },
       {
         "title": "Offboarding Amanda Quiding Aug 28",

@@ -2644,14 +2644,15 @@
       {
         "title": "Reinstall Excel Add-in for Harkirat",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-09-03T21:21:10.252Z"
       }
     ],
     "jordan": [

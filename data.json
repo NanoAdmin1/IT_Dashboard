@@ -2653,6 +2653,18 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-09-03T21:21:10.252Z"
+      },
+      {
+        "title": "Fix 107 iPad printer",
+        "type": "task",
+        "status": "waiting",
+        "categories": [
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

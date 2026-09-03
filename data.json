@@ -2645,7 +2645,9 @@
         "title": "Reinstall Excel Add-in for Harkirat",
         "type": "task",
         "status": "in-progress",
-        "categories": [],
+        "categories": [
+          "endpoint"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,

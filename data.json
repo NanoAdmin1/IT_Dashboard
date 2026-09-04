@@ -2632,14 +2632,15 @@
       {
         "title": "Upgrade XRD Software Friday 8:30am",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-09-04T16:28:56.033Z"
       },
       {
         "title": "Reinstall Excel Add-in for Harkirat",

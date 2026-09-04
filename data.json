@@ -3645,6 +3645,16 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-08-28T16:20:48.856Z"
+      },
+      {
+        "title": "Guide de bonne pratique SharePoint",
+        "type": "task",
+        "status": "not-started",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ]
   },

@@ -2658,7 +2658,7 @@
       {
         "title": "Fix 107 iPad printer",
         "type": "task",
-        "status": "waiting",
+        "status": "in-progress",
         "categories": [
           "endpoint"
         ],

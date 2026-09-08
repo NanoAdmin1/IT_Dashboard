@@ -2408,7 +2408,7 @@
       {
         "title": "Candiac Backups on BBY and vice versa",
         "type": "project",
-        "status": "waiting",
+        "status": "in-progress",
         "categories": [
           "infrastructure"
         ],
@@ -2673,14 +2673,15 @@
       {
         "title": "Sean Computer Stuttering",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-09-08T17:50:06.181Z"
       }
     ],
     "jordan": [

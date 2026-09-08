@@ -2569,14 +2569,15 @@
       {
         "title": "Onboarding Elijah Bliss Sept 8",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-09-08T17:50:02.728Z"
       },
       {
         "title": "Onboarding Ethan Tam Sept 8",

@@ -2682,6 +2682,20 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-09-08T17:50:06.181Z"
+      },
+      {
+        "title": "Make a list of groups for onboarding",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "infrastructure",
+          "endpoint",
+          "services"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

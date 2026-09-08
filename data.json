@@ -2582,14 +2582,15 @@
       {
         "title": "Onboarding Ethan Tam Sept 8",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-09-08T17:50:03.971Z"
       },
       {
         "title": "Offboarding Amy Lei Aug 28",
@@ -2659,14 +2660,15 @@
       {
         "title": "Fix 107 iPad printer",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-09-08T17:50:05.054Z"
       },
       {
         "title": "Sean Computer Stuttering",

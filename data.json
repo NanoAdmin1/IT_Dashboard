@@ -2725,9 +2725,7 @@
         "title": "Omarchy/AI Study",
         "type": "task",
         "status": "study",
-        "categories": [
-          "endpoint"
-        ],
+        "categories": [],
         "blocker": null,
         "notes": null,
         "resolution": null,

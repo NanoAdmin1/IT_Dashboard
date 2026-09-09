@@ -2701,7 +2701,9 @@
         "title": "Lisa Outlook Issue (Low Prio according to her)",
         "type": "task",
         "status": "waiting",
-        "categories": [],
+        "categories": [
+          "endpoint"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,

@@ -2720,6 +2720,16 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Omarchy/AI Study",
+        "type": "task",
+        "status": "study",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

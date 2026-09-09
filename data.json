@@ -2686,7 +2686,7 @@
       {
         "title": "Make a list of groups for onboarding",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "infrastructure",
           "endpoint",
@@ -2695,7 +2695,8 @@
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-09-09T18:31:45.905Z"
       },
       {
         "title": "Lisa Outlook Issue (Low Prio according to her)",
@@ -2725,7 +2726,9 @@
         "title": "Omarchy/AI Study",
         "type": "task",
         "status": "study",
-        "categories": [],
+        "categories": [
+          "infrastructure"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,

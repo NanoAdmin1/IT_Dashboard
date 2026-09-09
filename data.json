@@ -2713,14 +2713,15 @@
       {
         "title": "Vincent WiFi issue on Mac (1:15pm 9/9)",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-09-09T20:51:02.686Z"
       },
       {
         "title": "Omarchy/AI Study",

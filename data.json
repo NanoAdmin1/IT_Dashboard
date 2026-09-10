@@ -2408,7 +2408,7 @@
       {
         "title": "Candiac Backups on BBY and vice versa",
         "type": "project",
-        "status": "in-progress",
+        "status": "waiting",
         "categories": [
           "infrastructure"
         ],
@@ -2752,7 +2752,7 @@
       {
         "title": "RADIUS Server swap over (9/15)",
         "type": "task",
-        "status": "in-progress",
+        "status": "waiting",
         "categories": [
           "networking"
         ],

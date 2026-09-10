@@ -2701,14 +2701,15 @@
       {
         "title": "Lisa Outlook Issue (10am 9/10)",
         "type": "task",
-        "status": "waiting",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-09-10T17:21:01.916Z"
       },
       {
         "title": "Vincent WiFi issue on Mac (1:15pm 9/9)",

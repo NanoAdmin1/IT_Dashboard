@@ -3738,6 +3738,16 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Imprimante Étiquette Shipping (USB)",
+        "type": "task",
+        "status": "not-started",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ]
   },

@@ -2740,14 +2740,15 @@
       {
         "title": "Reinstall SmartLab for Ivan",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "security"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-09-10T20:54:25.197Z"
       },
       {
         "title": "RADIUS Server swap over (9/15)",

@@ -2506,7 +2506,7 @@
       {
         "title": "Move or Rebuild RADIUS server",
         "type": "project",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "networking",
           "security"
@@ -2514,7 +2514,8 @@
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-09-10T17:21:20.518Z"
       },
       {
         "title": "Incident Report for Network Outage",

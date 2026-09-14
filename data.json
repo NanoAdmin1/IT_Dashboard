@@ -2799,7 +2799,7 @@
       {
         "title": "Hard Drive full for SEM computer",
         "type": "task",
-        "status": "in-progress",
+        "status": "waiting",
         "categories": [
           "endpoint"
         ],

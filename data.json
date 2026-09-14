@@ -2824,7 +2824,9 @@
         "title": "Renew BRAD01 certificate",
         "type": "task",
         "status": "in-progress",
-        "categories": [],
+        "categories": [
+          "networking"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,

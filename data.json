@@ -2773,6 +2773,16 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Arbin 3 Export Issue",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

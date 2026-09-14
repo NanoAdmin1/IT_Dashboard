@@ -2765,7 +2765,7 @@
       {
         "title": "Fix Ring Camera after Outage on 15th",
         "type": "task",
-        "status": "in-progress",
+        "status": "waiting",
         "categories": [
           "endpoint"
         ],
@@ -2799,7 +2799,7 @@
       {
         "title": "Hard Drive full for SEM computer",
         "type": "task",
-        "status": "waiting",
+        "status": "in-progress",
         "categories": [
           "endpoint"
         ],

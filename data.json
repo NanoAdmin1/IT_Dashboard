@@ -2807,6 +2807,18 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Certificate auto-renewal for RADIUS",
+        "type": "task",
+        "status": "waiting",
+        "categories": [
+          "networking"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

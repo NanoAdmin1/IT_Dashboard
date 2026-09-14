@@ -2777,24 +2777,26 @@
       {
         "title": "Arbin 3 Export Issue",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-09-14T19:50:02.522Z"
       },
       {
         "title": "Candiac RADIUS investigation",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "networking"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-09-14T19:50:00.517Z"
       },
       {
         "title": "SEM 9/15 - 10AM ish with O'rian",

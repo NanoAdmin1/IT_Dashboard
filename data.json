@@ -2851,6 +2851,18 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Copy/Pastable PDF Generation for onboarding",
+        "type": "task",
+        "status": "waiting",
+        "categories": [
+          "services"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

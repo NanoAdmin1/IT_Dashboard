@@ -2823,14 +2823,15 @@
       {
         "title": "Renew BRAD01 certificate",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "networking"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-09-14T19:49:58.997Z"
       },
       {
         "title": "BRAD02 Renewal - July 2028",

@@ -2870,14 +2870,15 @@
       {
         "title": "Investigate Internet Outage in 107",
         "type": "project",
-        "status": "waiting",
+        "status": "completed",
         "categories": [
           "networking"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-09-15T18:47:04.262Z"
       }
     ],
     "jordan": [

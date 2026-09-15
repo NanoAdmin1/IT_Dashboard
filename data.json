@@ -2882,18 +2882,6 @@
         "completedAt": "2026-09-15T18:47:04.262Z"
       },
       {
-        "title": "Implement fix for Internet Outage in 107",
-        "type": "task",
-        "status": "in-progress",
-        "categories": [
-          "networking"
-        ],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": []
-      },
-      {
         "title": "RADIUS for Mac user fix",
         "type": "project",
         "status": "waiting",

@@ -2893,7 +2893,12 @@
         "status": "in-progress",
         "categories": [],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "Implemented, just waiting for Mac users to sync.",
+            "createdAt": "2026-09-15T19:48:39.621Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       }

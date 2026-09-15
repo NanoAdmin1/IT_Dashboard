@@ -2766,7 +2766,7 @@
       {
         "title": "Fix Ring Camera after Outage",
         "type": "task",
-        "status": "in-progress",
+        "status": "waiting",
         "categories": [
           "endpoint"
         ],

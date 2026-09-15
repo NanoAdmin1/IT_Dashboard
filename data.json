@@ -2766,14 +2766,15 @@
       {
         "title": "Fix Ring Camera after Outage",
         "type": "task",
-        "status": "waiting",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-09-15T19:28:46.213Z"
       },
       {
         "title": "Arbin 3 Export Issue",

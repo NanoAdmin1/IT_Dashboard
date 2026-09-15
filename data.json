@@ -2866,6 +2866,18 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Investigate Internet Outage in 107",
+        "type": "project",
+        "status": "waiting",
+        "categories": [
+          "networking"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

@@ -2753,14 +2753,15 @@
       {
         "title": "RADIUS Server swap over (9/15)",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "networking"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-09-15T18:47:13.936Z"
       },
       {
         "title": "Fix Ring Camera after Outage on 15th",

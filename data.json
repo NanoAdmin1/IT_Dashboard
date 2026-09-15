@@ -2808,7 +2808,12 @@
           "endpoint"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "Date change due to scheduling",
+            "createdAt": "2026-09-15T19:48:15.500Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       },

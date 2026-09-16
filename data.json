@@ -2901,6 +2901,18 @@
         ],
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Order Router Meraki Z4 or Equivalent",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "networking"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

@@ -2890,7 +2890,7 @@
       {
         "title": "RADIUS for Mac user fix",
         "type": "project",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [],
         "blocker": null,
         "notes": [
@@ -2900,7 +2900,8 @@
           }
         ],
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-09-16T17:01:38.611Z"
       },
       {
         "title": "Hardware for New Office",

@@ -3626,7 +3626,7 @@
       {
         "title": "SIMDUT EHS Training",
         "type": "task",
-        "status": "not-started",
+        "status": "blocked",
         "categories": [
           "certification"
         ],

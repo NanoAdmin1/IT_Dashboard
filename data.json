@@ -2946,7 +2946,12 @@
         "status": "in-progress",
         "categories": [],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "Need to install BIOS.\n\nContacted",
+            "createdAt": "2026-09-18T16:01:57.998Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       }

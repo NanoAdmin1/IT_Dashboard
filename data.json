@@ -2965,7 +2965,12 @@
           "services"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "Candiac backup on BBY is done. Just waiting for more storage to be put in the Candiac Veeam so BBY has space. Everything else is staged and ready",
+            "createdAt": "2026-09-21T19:36:31.665Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       }

@@ -2912,7 +2912,12 @@
           "networking"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "Waiting on a quote from CDW for the MX68 plus license",
+            "createdAt": "2026-09-21T20:39:15.916Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       },

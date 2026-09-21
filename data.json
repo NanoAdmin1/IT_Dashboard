@@ -2946,7 +2946,12 @@
         "status": "in-progress",
         "categories": [],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "New laptop ordered",
+            "createdAt": "2026-09-21T20:39:44.988Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       },

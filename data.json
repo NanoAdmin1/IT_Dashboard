@@ -2955,6 +2955,19 @@
         ],
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "BBY Backup on Candiac (Mostly Done)",
+        "type": "task",
+        "status": "waiting",
+        "categories": [
+          "infrastructure",
+          "services"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

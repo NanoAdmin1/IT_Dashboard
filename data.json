@@ -2973,6 +2973,19 @@
         ],
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Quote from CDW for MX68",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "networking",
+          "infrastructure"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

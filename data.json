@@ -3369,11 +3369,11 @@
         "subtasks": [
           {
             "title": "Review current Disaster Response Plan",
-            "status": "in-progress"
+            "status": "not-started"
           },
           {
             "title": "Determine role changes needed",
-            "status": "not-started"
+            "status": "in-progress"
           },
           {
             "title": "Inform team of role changes",

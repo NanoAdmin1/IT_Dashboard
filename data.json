@@ -3115,7 +3115,7 @@
       {
         "title": "Wired RADIUS Setup - Burnaby",
         "type": "task",
-        "status": "waiting",
+        "status": "blocked",
         "categories": [
           "networking",
           "security"

@@ -3443,7 +3443,7 @@
       {
         "title": "OS Hardening & Baseline Images",
         "type": "project",
-        "status": "not-started",
+        "status": "in-progress",
         "categories": [
           "security",
           "endpoint"

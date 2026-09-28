@@ -3279,43 +3279,6 @@
         ]
       },
       {
-        "title": "CIS 4.6 - Require MFA for Externally-Exposed Applications",
-        "type": "project",
-        "status": "waiting",
-        "categories": [
-          "security",
-          "networking"
-        ],
-        "blocker": null,
-        "notes": "Ensure all externally-accessible applications and services require multi-factor authentication.",
-        "subtasks": [
-          {
-            "title": "Inventory all externally-exposed applications and services",
-            "status": "not-started"
-          },
-          {
-            "title": "Identify which already have MFA enforced",
-            "status": "not-started"
-          },
-          {
-            "title": "Enable MFA for M365 / Azure AD external access (Conditional Access)",
-            "status": "not-started"
-          },
-          {
-            "title": "Enable MFA for VPN access (ties into Duo/Meraki project)",
-            "status": "not-started"
-          },
-          {
-            "title": "Enable MFA for any remaining external-facing services",
-            "status": "not-started"
-          },
-          {
-            "title": "Verify MFA enforcement with test logins from external networks",
-            "status": "not-started"
-          }
-        ]
-      },
-      {
         "title": "CIS 4.7 - Manage Default Accounts on Enterprise Assets",
         "type": "project",
         "status": "not-started",

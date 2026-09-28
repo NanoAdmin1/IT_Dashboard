@@ -3413,7 +3413,7 @@
         "subtasks": [
           {
             "title": "Define hardening standards (CIS benchmarks for Windows + macOS)",
-            "status": "not-started"
+            "status": "in-progress"
           },
           {
             "title": "Build Windows baseline image",

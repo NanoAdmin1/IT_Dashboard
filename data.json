@@ -3035,6 +3035,19 @@
         ],
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Intune Autopilot Troubleshooting",
+        "type": "project",
+        "status": "waiting",
+        "categories": [
+          "infrastructure",
+          "services"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

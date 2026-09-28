@@ -3210,47 +3210,6 @@
         ]
       },
       {
-        "title": "CIS 4.7 - Manage Default Accounts on Enterprise Assets",
-        "type": "project",
-        "status": "not-started",
-        "categories": [
-          "security",
-          "infrastructure"
-        ],
-        "blocker": null,
-        "notes": "Disable, rename, or change passwords on all default/built-in accounts across enterprise assets and software.",
-        "subtasks": [
-          {
-            "title": "Inventory default accounts on network devices (switches, firewalls, APs)",
-            "status": "not-started"
-          },
-          {
-            "title": "Inventory default accounts on servers and endpoints (local admin, guest)",
-            "status": "not-started"
-          },
-          {
-            "title": "Inventory default accounts in applications and services",
-            "status": "not-started"
-          },
-          {
-            "title": "Disable or rename default accounts where possible",
-            "status": "not-started"
-          },
-          {
-            "title": "Change default passwords on accounts that cannot be disabled",
-            "status": "not-started"
-          },
-          {
-            "title": "Configure Intune/GPO to enforce local admin account management (LAPS)",
-            "status": "not-started"
-          },
-          {
-            "title": "Document all changes and create recurring audit schedule",
-            "status": "not-started"
-          }
-        ]
-      },
-      {
         "title": "Disaster Response Planning",
         "type": "project",
         "status": "waiting",

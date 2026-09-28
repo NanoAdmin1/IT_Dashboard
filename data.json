@@ -2933,7 +2933,7 @@
       {
         "title": "Hong new laptop",
         "type": "task",
-        "status": "waiting",
+        "status": "in-progress",
         "categories": [],
         "blocker": null,
         "notes": [
@@ -3033,6 +3033,16 @@
             "createdAt": "2026-09-28T15:43:02.700Z"
           }
         ],
+        "resolution": null,
+        "subtasks": []
+      },
+      {
+        "title": "Intune Autopilot configuration",
+        "type": "task",
+        "status": "waiting",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
         "resolution": null,
         "subtasks": []
       }

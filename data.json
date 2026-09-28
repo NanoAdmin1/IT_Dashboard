@@ -2804,7 +2804,7 @@
       {
         "title": "SEM Investigation with O'rian",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
@@ -2824,7 +2824,8 @@
           }
         ],
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-09-28T15:40:15.747Z"
       },
       {
         "title": "Certificate auto-renewal for RADIUS",

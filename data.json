@@ -4008,6 +4008,20 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Bell Internet Speed Issue",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "networking",
+          "infrastructure",
+          "services"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ]
   },

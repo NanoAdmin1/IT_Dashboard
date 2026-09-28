@@ -2991,7 +2991,7 @@
       {
         "title": "BBY Backup on Candiac (Mostly Done)",
         "type": "task",
-        "status": "waiting",
+        "status": "blocked",
         "categories": [
           "infrastructure",
           "services"

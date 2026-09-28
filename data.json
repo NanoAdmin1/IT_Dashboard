@@ -3182,7 +3182,7 @@
         "subtasks": [
           {
             "title": "Identify data types and storage locations (SharePoint, file servers, email, backups)",
-            "status": "in-progress"
+            "status": "not-started"
           },
           {
             "title": "Define retention periods per data classification",

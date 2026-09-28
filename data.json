@@ -3019,7 +3019,12 @@
           "endpoint"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "Waiting for O'rian to respond to my messages about a time to install.",
+            "createdAt": "2026-09-28T19:20:39.201Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       },

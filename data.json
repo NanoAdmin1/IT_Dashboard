@@ -3103,7 +3103,12 @@
           "services"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "I have emailed Toner Tech",
+            "createdAt": "2026-09-28T19:32:44.787Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       }

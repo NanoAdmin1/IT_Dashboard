@@ -3509,6 +3509,19 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Auto-disable inactive accounts",
+        "type": "task",
+        "status": "not-started",
+        "categories": [
+          "security",
+          "infrastructure"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "blake": [],

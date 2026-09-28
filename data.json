@@ -3037,18 +3037,6 @@
         "subtasks": []
       },
       {
-        "title": "Intune Autopilot configuration",
-        "type": "task",
-        "status": "waiting",
-        "categories": [
-          "services"
-        ],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": []
-      },
-      {
         "title": "Island Enforcement with Maxime",
         "type": "task",
         "status": "waiting",

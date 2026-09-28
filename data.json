@@ -3210,38 +3210,6 @@
         ]
       },
       {
-        "title": "CIS 4.2 - Enforce Unique Credentials",
-        "type": "project",
-        "status": "not-started",
-        "categories": [
-          "security"
-        ],
-        "blocker": null,
-        "notes": "Ensure every user and service account has unique credentials. Eliminate shared accounts and default passwords.",
-        "subtasks": [
-          {
-            "title": "Audit AD for shared or generic accounts",
-            "status": "not-started"
-          },
-          {
-            "title": "Audit service accounts for shared credentials",
-            "status": "not-started"
-          },
-          {
-            "title": "Assign unique credentials to all shared accounts or decommission them",
-            "status": "not-started"
-          },
-          {
-            "title": "Enforce password policy in AD (complexity, rotation, no reuse)",
-            "status": "not-started"
-          },
-          {
-            "title": "Document exceptions and justifications for any remaining shared accounts",
-            "status": "not-started"
-          }
-        ]
-      },
-      {
         "title": "CIS 4.7 - Manage Default Accounts on Enterprise Assets",
         "type": "project",
         "status": "not-started",

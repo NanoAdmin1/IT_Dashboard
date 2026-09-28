@@ -4022,26 +4022,6 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
-      },
-      {
-        "title": "Unreachable Websites",
-        "type": "task",
-        "status": "blocked",
-        "categories": [
-          "networking",
-          "infrastructure",
-          "services",
-          "longterm"
-        ],
-        "blocker": null,
-        "notes": [
-          {
-            "text": "Issue fixed. Bell DNS Resolver in MTL was the issue. Changed to Toronto Resolver + Google's 8.8.8.8",
-            "createdAt": "2026-09-28T15:20:21.660Z"
-          }
-        ],
-        "resolution": null,
-        "subtasks": []
       }
     ]
   },

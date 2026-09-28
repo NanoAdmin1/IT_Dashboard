@@ -3048,6 +3048,19 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Island Browser Enforcement w/ Maxime",
+        "type": "project",
+        "status": "waiting",
+        "categories": [
+          "security",
+          "services"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

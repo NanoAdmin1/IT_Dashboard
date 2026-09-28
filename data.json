@@ -3126,7 +3126,7 @@
       {
         "title": "Wired RADIUS Setup - Candiac",
         "type": "task",
-        "status": "not-started",
+        "status": "in-progress",
         "categories": [
           "networking",
           "security"

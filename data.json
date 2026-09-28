@@ -3485,6 +3485,18 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "VPN Idle Timeout",
+        "type": "task",
+        "status": "not-started",
+        "categories": [
+          "security"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "blake": [],

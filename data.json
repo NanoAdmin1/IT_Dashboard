@@ -3223,11 +3223,11 @@
         "subtasks": [
           {
             "title": "Review current Disaster Response Plan",
-            "status": "done"
+            "status": "in-progress"
           },
           {
             "title": "Determine role changes needed",
-            "status": "done"
+            "status": "not-started"
           },
           {
             "title": "Inform team of role changes",
@@ -3246,7 +3246,7 @@
       {
         "title": "TableTop Exercise",
         "type": "project",
-        "status": "not-started",
+        "status": "in-progress",
         "categories": [
           "security"
         ],

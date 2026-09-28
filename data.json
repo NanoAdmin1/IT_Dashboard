@@ -3023,7 +3023,9 @@
         "title": "New Employee - Easton Bates",
         "type": "task",
         "status": "in-progress",
-        "categories": [],
+        "categories": [
+          "endpoint"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,

@@ -3040,7 +3040,9 @@
         "title": "Intune Autopilot configuration",
         "type": "task",
         "status": "waiting",
-        "categories": [],
+        "categories": [
+          "services"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,

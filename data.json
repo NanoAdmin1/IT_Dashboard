@@ -2966,7 +2966,7 @@
       {
         "title": "Kelli Camera issue",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [],
         "blocker": null,
         "notes": [
@@ -2985,7 +2985,8 @@
           }
         ],
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-09-28T15:38:45.538Z"
       },
       {
         "title": "BBY Backup on Candiac (Mostly Done)",

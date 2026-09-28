@@ -3169,43 +3169,6 @@
         "completedAt": "2026-08-12T16:03:44.542Z"
       },
       {
-        "title": "CIS 2.2 - Ensure Authorized Software Is Currently Supported",
-        "type": "project",
-        "status": "not-started",
-        "categories": [
-          "security",
-          "endpoint"
-        ],
-        "blocker": null,
-        "notes": "Inventory all installed software and ensure only vendor-supported versions are in use. Remove or upgrade end-of-life software.",
-        "subtasks": [
-          {
-            "title": "Build inventory of all installed software across endpoints and servers",
-            "status": "not-started"
-          },
-          {
-            "title": "Identify end-of-life or unsupported software",
-            "status": "not-started"
-          },
-          {
-            "title": "Create upgrade/removal plan for unsupported software",
-            "status": "not-started"
-          },
-          {
-            "title": "Execute upgrades and removals",
-            "status": "not-started"
-          },
-          {
-            "title": "Configure Intune or SIEM to alert on unauthorized/unsupported installs",
-            "status": "not-started"
-          },
-          {
-            "title": "Document approved software list and review schedule",
-            "status": "not-started"
-          }
-        ]
-      },
-      {
         "title": "CIS 3.4 - Enforce Data Retention",
         "type": "project",
         "status": "waiting",

@@ -3027,7 +3027,12 @@
           "endpoint"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "No form has been provided yet",
+            "createdAt": "2026-09-28T15:43:02.700Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       }

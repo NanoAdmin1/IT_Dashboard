@@ -3006,6 +3006,18 @@
         ],
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Install SSD into SEM computer",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

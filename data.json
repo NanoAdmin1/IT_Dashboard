@@ -4032,6 +4032,16 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Offline Laptop for OT",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ]
   },

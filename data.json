@@ -2835,7 +2835,12 @@
           "networking"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "On the backburner for other projects",
+            "createdAt": "2026-09-28T19:21:38.240Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       },

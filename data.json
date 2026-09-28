@@ -3079,6 +3079,20 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Label Printers for Uncountable",
+        "type": "project",
+        "status": "not-started",
+        "categories": [
+          "infrastructure",
+          "endpoint",
+          "services"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

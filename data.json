@@ -3115,13 +3115,14 @@
       {
         "title": "Wired RADIUS Setup - Burnaby",
         "type": "task",
-        "status": "blocked",
+        "status": "completed",
         "categories": [
           "networking",
           "security"
         ],
         "blocker": null,
-        "notes": "Set up 802.1X wired RADIUS authentication at the Burnaby site."
+        "notes": "Set up 802.1X wired RADIUS authentication at the Burnaby site.",
+        "completedAt": "2026-09-28T17:26:11.667Z"
       },
       {
         "title": "Wired RADIUS Setup - Candiac",

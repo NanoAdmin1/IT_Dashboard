@@ -3116,14 +3116,15 @@
       {
         "title": "Check Moisture Analzyer for WiFi issue.",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-09-29T22:34:25.693Z"
       }
     ],
     "jordan": [

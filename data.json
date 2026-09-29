@@ -2942,7 +2942,7 @@
       {
         "title": "Hong new laptop",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [],
         "blocker": null,
         "notes": [
@@ -2956,7 +2956,8 @@
           }
         ],
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-09-29T22:23:19.858Z"
       },
       {
         "title": "Marcus new laptop",

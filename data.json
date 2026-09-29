@@ -3746,7 +3746,13 @@
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [
+          {
+            "title": "Ouissem, synced with wrong AD",
+            "status": "not-started",
+            "createdAt": "2026-09-29T14:44:06.781Z"
+          }
+        ]
       },
       {
         "title": "Install Island to TruPoint VM",

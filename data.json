@@ -3098,7 +3098,7 @@
       {
         "title": "Printer feed issue with Toshiba in 101B",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint",
           "services"
@@ -3111,7 +3111,8 @@
           }
         ],
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-10-01T18:04:43.461Z"
       },
       {
         "title": "Check Moisture Analzyer for WiFi issue.",

@@ -3150,6 +3150,19 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-10-05T17:40:34.390Z"
+      },
+      {
+        "title": "Key FOBs for Tamara",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "endpoint",
+          "services"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

@@ -3143,12 +3143,13 @@
       {
         "title": "TonerTech 9:30am (Now 9:50am as hes late)",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-10-05T17:40:34.390Z"
       }
     ],
     "jordan": [

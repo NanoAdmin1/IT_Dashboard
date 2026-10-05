@@ -3154,7 +3154,7 @@
       {
         "title": "Key FOBs for Tamara",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint",
           "services"
@@ -3162,7 +3162,8 @@
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-10-05T17:49:35.984Z"
       }
     ],
     "jordan": [

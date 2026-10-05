@@ -3170,7 +3170,9 @@
         "title": "Present IT best practices/tidy-up in meeting",
         "type": "task",
         "status": "in-progress",
-        "categories": [],
+        "categories": [
+          "services"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,

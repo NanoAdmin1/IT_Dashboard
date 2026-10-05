@@ -2921,7 +2921,7 @@
       {
         "title": "Hardware for New Office",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "networking"
         ],
@@ -2937,7 +2937,8 @@
           }
         ],
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-10-05T17:51:36.283Z"
       },
       {
         "title": "Hong new laptop",

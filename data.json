@@ -3021,7 +3021,7 @@
       {
         "title": "Install SSD into SEM computer",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
@@ -3033,7 +3033,8 @@
           }
         ],
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-10-06T16:25:34.332Z"
       },
       {
         "title": "Onboarding Easton Bates - 10/8",
@@ -3171,7 +3172,8 @@
         "type": "task",
         "status": "in-progress",
         "categories": [
-          "services"
+          "services",
+          "endpoint"
         ],
         "blocker": null,
         "notes": null,

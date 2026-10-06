@@ -3179,6 +3179,19 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Install O'rian Software on WinShared",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "endpoint",
+          "services"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

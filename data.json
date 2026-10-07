@@ -4151,12 +4151,13 @@
       {
         "title": "Data Room Setup For Aleem",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-10-07T18:34:50.881Z"
       }
     ]
   },

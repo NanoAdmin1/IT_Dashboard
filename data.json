@@ -3170,7 +3170,7 @@
       {
         "title": "Present IT best practices/tidy-up in meeting",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "services",
           "endpoint"
@@ -3178,7 +3178,8 @@
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-10-08T19:23:29.964Z"
       },
       {
         "title": "Install O'rian Software on WinShared",

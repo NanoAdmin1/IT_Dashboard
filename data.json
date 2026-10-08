@@ -3039,7 +3039,7 @@
       {
         "title": "Onboarding Easton Bates - 10/8",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
@@ -3055,7 +3055,8 @@
           }
         ],
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-10-08T19:23:32.970Z"
       },
       {
         "title": "Intune Autopilot Troubleshooting",
@@ -3184,7 +3185,7 @@
       {
         "title": "Install O'rian Software on WinShared",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint",
           "services"
@@ -3197,7 +3198,8 @@
           }
         ],
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-10-08T19:23:31.639Z"
       },
       {
         "title": "Kelli Laptop Issues",

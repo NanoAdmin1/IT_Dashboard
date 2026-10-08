@@ -3226,7 +3226,12 @@
           "endpoint"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "It does not appear to be because of routing issues. What probably happened is the browser is holding a cookie that has 101Bs firewall details then when we changed the setting to 107 forwarding its own internet it caused this issue. \n\nFix is to clear browser cookies.",
+            "createdAt": "2026-10-08T21:07:41.122Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       }

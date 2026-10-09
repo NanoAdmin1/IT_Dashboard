@@ -3239,7 +3239,9 @@
         "title": "Format Bec's old laptop",
         "type": "task",
         "status": "in-progress",
-        "categories": [],
+        "categories": [
+          "endpoint"
+        ],
         "blocker": null,
         "notes": null,
         "resolution": null,

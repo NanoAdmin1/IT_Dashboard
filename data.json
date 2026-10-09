@@ -4202,6 +4202,18 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-10-07T18:34:50.881Z"
+      },
+      {
+        "title": "Systems SP Site",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "longterm"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ]
   },

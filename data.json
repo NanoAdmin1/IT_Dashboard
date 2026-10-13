@@ -4148,7 +4148,7 @@
       {
         "title": "Bell Internet Speed Issue",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "networking",
           "infrastructure",
@@ -4173,7 +4173,8 @@
             "status": "done",
             "createdAt": "2026-10-05T13:30:59.295Z"
           }
-        ]
+        ],
+        "completedAt": "2026-10-13T18:13:23.446Z"
       },
       {
         "title": "Replace AIO in the Control Room",

@@ -4155,7 +4155,12 @@
           "services"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "Carlo shut down the project for now.  Will be upgrading Bell to 1G instead until we can review later.",
+            "createdAt": "2026-10-13T18:13:19.247Z"
+          }
+        ],
         "resolution": null,
         "subtasks": [
           {
@@ -4165,7 +4170,7 @@
           },
           {
             "title": "Internet is OK,  we're on the correct speed. Next step is checking how much 1G is and compare with Videotron",
-            "status": "in-progress",
+            "status": "done",
             "createdAt": "2026-10-05T13:30:59.295Z"
           }
         ]

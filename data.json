@@ -3238,14 +3238,15 @@
       {
         "title": "Format Bec's old laptop",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-10-15T15:38:49.188Z"
       },
       {
         "title": "Veeam Renewal",

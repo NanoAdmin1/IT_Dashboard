@@ -3289,7 +3289,12 @@
           "services"
         ],
         "blocker": null,
-        "notes": null,
+        "notes": [
+          {
+            "text": "Setting up a meeting with O'rian",
+            "createdAt": "2026-10-15T18:03:45.489Z"
+          }
+        ],
         "resolution": null,
         "subtasks": []
       }

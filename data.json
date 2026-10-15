@@ -3229,7 +3229,7 @@
       {
         "title": "Website blocked issue",
         "type": "task",
-        "status": "in-progress",
+        "status": "waiting",
         "categories": [
           "endpoint"
         ],

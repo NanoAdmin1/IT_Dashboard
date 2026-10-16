@@ -3271,7 +3271,7 @@
       {
         "title": "Investigate Claude Organizational Settings",
         "type": "project",
-        "status": "in-progress",
+        "status": "waiting",
         "categories": [
           "security",
           "services"

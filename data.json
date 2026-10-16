@@ -3271,7 +3271,7 @@
       {
         "title": "Investigate Claude Organizational Settings",
         "type": "project",
-        "status": "waiting",
+        "status": "completed",
         "categories": [
           "security",
           "services"
@@ -3279,7 +3279,8 @@
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-10-16T16:16:12.781Z"
       },
       {
         "title": "Uncountable Go-live",

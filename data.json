@@ -3463,7 +3463,7 @@
       {
         "title": "Disaster Response Planning",
         "type": "project",
-        "status": "blocked",
+        "status": "in-progress",
         "categories": [
           "security",
           "infrastructure"

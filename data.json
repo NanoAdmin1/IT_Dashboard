@@ -3316,7 +3316,7 @@
       {
         "title": "SharePoint Migration",
         "type": "project",
-        "status": "waiting",
+        "status": "blocked",
         "categories": [
           "services"
         ],

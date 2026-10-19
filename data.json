@@ -3316,7 +3316,7 @@
       {
         "title": "SharePoint Migration",
         "type": "project",
-        "status": "blocked",
+        "status": "completed",
         "categories": [
           "services"
         ],
@@ -3359,7 +3359,8 @@
             "title": "Message Alex, Pierre, Andrew about Business Dev site",
             "status": "done"
           }
-        ]
+        ],
+        "completedAt": "2026-10-19T16:22:26.764Z"
       },
       {
         "title": "Wired RADIUS Setup - Burnaby",

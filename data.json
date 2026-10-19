@@ -3298,6 +3298,18 @@
         ],
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "Lisa Claude License and App Install",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

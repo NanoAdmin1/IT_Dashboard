@@ -3302,14 +3302,15 @@
       {
         "title": "Lisa Claude License and App Install",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-10-19T18:07:37.094Z"
       }
     ],
     "jordan": [

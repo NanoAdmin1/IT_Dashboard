@@ -3259,14 +3259,15 @@
       {
         "title": "Veeam Renewal",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-10-20T21:21:11.632Z"
       },
       {
         "title": "Investigate Claude Organizational Settings",

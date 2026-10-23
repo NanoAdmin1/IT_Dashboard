@@ -2963,7 +2963,7 @@
       {
         "title": "Marcus new laptop",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [],
         "blocker": null,
         "notes": [
@@ -2977,7 +2977,8 @@
           }
         ],
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-10-23T16:10:10.554Z"
       },
       {
         "title": "Kelli Camera issue",

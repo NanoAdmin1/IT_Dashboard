@@ -3512,11 +3512,11 @@
         "subtasks": [
           {
             "title": "Review current Disaster Response Plan",
-            "status": "in-progress"
+            "status": "done"
           },
           {
             "title": "Determine role changes needed",
-            "status": "in-progress"
+            "status": "done"
           },
           {
             "title": "Inform team of role changes",

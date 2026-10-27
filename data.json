@@ -3535,7 +3535,7 @@
       {
         "title": "TableTop Exercise",
         "type": "project",
-        "status": "in-progress",
+        "status": "waiting",
         "categories": [
           "security"
         ],

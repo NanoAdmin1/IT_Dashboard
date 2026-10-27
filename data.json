@@ -3329,7 +3329,7 @@
       {
         "title": "SFTP set-up for Uncountable",
         "type": "task",
-        "status": "waiting",
+        "status": "in-progress",
         "categories": [
           "endpoint"
         ],

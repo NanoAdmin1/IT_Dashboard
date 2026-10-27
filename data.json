@@ -3811,18 +3811,6 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
-      },
-      {
-        "title": "sdfg",
-        "type": "task",
-        "status": "blocked",
-        "categories": [
-          "networking"
-        ],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": []
       }
     ],
     "blake": [],

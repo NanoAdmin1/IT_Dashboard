@@ -3502,7 +3502,7 @@
       {
         "title": "IRP  Renewal",
         "type": "project",
-        "status": "waiting",
+        "status": "completed",
         "categories": [
           "security",
           "infrastructure"
@@ -3530,7 +3530,8 @@
             "title": "Schedule tentative date for TableTop exercise",
             "status": "in-progress"
           }
-        ]
+        ],
+        "completedAt": "2026-10-27T18:57:42.327Z"
       },
       {
         "title": "TableTop Exercise",

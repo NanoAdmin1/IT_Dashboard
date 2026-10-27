@@ -3502,7 +3502,7 @@
       {
         "title": "IRP  Renewal",
         "type": "project",
-        "status": "in-progress",
+        "status": "waiting",
         "categories": [
           "security",
           "infrastructure"

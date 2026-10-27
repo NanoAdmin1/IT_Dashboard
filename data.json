@@ -3327,7 +3327,7 @@
         "subtasks": []
       },
       {
-        "title": "SFTP set-up for Uncountable",
+        "title": "S3 Bucket set-up for Uncountable",
         "type": "task",
         "status": "in-progress",
         "categories": [

@@ -3762,8 +3762,13 @@
           },
           {
             "title": "GPO policy set",
-            "status": "in-progress",
+            "status": "done",
             "createdAt": "2026-10-28T21:23:25.333Z"
+          },
+          {
+            "title": "progress check friday",
+            "status": "not-started",
+            "createdAt": "2026-10-28T21:23:48.931Z"
           }
         ]
       },

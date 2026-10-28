@@ -549,6 +549,32 @@
   .card-status-badge.st-pending { background: var(--blue-bg); color: var(--blue); }
   .card-status-badge.st-shelved { background: rgba(148,163,184,0.15); color: #94a3b8; }
 
+  /* Status dropdown on member task cards */
+  .status-row { margin: 2px 0 8px; }
+  .status-row-compact { margin-top: 6px; }
+  .status-row-compact .status-row { margin: 0; }
+  .status-row-compact .status-select { font-size: 0.6rem; padding: 2px 4px; }
+  .status-select {
+    padding: 3px 6px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    font-size: 0.66rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    background: var(--surface2);
+    color: var(--text);
+  }
+  .status-select:focus { outline: 1px solid var(--blue); }
+  .status-select option { background: var(--surface2); color: var(--text); text-transform: none; font-weight: 500; }
+  .status-select.st-not-started { background: var(--gray-bg); color: var(--gray); border-color: var(--gray); }
+  .status-select.st-in-progress { background: var(--green-bg); color: var(--green); border-color: var(--green); }
+  .status-select.st-waiting { background: var(--yellow-bg); color: var(--yellow); border-color: var(--yellow); }
+  .status-select.st-blocked { background: var(--red-bg); color: var(--red); border-color: var(--red); }
+  .status-select.st-study { background: #422006; color: var(--orange); border-color: var(--orange); }
+  .status-select.st-completed { background: var(--blue-bg); color: var(--blue); border-color: var(--blue); }
+
   /* Delete button */
   .card-delete {
     position: absolute;
@@ -3009,9 +3035,12 @@ function renderAll() {
       // Delete button
       const deleteBtn = `<button class="card-delete" onclick="deleteTask(event, '${memberKey}', ${taskIdx})" title="Delete">&times;</button>`;
 
-      // Status badge for non-completed cards
-      const statusLabel = { 'not-started': 'Not Started', 'in-progress': 'In Progress', 'waiting': 'Waiting', 'blocked': 'Blocked', 'study': 'Study' };
-      const statusBadge = p.status !== 'completed' ? `<span class="card-status-badge st-${p.status}" onclick="cycleTaskStatus(event, '${memberKey}', ${taskIdx})" title="Click to change status">${statusLabel[p.status] || p.status}</span>` : '';
+      // Status dropdown (all cards, including completed)
+      const statusOptions = TASK_STATUS_OPTIONS.map(([val, lbl]) =>
+        `<option value="${val}" ${p.status === val ? 'selected' : ''}>${lbl}</option>`).join('');
+      const statusSelect = `<div class="status-row"><select class="status-select st-${p.status}" title="Change status"
+          onclick="event.stopPropagation()" onmousedown="event.stopPropagation()"
+          onchange="setTaskStatus(event, '${memberKey}', ${taskIdx}, this.value)">${statusOptions}</select></div>`;
 
       // Category editor (shown when expanded)
       const catEditorChips = ALL_CATEGORIES.map(c => {
@@ -3079,6 +3108,7 @@ function renderAll() {
               ${hasDetails ? `<span style="font-size:0.65rem;color:var(--border);">&#9656;</span>` : ''}
             </span>
           </div>
+          <div class="status-row-compact">${statusSelect}</div>
           ${notesHtml}
           ${resolutionHtml}
         `;
@@ -3086,7 +3116,8 @@ function renderAll() {
         card.innerHTML = `
           ${deleteBtn}
           <div class="card-title editable" ondblclick="startEditTitle(event, '${memberKey}', ${taskIdx})">${p.title}</div>
-          <div>${statusBadge}${typeBadge}</div>
+          ${statusSelect}
+          <div>${typeBadge}</div>
           <div class="card-tags" style="margin-top:6px">${tags}</div>
           ${categoryEditor}
           ${subtasksHtml}
@@ -3218,6 +3249,31 @@ const ALL_CATEGORIES = ['networking', 'security', 'infrastructure', 'endpoint', 
 const TASK_STATUS_CYCLE = ['not-started', 'in-progress', 'waiting', 'blocked', 'completed'];
 
 // 1. Task/Project Status Cycling
+const TASK_STATUS_OPTIONS = [
+  ['not-started', 'Not Started'],
+  ['in-progress', 'In Progress'],
+  ['waiting', 'Waiting'],
+  ['blocked', 'Blocked'],
+  ['study', 'Study'],
+  ['completed', 'Completed']
+];
+
+// Set status from the dropdown (also moves completed tasks back out)
+function setTaskStatus(event, memberKey, taskIdx, newStatus) {
+  event.stopPropagation();
+  const task = allMembersData[memberKey][taskIdx];
+  if (!task || task.status === newStatus) return;
+  task.status = newStatus;
+  if (newStatus === 'completed') {
+    task.completedAt = new Date().toISOString();
+  } else {
+    delete task.completedAt;
+  }
+  projects = allMembersData[activeMember];
+  renderAll();
+  saveData();
+}
+
 function cycleTaskStatus(event, memberKey, taskIdx) {
   event.stopPropagation();
   const task = allMembersData[memberKey][taskIdx];

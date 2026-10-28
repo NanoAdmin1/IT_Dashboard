@@ -3737,7 +3737,7 @@
       {
         "title": "PT Time change for BBY devices",
         "type": "task",
-        "status": "blocked",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
@@ -3770,7 +3770,8 @@
             "status": "not-started",
             "createdAt": "2026-10-28T21:23:55.280Z"
           }
-        ]
+        ],
+        "completedAt": "2026-10-28T21:29:47.395Z"
       },
       {
         "title": "OS hardening Policy | GPO + Intune",

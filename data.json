@@ -3776,6 +3776,18 @@
         "subtasks": []
       },
       {
+        "title": "PT Time change for BBY devices",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
         "title": "Setup Wazuh Alerting",
         "type": "task",
         "status": "in-progress",
@@ -3831,18 +3843,6 @@
         "status": "in-progress",
         "categories": [
           "security"
-        ],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": []
-      },
-      {
-        "title": "PT Time change for BBY devices",
-        "type": "task",
-        "status": "in-progress",
-        "categories": [
-          "endpoint"
         ],
         "blocker": null,
         "notes": null,

@@ -3744,7 +3744,13 @@
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [
+          {
+            "title": "GPO set",
+            "status": "not-started",
+            "createdAt": "2026-10-28T21:22:00.582Z"
+          }
+        ]
       },
       {
         "title": "OS hardening Policy | GPO + Intune",

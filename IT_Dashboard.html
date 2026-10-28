@@ -435,6 +435,21 @@
 
   .subtask:last-child { border-bottom: none; }
 
+  .subtask[draggable="true"] { cursor: grab; }
+  .subtask.dragging { opacity: 0.4; }
+  .subtask.drag-over-top { box-shadow: inset 0 2px 0 var(--blue); }
+  .subtask.drag-over-bottom { box-shadow: inset 0 -2px 0 var(--blue); }
+  .subtask .subtask-title { flex: 1; }
+  .subtask-handle {
+    color: var(--muted);
+    opacity: 0.4;
+    font-size: 0.8rem;
+    cursor: grab;
+    user-select: none;
+    flex-shrink: 0;
+  }
+  .subtask:hover .subtask-handle { opacity: 0.9; }
+
   .subtask-status {
     flex-shrink: 0;
     font-size: 0.62rem;
@@ -2706,9 +2721,15 @@ function renderSharePoint() {
           const subItems = item.subtasks.map((sub, si) => {
             const subLabel = sub.status === 'not-started' ? 'Not Started' : sub.status === 'in-progress' ? 'In Progress' : 'Done';
             const stamp = sub.createdAt ? `<span class="note-stamp">${fmtStamp(sub.createdAt)}</span>` : '';
-            return `<div class="subtask ${sub.status === 'done' ? 'is-done' : ''}">
+            return `<div class="subtask ${sub.status === 'done' ? 'is-done' : ''}" draggable="true"
+                ondragstart="onSubDragStart(event,'sp','',${idx},${si})"
+                ondragover="onSubDragOver(event,'sp','',${idx},${si})"
+                ondrop="onSubDrop(event,'sp','',${idx},${si})"
+                ondragend="onSubDragEnd(event)">
+              <span class="subtask-handle" title="Drag to reorder">⠿</span>
               <span class="subtask-status ${sub.status} clickable" onclick="cycleSpSubtask(event, ${idx}, ${si})">${subLabel}</span>
               <span class="subtask-title">${sub.title}${stamp}</span>
+              <button class="note-delete" onclick="deleteSubtask(event,'sp','',${idx},${si})" title="Delete subtask">&times;</button>
             </div>`;
           }).join('');
           subtasksHtml = `<div class="card-subtasks">
@@ -3007,9 +3028,15 @@ function renderAll() {
         const items = p.subtasks.map((s, si) => {
           const label = s.status === 'not-started' ? 'Not Started' : s.status === 'in-progress' ? 'In Progress' : 'Done';
           const stamp = s.createdAt ? `<span class="note-stamp">${fmtStamp(s.createdAt)}</span>` : '';
-          return `<div class="subtask ${s.status === 'done' ? 'is-done' : ''}">
+          return `<div class="subtask ${s.status === 'done' ? 'is-done' : ''}" draggable="true"
+              ondragstart="onSubDragStart(event,'member','${memberKey}',${taskIdx},${si})"
+              ondragover="onSubDragOver(event,'member','${memberKey}',${taskIdx},${si})"
+              ondrop="onSubDrop(event,'member','${memberKey}',${taskIdx},${si})"
+              ondragend="onSubDragEnd(event)">
+            <span class="subtask-handle" title="Drag to reorder">⠿</span>
             <span class="subtask-status ${s.status} clickable" onclick="cycleSubtask(event, '${memberKey}', ${taskIdx}, ${si})">${label}</span>
             <span class="subtask-title">${s.title}${stamp}</span>
+            <button class="note-delete" onclick="deleteSubtask(event,'member','${memberKey}',${taskIdx},${si})" title="Delete subtask">&times;</button>
           </div>`;
         }).join('');
         const addSubBtn = `<button class="add-subtask-trigger" onclick="showAddSubtaskForm(event, '${memberKey}', ${taskIdx})">+ Add Subtask</button>`;
@@ -3674,6 +3701,7 @@ function onDragEnd(event) {
 }
 
 function onColumnDragOver(event) {
+  if (draggedSub) return; // subtask drags are handled by the subtask rows, not the columns
   event.preventDefault();
   event.dataTransfer.dropEffect = 'move';
   const col = event.target.closest('.column');
@@ -3785,6 +3813,92 @@ function onSpColumnDrop(event, targetStatus) {
   clearDragOverCard();
   renderSharePoint();
   saveData();
+}
+
+// 4c. Subtask delete + drag-to-reorder (works for member tabs and SharePoint)
+let draggedSub = null;      // { scope: 'member'|'sp', key, taskIdx, subIdx }
+let subDropTarget = null;
+let subDropPos = null;      // 'before' | 'after'
+
+function getSubtaskList(scope, key, taskIdx) {
+  return scope === 'sp' ? sharepointData[taskIdx].subtasks : allMembersData[key][taskIdx].subtasks;
+}
+
+function rerenderSubtaskScope(scope) {
+  if (scope === 'sp') {
+    renderSharePoint();
+  } else {
+    projects = allMembersData[activeMember];
+    renderAll();
+  }
+}
+
+function deleteSubtask(event, scope, key, taskIdx, subIdx) {
+  event.stopPropagation();
+  const list = getSubtaskList(scope, key, taskIdx);
+  const sub = list[subIdx];
+  if (!sub || !confirm(`Delete subtask "${sub.title}"?`)) return;
+  list.splice(subIdx, 1);
+  rerenderSubtaskScope(scope);
+  saveData();
+}
+
+function clearSubDropIndicator() {
+  if (subDropTarget) subDropTarget.classList.remove('drag-over-top', 'drag-over-bottom');
+  subDropTarget = null;
+  subDropPos = null;
+}
+
+function isSameSubParent(scope, key, taskIdx) {
+  return draggedSub && draggedSub.scope === scope && draggedSub.key === key && draggedSub.taskIdx === taskIdx;
+}
+
+function onSubDragStart(event, scope, key, taskIdx, subIdx) {
+  event.stopPropagation(); // don't start a card drag
+  draggedSub = { scope, key, taskIdx, subIdx };
+  event.currentTarget.classList.add('dragging');
+  event.dataTransfer.effectAllowed = 'move';
+  event.dataTransfer.setData('text/plain', 'subtask');
+}
+
+function onSubDragOver(event, scope, key, taskIdx, subIdx) {
+  if (!isSameSubParent(scope, key, taskIdx)) return; // only reorder within the same task
+  event.preventDefault();
+  event.stopPropagation();
+  event.dataTransfer.dropEffect = 'move';
+  const el = event.currentTarget;
+  const rect = el.getBoundingClientRect();
+  const pos = event.clientY < rect.top + rect.height / 2 ? 'before' : 'after';
+  if (subDropTarget !== el || subDropPos !== pos) {
+    clearSubDropIndicator();
+    subDropTarget = el;
+    subDropPos = pos;
+    el.classList.add(pos === 'before' ? 'drag-over-top' : 'drag-over-bottom');
+  }
+}
+
+function onSubDrop(event, scope, key, taskIdx, subIdx) {
+  if (!isSameSubParent(scope, key, taskIdx)) return;
+  event.preventDefault();
+  event.stopPropagation();
+  const list = getSubtaskList(scope, key, taskIdx);
+  const from = draggedSub.subIdx;
+  let to = subDropPos === 'after' ? subIdx + 1 : subIdx;
+  if (from < to) to--;
+  clearSubDropIndicator();
+  draggedSub = null;
+  if (from === to) { rerenderSubtaskScope(scope); return; }
+  const [moved] = list.splice(from, 1);
+  list.splice(to, 0, moved);
+  rerenderSubtaskScope(scope);
+  saveData();
+}
+
+function onSubDragEnd(event) {
+  event.stopPropagation(); // don't trigger the card's dragend
+  event.currentTarget.classList.remove('dragging');
+  clearSubDropIndicator();
+  draggedSub = null;
 }
 
 // 5. Category Tag Editing

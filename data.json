@@ -3691,47 +3691,6 @@
         "completedAt": "2026-05-28T20:20:19.324Z"
       },
       {
-        "title": "OS Hardening & Baseline Images",
-        "type": "project",
-        "status": "in-progress",
-        "categories": [
-          "security",
-          "endpoint"
-        ],
-        "blocker": null,
-        "notes": "Build hardened baseline images for Windows and Mac endpoints, managed through Intune.",
-        "subtasks": [
-          {
-            "title": "Define hardening standards (CIS benchmarks for Windows + macOS)",
-            "status": "in-progress"
-          },
-          {
-            "title": "Build Windows baseline image",
-            "status": "not-started"
-          },
-          {
-            "title": "Build macOS baseline image",
-            "status": "not-started"
-          },
-          {
-            "title": "Create Intune compliance policies for Windows",
-            "status": "not-started"
-          },
-          {
-            "title": "Create Intune compliance policies for Mac",
-            "status": "not-started"
-          },
-          {
-            "title": "Test baseline images on pilot devices",
-            "status": "not-started"
-          },
-          {
-            "title": "Document image build and update process",
-            "status": "not-started"
-          }
-        ]
-      },
-      {
         "title": "PagerDuty Licenses for Sam",
         "type": "task",
         "status": "completed",
@@ -3786,6 +3745,47 @@
         "notes": null,
         "resolution": null,
         "subtasks": []
+      },
+      {
+        "title": "OS Hardening & Baseline Images",
+        "type": "project",
+        "status": "in-progress",
+        "categories": [
+          "security",
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": "Build hardened baseline images for Windows and Mac endpoints, managed through Intune.",
+        "subtasks": [
+          {
+            "title": "Define hardening standards (CIS benchmarks for Windows + macOS)",
+            "status": "in-progress"
+          },
+          {
+            "title": "Build Windows baseline image",
+            "status": "not-started"
+          },
+          {
+            "title": "Build macOS baseline image",
+            "status": "not-started"
+          },
+          {
+            "title": "Create Intune compliance policies for Windows",
+            "status": "not-started"
+          },
+          {
+            "title": "Create Intune compliance policies for Mac",
+            "status": "not-started"
+          },
+          {
+            "title": "Test baseline images on pilot devices",
+            "status": "not-started"
+          },
+          {
+            "title": "Document image build and update process",
+            "status": "not-started"
+          }
+        ]
       },
       {
         "title": "Setup Wazuh Alerting",

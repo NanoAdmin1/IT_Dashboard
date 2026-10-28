@@ -3846,14 +3846,15 @@
       {
         "title": "AI Use policy updates",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "security"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-10-28T16:16:13.384Z"
       }
     ],
     "blake": [],

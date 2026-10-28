@@ -550,7 +550,8 @@
   .card-status-badge.st-shelved { background: rgba(148,163,184,0.15); color: #94a3b8; }
 
   /* Status dropdown on member task cards */
-  .status-row { margin: 2px 0 8px; }
+  .status-row { margin: 2px 0 8px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .status-row .type-badge { margin-bottom: 0; }
   .status-row-compact { margin-top: 6px; }
   .status-row-compact .status-row { margin: 0; }
   .status-row-compact .status-select { font-size: 0.6rem; padding: 2px 4px; }
@@ -3054,9 +3055,12 @@ function renderAll() {
       // Status dropdown (all cards, including completed)
       const statusOptions = TASK_STATUS_OPTIONS.map(([val, lbl]) =>
         `<option value="${val}" ${p.status === val ? 'selected' : ''}>${lbl}</option>`).join('');
-      const statusSelect = `<div class="status-row"><select class="status-select st-${p.status}" title="Change status"
+      const statusSelectEl = `<select class="status-select st-${p.status}" title="Change status"
           onclick="event.stopPropagation()" onmousedown="event.stopPropagation()"
-          onchange="setTaskStatus(event, '${memberKey}', ${taskIdx}, this.value)">${statusOptions}</select></div>`;
+          onchange="setTaskStatus(event, '${memberKey}', ${taskIdx}, this.value)">${statusOptions}</select>`;
+      const statusSelect = `<div class="status-row">${statusSelectEl}</div>`;
+      // Active cards: dropdown with the task/project chip to its right
+      const statusRowWithType = `<div class="status-row">${statusSelectEl}${typeBadge}</div>`;
 
       // Category editor (shown when expanded)
       const catEditorChips = ALL_CATEGORIES.map(c => {
@@ -3132,8 +3136,7 @@ function renderAll() {
         card.innerHTML = `
           ${deleteBtn}
           <div class="card-title editable" ondblclick="startEditTitle(event, '${memberKey}', ${taskIdx})">${p.title}</div>
-          ${statusSelect}
-          <div>${typeBadge}</div>
+          ${statusRowWithType}
           <div class="card-tags" style="margin-top:6px">${tags}</div>
           ${categoryEditor}
           ${subtasksHtml}

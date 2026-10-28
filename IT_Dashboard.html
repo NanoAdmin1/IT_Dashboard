@@ -574,6 +574,8 @@
   .status-select.st-blocked { background: var(--red-bg); color: var(--red); border-color: var(--red); }
   .status-select.st-study { background: #422006; color: var(--orange); border-color: var(--orange); }
   .status-select.st-completed { background: var(--blue-bg); color: var(--blue); border-color: var(--blue); }
+  .status-select.st-pending { background: var(--blue-bg); color: #93c5fd; border-color: #93c5fd; }
+  .status-select.st-shelved { background: rgba(148,163,184,0.15); color: #94a3b8; border-color: #94a3b8; }
 
   /* Delete button */
   .card-delete {
@@ -2719,21 +2721,25 @@ function renderSharePoint() {
       const label = item.assignedTo ? SP_ASSIGNEE_LABELS[item.assignedTo] : 'Unassigned';
       const assigneeHtml = `<div style="margin-top:6px;"><span class="sp-assignee-chip" onclick="cycleSpAssignee(event,${idx})" title="Click to reassign" style="cursor:pointer;font-size:0.7rem;padding:2px 8px;border-radius:4px;background:${color}22;color:${color};border:1px solid ${color}44;">${label} ▾</span></div>`;
 
+      // Status dropdown (all SP cards, including completed and shelved)
+      const spStatusOptions = SP_STATUS_CYCLE.map(val =>
+        `<option value="${val}" ${s === val ? 'selected' : ''}>${SP_STATUS_LABEL[val]}</option>`).join('');
+      const spStatusSelect = `<div class="status-row"><select class="status-select st-${s}" title="Change status"
+          onclick="event.stopPropagation()" onmousedown="event.stopPropagation()"
+          onchange="setSpStatus(event, ${idx}, this.value)">${spStatusOptions}</select></div>`;
+
       if (isCompact) {
         card.style.padding = '8px 12px';
         const notesHtml = renderSpNotesHtml(item.notes, idx);
-        const shelvedBadge = isShelved ? `<div style="margin-bottom:4px;"><span class="card-status-badge st-shelved" onclick="cycleSpStatus(event, ${idx})" title="Click to change status">Shelved</span></div>` : '';
         card.innerHTML = `
           ${deleteBtn}
-          ${shelvedBadge}
           <div class="card-title" style="margin-bottom:0;font-size:0.8rem;color:var(--muted);">${item.title}</div>
+          <div class="status-row-compact">${spStatusSelect}</div>
           ${assigneeHtml}
           ${notesHtml}
         `;
         card.onclick = () => card.classList.toggle('expanded');
       } else {
-        // Status badge
-        const statusBadge = `<span class="card-status-badge st-${s}" onclick="cycleSpStatus(event, ${idx})" title="Click to change status">${SP_STATUS_LABEL[s]}</span>`;
 
         // Notes (multi-note)
         const notesHtml = renderSpNotesHtml(item.notes, idx);
@@ -2778,7 +2784,7 @@ function renderSharePoint() {
         card.innerHTML = `
           ${deleteBtn}
           <div class="card-title editable" ondblclick="startEditSpTitle(event, ${idx})">${item.title}</div>
-          <div>${statusBadge}</div>
+          ${spStatusSelect}
           ${assigneeHtml}
           ${subtasksHtml}
           ${notesHtml}
@@ -2815,6 +2821,16 @@ function renderSharePoint() {
 }
 
 // SP Status cycling
+// Set SP status from the dropdown
+function setSpStatus(event, idx, newStatus) {
+  event.stopPropagation();
+  const item = sharepointData[idx];
+  if (!item || item.status === newStatus) return;
+  item.status = newStatus;
+  renderSharePoint();
+  saveData();
+}
+
 function cycleSpStatus(event, idx) {
   event.stopPropagation();
   const item = sharepointData[idx];

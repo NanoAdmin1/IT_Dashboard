@@ -3764,6 +3764,18 @@
         "subtasks": []
       },
       {
+        "title": "2026 Maturity Assesment",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "security"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
+      },
+      {
         "title": "Setup Wazuh Alerting",
         "type": "task",
         "status": "in-progress",
@@ -3815,18 +3827,6 @@
       },
       {
         "title": "AI Use policy updates",
-        "type": "task",
-        "status": "in-progress",
-        "categories": [
-          "security"
-        ],
-        "blocker": null,
-        "notes": null,
-        "resolution": null,
-        "subtasks": []
-      },
-      {
-        "title": "2026 Maturity Assesment",
         "type": "task",
         "status": "in-progress",
         "categories": [

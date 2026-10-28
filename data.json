@@ -3746,9 +3746,9 @@
         "resolution": null,
         "subtasks": [
           {
-            "title": "GPO set",
+            "title": "Intune Expedite policy set",
             "status": "not-started",
-            "createdAt": "2026-10-28T21:22:00.582Z"
+            "createdAt": "2026-10-28T21:22:08.813Z"
           }
         ]
       },

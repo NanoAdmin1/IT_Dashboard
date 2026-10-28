@@ -3752,6 +3752,11 @@
             "title": "Discuss Scenario",
             "status": "not-started",
             "createdAt": "2026-10-28T22:22:42.714Z"
+          },
+          {
+            "title": "Strategy review",
+            "status": "not-started",
+            "createdAt": "2026-10-28T22:22:51.264Z"
           }
         ]
       },

@@ -3747,7 +3747,7 @@
         "subtasks": []
       },
       {
-        "title": "OS Hardening & Baseline Images",
+        "title": "OS hardening Policy | GPO + Intune",
         "type": "project",
         "status": "in-progress",
         "categories": [

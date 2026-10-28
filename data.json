@@ -3755,7 +3755,13 @@
           "endpoint"
         ],
         "blocker": null,
-        "notes": "Build hardened baseline images for Windows and Mac endpoints, managed through Intune.",
+        "notes": [
+          {
+            "text": "Instead of building operating system images which are hardened, the modern approach is now entirely done through policy., specifically through GPO and Intune policies.",
+            "createdAt": null,
+            "editedAt": "2026-10-28T16:08:15.965Z"
+          }
+        ],
         "subtasks": [
           {
             "title": "Define hardening standards (CIS benchmarks for Windows + macOS)",

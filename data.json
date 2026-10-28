@@ -3737,7 +3737,7 @@
       {
         "title": "PT Time change for BBY devices",
         "type": "task",
-        "status": "completed",
+        "status": "waiting",
         "categories": [
           "endpoint"
         ],
@@ -3745,11 +3745,6 @@
         "notes": null,
         "resolution": null,
         "subtasks": [
-          {
-            "title": "GPO policy set",
-            "status": "done",
-            "createdAt": "2026-10-28T21:23:25.333Z"
-          },
           {
             "title": "Intune Expedite policy set",
             "status": "done",
@@ -3761,6 +3756,16 @@
             "createdAt": "2026-10-28T21:22:42.447Z"
           },
           {
+            "title": "wert",
+            "status": "not-started",
+            "createdAt": "2026-10-28T21:22:58.535Z"
+          },
+          {
+            "title": "GPO policy set",
+            "status": "done",
+            "createdAt": "2026-10-28T21:23:25.333Z"
+          },
+          {
             "title": "progress check friday",
             "status": "not-started",
             "createdAt": "2026-10-28T21:23:48.931Z"
@@ -3770,8 +3775,7 @@
             "status": "not-started",
             "createdAt": "2026-10-28T21:23:55.280Z"
           }
-        ],
-        "completedAt": "2026-10-28T21:29:47.395Z"
+        ]
       },
       {
         "title": "OS hardening Policy | GPO + Intune",

@@ -3773,11 +3773,11 @@
           },
           {
             "title": "Build macOS baseline image",
-            "status": "in-progress"
+            "status": "done"
           },
           {
             "title": "Create Intune compliance policies for Windows",
-            "status": "not-started"
+            "status": "in-progress"
           },
           {
             "title": "Create Intune compliance policies for Mac",

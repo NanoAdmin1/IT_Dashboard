@@ -3737,7 +3737,7 @@
       {
         "title": "PT Time change for BBY devices",
         "type": "task",
-        "status": "waiting",
+        "status": "in-progress",
         "categories": [
           "endpoint"
         ],

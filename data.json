@@ -3737,7 +3737,7 @@
       {
         "title": "PT Time change for BBY devices",
         "type": "task",
-        "status": "waiting",
+        "status": "in-progress",
         "categories": [
           "endpoint"
         ],
@@ -3745,6 +3745,11 @@
         "notes": null,
         "resolution": null,
         "subtasks": [
+          {
+            "title": "GPO policy set",
+            "status": "done",
+            "createdAt": "2026-10-28T21:23:25.333Z"
+          },
           {
             "title": "Intune Expedite policy set",
             "status": "done",
@@ -3754,16 +3759,6 @@
             "title": "Progress check Thursday",
             "status": "not-started",
             "createdAt": "2026-10-28T21:22:42.447Z"
-          },
-          {
-            "title": "wert",
-            "status": "not-started",
-            "createdAt": "2026-10-28T21:22:58.535Z"
-          },
-          {
-            "title": "GPO policy set",
-            "status": "done",
-            "createdAt": "2026-10-28T21:23:25.333Z"
           },
           {
             "title": "progress check friday",

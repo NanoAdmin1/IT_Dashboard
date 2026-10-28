@@ -3769,7 +3769,7 @@
           },
           {
             "title": "Build Windows baseline image",
-            "status": "not-started"
+            "status": "in-progress"
           },
           {
             "title": "Build macOS baseline image",

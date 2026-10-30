@@ -3317,14 +3317,15 @@
       {
         "title": "Label Meeting (Oct 30th)",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "services"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-10-30T20:02:31.818Z"
       },
       {
         "title": "S3 Bucket set-up for Uncountable",

@@ -3287,7 +3287,7 @@
       {
         "title": "Uncountable Go-live",
         "type": "project",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "services"
         ],
@@ -3299,7 +3299,8 @@
           }
         ],
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-10-30T20:02:34.118Z"
       },
       {
         "title": "Lisa Claude License and App Install",

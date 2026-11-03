@@ -3343,14 +3343,15 @@
       {
         "title": "Pacific Time (British Columbia) updates for all BC users",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-11-03T21:55:01.956Z"
       },
       {
         "title": "In-house Notion replacement",

@@ -3922,6 +3922,19 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-10-28T16:16:13.384Z"
+      },
+      {
+        "title": "Create IRP assumption questions for Execs",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "security",
+          "infrastructure"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "blake": [],

@@ -4368,7 +4368,7 @@
       {
         "title": "Quickbooks/Trupoint Decomissioning",
         "type": "task",
-        "status": "not-started",
+        "status": "study",
         "categories": [],
         "blocker": null,
         "notes": null,

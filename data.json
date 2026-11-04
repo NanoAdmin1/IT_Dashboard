@@ -3980,7 +3980,7 @@
       {
         "title": "Veeam Backup Upgrade",
         "type": "project",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "networking",
           "security",
@@ -4010,7 +4010,8 @@
             "status": "not-started",
             "createdAt": "2026-08-17T13:49:49.056Z"
           }
-        ]
+        ],
+        "completedAt": "2026-11-04T17:51:22.659Z"
       },
       {
         "title": "Island Browser Enforcement",

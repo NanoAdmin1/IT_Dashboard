@@ -3394,14 +3394,15 @@
       {
         "title": "Ida OneDrive Help",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-11-05T20:08:39.708Z"
       }
     ],
     "jordan": [

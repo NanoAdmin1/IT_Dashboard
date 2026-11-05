@@ -3381,14 +3381,15 @@
       {
         "title": "iPad set-up",
         "type": "task",
-        "status": "in-progress",
+        "status": "completed",
         "categories": [
           "endpoint"
         ],
         "blocker": null,
         "notes": null,
         "resolution": null,
-        "subtasks": []
+        "subtasks": [],
+        "completedAt": "2026-11-05T19:53:22.080Z"
       },
       {
         "title": "Ida OneDrive Help",

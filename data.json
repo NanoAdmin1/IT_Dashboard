@@ -3377,6 +3377,18 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-11-05T17:19:55.559Z"
+      },
+      {
+        "title": "iPad set-up",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [

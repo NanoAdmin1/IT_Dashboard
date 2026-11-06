@@ -3403,6 +3403,18 @@
         "resolution": null,
         "subtasks": [],
         "completedAt": "2026-11-05T20:08:39.708Z"
+      },
+      {
+        "title": "Off-boarding Angel Nov 9",
+        "type": "task",
+        "status": "in-progress",
+        "categories": [
+          "endpoint"
+        ],
+        "blocker": null,
+        "notes": null,
+        "resolution": null,
+        "subtasks": []
       }
     ],
     "jordan": [
